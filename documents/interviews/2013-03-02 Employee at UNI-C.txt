@@ -1,0 +1,43 @@
+Styring af bygninger
+
+Hvilke bygninger opholder du dig i?
+	Hus
+		Eks:Varmesystem (op og nedjustering af temperatur)
+		Ny: Lyset skal tænde i gangen, når man åbner hoveddør udefra.
+		Ny: Om morgenen når man skal i bad, skal radioen tænde. Baseret på rutine-tiden om morgenen. [ESTIMATED BY NARROW SCOPE]
+		Ny: Solafskærmning - blinds skal lukke når solen står direkte på (stadig manualt).
+		Ny: Lysstribe når man skal tisse om natten.
+		Ny: Kæledyr, når de mangler vand i flasken, så fyld op.
+		Ny: Uautoriseret færden udenfor huset, skal kunne advare os inde i huset. Auto alarm til firma. Lys kan blive aktiveret. Skal kunne se om det er et menneske eller ej.
+		Ny: Køkken, hvis den registrerer service ovenpå køkkebordet, skal opvaskemaskine klappe ned så man huske er sætte det ind.
+		Ny: Hvis et rum overstiger en bestemt temperatur, og det er sommer, så åbn ovenlys vinduet.
+
+	Arbejde
+		Eks:light motion
+			Hørt andre der sige at vifte med arme og ben er irriterende. Måske efter et vist tidspunkt, idag er det hele dagen det virker sådan.
+
+		Eks:blinds hvis det stormer
+			Fint nok - sikring for dem. Ikke til anden gavn.
+			Ny: Gå automatisk ned når solen står lige ind på vinduet - skal kunne overrules. Det har noget med lysstyrken at gøre og ikke nødvendigvis temperaturen, da der bliver alt for lyst til at kunne arbejde. Går op igen når solen er normal igen.
+		Eks: Printerne går i sleep mode, og skal vækkes før man f.eks. kan scanne.
+		Ny: Når en medarbejder kommer ind i bygningen, kunne det være rart at computeren starter, så man ikke skal vente.
+		Ny: Ville gerne optimerer så computerne slukkede automatisk for at spare energi, men der er mange problemer forbundet med det. Nogle medarbejdere har brug for at computerne kører hele tiden, pga. små arbejdsservere osv, andre har brug for at kunne tilgå den via VPN/fjernadgang, og hun kan ikke overskue om det kan lade sig gøre teknisk. Alle programmer skal være åbne med indhold. Må godt tænde og slukke hver gang man kommer/går.
+		Ny: Kan den tætteste printer vækkes af sleep mode, når en medarbejder kommer ind om morgenen?
+		Ny: Forskellige adgangskoder.
+		Ny: Måske lys på kontoret når man bruger sit adgangskort?
+		Ny: Vil have en cafe latte på borden når man ankommer om morgenen.
+		Ny: Automatisk toilet-bræt-nedslå-mekanisme når man forlader toilettet.
+		Ny: Hver morgen/nat skal opvaskemaskinen starte, hvis den er fyldt (enten vægt eller sensor). Problematik fordi folk ikke tømmer den, men stiller beskidt ind igen, hvilket så gør at den næste vasker det hele én gang til.
+		Ny: Automatisk stille telefonen videre, når man forlader bygningen eller forlader sin plads. Men skal kunne virke med ens arbejdstider, så den ikke stiller videre når man har fri, men kun til f.eks møder osv. Det skal være muligt at angive forskellige numre den skal vidrestille til, evt. baseret på tid man er væk, eller om man forlader bygningen.
+
+	Tog
+		Ny: Hvis det er meget varmt i toget, skal topvinduerne gå op automatisk.
+		Ny: Hvis en cykelholder bliver taget i brug, skal sædet ved siden af automatisk klappe ned.
+		Ny: Kan mobilen ikke brumme, når man er tæt på der hvor man skal af?
+
+	Banen (frivillig)
+		Ny: Der er et varmesystem idag, men det er manuelt, og ikke behageligt fordi der er koldt når I kommer. Kunne godt tænke sig at have en kalender med tidspunkter, så den forvarmer rummene til folk. Desuden skal den kunne slukke selv efter tidspunkt. Skal stadig kunne virke manuelt. Vision: Web-interface til hvornår der skal tændes og slukkes. Måske en SMS til et nummer. Der er akustik problemer.
+		Ny: Opvaskemaskine skal varme op før den kan virke, dette kunne være forskudt for starttidspunktet for varmen.
+
+Report relevant:
+		She expressed a desire for a 'routine-component' that would learn and know her routine, and use this information to decide if neccesary action was needed. For example, a policy that she expressed was; "In the morning when I am going to take my shower, I would like the radio to turn on.". She wants the system to know that she is going to take her shower, and only in that instance turn on the radio. We have chose to narrow the scope of this functionality, since we do not consider this to be of core importance in regards to our specific goals. We estimate this functionality by a static schedule of the week, have time intervals for when it is 'bathing-time' and such scheduled activities.
