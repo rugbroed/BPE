@@ -1,0 +1,32 @@
+Employee in FM @ Københavns Tekniske Skole
+
+Existing policies:
+
+	Existing: AccessControl (time and weekday based): Opens and closes the gate to the school. Can be manually re-programmed and also de-activated. Allows for holydays.
+	Existing: VideoSurveillance (time and weekday based): Records video.
+	Existing: RemoteWorkStation (manually): An IT employee can remotely shut off computers, if people forget to turn them off before they leave.
+	Existing: MotionSensors are used which can be annoying, especially when the light turns off in the middle of a parental meeting, and they have to flail around with their arms to see each other. Should be based on week/time and maybe using Infrared instead of motion.
+
+	New: 	  RemoteWorkStation (automatically): Should be able to set time and weekday for the computers, so they shut off by themselves.
+
+	New: 	  Today skylight windows can be opened manually by a switch on a nearby wall. There is curtains underneath them, which can also be controlled by a nearby switch. However, people sometimes forget to close a the window, because the curtain is hiding the window. Since there is no rain sensor on the window, the curtain gets ruined by the water and needs replacing. (If it rains outside, then close the window. When school closes, roll back skylight curtains.)
+
+	New: 	  Room radiators have thermostats that senses the ambient temperature and adjusts the radiator accordingly. During winter, students might find the room 'stuffy' and opens some windows, without bothering to turn down the radiators. The thermostat treats this as the rool is getting colder, and turns up the heat. This is a huge waste and very bad for human comfort. (If the radiators are on, and windows are opened then turn down radiators.)
+
+	New:	  By exchanging the room raditor thermostats with centrally controlled temperature sensors and radiator actuators, it will be possible to make a finer grained control of the rooms. Individual room temperature might be possible, using motion/infrared sensors indicating if the room is in use or not. If not in use the heat can be driven down. Should also be possible based on week/time.
+
+	New:	  There are gauges on the three main resources in the school; electricity, gas and water. Sometimes, especially after weekends or holidays, an abnormal large usage of water can be registered. Someone might be stealing water for carwashes, or similar. There is a need to shut down the supply if a usage is too high. Should work based on week/time.
+
+	New:	  The central AccessControl system has actuators on only a few doors. However, if someone has but in place an obstacle, no notice is given to the people working at the scool, meating that they provide false security. (If CLOSING_TIME then SecurityDoors-->Close. If cannot close door, then send sms with alarm to the staff so they can remove obstacle.)
+
+	New:	  If the school is about to close, then enumerate through all windows, skylights and exterior doors. If any of them are not securely closed and locked, then send an accumulated list to the staff.
+
+	New:	  Generally it would be nice to have rules/policies working not only by week/time, but also by integrating into the existing systems for room planning and student data. (Flex, ElevPlan). We would not like to have a new system where we have to enter everything again. Without integration, there is no realistic scenario for usage.
+
+	New:	  The room heating should be driven partly by the heat that is entering the windows.
+
+	New:	  The school have 20 sky lights where 5 is smoke-escape hatches in case of a fire. These 5 can be controlled centrally, the rest can't. There are also a hallway with a glass roof on 1st floor but the windows on that is only manually operated. This rule is needed (If temperature on hallway is above 25 then open the windows. Close the windows in case of rain.)
+
+	New:	  General equipment, especially projectors, are sometimes left on by students and teachers. They should be turned off based on week/time and room planning.
+
+	New:	  The existing control system (CTS) for ventilation is hard to understand. The GUI is made like an electrical diagram, and is not user friendly. Moreover, the temperatures shown in the program is from sensors in the ventilation ducts, not in the room themselves, making it very hard to regulate them, since you'll have to change the settings and then wait for 10-15 minutes. Then you'll have to go to the room and manually hold a thermometer before going back and repeat this.
