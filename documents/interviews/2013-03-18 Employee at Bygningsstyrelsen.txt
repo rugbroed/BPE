@@ -1,0 +1,57 @@
+Varme + ventilation med CTS (central tilstand styring)
+	Sneider Honywell-produkter
+	Gas, fjernvarme, osv.
+
+	Ift. udetemperaturen., en kurve - i cts. "Når det er 0 sende man 45 grader, når"
+
+Ventilation
+	Nogle steder efter rum-temperatur. Nogle steder.
+
+Varme
+	Fjernvarme, primært
+	Få med damp.
+
+Helligdags-program
+	Mest kontorejendomme - lav blus i weekender, ferier og heligdage.
+	Sænker temp stopper ventilation. Også døgn basis i CTS. 7-17 ventilation.
+
+Drifter statens kontorejendomme.
+	+ universiteter (har egne driftsaftdelering.) + politi, domstole.
+
+Udevendige persienner, solafskærmning (ift. en vejrstation)
+	styrer hvornår de går ned
+
+	nogle gange integreret i cts, eller standalone.
+
+Drifter stærkstrøm, varme osv.
+
+EBS - FN Byen Marmorkaj - der sidder følere (motion sensors), integreret i netværker - kan styre lys og solafskærmning og ventilation.
+
+	Motion sensors mest til lys på gange, kontorer osv.
+	Akkustiske sensorer - de bruger det en del. Efter kl. 9 ikke har været aktivit i en time, så slukkes.
+		Lys på trappeopgange.
+
+FN Byen - Marmorkaj
+___________________
+
+Problem med ældre bygning
+	for dyrt at installere
+
+	for dyrt at integrerer (så skal det være trådløse systemer)
+		wifi er ikke god nok endnu, for mange ting der forstyrre
+
+		radiator termostater.
+
+	Lukkede CTS systemer!
+		bundet af leverandør
+
+		Der er systemer på markedet med åbne standarder ()
+
+Skabe konkurerrence
+	Service delene
+		Programmering + 
+			Installerer et nyt ventilationsanlæg integreres med CTS.
+
+CTS kræver uddannelse (minimum en halv time.)
+
+	CO følere
