@@ -12,3 +12,5 @@ documents/llncs.synctex.gz
 *.ods#
 
 *.pdf
+
+source/.DS_Store
