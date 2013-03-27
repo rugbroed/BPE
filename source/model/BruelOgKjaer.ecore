@@ -78,4 +78,5 @@
         eType="#//InstallationType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Humidifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Light" eSuperTypes="#//Sensor"/>
 </ecore:EPackage>
