@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bruelogkjaer" nsURI="http://bruelogkjaer/1.0" nsPrefix="bruelogkjaer">
+  <eClassifiers xsi:type="ecore:EClass" name="Building">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="floors" lowerBound="1"
+        upperBound="-1" eType="#//Floor" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owns" lowerBound="1" upperBound="-1"
+        eType="#//Building" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoomType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CleanRoom" eSuperTypes="#//Production"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CallibrationRoom" eSuperTypes="#//Production"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Office" eSuperTypes="#//RoomType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Storage" eSuperTypes="#//RoomType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Production" abstract="true" eSuperTypes="#//RoomType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Toilet" eSuperTypes="#//RoomType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Door" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Window" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Installation" abstract="true" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" eType="#//Sensor"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lighting" eSuperTypes="#//Installation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Heating" eSuperTypes="#//Installation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Ventilation" eSuperTypes="#//Installation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Cooling" eSuperTypes="#//Installation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MeetingRoom" eSuperTypes="#//RoomType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="regulates?" upperBound="-1"
+        eType="#//Accuator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Accuator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" lowerBound="1"
+        eType="#//Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Floor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" lowerBound="1" upperBound="-1"
+        eType="#//Compartment" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Motion" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Temperature" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Pressure" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Touch" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MonitoringSystem" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="monitors" eType="#//Sensor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ceiling" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="units" eType="#//Cooling"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlProduction" eSuperTypes="#//MonitoringSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlHQ" eSuperTypes="#//MonitoringSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Hydraulic" eSuperTypes="#//Accuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Pneumatic"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Mechanical"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Electrical" eSuperTypes="#//Accuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Compartment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
