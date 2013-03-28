@@ -10,8 +10,6 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="buildings" lowerBound="1"
-        upperBound="-1" eType="#//Building" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//NamedElement" containment="true"/>
   </eClassifiers>
