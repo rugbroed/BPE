@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bruelogkjaer" nsURI="http://bruelogkjaer/1.0" nsPrefix="bruelogkjaer">
-  <eClassifiers xsi:type="ecore:EClass" name="Building">
+  <eClassifiers xsi:type="ecore:EClass" name="Building" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="floors" lowerBound="1"
         upperBound="-1" eType="#//Floor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ctsSystem" eType="#//CTS"
@@ -9,32 +9,28 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControl" eType="#//AccessControl"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
+  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="buildings" lowerBound="1"
         upperBound="-1" eType="#//Building" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//NamedElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RoomType" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
-        eType="#//Component" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Door" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Window" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
         eType="#//Sensor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actuators" upperBound="-1"
         eType="#//Actuator" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lighting" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="regulates" upperBound="-1"
         eType="#//Actuator" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="controls" lowerBound="1"
         eType="#//Component" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Floor">
+  <eClassifiers xsi:type="ecore:EClass" name="Floor" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="compartments" lowerBound="1"
         upperBound="-1" eType="#//Room" containment="true"/>
   </eClassifiers>
@@ -42,12 +38,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Temperature" eSuperTypes="#//Sensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="Pressure" eSuperTypes="#//Sensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="Touch" eSuperTypes="#//Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Ceiling" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Room">
+  <eClassifiers xsi:type="ecore:EClass" name="WindowActuator" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
-        eType="#//RoomType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Humidifier" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Light" eSuperTypes="#//Sensor"/>
@@ -64,4 +60,7 @@
         upperBound="-1" eType="#//Actuator" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DoorActuator" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>
