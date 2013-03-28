@@ -17,30 +17,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CleanRoom" eSuperTypes="#//Production">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="humidified" upperBound="-1"
-        eType="#//Humidifier" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CallibrationRoom" eSuperTypes="#//Production"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Office" eSuperTypes="#//RoomType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Storage" eSuperTypes="#//RoomType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Production" abstract="true" eSuperTypes="#//RoomType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Toilet" eSuperTypes="#//RoomType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Door" eSuperTypes="#//Component"/>
   <eClassifiers xsi:type="ecore:EClass" name="Window" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InstallationType" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
         eType="#//Sensor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actuators" upperBound="-1"
         eType="#//Actuator" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Lighting" eSuperTypes="#//InstallationType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Ventilation" eSuperTypes="#//InstallationType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" eType="#//Humidifier"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MeetingRoom" eSuperTypes="#//RoomType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Lighting" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="regulates" upperBound="-1"
         eType="#//Actuator" containment="true"/>
@@ -58,21 +43,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Pressure" eSuperTypes="#//Sensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="Touch" eSuperTypes="#//Sensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="Ceiling" eSuperTypes="#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Hydraulic" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Pneumatic" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Mechanical" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Electrical" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Room">
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compType" lowerBound="1"
         eType="#//RoomType" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Installation" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instType" lowerBound="1"
-        eType="#//InstallationType" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Humidifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Humidifier" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Light" eSuperTypes="#//Sensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="CTS">
     <eStructuralFeatures xsi:type="ecore:EReference" name="temperatureSensors" upperBound="-1"
@@ -86,4 +63,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControlDoorLockActuator"
         upperBound="-1" eType="#//Actuator" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DoorActuator" eSuperTypes="#//Actuator"/>
 </ecore:EPackage>
