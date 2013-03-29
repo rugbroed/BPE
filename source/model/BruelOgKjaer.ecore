@@ -8,6 +8,12 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControl" eType="#//AccessControl"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="smsSystem" eType="#//SMSSystem"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calendarSystem" eType="#//CalendarSystem"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="meetingScheduleSystem"
+        eType="#//MeetingScheduleSystem" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -20,17 +26,11 @@
         eType="#//Actuator" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lighting" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="regulates" upperBound="-1"
-        eType="#//Actuator" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" lowerBound="1"
-        eType="#//Component" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Floor" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="compartments" lowerBound="1"
-        upperBound="-1" eType="#//Room" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" lowerBound="1" upperBound="-1"
+        eType="#//Room" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Motion" eSuperTypes="#//Sensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="Temperature" eSuperTypes="#//Sensor"/>
@@ -38,8 +38,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Touch" eSuperTypes="#//Sensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="WindowActuator" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
-        eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component" containment="true"/>
   </eClassifiers>
@@ -61,4 +59,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SMSSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CalendarSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MeetingScheduleSystem"/>
 </ecore:EPackage>
