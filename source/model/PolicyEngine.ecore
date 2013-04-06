@@ -63,6 +63,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CO2Sensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="InfraredLightSensor" eSuperTypes="#//HasIntegerValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HasIntegerValue" eSuperTypes="#//Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HasBooleanValue" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HasIntegerValue" eSuperTypes="#//Sensor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasBooleanValue" eSuperTypes="#//Sensor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
 </ecore:EPackage>

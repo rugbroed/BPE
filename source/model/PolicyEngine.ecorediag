@@ -443,6 +443,10 @@
   <children xmi:type="notation:Node" xmi:id="_hyFdYJ5xEeKxduqAjA1AXg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_hyGEcJ5xEeKxduqAjA1AXg" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_hyGEcZ5xEeKxduqAjA1AXg" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_R5Fu8J5yEeKxduqAjA1AXg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="PolicyEngine.ecore#//HasIntegerValue/valueState"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_R5Fu8Z5yEeKxduqAjA1AXg"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_hyGEcp5xEeKxduqAjA1AXg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_hyGEc55xEeKxduqAjA1AXg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_hyGEdJ5xEeKxduqAjA1AXg"/>
@@ -459,6 +463,10 @@
   <children xmi:type="notation:Node" xmi:id="_i1rBUJ5xEeKxduqAjA1AXg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_i1roYp5xEeKxduqAjA1AXg" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_i1sPcJ5xEeKxduqAjA1AXg" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_b-HeMJ5yEeKxduqAjA1AXg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="PolicyEngine.ecore#//HasBooleanValue/valueState"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_b-HeMZ5yEeKxduqAjA1AXg"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_i1sPcZ5xEeKxduqAjA1AXg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_i1sPcp5xEeKxduqAjA1AXg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_i1sPc55xEeKxduqAjA1AXg"/>
