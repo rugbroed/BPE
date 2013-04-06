@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PolicyEngine" nsURI="http://policyengine/1.0" nsPrefix="policyengine">
   <eClassifiers xsi:type="ecore:EClass" name="Building" eSuperTypes="#//NamedElement #//HasActuators #//HasSensors">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defineComponents" upperBound="-1"
         eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ctsSystem" eType="#//CTS"
         containment="true"/>
@@ -12,6 +12,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="meetingScheduleSystem"
         eType="#//MeetingScheduleSystem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declareComponents" upperBound="-1"
+        eType="#//Component" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement #//HasActuators #//HasSensors">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -21,10 +23,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//NamedElement #//HasSensors #//HasActuators">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declareComponents" upperBound="-1"
         eType="#//Component" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//Component"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
+        eType="#//Component" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MotionSensor" eSuperTypes="#//HasBooleanValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="TemperatureSensor" eSuperTypes="#//HasIntegerValue"/>
