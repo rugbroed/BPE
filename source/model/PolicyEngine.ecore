@@ -8,8 +8,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControl" eType="#//AccessControl"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="smsSystem" eType="#//SMSSystem"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="calendarSystem" eType="#//CalendarSystem"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="meetingScheduleSystem"
@@ -50,7 +48,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SMSSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SMSActuator" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="CalendarSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="MeetingScheduleSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="RadiatorKnobActuator" eSuperTypes="#//Actuator"/>
@@ -71,4 +69,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HumiditySensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="DatabaseActuator" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AudioAlarmActuator" eSuperTypes="#//Actuator"/>
 </ecore:EPackage>
