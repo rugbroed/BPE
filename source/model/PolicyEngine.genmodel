@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/bpe/src" modelPluginID="bpe" modelName="BruelOgKjaer"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/bpe/src" modelPluginID="bpe" modelName="PolicyEngine"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
-  <foreignModel>BruelOgKjaer.ecore</foreignModel>
-  <genPackages prefix="Bruelogkjaer" disposableProviderFactory="true" ecorePackage="BruelOgKjaer.ecore#/">
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Building">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//Building/floors"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//Building/ctsSystem"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//Building/accessControl"/>
+  <foreignModel>PolicyEngine.ecore</foreignModel>
+  <genPackages prefix="PolicyEngine" disposableProviderFactory="true" ecorePackage="PolicyEngine.ecore#/">
+    <genClasses ecoreClass="PolicyEngine.ecore#//Building">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/floors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/ctsSystem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/accessControl"/>
     </genClasses>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//Model/elements"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/elements"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="BruelOgKjaer.ecore#//Component">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//Component/sensors"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//Component/actuators"/>
+    <genClasses image="false" ecoreClass="PolicyEngine.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Component/sensors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Component/actuators"/>
     </genClasses>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Lighting"/>
-    <genClasses image="false" ecoreClass="BruelOgKjaer.ecore#//Sensor"/>
-    <genClasses image="false" ecoreClass="BruelOgKjaer.ecore#//Actuator"/>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Floor">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//Floor/rooms"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Lighting"/>
+    <genClasses image="false" ecoreClass="PolicyEngine.ecore#//Sensor"/>
+    <genClasses image="false" ecoreClass="PolicyEngine.ecore#//Actuator"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Floor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Floor/rooms"/>
     </genClasses>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Motion"/>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Temperature"/>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Pressure"/>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Touch"/>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//WindowActuator"/>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Room">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//Room/components"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Motion"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Temperature"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Pressure"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Touch"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//WindowActuator"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Room">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/components"/>
     </genClasses>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Humidifier"/>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//Light"/>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//CTS">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//CTS/temperatureSensors"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//CTS/ctsActuators"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Humidifier"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Light"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//CTS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//CTS/temperatureSensors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//CTS/ctsActuators"/>
     </genClasses>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//AccessControl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//AccessControl/accessControlSensors"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BruelOgKjaer.ecore#//AccessControl/accessControlDoorLockActuator"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//AccessControl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//AccessControl/accessControlSensors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//AccessControl/accessControlDoorLockActuator"/>
     </genClasses>
-    <genClasses ecoreClass="BruelOgKjaer.ecore#//DoorActuator"/>
-    <genClasses image="false" ecoreClass="BruelOgKjaer.ecore#//NamedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BruelOgKjaer.ecore#//NamedElement/name"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//DoorActuator"/>
+    <genClasses image="false" ecoreClass="PolicyEngine.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//NamedElement/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
