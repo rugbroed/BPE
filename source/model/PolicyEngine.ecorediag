@@ -894,4 +894,17 @@
     <element xmi:type="ecore:EReference" href="PolicyEngine.ecore#//Component/components"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FxLt456yEeKXw9-1LQLpGQ" points="[-63, -1, -63, -1]$[-63, -1, -63, -1]"/>
   </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_hAWWcJ7JEeKXw9-1LQLpGQ" type="3002" source="_lw0rQJF1EeKPhIawO7k4UA" target="_lw0rQJF1EeKPhIawO7k4UA">
+    <children xmi:type="notation:Node" xmi:id="_hAW9gJ7JEeKXw9-1LQLpGQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hAW9gZ7JEeKXw9-1LQLpGQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_hAW9gp7JEeKXw9-1LQLpGQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hAW9g57JEeKXw9-1LQLpGQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_hAWWcZ7JEeKXw9-1LQLpGQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_hAWWcp7JEeKXw9-1LQLpGQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="PolicyEngine.ecore#//Component/extends"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hAWWc57JEeKXw9-1LQLpGQ" points="[-29, 5, -63, 13]$[12, 17, -22, 25]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hAZZwJ7JEeKXw9-1LQLpGQ" id="(0.23529411764705882,0.6666666666666666)"/>
+  </edges>
 </notation:Diagram>
