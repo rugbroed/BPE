@@ -16,3 +16,6 @@ documents/llncs.synctex.gz
 source/.DS_Store
 
 source/model/BruelOgKjaer.genmodel
+
+source/src/
+source/bin/
