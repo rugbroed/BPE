@@ -26,14 +26,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" lowerBound="1" upperBound="-1"
         eType="#//Room" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MotionSensor" eSuperTypes="#//Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TemperatureSensor" eSuperTypes="#//Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PressureSensor" eSuperTypes="#//Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TouchSensor" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MotionSensor" eSuperTypes="#//HasBooleanValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TemperatureSensor" eSuperTypes="#//HasIntegerValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PressureSensor" eSuperTypes="#//HasIntegerValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TouchSensor" eSuperTypes="#//HasBooleanValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="WindowActuator" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="#//NamedElement #//HasActuators #//HasSensors"/>
   <eClassifiers xsi:type="ecore:EClass" name="HumidifierActuator" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LightSensor" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LightSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="CTS">
     <eStructuralFeatures xsi:type="ecore:EReference" name="temperatureSensors" upperBound="-1"
         eType="#//Sensor" containment="true"/>
@@ -54,13 +54,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="CalendarSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="MeetingScheduleSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="RadiatorKnobActuator" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SmokeSensor" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SmokeSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="HasSensors">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" eType="#//Sensor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HasActuators">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actuators" eType="#//Actuator"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CO2Sensor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InfraredLightSensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CO2Sensor" eSuperTypes="#//HasIntegerValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InfraredLightSensor" eSuperTypes="#//HasIntegerValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HasIntegerValue" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HasBooleanValue" eSuperTypes="#//Sensor"/>
 </ecore:EPackage>
