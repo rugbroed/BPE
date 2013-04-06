@@ -45,7 +45,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_K5JbCJFxEeKPhIawO7k4UA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_K5Iz8ZFxEeKPhIawO7k4UA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//LightControl"/>
+    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//LightSwitchActuator"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K5Iz8pFxEeKPhIawO7k4UA" x="-90" y="-189"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_bQPBYJF1EeKPhIawO7k4UA" type="1001">
@@ -109,7 +109,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Smw_SJF3EeKPhIawO7k4UA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_SmwYMZF3EeKPhIawO7k4UA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//Motion"/>
+    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//MotionSensor"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SmwYMpF3EeKPhIawO7k4UA" x="315" y="-189"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_UFbVoJF3EeKPhIawO7k4UA" type="1001">
@@ -125,7 +125,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_UFb8t5F3EeKPhIawO7k4UA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_UFbVoZF3EeKPhIawO7k4UA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//Temperature"/>
+    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//TemperatureSensor"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UFbVopF3EeKPhIawO7k4UA" x="441" y="-189"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_VJFyEJF3EeKPhIawO7k4UA" type="1001">
@@ -143,7 +143,7 @@
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_dRe1gJF3EeKPhIawO7k4UA" value="0.3"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_VJFyEZF3EeKPhIawO7k4UA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//Pressure"/>
+    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//PressureSensor"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VJFyEpF3EeKPhIawO7k4UA" x="693" y="-189"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_R1zm8JF4EeKPhIawO7k4UA" type="1001">
@@ -159,7 +159,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_R10OB5F4EeKPhIawO7k4UA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_R1zm8ZF4EeKPhIawO7k4UA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//Touch"/>
+    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//TouchSensor"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R1zm8pF4EeKPhIawO7k4UA" x="819" y="-189"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_aaFNwJF7EeKPhIawO7k4UA" type="1001">
@@ -175,7 +175,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_aaF015F7EeKPhIawO7k4UA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_aaFNwZF7EeKPhIawO7k4UA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//WindowControl"/>
+    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//WindowActuator"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aaFNwpF7EeKPhIawO7k4UA" x="-207" y="-189"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_YA8aoJb2EeKRY5tOQVhg_w" type="1001">
@@ -209,7 +209,7 @@
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_s7ow0JeDEeKRY5tOQVhg_w" value="0.3"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_pQ-EEZcOEeKRY5tOQVhg_w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//HumidityControl"/>
+    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//HumidifierActuator"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pQ-EEpcOEeKRY5tOQVhg_w" x="27" y="-189"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_sCvO0JcTEeKRY5tOQVhg_w" type="1001">
@@ -225,7 +225,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_sCwc85cTEeKRY5tOQVhg_w"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_sCvO0ZcTEeKRY5tOQVhg_w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//Light"/>
+    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//LightSensor"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sCvO0pcTEeKRY5tOQVhg_w" x="567" y="-189"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_ljwlUJd4EeK0jqHC9v-clQ" type="1001">
@@ -273,7 +273,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3qt7-Jd-EeK0jqHC9v-clQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3qtU4Zd-EeK0jqHC9v-clQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//DoorControl"/>
+    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//DoorActuator"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3qtU4pd-EeK0jqHC9v-clQ" x="144" y="-189"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_7AZMYJeAEeKRY5tOQVhg_w" type="1001">
@@ -357,7 +357,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_VzQI854mEeKxduqAjA1AXg"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_VwnEoZ4mEeKxduqAjA1AXg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//Radiator"/>
+    <element xmi:type="ecore:EClass" href="BruelOgKjaer.ecore#//RadiatorKnobActuator"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VwnEop4mEeKxduqAjA1AXg" x="234" y="-117"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_p7MSIJ4nEeKxduqAjA1AXg" type="1001">
