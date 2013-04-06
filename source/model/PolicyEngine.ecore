@@ -17,7 +17,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//NamedElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LightSwitchActuator" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LightSwitchActuator" eSuperTypes="#//SetsOnOffState"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//NamedElement #//HasSensors #//HasActuators">
@@ -30,8 +30,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="TemperatureSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="PressureSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="TouchSensor" eSuperTypes="#//HasBooleanValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="WindowActuator" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HumidifierActuator" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WindowActuator" eSuperTypes="#//SetsOpenCloseState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HumidifierActuator" eSuperTypes="#//SetsOnOffState"/>
   <eClassifiers xsi:type="ecore:EClass" name="LightSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="CTS">
     <eStructuralFeatures xsi:type="ecore:EReference" name="temperatureSensors" upperBound="-1"
@@ -45,14 +45,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControlDoorLockActuator"
         upperBound="-1" eType="#//Actuator" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DoorActuator" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DoorActuator" eSuperTypes="#//SetsOpenCloseState"/>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SMSActuator" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SMSActuator" eSuperTypes="#//SetStringState"/>
   <eClassifiers xsi:type="ecore:EClass" name="CalendarSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="MeetingScheduleSystem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RadiatorKnobActuator" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RadiatorActuator" eSuperTypes="#//SetsOnOffState"/>
   <eClassifiers xsi:type="ecore:EClass" name="SmokeSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="HasSensors">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" eType="#//Sensor"/>
@@ -69,6 +69,23 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HumiditySensor" eSuperTypes="#//HasIntegerValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DatabaseActuator" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AudioAlarmActuator" eSuperTypes="#//Actuator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DatabaseActuator" eSuperTypes="#//SetStringState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AudioAlarmActuator" eSuperTypes="#//SetsOnOffState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SetsOpenCloseState" eSuperTypes="#//Actuator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="#//OpenClose"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetsOnOffState" eSuperTypes="#//Actuator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="#//OnOff"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetStringState" eSuperTypes="#//Actuator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OpenClose">
+    <eLiterals name="OPEN"/>
+    <eLiterals name="CLOSE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OnOff">
+    <eLiterals name="ON"/>
+    <eLiterals name="OFF" value="1"/>
+  </eClassifiers>
 </ecore:EPackage>
