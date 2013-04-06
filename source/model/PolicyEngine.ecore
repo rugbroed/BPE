@@ -2,8 +2,8 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PolicyEngine" nsURI="http://policyengine/1.0" nsPrefix="policyengine">
   <eClassifiers xsi:type="ecore:EClass" name="Building" eSuperTypes="#//NamedElement #//HasActuators #//HasSensors">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="floors" lowerBound="1"
-        upperBound="-1" eType="#//Floor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ctsSystem" eType="#//CTS"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControl" eType="#//AccessControl"
@@ -20,16 +20,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="LightSwitchActuator" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Floor" eSuperTypes="#//NamedElement #//HasSensors #//HasActuators">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" lowerBound="1" upperBound="-1"
-        eType="#//Room" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//NamedElement #//HasSensors #//HasActuators">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MotionSensor" eSuperTypes="#//HasBooleanValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="TemperatureSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="PressureSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="TouchSensor" eSuperTypes="#//HasBooleanValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="WindowActuator" eSuperTypes="#//Actuator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="#//NamedElement #//HasActuators #//HasSensors"/>
   <eClassifiers xsi:type="ecore:EClass" name="HumidifierActuator" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="LightSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="CTS">
