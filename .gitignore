@@ -13,9 +13,13 @@ documents/llncs.synctex.gz
 
 *.pdf
 
-source/.DS_Store
+*.DS_Store
 
 source/model/BruelOgKjaer.genmodel
 
 source/src/
 source/bin/
+
+bpe.edit/
+bpe.editor/
+bpe.tests/
