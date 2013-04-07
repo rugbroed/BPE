@@ -15,11 +15,13 @@ documents/llncs.synctex.gz
 
 *.DS_Store
 
+source/.metadata
 source/model/BruelOgKjaer.genmodel
 
-source/src/
-source/bin/
+source/bpe/src/
+source/bpe/bin/
+source/bpe/META-INF/
 
-bpe.edit/
-bpe.editor/
-bpe.tests/
+source/bpe.edit/
+source/bpe.editor/
+source/bpe.tests/
