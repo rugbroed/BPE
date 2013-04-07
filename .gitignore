@@ -1,19 +1,14 @@
+*.ods#
+*.pdf
+*.DS_Store
 
 documents/llncs.log
-
 documents/llncs.out
-
 documents/llncs.pdf
-
 documents/llncs.synctex.gz(busy)
-
 documents/llncs.synctex.gz
 
-*.ods#
-
-*.pdf
-
-*.DS_Store
+runtime-EclipseApplication/
 
 source/.metadata
 source/model/BruelOgKjaer.genmodel
