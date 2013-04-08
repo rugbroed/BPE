@@ -8,7 +8,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://policyengine/1.0"
+            uri="platform:/resource/bpe/model/PolicyEngine.ecore"
             class="dk.itu.mdd.PolicyEngine.PolicyEnginePackage"
             genModel="model/PolicyEngine.genmodel"/>
    </extension>

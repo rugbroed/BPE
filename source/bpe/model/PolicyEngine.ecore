@@ -18,7 +18,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="buildings" upperBound="-1"
         eType="#//Building" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defineComponents" upperBound="-1"
-        eType="#//Component" containment="true"/>
+        eType="#//ModelDefinedComponents" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LightSwitchActuator" eSuperTypes="#//SetsOnOffState"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//NamedElement"/>
@@ -90,5 +90,9 @@
   <eClassifiers xsi:type="ecore:EEnum" name="OnOff">
     <eLiterals name="ON"/>
     <eLiterals name="OFF" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelDefinedComponents" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declareComponents" upperBound="-1"
+        eType="#//Component" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -6,13 +6,13 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Model returns Model:
 	{Model}
-	'Model'
+	'model'
 	name=EString
 	'{'
 		('actuators' actuators=[Actuator|EString])?
 		('sensors' sensors=[Sensor|EString])?
-		('buildings' '{' buildings+=Building ( "," buildings+=Building)* '}' )?
-		('defineComponents' '{' defineComponents+=Component ( "," defineComponents+=Component)* '}' )?
+		(defineComponents+=ModelDefinedComponents (defineComponents+=ModelDefinedComponents)*)?
+		(buildings+=Building (buildings+=Building)*)?
 	'}';
 
 Actuator returns Actuator:
@@ -22,17 +22,12 @@ Sensor returns Sensor:
 	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor | InfraredLightSensor | HasIntegerValue_Impl | HasBooleanValue_Impl | HumiditySensor;
 
 
-
-
-
-
-
 EString returns ecore::EString:
 	STRING | ID;
 
 Building returns Building:
 	{Building}
-	'Building'
+	'dec'
 	name=EString
 	'{'
 		('actuators' actuators=[Actuator|EString])?
@@ -41,19 +36,27 @@ Building returns Building:
 		('accessControl' accessControl=AccessControl)?
 		('calendarSystem' calendarSystem=CalendarSystem)?
 		('meetingScheduleSystem' meetingScheduleSystem=MeetingScheduleSystem)?
-		('declareComponents' '{' declareComponents+=Component ( "," declareComponents+=Component)* '}' )?
+		(declareComponents+=Component (declareComponents+=Component)*)?
+	'}';
+
+ModelDefinedComponents returns ModelDefinedComponents:
+	{ModelDefinedComponents}
+	'def'
+	name=EString
+	'{'
+		(declareComponents+=Component (declareComponents+=Component)*)?
 	'}';
 
 Component returns Component:
 	{Component}
-	'Component'
+	'dec'
 	name=EString
-	'{'
+	'('
 		('sensors' sensors=[Sensor|EString])?
 		('actuators' actuators=[Actuator|EString])?
-		('declareComponents' '{' declareComponents+=Component ( "," declareComponents+=Component)* '}' )?
-		('extends' '{' extends+=Component ( "," extends+=Component)* '}' )?
-	'}';
+		(declareComponents+=Component (declareComponents+=Component)*)?
+		(':'extends+=Component (extends+=Component)*)?
+	')';
 
 LightSwitchActuator returns LightSwitchActuator:
 	{LightSwitchActuator}
@@ -262,3 +265,5 @@ MeetingScheduleSystem returns MeetingScheduleSystem:
 	{MeetingScheduleSystem}
 	'MeetingScheduleSystem'
 	;
+
+
