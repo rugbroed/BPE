@@ -3,8 +3,6 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PolicyEngine" nsURI="platform:/resource/bpe/model/PolicyEngine.ecore"
     nsPrefix="policyengine">
   <eClassifiers xsi:type="ecore:EClass" name="Building" eSuperTypes="#//NamedElement #//HasActuators #//HasSensors">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="defineComponents" upperBound="-1"
-        eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ctsSystem" eType="#//CTS"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControl" eType="#//AccessControl"
@@ -19,6 +17,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement #//HasActuators #//HasSensors">
     <eStructuralFeatures xsi:type="ecore:EReference" name="buildings" upperBound="-1"
         eType="#//Building" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defineComponents" upperBound="-1"
+        eType="#//Component" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LightSwitchActuator" eSuperTypes="#//SetsOnOffState"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//NamedElement"/>
