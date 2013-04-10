@@ -14,20 +14,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="declareComponents" upperBound="-1"
         eType="#//Component" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement #//HasActuators #//HasSensors">
+  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement #//HasActuators">
     <eStructuralFeatures xsi:type="ecore:EReference" name="buildings" upperBound="-1"
         eType="#//Building" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defineComponents" upperBound="-1"
         eType="#//ModelDefinedComponents" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LightSwitchActuator" eSuperTypes="#//SetsOnOffState"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//NamedElement #//HasSensors #//HasActuators">
     <eStructuralFeatures xsi:type="ecore:EReference" name="declareComponents" upperBound="-1"
         eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
-        eType="#//Component" containment="true"/>
+        eType="#//Extends" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MotionSensor" eSuperTypes="#//HasBooleanValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="TemperatureSensor" eSuperTypes="#//HasIntegerValue"/>
@@ -58,7 +58,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="RadiatorActuator" eSuperTypes="#//SetsOnOffState"/>
   <eClassifiers xsi:type="ecore:EClass" name="SmokeSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="HasSensors">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" eType="#//Sensor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
+        eType="#//Sensor" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HasActuators">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actuators" eType="#//Actuator"/>
@@ -93,6 +94,20 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModelDefinedComponents" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="declareComponents" upperBound="-1"
-        eType="#//Component" containment="true"/>
+        eType="#//DefineDeclaredComponents" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
+        eType="#//Extends" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Extends" eSuperTypes="#//HasSensors">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extendsDefinedComponents"
+        upperBound="-1" eType="#//ModelDefinedComponents"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extendsSensors" upperBound="-1"
+        eType="#//HasSensors"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefineDeclaredComponents" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defineDeclaredComponents"
+        upperBound="-1" eType="#//DefineDeclaredComponents" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
+        eType="#//Extends" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
