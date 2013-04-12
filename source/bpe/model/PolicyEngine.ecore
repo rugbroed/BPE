@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PolicyEngine" nsURI="platform:/resource/bpe/model/PolicyEngine.ecore"
     nsPrefix="policyengine">
-  <eClassifiers xsi:type="ecore:EClass" name="Building" eSuperTypes="#//NamedElement #//HasActuators #//HasSensors">
+  <eClassifiers xsi:type="ecore:EClass" name="Building" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ctsSystem" eType="#//CTS"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControl" eType="#//AccessControl"
@@ -11,30 +11,31 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="meetingScheduleSystem"
         eType="#//MeetingScheduleSystem" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="declareComponents" upperBound="-1"
-        eType="#//Component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="floors" upperBound="-1"
+        eType="#//Floor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declareSensors" upperBound="-1"
+        eType="#//SensorComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declareActuators" upperBound="-1"
+        eType="#//ActuatorComponent" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement #//HasActuators">
+  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="buildings" upperBound="-1"
         eType="#//Building" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="defineComponents" upperBound="-1"
-        eType="#//ModelDefinedComponents" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predefinedRooms" upperBound="-1"
+        eType="#//Room" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateDefinition" upperBound="-1"
+        eType="#//State" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LightSwitchActuator" eSuperTypes="#//SetsOnOffState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LightSwitchActuator" eSuperTypes="#//HasIntValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//NamedElement #//HasSensors #//HasActuators">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="declareComponents" upperBound="-1"
-        eType="#//Component" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
-        eType="#//Extends" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MotionSensor" eSuperTypes="#//HasBooleanValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Actuator" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorComponent" eSuperTypes="#//HasSensors #//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MotionSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="TemperatureSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="PressureSensor" eSuperTypes="#//HasIntegerValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TouchSensor" eSuperTypes="#//HasBooleanValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="WindowActuator" eSuperTypes="#//SetsOpenCloseState"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HumidifierActuator" eSuperTypes="#//SetsOnOffState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TouchSensor" eSuperTypes="#//HasIntegerValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WindowActuator" eSuperTypes="#//HasIntValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HumidifierActuator" eSuperTypes="#//HasIntValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="LightSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="CTS">
     <eStructuralFeatures xsi:type="ecore:EReference" name="temperatureSensors" upperBound="-1"
@@ -48,66 +49,50 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControlDoorLockActuator"
         upperBound="-1" eType="#//Actuator" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DoorActuator" eSuperTypes="#//SetsOpenCloseState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DoorActuator" eSuperTypes="#//HasIntValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SMSActuator" eSuperTypes="#//SetStringState"/>
   <eClassifiers xsi:type="ecore:EClass" name="CalendarSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="MeetingScheduleSystem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RadiatorActuator" eSuperTypes="#//SetsOnOffState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RadiatorActuator" eSuperTypes="#//HasIntValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="SmokeSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="HasSensors">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensors" upperBound="-1"
         eType="#//Sensor" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HasActuators">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actuators" eType="#//Actuator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuators" upperBound="-1"
+        eType="#//Actuator" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CO2Sensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="InfraredLightSensor" eSuperTypes="#//HasIntegerValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="HasIntegerValue" eSuperTypes="#//Sensor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HasBooleanValue" eSuperTypes="#//Sensor">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HumiditySensor" eSuperTypes="#//HasIntegerValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DatabaseActuator" eSuperTypes="#//SetStringState"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AudioAlarmActuator" eSuperTypes="#//SetsOnOffState"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SetsOpenCloseState" eSuperTypes="#//Actuator">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="#//OpenClose"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AudioAlarmActuator" eSuperTypes="#//HasIntValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HasIntValue" eSuperTypes="#//Actuator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SetsOnOffState" eSuperTypes="#//Actuator">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="#//OnOff"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declareSensor" upperBound="-1"
+        eType="#//SensorComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declareActuator" upperBound="-1"
+        eType="#//ActuatorComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//Room"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SetStringState" eSuperTypes="#//Actuator">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Floor" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" upperBound="-1"
+        eType="#//Room" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declareSensors" upperBound="-1"
+        eType="#//SensorComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declareActuators" upperBound="-1"
+        eType="#//ActuatorComponent" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="OpenClose">
-    <eLiterals name="OPEN"/>
-    <eLiterals name="CLOSE" value="1"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="OnOff">
-    <eLiterals name="ON"/>
-    <eLiterals name="OFF" value="1"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelDefinedComponents" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="declareComponents" upperBound="-1"
-        eType="#//DefineDeclaredComponents" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
-        eType="#//Extends" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Extends" eSuperTypes="#//HasSensors">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="extendsDefinedComponents"
-        upperBound="-1" eType="#//ModelDefinedComponents"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="extendsSensors" upperBound="-1"
-        eType="#//HasSensors"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DefineDeclaredComponents" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="defineDeclaredComponents"
-        upperBound="-1" eType="#//DefineDeclaredComponents" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
-        eType="#//Extends" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActuatorComponent" eSuperTypes="#//HasActuators #//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Actuator"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

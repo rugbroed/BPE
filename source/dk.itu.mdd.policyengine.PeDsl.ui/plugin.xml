@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="policy"
+            id="dk.itu.mdd.policyengine.PeDsl"
+            name="PeDsl Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="dk.itu.mdd.policyengine.PeDsl.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="dk.itu.mdd.policyengine.PeDsl.validate">
+         <activeWhen>
+            <reference
+                    definitionId="dk.itu.mdd.policyengine.PeDsl.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="dk.itu.mdd.policyengine.PeDsl.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="dk.itu.mdd.policyengine.PeDsl" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="dk.itu.mdd.policyengine.PeDsl"
+            name="PeDsl">
+            <keywordReference id="dk.itu.mdd.policyengine.ui.keyword_PeDsl"/>
+        </page>
+        <page
+            category="dk.itu.mdd.policyengine.PeDsl"
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="dk.itu.mdd.policyengine.PeDsl.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="dk.itu.mdd.policyengine.ui.keyword_PeDsl"/>
+        </page>
+        <page
+            category="dk.itu.mdd.policyengine.PeDsl"
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="dk.itu.mdd.policyengine.PeDsl.templates"
+            name="Templates">
+            <keywordReference id="dk.itu.mdd.policyengine.ui.keyword_PeDsl"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="dk.itu.mdd.policyengine.PeDsl"
+            name="PeDsl">
+            <keywordReference id="dk.itu.mdd.policyengine.ui.keyword_PeDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="dk.itu.mdd.policyengine.ui.keyword_PeDsl"
+            label="PeDsl"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="dk.itu.mdd.policyengine.PeDsl.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="dk.itu.mdd.policyengine.PeDsl.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="dk.itu.mdd.policyengine.PeDsl.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="dk.itu.mdd.policyengine.PeDsl.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="dk.itu.mdd.policyengine.PeDsl.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="policy">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="policy">
+        </resourceServiceProvider>
+    </extension>
+
+
+    <!-- marker definitions for dk.itu.mdd.policyengine.PeDsl -->
+    <extension
+            id="pedsl.check.fast"
+            name="PeDsl Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.fast"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="pedsl.check.normal"
+            name="PeDsl Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.normal"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="pedsl.check.expensive"
+            name="PeDsl Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.expensive"/>
+        <persistent value="true"/>
+    </extension>
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="dk.itu.mdd.policyengine.PeDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="dk.itu.mdd.policyengine.PeDsl.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="dk.itu.mdd.policyengine.PeDsl.compare.contentViewers"
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="policy">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="dk.itu.mdd.policyengine.PeDsl.compare.contentMergeViewers"
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="policy" label="PeDsl Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="dk.itu.mdd.policyengine.PeDsl.editors.documentProviders"
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="policy">
+    </provider>
+  </extension>
+    <!-- quickfix marker resolution generator for dk.itu.mdd.policyengine.PeDsl -->
+    <extension
+            point="org.eclipse.ui.ide.markerResolution">
+        <markerResolutionGenerator
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="dk.itu.mdd.policyengine.ui.pedsl.check.fast">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="dk.itu.mdd.policyengine.ui.pedsl.check.normal">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="dk.itu.mdd.policyengine.ui.PeDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="dk.itu.mdd.policyengine.ui.pedsl.check.expensive">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+    </extension>
+
+</plugin>

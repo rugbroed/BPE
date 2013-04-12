@@ -5,32 +5,24 @@
   <foreignModel>PolicyEngine.ecore</foreignModel>
   <genPackages prefix="PolicyEngine" basePackage="dk.itu.mdd" disposableProviderFactory="true"
       ecorePackage="PolicyEngine.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PolicyEngine.ecore#//OpenClose">
-      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//OpenClose/OPEN"/>
-      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//OpenClose/CLOSE"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PolicyEngine.ecore#//OnOff">
-      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//OnOff/ON"/>
-      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//OnOff/OFF"/>
-    </genEnums>
     <genClasses ecoreClass="PolicyEngine.ecore#//Building">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/ctsSystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/accessControl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/calendarSystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/meetingScheduleSystem"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/declareComponents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/floors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/declareSensors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/declareActuators"/>
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/buildings"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/defineComponents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/predefinedRooms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/stateDefinition"/>
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//LightSwitchActuator"/>
     <genClasses image="false" ecoreClass="PolicyEngine.ecore#//Sensor"/>
     <genClasses image="false" ecoreClass="PolicyEngine.ecore#//Actuator"/>
-    <genClasses ecoreClass="PolicyEngine.ecore#//Component">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Component/declareComponents"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Component/extends"/>
-    </genClasses>
+    <genClasses ecoreClass="PolicyEngine.ecore#//SensorComponent"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//MotionSensor"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//TemperatureSensor"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//PressureSensor"/>
@@ -50,7 +42,6 @@
     <genClasses image="false" ecoreClass="PolicyEngine.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//NamedElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//SMSActuator"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//CalendarSystem"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//MeetingScheduleSystem"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//RadiatorActuator"/>
@@ -66,31 +57,24 @@
     <genClasses ecoreClass="PolicyEngine.ecore#//HasIntegerValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//HasIntegerValue/valueState"/>
     </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//HasBooleanValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//HasBooleanValue/valueState"/>
-    </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//HumiditySensor"/>
-    <genClasses ecoreClass="PolicyEngine.ecore#//DatabaseActuator"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//AudioAlarmActuator"/>
-    <genClasses ecoreClass="PolicyEngine.ecore#//SetsOpenCloseState">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//SetsOpenCloseState/valueState"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//HasIntValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//HasIntValue/valueState"/>
     </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//SetsOnOffState">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//SetsOnOffState/valueState"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Room">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/declareSensor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/declareActuator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/extends"/>
     </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//SetStringState">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//SetStringState/valueState"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Floor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Floor/rooms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Floor/declareSensors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Floor/declareActuators"/>
     </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//ModelDefinedComponents">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//ModelDefinedComponents/declareComponents"/>
-    </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//Extends">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Extends/extendsDefinedComponents"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Extends/extendsSensors"/>
-    </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//DefineDeclaredComponents">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//DefineDeclaredComponents/defineDeclaredComponents"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//DefineDeclaredComponents/extends"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//ActuatorComponent"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//State">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//State/uses"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
