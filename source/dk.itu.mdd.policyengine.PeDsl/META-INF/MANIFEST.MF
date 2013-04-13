@@ -12,16 +12,6 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional,
- bpe,
- org.eclipse.xtext.util,
- org.antlr.runtime
+ bpe
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: dk.itu.mdd.policyengine,
- dk.itu.mdd.policyengine.services,
- dk.itu.mdd.policyengine.parseTreeConstruction,
- dk.itu.mdd.policyengine.parser.antlr,
- dk.itu.mdd.policyengine.parser.antlr.internal,
- dk.itu.mdd.policyengine.validation,
- dk.itu.mdd.policyengine.scoping,
- dk.itu.mdd.policyengine.formatting
