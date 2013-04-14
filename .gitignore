@@ -1,6 +1,6 @@
+*.DS_Store
 *.ods#
 *.pdf
-*.DS_Store
 
 documents/llncs.log
 documents/llncs.out
@@ -10,16 +10,6 @@ documents/llncs.synctex.gz
 
 runtime-EclipseApplication/
 
-source/.metadata
+/source/dk.itu.mdd.policyengine/bin/
+/source/dk.itu.mdd.policyengine.time/
 
-source/bpe/src/
-source/bpe/bin/
-source/bpe/META-INF/
-
-source/bpe.edit/
-source/bpe.editor/
-source/bpe.tests/
-
-source/dk.itu.mdd.policyengine.PeDsl/bin
-source/dk.itu.mdd.policyengine.PeDsl.test/bin
-source/dk.itu.mdd.policyengine.PeDsl.ui/bin
