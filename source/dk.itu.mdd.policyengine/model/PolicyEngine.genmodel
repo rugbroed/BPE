@@ -55,13 +55,10 @@
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//CO2Sensor"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//InfraredLightSensor"/>
-    <genClasses ecoreClass="PolicyEngine.ecore#//HasIntegerValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//HasIntegerValue/valueState"/>
-    </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//HumiditySensor"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//AudioAlarmActuator"/>
-    <genClasses ecoreClass="PolicyEngine.ecore#//HasIntValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//HasIntValue/valueState"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//HasIntegerValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//HasIntegerValue/valueState"/>
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//Room">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/declareSensor"/>
