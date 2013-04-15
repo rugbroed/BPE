@@ -35,7 +35,7 @@ Policy returns Policy:
 	name=EString
 	'uses sensors' (usesSensors+=Sensor (',' usesSensors+=Sensor)*)?
 	'uses actuators' (uses+=Actuator (',' uses+=Actuator)*)?
-	('is specified by' '{' specifiedBy+=Conditions (specifiedBy+=Conditions)* '}')?
+	('is specified by' '{' (specifiedBy+=Conditions (specifiedBy+=Conditions)*)? '}')?
 	;
 
 Building returns Building:
@@ -62,10 +62,10 @@ Room returns Room:
 	{Room}
 	name=EString
 	('is of type' extends+=[Room|EString] (extends+=[Room|EString])*)?
-	'{'
+	('{'
 		(declareSensor+=SensorComponent (declareSensor+=SensorComponent)*)?
 		(declareActuator+=ActuatorComponent (declareActuator+=ActuatorComponent)*)?
-	'}';
+	'}');
 	
 CTS returns CTS:
 	{CTS}

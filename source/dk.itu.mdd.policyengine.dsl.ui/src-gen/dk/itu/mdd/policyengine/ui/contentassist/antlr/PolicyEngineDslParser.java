@@ -53,6 +53,7 @@ public class PolicyEngineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPolicyAccess().getGroup_6(), "rule__Policy__Group_6__0");
 					put(grammarAccess.getPolicyAccess().getGroup_6_1(), "rule__Policy__Group_6_1__0");
 					put(grammarAccess.getPolicyAccess().getGroup_7(), "rule__Policy__Group_7__0");
+					put(grammarAccess.getPolicyAccess().getGroup_7_2(), "rule__Policy__Group_7_2__0");
 					put(grammarAccess.getBuildingAccess().getGroup(), "rule__Building__Group__0");
 					put(grammarAccess.getBuildingAccess().getGroup_8(), "rule__Building__Group_8__0");
 					put(grammarAccess.getFloorAccess().getGroup(), "rule__Floor__Group__0");
@@ -60,8 +61,9 @@ public class PolicyEngineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFloorAccess().getGroup_4_2(), "rule__Floor__Group_4_2__0");
 					put(grammarAccess.getRoomAccess().getGroup(), "rule__Room__Group__0");
 					put(grammarAccess.getRoomAccess().getGroup_2(), "rule__Room__Group_2__0");
-					put(grammarAccess.getRoomAccess().getGroup_4(), "rule__Room__Group_4__0");
-					put(grammarAccess.getRoomAccess().getGroup_5(), "rule__Room__Group_5__0");
+					put(grammarAccess.getRoomAccess().getGroup_3(), "rule__Room__Group_3__0");
+					put(grammarAccess.getRoomAccess().getGroup_3_1(), "rule__Room__Group_3_1__0");
+					put(grammarAccess.getRoomAccess().getGroup_3_2(), "rule__Room__Group_3_2__0");
 					put(grammarAccess.getCTSAccess().getGroup(), "rule__CTS__Group__0");
 					put(grammarAccess.getCTSAccess().getGroup_3(), "rule__CTS__Group_3__0");
 					put(grammarAccess.getCTSAccess().getGroup_3_3(), "rule__CTS__Group_3_3__0");
@@ -130,8 +132,8 @@ public class PolicyEngineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPolicyAccess().getUsesSensorsAssignment_4_1_1(), "rule__Policy__UsesSensorsAssignment_4_1_1");
 					put(grammarAccess.getPolicyAccess().getUsesAssignment_6_0(), "rule__Policy__UsesAssignment_6_0");
 					put(grammarAccess.getPolicyAccess().getUsesAssignment_6_1_1(), "rule__Policy__UsesAssignment_6_1_1");
-					put(grammarAccess.getPolicyAccess().getSpecifiedByAssignment_7_2(), "rule__Policy__SpecifiedByAssignment_7_2");
-					put(grammarAccess.getPolicyAccess().getSpecifiedByAssignment_7_3(), "rule__Policy__SpecifiedByAssignment_7_3");
+					put(grammarAccess.getPolicyAccess().getSpecifiedByAssignment_7_2_0(), "rule__Policy__SpecifiedByAssignment_7_2_0");
+					put(grammarAccess.getPolicyAccess().getSpecifiedByAssignment_7_2_1(), "rule__Policy__SpecifiedByAssignment_7_2_1");
 					put(grammarAccess.getBuildingAccess().getNameAssignment_2(), "rule__Building__NameAssignment_2");
 					put(grammarAccess.getBuildingAccess().getCtsSystemAssignment_4(), "rule__Building__CtsSystemAssignment_4");
 					put(grammarAccess.getBuildingAccess().getAccessControlAssignment_5(), "rule__Building__AccessControlAssignment_5");
@@ -145,10 +147,10 @@ public class PolicyEngineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRoomAccess().getNameAssignment_1(), "rule__Room__NameAssignment_1");
 					put(grammarAccess.getRoomAccess().getExtendsAssignment_2_1(), "rule__Room__ExtendsAssignment_2_1");
 					put(grammarAccess.getRoomAccess().getExtendsAssignment_2_2(), "rule__Room__ExtendsAssignment_2_2");
-					put(grammarAccess.getRoomAccess().getDeclareSensorAssignment_4_0(), "rule__Room__DeclareSensorAssignment_4_0");
-					put(grammarAccess.getRoomAccess().getDeclareSensorAssignment_4_1(), "rule__Room__DeclareSensorAssignment_4_1");
-					put(grammarAccess.getRoomAccess().getDeclareActuatorAssignment_5_0(), "rule__Room__DeclareActuatorAssignment_5_0");
-					put(grammarAccess.getRoomAccess().getDeclareActuatorAssignment_5_1(), "rule__Room__DeclareActuatorAssignment_5_1");
+					put(grammarAccess.getRoomAccess().getDeclareSensorAssignment_3_1_0(), "rule__Room__DeclareSensorAssignment_3_1_0");
+					put(grammarAccess.getRoomAccess().getDeclareSensorAssignment_3_1_1(), "rule__Room__DeclareSensorAssignment_3_1_1");
+					put(grammarAccess.getRoomAccess().getDeclareActuatorAssignment_3_2_0(), "rule__Room__DeclareActuatorAssignment_3_2_0");
+					put(grammarAccess.getRoomAccess().getDeclareActuatorAssignment_3_2_1(), "rule__Room__DeclareActuatorAssignment_3_2_1");
 					put(grammarAccess.getCTSAccess().getTemperatureSensorsAssignment_3_2(), "rule__CTS__TemperatureSensorsAssignment_3_2");
 					put(grammarAccess.getCTSAccess().getTemperatureSensorsAssignment_3_3_1(), "rule__CTS__TemperatureSensorsAssignment_3_3_1");
 					put(grammarAccess.getCTSAccess().getCtsActuatorsAssignment_4_2(), "rule__CTS__CtsActuatorsAssignment_4_2");
