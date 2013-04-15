@@ -589,9 +589,11 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cExtendsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final CrossReference cExtendsRoomCrossReference_2_1_0 = (CrossReference)cExtendsAssignment_2_1.eContents().get(0);
 		private final RuleCall cExtendsRoomEStringParserRuleCall_2_1_0_1 = (RuleCall)cExtendsRoomCrossReference_2_1_0.eContents().get(1);
-		private final Assignment cExtendsAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final CrossReference cExtendsRoomCrossReference_2_2_0 = (CrossReference)cExtendsAssignment_2_2.eContents().get(0);
-		private final RuleCall cExtendsRoomEStringParserRuleCall_2_2_0_1 = (RuleCall)cExtendsRoomCrossReference_2_2_0.eContents().get(1);
+		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
+		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+		private final Assignment cExtendsAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
+		private final CrossReference cExtendsRoomCrossReference_2_2_1_0 = (CrossReference)cExtendsAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cExtendsRoomEStringParserRuleCall_2_2_1_0_1 = (RuleCall)cExtendsRoomCrossReference_2_2_1_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cIsControlledByKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cPoliciesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -628,13 +630,13 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Room:
-		//	{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
+		//	{Room} name=EString ("is-of-type" extends+=[Room|EString] ("," extends+=[Room|EString])*)? ("is-controlled-by"
 		//	policies+=[Policy|EString] ("," policies+=[Policy|EString])* ("during" during+=[Schedule|EString] (","
 		//	during+=[Schedule|EString])* | "during-always")?)? "{" (declareSensor+=SensorComponent
 		//	declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
+		//{Room} name=EString ("is-of-type" extends+=[Room|EString] ("," extends+=[Room|EString])*)? ("is-controlled-by"
 		//policies+=[Policy|EString] ("," policies+=[Policy|EString])* ("during" during+=[Schedule|EString] (","
 		//during+=[Schedule|EString])* | "during-always")?)? "{" (declareSensor+=SensorComponent
 		//declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}"
@@ -649,7 +651,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
 
-		//("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)?
+		//("is-of-type" extends+=[Room|EString] ("," extends+=[Room|EString])*)?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"is-of-type"
@@ -664,14 +666,20 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getExtendsRoomEStringParserRuleCall_2_1_0_1() { return cExtendsRoomEStringParserRuleCall_2_1_0_1; }
 
-		//extends+=[Room|EString]*
-		public Assignment getExtendsAssignment_2_2() { return cExtendsAssignment_2_2; }
+		//("," extends+=[Room|EString])*
+		public Group getGroup_2_2() { return cGroup_2_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
+
+		//extends+=[Room|EString]
+		public Assignment getExtendsAssignment_2_2_1() { return cExtendsAssignment_2_2_1; }
 
 		//[Room|EString]
-		public CrossReference getExtendsRoomCrossReference_2_2_0() { return cExtendsRoomCrossReference_2_2_0; }
+		public CrossReference getExtendsRoomCrossReference_2_2_1_0() { return cExtendsRoomCrossReference_2_2_1_0; }
 
 		//EString
-		public RuleCall getExtendsRoomEStringParserRuleCall_2_2_0_1() { return cExtendsRoomEStringParserRuleCall_2_2_0_1; }
+		public RuleCall getExtendsRoomEStringParserRuleCall_2_2_1_0_1() { return cExtendsRoomEStringParserRuleCall_2_2_1_0_1; }
 
 		//("is-controlled-by" policies+=[Policy|EString] ("," policies+=[Policy|EString])* ("during" during+=[Schedule|EString]
 		//("," during+=[Schedule|EString])* | "during-always")?)?
@@ -2400,7 +2408,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Room:
-	//	{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
+	//	{Room} name=EString ("is-of-type" extends+=[Room|EString] ("," extends+=[Room|EString])*)? ("is-controlled-by"
 	//	policies+=[Policy|EString] ("," policies+=[Policy|EString])* ("during" during+=[Schedule|EString] (","
 	//	during+=[Schedule|EString])* | "during-always")?)? "{" (declareSensor+=SensorComponent
 	//	declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}";

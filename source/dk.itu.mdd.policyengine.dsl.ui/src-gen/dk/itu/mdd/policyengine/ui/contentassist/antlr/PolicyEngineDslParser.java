@@ -70,6 +70,7 @@ public class PolicyEngineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFloorAccess().getGroup_4_2(), "rule__Floor__Group_4_2__0");
 					put(grammarAccess.getRoomAccess().getGroup(), "rule__Room__Group__0");
 					put(grammarAccess.getRoomAccess().getGroup_2(), "rule__Room__Group_2__0");
+					put(grammarAccess.getRoomAccess().getGroup_2_2(), "rule__Room__Group_2_2__0");
 					put(grammarAccess.getRoomAccess().getGroup_3(), "rule__Room__Group_3__0");
 					put(grammarAccess.getRoomAccess().getGroup_3_2(), "rule__Room__Group_3_2__0");
 					put(grammarAccess.getRoomAccess().getGroup_3_3_0(), "rule__Room__Group_3_3_0__0");
@@ -167,7 +168,7 @@ public class PolicyEngineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFloorAccess().getRoomsAssignment_4_2_1(), "rule__Floor__RoomsAssignment_4_2_1");
 					put(grammarAccess.getRoomAccess().getNameAssignment_1(), "rule__Room__NameAssignment_1");
 					put(grammarAccess.getRoomAccess().getExtendsAssignment_2_1(), "rule__Room__ExtendsAssignment_2_1");
-					put(grammarAccess.getRoomAccess().getExtendsAssignment_2_2(), "rule__Room__ExtendsAssignment_2_2");
+					put(grammarAccess.getRoomAccess().getExtendsAssignment_2_2_1(), "rule__Room__ExtendsAssignment_2_2_1");
 					put(grammarAccess.getRoomAccess().getPoliciesAssignment_3_1(), "rule__Room__PoliciesAssignment_3_1");
 					put(grammarAccess.getRoomAccess().getPoliciesAssignment_3_2_1(), "rule__Room__PoliciesAssignment_3_2_1");
 					put(grammarAccess.getRoomAccess().getDuringAssignment_3_3_0_1(), "rule__Room__DuringAssignment_3_3_0_1");

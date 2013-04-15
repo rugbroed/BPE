@@ -4333,9 +4333,9 @@ rule__Room__Group_2__2__Impl
     }
 :
 (
-{ before(grammarAccess.getRoomAccess().getExtendsAssignment_2_2()); }
-(rule__Room__ExtendsAssignment_2_2)*
-{ after(grammarAccess.getRoomAccess().getExtendsAssignment_2_2()); }
+{ before(grammarAccess.getRoomAccess().getGroup_2_2()); }
+(rule__Room__Group_2_2__0)*
+{ after(grammarAccess.getRoomAccess().getGroup_2_2()); }
 )
 
 ;
@@ -4344,6 +4344,69 @@ finally {
 }
 
 
+
+
+
+
+
+
+rule__Room__Group_2_2__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Room__Group_2_2__0__Impl
+	rule__Room__Group_2_2__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Room__Group_2_2__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getRoomAccess().getCommaKeyword_2_2_0()); }
+
+	',' 
+
+{ after(grammarAccess.getRoomAccess().getCommaKeyword_2_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Room__Group_2_2__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Room__Group_2_2__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Room__Group_2_2__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getRoomAccess().getExtendsAssignment_2_2_1()); }
+(rule__Room__ExtendsAssignment_2_2_1)
+{ after(grammarAccess.getRoomAccess().getExtendsAssignment_2_2_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 
@@ -11442,18 +11505,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Room__ExtendsAssignment_2_2
+rule__Room__ExtendsAssignment_2_2_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getRoomAccess().getExtendsRoomCrossReference_2_2_0()); }
+{ before(grammarAccess.getRoomAccess().getExtendsRoomCrossReference_2_2_1_0()); }
 (
-{ before(grammarAccess.getRoomAccess().getExtendsRoomEStringParserRuleCall_2_2_0_1()); }
-	ruleEString{ after(grammarAccess.getRoomAccess().getExtendsRoomEStringParserRuleCall_2_2_0_1()); }
+{ before(grammarAccess.getRoomAccess().getExtendsRoomEStringParserRuleCall_2_2_1_0_1()); }
+	ruleEString{ after(grammarAccess.getRoomAccess().getExtendsRoomEStringParserRuleCall_2_2_1_0_1()); }
 )
-{ after(grammarAccess.getRoomAccess().getExtendsRoomCrossReference_2_2_0()); }
+{ after(grammarAccess.getRoomAccess().getExtendsRoomCrossReference_2_2_1_0()); }
 )
 
 ;

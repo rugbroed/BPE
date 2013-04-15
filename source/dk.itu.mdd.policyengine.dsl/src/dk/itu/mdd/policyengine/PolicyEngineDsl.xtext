@@ -60,7 +60,7 @@ Floor returns Floor:
 Room returns Room:
 	{Room}
 	name=EString
-	('is-of-type' extends+=[Room|EString] (extends+=[Room|EString])*)?
+	('is-of-type' extends+=[Room|EString] (',' extends+=[Room|EString])*)?
 	(
 		('is-controlled-by' policies+=[Policy|EString] (',' policies+=[Policy|EString])*
 			(
