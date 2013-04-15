@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'room-type'", "'}'", "'state'", "'='", "'policy'", "'uses sensors'", "','", "'uses actuators'", "'is specified by'", "'building'", "'floor'", "'room'", "'is of type'", "'CTS'", "'temperatureSensors'", "'ctsActuators'", "'AccessControl'", "'accessControlSensors'", "'accessControlDoorLockActuator'", "'CalendarSystem'", "'MeetingScheduleSystem'", "'MotionSensor'", "'valueState'", "'TemperatureSensor'", "'PressureSensor'", "'TouchSensor'", "'LightSensor'", "'SmokeSensor'", "'CO2Sensor'", "'InfraredLightSensor'", "'-'", "'LightSwitchActuator'", "'WindowActuator'", "'HumidifierActuator'", "'DoorActuator'", "'RadiatorActuator'", "'AudioAlarmActuator'", "'sensor '", "'is a '", "'actuator'", "'Conditions'", "'true'", "'false'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'room-type'", "'}'", "'state'", "'='", "'policy'", "'uses sensors'", "','", "'uses actuators'", "'is specified by'", "'building'", "'floor'", "'room'", "'is of type'", "'CTS'", "'temperatureSensors'", "'ctsActuators'", "'AccessControl'", "'accessControlSensors'", "'accessControlDoorLockActuator'", "'CalendarSystem'", "'MeetingScheduleSystem'", "'MotionSensor'", "'valueState'", "'TemperatureSensor'", "'PressureSensor'", "'TouchSensor'", "'LightSensor'", "'SmokeSensor'", "'CO2Sensor'", "'InfraredLightSensor'", "'HumiditySensor'", "'-'", "'LightSwitchActuator'", "'WindowActuator'", "'HumidifierActuator'", "'DoorActuator'", "'RadiatorActuator'", "'AudioAlarmActuator'", "'sensor '", "'is a '", "'actuator'", "'Conditions'", "'true'", "'false'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -36,6 +36,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
     public static final int T__21=21;
     public static final int T__20=20;
     public static final int EOF=-1;
+    public static final int T__55=55;
     public static final int T__19=19;
     public static final int T__51=51;
     public static final int T__16=16;
@@ -711,32 +712,32 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
             // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:281:1: (this_LightSwitchActuator_0= ruleLightSwitchActuator | this_WindowActuator_1= ruleWindowActuator | this_HumidifierActuator_2= ruleHumidifierActuator | this_DoorActuator_3= ruleDoorActuator | this_RadiatorActuator_4= ruleRadiatorActuator | this_AudioAlarmActuator_5= ruleAudioAlarmActuator )
             int alt9=6;
             switch ( input.LA(1) ) {
-            case 43:
+            case 44:
                 {
                 alt9=1;
                 }
                 break;
-            case 44:
+            case 45:
                 {
                 alt9=2;
                 }
                 break;
-            case 45:
+            case 46:
                 {
                 alt9=3;
                 }
                 break;
-            case 46:
+            case 47:
                 {
                 alt9=4;
                 }
                 break;
-            case 47:
+            case 48:
                 {
                 alt9=5;
                 }
                 break;
-            case 48:
+            case 49:
                 {
                 alt9=6;
                 }
@@ -914,7 +915,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:357:1: ruleSensor returns [EObject current=null] : (this_MotionSensor_0= ruleMotionSensor | this_TemperatureSensor_1= ruleTemperatureSensor | this_PressureSensor_2= rulePressureSensor | this_TouchSensor_3= ruleTouchSensor | this_LightSensor_4= ruleLightSensor | this_SmokeSensor_5= ruleSmokeSensor | this_CO2Sensor_6= ruleCO2Sensor | this_InfraredLightSensor_7= ruleInfraredLightSensor ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:357:1: ruleSensor returns [EObject current=null] : (this_MotionSensor_0= ruleMotionSensor | this_TemperatureSensor_1= ruleTemperatureSensor | this_PressureSensor_2= rulePressureSensor | this_TouchSensor_3= ruleTouchSensor | this_LightSensor_4= ruleLightSensor | this_SmokeSensor_5= ruleSmokeSensor | this_CO2Sensor_6= ruleCO2Sensor | this_InfraredLightSensor_7= ruleInfraredLightSensor | this_HumiditySensor_8= ruleHumiditySensor ) ;
     public final EObject ruleSensor() throws RecognitionException {
         EObject current = null;
 
@@ -934,15 +935,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
         EObject this_InfraredLightSensor_7 = null;
 
+        EObject this_HumiditySensor_8 = null;
+
 
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:360:28: ( (this_MotionSensor_0= ruleMotionSensor | this_TemperatureSensor_1= ruleTemperatureSensor | this_PressureSensor_2= rulePressureSensor | this_TouchSensor_3= ruleTouchSensor | this_LightSensor_4= ruleLightSensor | this_SmokeSensor_5= ruleSmokeSensor | this_CO2Sensor_6= ruleCO2Sensor | this_InfraredLightSensor_7= ruleInfraredLightSensor ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:361:1: (this_MotionSensor_0= ruleMotionSensor | this_TemperatureSensor_1= ruleTemperatureSensor | this_PressureSensor_2= rulePressureSensor | this_TouchSensor_3= ruleTouchSensor | this_LightSensor_4= ruleLightSensor | this_SmokeSensor_5= ruleSmokeSensor | this_CO2Sensor_6= ruleCO2Sensor | this_InfraredLightSensor_7= ruleInfraredLightSensor )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:360:28: ( (this_MotionSensor_0= ruleMotionSensor | this_TemperatureSensor_1= ruleTemperatureSensor | this_PressureSensor_2= rulePressureSensor | this_TouchSensor_3= ruleTouchSensor | this_LightSensor_4= ruleLightSensor | this_SmokeSensor_5= ruleSmokeSensor | this_CO2Sensor_6= ruleCO2Sensor | this_InfraredLightSensor_7= ruleInfraredLightSensor | this_HumiditySensor_8= ruleHumiditySensor ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:361:1: (this_MotionSensor_0= ruleMotionSensor | this_TemperatureSensor_1= ruleTemperatureSensor | this_PressureSensor_2= rulePressureSensor | this_TouchSensor_3= ruleTouchSensor | this_LightSensor_4= ruleLightSensor | this_SmokeSensor_5= ruleSmokeSensor | this_CO2Sensor_6= ruleCO2Sensor | this_InfraredLightSensor_7= ruleInfraredLightSensor | this_HumiditySensor_8= ruleHumiditySensor )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:361:1: (this_MotionSensor_0= ruleMotionSensor | this_TemperatureSensor_1= ruleTemperatureSensor | this_PressureSensor_2= rulePressureSensor | this_TouchSensor_3= ruleTouchSensor | this_LightSensor_4= ruleLightSensor | this_SmokeSensor_5= ruleSmokeSensor | this_CO2Sensor_6= ruleCO2Sensor | this_InfraredLightSensor_7= ruleInfraredLightSensor )
-            int alt10=8;
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:361:1: (this_MotionSensor_0= ruleMotionSensor | this_TemperatureSensor_1= ruleTemperatureSensor | this_PressureSensor_2= rulePressureSensor | this_TouchSensor_3= ruleTouchSensor | this_LightSensor_4= ruleLightSensor | this_SmokeSensor_5= ruleSmokeSensor | this_CO2Sensor_6= ruleCO2Sensor | this_InfraredLightSensor_7= ruleInfraredLightSensor | this_HumiditySensor_8= ruleHumiditySensor )
+            int alt10=9;
             switch ( input.LA(1) ) {
             case 33:
                 {
@@ -982,6 +985,11 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
             case 41:
                 {
                 alt10=8;
+                }
+                break;
+            case 42:
+                {
+                alt10=9;
                 }
                 break;
             default:
@@ -1136,6 +1144,24 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 9 :
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:442:5: this_HumiditySensor_8= ruleHumiditySensor
+                    {
+                     
+                            newCompositeNode(grammarAccess.getSensorAccess().getHumiditySensorParserRuleCall_8()); 
+                        
+                    pushFollow(FollowSets000.FOLLOW_ruleHumiditySensor_in_ruleSensor896);
+                    this_HumiditySensor_8=ruleHumiditySensor();
+
+                    state._fsp--;
+
+                     
+                            current = this_HumiditySensor_8; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
 
             }
 
@@ -1157,7 +1183,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:448:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:458:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -1165,17 +1191,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:449:2: (iv_ruleEString= ruleEString EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:450:2: iv_ruleEString= ruleEString EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:459:2: (iv_ruleEString= ruleEString EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:460:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_entryRuleEString905);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_entryRuleEString932);
             iv_ruleEString=ruleEString();
 
             state._fsp--;
 
              current =iv_ruleEString.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEString916); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEString943); 
 
             }
 
@@ -1193,7 +1219,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:457:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:467:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1203,10 +1229,10 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:460:28: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:461:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:470:28: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:471:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:461:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:471:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1224,9 +1250,9 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:461:6: this_STRING_0= RULE_STRING
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:471:6: this_STRING_0= RULE_STRING
                     {
-                    this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleEString956); 
+                    this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleEString983); 
 
                     		current.merge(this_STRING_0);
                         
@@ -1237,9 +1263,9 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:469:10: this_ID_1= RULE_ID
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:479:10: this_ID_1= RULE_ID
                     {
-                    this_ID_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEString982); 
+                    this_ID_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEString1009); 
 
                     		current.merge(this_ID_1);
                         
@@ -1270,7 +1296,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleState"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:484:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:494:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
     public final EObject entryRuleState() throws RecognitionException {
         EObject current = null;
 
@@ -1278,17 +1304,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:485:2: (iv_ruleState= ruleState EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:486:2: iv_ruleState= ruleState EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:495:2: (iv_ruleState= ruleState EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:496:2: iv_ruleState= ruleState EOF
             {
              newCompositeNode(grammarAccess.getStateRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleState_in_entryRuleState1027);
+            pushFollow(FollowSets000.FOLLOW_ruleState_in_entryRuleState1054);
             iv_ruleState=ruleState();
 
             state._fsp--;
 
              current =iv_ruleState; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleState1037); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleState1064); 
 
             }
 
@@ -1306,7 +1332,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleState"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:493:1: ruleState returns [EObject current=null] : ( () otherlv_1= 'state' ( (lv_name_2_0= ruleEString ) ) ( (lv_valueState_3_0= '=' ) ) ruleEBoolean ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:503:1: ruleState returns [EObject current=null] : ( () otherlv_1= 'state' ( (lv_name_2_0= ruleEString ) ) ( (lv_valueState_3_0= '=' ) ) ruleEBoolean ) ;
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
@@ -1318,14 +1344,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:496:28: ( ( () otherlv_1= 'state' ( (lv_name_2_0= ruleEString ) ) ( (lv_valueState_3_0= '=' ) ) ruleEBoolean ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:497:1: ( () otherlv_1= 'state' ( (lv_name_2_0= ruleEString ) ) ( (lv_valueState_3_0= '=' ) ) ruleEBoolean )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:506:28: ( ( () otherlv_1= 'state' ( (lv_name_2_0= ruleEString ) ) ( (lv_valueState_3_0= '=' ) ) ruleEBoolean ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:507:1: ( () otherlv_1= 'state' ( (lv_name_2_0= ruleEString ) ) ( (lv_valueState_3_0= '=' ) ) ruleEBoolean )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:497:1: ( () otherlv_1= 'state' ( (lv_name_2_0= ruleEString ) ) ( (lv_valueState_3_0= '=' ) ) ruleEBoolean )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:497:2: () otherlv_1= 'state' ( (lv_name_2_0= ruleEString ) ) ( (lv_valueState_3_0= '=' ) ) ruleEBoolean
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:507:1: ( () otherlv_1= 'state' ( (lv_name_2_0= ruleEString ) ) ( (lv_valueState_3_0= '=' ) ) ruleEBoolean )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:507:2: () otherlv_1= 'state' ( (lv_name_2_0= ruleEString ) ) ( (lv_valueState_3_0= '=' ) ) ruleEBoolean
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:497:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:498:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:507:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:508:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1335,20 +1361,20 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleState1083); 
+            otherlv_1=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleState1110); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getStateAccess().getStateKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:507:1: ( (lv_name_2_0= ruleEString ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:508:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:517:1: ( (lv_name_2_0= ruleEString ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:518:1: (lv_name_2_0= ruleEString )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:508:1: (lv_name_2_0= ruleEString )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:509:3: lv_name_2_0= ruleEString
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:518:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:519:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getStateAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleState1104);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleState1131);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -1370,13 +1396,13 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:525:2: ( (lv_valueState_3_0= '=' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:526:1: (lv_valueState_3_0= '=' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:535:2: ( (lv_valueState_3_0= '=' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:536:1: (lv_valueState_3_0= '=' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:526:1: (lv_valueState_3_0= '=' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:527:3: lv_valueState_3_0= '='
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:536:1: (lv_valueState_3_0= '=' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:537:3: lv_valueState_3_0= '='
             {
-            lv_valueState_3_0=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleState1122); 
+            lv_valueState_3_0=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleState1149); 
 
                     newLeafNode(lv_valueState_3_0, grammarAccess.getStateAccess().getValueStateEqualsSignKeyword_3_0());
                 
@@ -1395,7 +1421,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getStateAccess().getEBooleanParserRuleCall_4()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleEBoolean_in_ruleState1151);
+            pushFollow(FollowSets000.FOLLOW_ruleEBoolean_in_ruleState1178);
             ruleEBoolean();
 
             state._fsp--;
@@ -1424,7 +1450,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePolicy"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:556:1: entryRulePolicy returns [EObject current=null] : iv_rulePolicy= rulePolicy EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:566:1: entryRulePolicy returns [EObject current=null] : iv_rulePolicy= rulePolicy EOF ;
     public final EObject entryRulePolicy() throws RecognitionException {
         EObject current = null;
 
@@ -1432,17 +1458,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:557:2: (iv_rulePolicy= rulePolicy EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:558:2: iv_rulePolicy= rulePolicy EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:567:2: (iv_rulePolicy= rulePolicy EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:568:2: iv_rulePolicy= rulePolicy EOF
             {
              newCompositeNode(grammarAccess.getPolicyRule()); 
-            pushFollow(FollowSets000.FOLLOW_rulePolicy_in_entryRulePolicy1186);
+            pushFollow(FollowSets000.FOLLOW_rulePolicy_in_entryRulePolicy1213);
             iv_rulePolicy=rulePolicy();
 
             state._fsp--;
 
              current =iv_rulePolicy; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePolicy1196); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePolicy1223); 
 
             }
 
@@ -1460,7 +1486,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePolicy"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:565:1: rulePolicy returns [EObject current=null] : ( () otherlv_1= 'policy' ( (lv_name_2_0= ruleEString ) ) otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:575:1: rulePolicy returns [EObject current=null] : ( () otherlv_1= 'policy' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? )? (otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? )? (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )? ) ;
     public final EObject rulePolicy() throws RecognitionException {
         EObject current = null;
 
@@ -1490,14 +1516,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:568:28: ( ( () otherlv_1= 'policy' ( (lv_name_2_0= ruleEString ) ) otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:569:1: ( () otherlv_1= 'policy' ( (lv_name_2_0= ruleEString ) ) otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:578:28: ( ( () otherlv_1= 'policy' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? )? (otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? )? (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:579:1: ( () otherlv_1= 'policy' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? )? (otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? )? (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:569:1: ( () otherlv_1= 'policy' ( (lv_name_2_0= ruleEString ) ) otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:569:2: () otherlv_1= 'policy' ( (lv_name_2_0= ruleEString ) ) otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:579:1: ( () otherlv_1= 'policy' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? )? (otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? )? (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:579:2: () otherlv_1= 'policy' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? )? (otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? )? (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:569:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:570:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:579:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:580:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1507,20 +1533,20 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,16,FollowSets000.FOLLOW_16_in_rulePolicy1242); 
+            otherlv_1=(Token)match(input,16,FollowSets000.FOLLOW_16_in_rulePolicy1269); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getPolicyAccess().getPolicyKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:579:1: ( (lv_name_2_0= ruleEString ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:580:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:589:1: ( (lv_name_2_0= ruleEString ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:590:1: (lv_name_2_0= ruleEString )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:580:1: (lv_name_2_0= ruleEString )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:581:3: lv_name_2_0= ruleEString
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:590:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:591:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getPolicyAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rulePolicy1263);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rulePolicy1290);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -1542,268 +1568,302 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,17,FollowSets000.FOLLOW_17_in_rulePolicy1275); 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:607:2: (otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )? )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-                	newLeafNode(otherlv_3, grammarAccess.getPolicyAccess().getUsesSensorsKeyword_3());
-                
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:601:1: ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
-
-            if ( (LA13_0==33||(LA13_0>=35 && LA13_0<=41)) ) {
-                alt13=1;
+            if ( (LA14_0==17) ) {
+                alt14=1;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:601:2: ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )*
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:607:4: otherlv_3= 'uses sensors' ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )?
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:601:2: ( (lv_usesSensors_4_0= ruleSensor ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:602:1: (lv_usesSensors_4_0= ruleSensor )
-                    {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:602:1: (lv_usesSensors_4_0= ruleSensor )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:603:3: lv_usesSensors_4_0= ruleSensor
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesSensorsSensorParserRuleCall_4_0_0()); 
-                    	    
-                    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_rulePolicy1297);
-                    lv_usesSensors_4_0=ruleSensor();
+                    otherlv_3=(Token)match(input,17,FollowSets000.FOLLOW_17_in_rulePolicy1303); 
 
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getPolicyRule());
-                    	        }
-                           		add(
-                           			current, 
-                           			"usesSensors",
-                            		lv_usesSensors_4_0, 
-                            		"Sensor");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:619:2: (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )*
-                    loop12:
-                    do {
-                        int alt12=2;
-                        int LA12_0 = input.LA(1);
-
-                        if ( (LA12_0==18) ) {
-                            alt12=1;
-                        }
-
-
-                        switch (alt12) {
-                    	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:619:4: otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) )
-                    	    {
-                    	    otherlv_5=(Token)match(input,18,FollowSets000.FOLLOW_18_in_rulePolicy1310); 
-
-                    	        	newLeafNode(otherlv_5, grammarAccess.getPolicyAccess().getCommaKeyword_4_1_0());
-                    	        
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:623:1: ( (lv_usesSensors_6_0= ruleSensor ) )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:624:1: (lv_usesSensors_6_0= ruleSensor )
-                    	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:624:1: (lv_usesSensors_6_0= ruleSensor )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:625:3: lv_usesSensors_6_0= ruleSensor
-                    	    {
-                    	     
-                    	    	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesSensorsSensorParserRuleCall_4_1_1_0()); 
-                    	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_rulePolicy1331);
-                    	    lv_usesSensors_6_0=ruleSensor();
-
-                    	    state._fsp--;
-
-
-                    	    	        if (current==null) {
-                    	    	            current = createModelElementForParent(grammarAccess.getPolicyRule());
-                    	    	        }
-                    	           		add(
-                    	           			current, 
-                    	           			"usesSensors",
-                    	            		lv_usesSensors_6_0, 
-                    	            		"Sensor");
-                    	    	        afterParserOrEnumRuleCall();
-                    	    	    
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop12;
-                        }
-                    } while (true);
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_7=(Token)match(input,19,FollowSets000.FOLLOW_19_in_rulePolicy1347); 
-
-                	newLeafNode(otherlv_7, grammarAccess.getPolicyAccess().getUsesActuatorsKeyword_5());
-                
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:645:1: ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
-
-            if ( ((LA15_0>=43 && LA15_0<=48)) ) {
-                alt15=1;
-            }
-            switch (alt15) {
-                case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:645:2: ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )*
-                    {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:645:2: ( (lv_uses_8_0= ruleActuator ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:646:1: (lv_uses_8_0= ruleActuator )
-                    {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:646:1: (lv_uses_8_0= ruleActuator )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:647:3: lv_uses_8_0= ruleActuator
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesActuatorParserRuleCall_6_0_0()); 
-                    	    
-                    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_rulePolicy1369);
-                    lv_uses_8_0=ruleActuator();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getPolicyRule());
-                    	        }
-                           		add(
-                           			current, 
-                           			"uses",
-                            		lv_uses_8_0, 
-                            		"Actuator");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:663:2: (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )*
-                    loop14:
-                    do {
-                        int alt14=2;
-                        int LA14_0 = input.LA(1);
-
-                        if ( (LA14_0==18) ) {
-                            alt14=1;
-                        }
-
-
-                        switch (alt14) {
-                    	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:663:4: otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) )
-                    	    {
-                    	    otherlv_9=(Token)match(input,18,FollowSets000.FOLLOW_18_in_rulePolicy1382); 
-
-                    	        	newLeafNode(otherlv_9, grammarAccess.getPolicyAccess().getCommaKeyword_6_1_0());
-                    	        
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:667:1: ( (lv_uses_10_0= ruleActuator ) )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:668:1: (lv_uses_10_0= ruleActuator )
-                    	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:668:1: (lv_uses_10_0= ruleActuator )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:669:3: lv_uses_10_0= ruleActuator
-                    	    {
-                    	     
-                    	    	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesActuatorParserRuleCall_6_1_1_0()); 
-                    	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_rulePolicy1403);
-                    	    lv_uses_10_0=ruleActuator();
-
-                    	    state._fsp--;
-
-
-                    	    	        if (current==null) {
-                    	    	            current = createModelElementForParent(grammarAccess.getPolicyRule());
-                    	    	        }
-                    	           		add(
-                    	           			current, 
-                    	           			"uses",
-                    	            		lv_uses_10_0, 
-                    	            		"Actuator");
-                    	    	        afterParserOrEnumRuleCall();
-                    	    	    
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop14;
-                        }
-                    } while (true);
-
-
-                    }
-                    break;
-
-            }
-
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:685:6: (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
-
-            if ( (LA18_0==20) ) {
-                alt18=1;
-            }
-            switch (alt18) {
-                case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:685:8: otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}'
-                    {
-                    otherlv_11=(Token)match(input,20,FollowSets000.FOLLOW_20_in_rulePolicy1420); 
-
-                        	newLeafNode(otherlv_11, grammarAccess.getPolicyAccess().getIsSpecifiedByKeyword_7_0());
+                        	newLeafNode(otherlv_3, grammarAccess.getPolicyAccess().getUsesSensorsKeyword_3_0());
                         
-                    otherlv_12=(Token)match(input,11,FollowSets000.FOLLOW_11_in_rulePolicy1432); 
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:611:1: ( ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )* )?
+                    int alt13=2;
+                    int LA13_0 = input.LA(1);
 
-                        	newLeafNode(otherlv_12, grammarAccess.getPolicyAccess().getLeftCurlyBracketKeyword_7_1());
-                        
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:693:1: ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )?
-                    int alt17=2;
-                    int LA17_0 = input.LA(1);
-
-                    if ( (LA17_0==52) ) {
-                        alt17=1;
+                    if ( (LA13_0==33||(LA13_0>=35 && LA13_0<=42)) ) {
+                        alt13=1;
                     }
-                    switch (alt17) {
+                    switch (alt13) {
                         case 1 :
-                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:693:2: ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )*
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:611:2: ( (lv_usesSensors_4_0= ruleSensor ) ) (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )*
                             {
-                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:693:2: ( (lv_specifiedBy_13_0= ruleConditions ) )
-                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:694:1: (lv_specifiedBy_13_0= ruleConditions )
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:611:2: ( (lv_usesSensors_4_0= ruleSensor ) )
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:612:1: (lv_usesSensors_4_0= ruleSensor )
                             {
-                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:694:1: (lv_specifiedBy_13_0= ruleConditions )
-                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:695:3: lv_specifiedBy_13_0= ruleConditions
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:612:1: (lv_usesSensors_4_0= ruleSensor )
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:613:3: lv_usesSensors_4_0= ruleSensor
                             {
                              
-                            	        newCompositeNode(grammarAccess.getPolicyAccess().getSpecifiedByConditionsParserRuleCall_7_2_0_0()); 
+                            	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesSensorsSensorParserRuleCall_3_1_0_0()); 
                             	    
-                            pushFollow(FollowSets000.FOLLOW_ruleConditions_in_rulePolicy1454);
+                            pushFollow(FollowSets000.FOLLOW_ruleSensor_in_rulePolicy1325);
+                            lv_usesSensors_4_0=ruleSensor();
+
+                            state._fsp--;
+
+
+                            	        if (current==null) {
+                            	            current = createModelElementForParent(grammarAccess.getPolicyRule());
+                            	        }
+                                   		add(
+                                   			current, 
+                                   			"usesSensors",
+                                    		lv_usesSensors_4_0, 
+                                    		"Sensor");
+                            	        afterParserOrEnumRuleCall();
+                            	    
+
+                            }
+
+
+                            }
+
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:629:2: (otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) ) )*
+                            loop12:
+                            do {
+                                int alt12=2;
+                                int LA12_0 = input.LA(1);
+
+                                if ( (LA12_0==18) ) {
+                                    alt12=1;
+                                }
+
+
+                                switch (alt12) {
+                            	case 1 :
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:629:4: otherlv_5= ',' ( (lv_usesSensors_6_0= ruleSensor ) )
+                            	    {
+                            	    otherlv_5=(Token)match(input,18,FollowSets000.FOLLOW_18_in_rulePolicy1338); 
+
+                            	        	newLeafNode(otherlv_5, grammarAccess.getPolicyAccess().getCommaKeyword_3_1_1_0());
+                            	        
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:633:1: ( (lv_usesSensors_6_0= ruleSensor ) )
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:634:1: (lv_usesSensors_6_0= ruleSensor )
+                            	    {
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:634:1: (lv_usesSensors_6_0= ruleSensor )
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:635:3: lv_usesSensors_6_0= ruleSensor
+                            	    {
+                            	     
+                            	    	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesSensorsSensorParserRuleCall_3_1_1_1_0()); 
+                            	    	    
+                            	    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_rulePolicy1359);
+                            	    lv_usesSensors_6_0=ruleSensor();
+
+                            	    state._fsp--;
+
+
+                            	    	        if (current==null) {
+                            	    	            current = createModelElementForParent(grammarAccess.getPolicyRule());
+                            	    	        }
+                            	           		add(
+                            	           			current, 
+                            	           			"usesSensors",
+                            	            		lv_usesSensors_6_0, 
+                            	            		"Sensor");
+                            	    	        afterParserOrEnumRuleCall();
+                            	    	    
+
+                            	    }
+
+
+                            	    }
+
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    break loop12;
+                                }
+                            } while (true);
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:651:8: (otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )? )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
+
+            if ( (LA17_0==19) ) {
+                alt17=1;
+            }
+            switch (alt17) {
+                case 1 :
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:651:10: otherlv_7= 'uses actuators' ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )?
+                    {
+                    otherlv_7=(Token)match(input,19,FollowSets000.FOLLOW_19_in_rulePolicy1378); 
+
+                        	newLeafNode(otherlv_7, grammarAccess.getPolicyAccess().getUsesActuatorsKeyword_4_0());
+                        
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:655:1: ( ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )* )?
+                    int alt16=2;
+                    int LA16_0 = input.LA(1);
+
+                    if ( ((LA16_0>=44 && LA16_0<=49)) ) {
+                        alt16=1;
+                    }
+                    switch (alt16) {
+                        case 1 :
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:655:2: ( (lv_uses_8_0= ruleActuator ) ) (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )*
+                            {
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:655:2: ( (lv_uses_8_0= ruleActuator ) )
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:656:1: (lv_uses_8_0= ruleActuator )
+                            {
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:656:1: (lv_uses_8_0= ruleActuator )
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:657:3: lv_uses_8_0= ruleActuator
+                            {
+                             
+                            	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesActuatorParserRuleCall_4_1_0_0()); 
+                            	    
+                            pushFollow(FollowSets000.FOLLOW_ruleActuator_in_rulePolicy1400);
+                            lv_uses_8_0=ruleActuator();
+
+                            state._fsp--;
+
+
+                            	        if (current==null) {
+                            	            current = createModelElementForParent(grammarAccess.getPolicyRule());
+                            	        }
+                                   		add(
+                                   			current, 
+                                   			"uses",
+                                    		lv_uses_8_0, 
+                                    		"Actuator");
+                            	        afterParserOrEnumRuleCall();
+                            	    
+
+                            }
+
+
+                            }
+
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:673:2: (otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) ) )*
+                            loop15:
+                            do {
+                                int alt15=2;
+                                int LA15_0 = input.LA(1);
+
+                                if ( (LA15_0==18) ) {
+                                    alt15=1;
+                                }
+
+
+                                switch (alt15) {
+                            	case 1 :
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:673:4: otherlv_9= ',' ( (lv_uses_10_0= ruleActuator ) )
+                            	    {
+                            	    otherlv_9=(Token)match(input,18,FollowSets000.FOLLOW_18_in_rulePolicy1413); 
+
+                            	        	newLeafNode(otherlv_9, grammarAccess.getPolicyAccess().getCommaKeyword_4_1_1_0());
+                            	        
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:677:1: ( (lv_uses_10_0= ruleActuator ) )
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:678:1: (lv_uses_10_0= ruleActuator )
+                            	    {
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:678:1: (lv_uses_10_0= ruleActuator )
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:679:3: lv_uses_10_0= ruleActuator
+                            	    {
+                            	     
+                            	    	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesActuatorParserRuleCall_4_1_1_1_0()); 
+                            	    	    
+                            	    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_rulePolicy1434);
+                            	    lv_uses_10_0=ruleActuator();
+
+                            	    state._fsp--;
+
+
+                            	    	        if (current==null) {
+                            	    	            current = createModelElementForParent(grammarAccess.getPolicyRule());
+                            	    	        }
+                            	           		add(
+                            	           			current, 
+                            	           			"uses",
+                            	            		lv_uses_10_0, 
+                            	            		"Actuator");
+                            	    	        afterParserOrEnumRuleCall();
+                            	    	    
+
+                            	    }
+
+
+                            	    }
+
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    break loop15;
+                                }
+                            } while (true);
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:695:8: (otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}' )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
+
+            if ( (LA20_0==20) ) {
+                alt20=1;
+            }
+            switch (alt20) {
+                case 1 :
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:695:10: otherlv_11= 'is specified by' otherlv_12= '{' ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )? otherlv_15= '}'
+                    {
+                    otherlv_11=(Token)match(input,20,FollowSets000.FOLLOW_20_in_rulePolicy1453); 
+
+                        	newLeafNode(otherlv_11, grammarAccess.getPolicyAccess().getIsSpecifiedByKeyword_5_0());
+                        
+                    otherlv_12=(Token)match(input,11,FollowSets000.FOLLOW_11_in_rulePolicy1465); 
+
+                        	newLeafNode(otherlv_12, grammarAccess.getPolicyAccess().getLeftCurlyBracketKeyword_5_1());
+                        
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:703:1: ( ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )* )?
+                    int alt19=2;
+                    int LA19_0 = input.LA(1);
+
+                    if ( (LA19_0==53) ) {
+                        alt19=1;
+                    }
+                    switch (alt19) {
+                        case 1 :
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:703:2: ( (lv_specifiedBy_13_0= ruleConditions ) ) ( (lv_specifiedBy_14_0= ruleConditions ) )*
+                            {
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:703:2: ( (lv_specifiedBy_13_0= ruleConditions ) )
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:704:1: (lv_specifiedBy_13_0= ruleConditions )
+                            {
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:704:1: (lv_specifiedBy_13_0= ruleConditions )
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:705:3: lv_specifiedBy_13_0= ruleConditions
+                            {
+                             
+                            	        newCompositeNode(grammarAccess.getPolicyAccess().getSpecifiedByConditionsParserRuleCall_5_2_0_0()); 
+                            	    
+                            pushFollow(FollowSets000.FOLLOW_ruleConditions_in_rulePolicy1487);
                             lv_specifiedBy_13_0=ruleConditions();
 
                             state._fsp--;
@@ -1825,28 +1885,28 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:711:2: ( (lv_specifiedBy_14_0= ruleConditions ) )*
-                            loop16:
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:721:2: ( (lv_specifiedBy_14_0= ruleConditions ) )*
+                            loop18:
                             do {
-                                int alt16=2;
-                                int LA16_0 = input.LA(1);
+                                int alt18=2;
+                                int LA18_0 = input.LA(1);
 
-                                if ( (LA16_0==52) ) {
-                                    alt16=1;
+                                if ( (LA18_0==53) ) {
+                                    alt18=1;
                                 }
 
 
-                                switch (alt16) {
+                                switch (alt18) {
                             	case 1 :
-                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:712:1: (lv_specifiedBy_14_0= ruleConditions )
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:722:1: (lv_specifiedBy_14_0= ruleConditions )
                             	    {
-                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:712:1: (lv_specifiedBy_14_0= ruleConditions )
-                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:713:3: lv_specifiedBy_14_0= ruleConditions
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:722:1: (lv_specifiedBy_14_0= ruleConditions )
+                            	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:723:3: lv_specifiedBy_14_0= ruleConditions
                             	    {
                             	     
-                            	    	        newCompositeNode(grammarAccess.getPolicyAccess().getSpecifiedByConditionsParserRuleCall_7_2_1_0()); 
+                            	    	        newCompositeNode(grammarAccess.getPolicyAccess().getSpecifiedByConditionsParserRuleCall_5_2_1_0()); 
                             	    	    
-                            	    pushFollow(FollowSets000.FOLLOW_ruleConditions_in_rulePolicy1475);
+                            	    pushFollow(FollowSets000.FOLLOW_ruleConditions_in_rulePolicy1508);
                             	    lv_specifiedBy_14_0=ruleConditions();
 
                             	    state._fsp--;
@@ -1870,7 +1930,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop16;
+                            	    break loop18;
                                 }
                             } while (true);
 
@@ -1880,9 +1940,9 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_15=(Token)match(input,13,FollowSets000.FOLLOW_13_in_rulePolicy1490); 
+                    otherlv_15=(Token)match(input,13,FollowSets000.FOLLOW_13_in_rulePolicy1523); 
 
-                        	newLeafNode(otherlv_15, grammarAccess.getPolicyAccess().getRightCurlyBracketKeyword_7_3());
+                        	newLeafNode(otherlv_15, grammarAccess.getPolicyAccess().getRightCurlyBracketKeyword_5_3());
                         
 
                     }
@@ -1911,7 +1971,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBuilding"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:741:1: entryRuleBuilding returns [EObject current=null] : iv_ruleBuilding= ruleBuilding EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:751:1: entryRuleBuilding returns [EObject current=null] : iv_ruleBuilding= ruleBuilding EOF ;
     public final EObject entryRuleBuilding() throws RecognitionException {
         EObject current = null;
 
@@ -1919,17 +1979,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:742:2: (iv_ruleBuilding= ruleBuilding EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:743:2: iv_ruleBuilding= ruleBuilding EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:752:2: (iv_ruleBuilding= ruleBuilding EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:753:2: iv_ruleBuilding= ruleBuilding EOF
             {
              newCompositeNode(grammarAccess.getBuildingRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleBuilding_in_entryRuleBuilding1528);
+            pushFollow(FollowSets000.FOLLOW_ruleBuilding_in_entryRuleBuilding1561);
             iv_ruleBuilding=ruleBuilding();
 
             state._fsp--;
 
              current =iv_ruleBuilding; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBuilding1538); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBuilding1571); 
 
             }
 
@@ -1947,7 +2007,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBuilding"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:750:1: ruleBuilding returns [EObject current=null] : ( () otherlv_1= 'building' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_ctsSystem_4_0= ruleCTS ) )? ( (lv_accessControl_5_0= ruleAccessControl ) )? ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )? ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )? ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )? otherlv_10= '}' ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:760:1: ruleBuilding returns [EObject current=null] : ( () otherlv_1= 'building' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_ctsSystem_4_0= ruleCTS ) )? ( (lv_accessControl_5_0= ruleAccessControl ) )? ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )? ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )? ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )? otherlv_10= '}' ) ;
     public final EObject ruleBuilding() throws RecognitionException {
         EObject current = null;
 
@@ -1972,14 +2032,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:753:28: ( ( () otherlv_1= 'building' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_ctsSystem_4_0= ruleCTS ) )? ( (lv_accessControl_5_0= ruleAccessControl ) )? ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )? ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )? ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )? otherlv_10= '}' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:754:1: ( () otherlv_1= 'building' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_ctsSystem_4_0= ruleCTS ) )? ( (lv_accessControl_5_0= ruleAccessControl ) )? ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )? ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )? ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )? otherlv_10= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:763:28: ( ( () otherlv_1= 'building' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_ctsSystem_4_0= ruleCTS ) )? ( (lv_accessControl_5_0= ruleAccessControl ) )? ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )? ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )? ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )? otherlv_10= '}' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:764:1: ( () otherlv_1= 'building' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_ctsSystem_4_0= ruleCTS ) )? ( (lv_accessControl_5_0= ruleAccessControl ) )? ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )? ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )? ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )? otherlv_10= '}' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:754:1: ( () otherlv_1= 'building' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_ctsSystem_4_0= ruleCTS ) )? ( (lv_accessControl_5_0= ruleAccessControl ) )? ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )? ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )? ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )? otherlv_10= '}' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:754:2: () otherlv_1= 'building' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_ctsSystem_4_0= ruleCTS ) )? ( (lv_accessControl_5_0= ruleAccessControl ) )? ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )? ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )? ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )? otherlv_10= '}'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:764:1: ( () otherlv_1= 'building' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_ctsSystem_4_0= ruleCTS ) )? ( (lv_accessControl_5_0= ruleAccessControl ) )? ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )? ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )? ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )? otherlv_10= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:764:2: () otherlv_1= 'building' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_ctsSystem_4_0= ruleCTS ) )? ( (lv_accessControl_5_0= ruleAccessControl ) )? ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )? ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )? ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )? otherlv_10= '}'
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:754:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:755:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:764:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:765:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1989,20 +2049,20 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleBuilding1584); 
+            otherlv_1=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleBuilding1617); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getBuildingAccess().getBuildingKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:764:1: ( (lv_name_2_0= ruleEString ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:765:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:774:1: ( (lv_name_2_0= ruleEString ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:775:1: (lv_name_2_0= ruleEString )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:765:1: (lv_name_2_0= ruleEString )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:766:3: lv_name_2_0= ruleEString
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:775:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:776:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getBuildingAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleBuilding1605);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleBuilding1638);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -2024,28 +2084,28 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleBuilding1617); 
+            otherlv_3=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleBuilding1650); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getBuildingAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:786:1: ( (lv_ctsSystem_4_0= ruleCTS ) )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:796:1: ( (lv_ctsSystem_4_0= ruleCTS ) )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA19_0==25) ) {
-                alt19=1;
+            if ( (LA21_0==25) ) {
+                alt21=1;
             }
-            switch (alt19) {
+            switch (alt21) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:787:1: (lv_ctsSystem_4_0= ruleCTS )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:797:1: (lv_ctsSystem_4_0= ruleCTS )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:787:1: (lv_ctsSystem_4_0= ruleCTS )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:788:3: lv_ctsSystem_4_0= ruleCTS
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:797:1: (lv_ctsSystem_4_0= ruleCTS )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:798:3: lv_ctsSystem_4_0= ruleCTS
                     {
                      
                     	        newCompositeNode(grammarAccess.getBuildingAccess().getCtsSystemCTSParserRuleCall_4_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleCTS_in_ruleBuilding1638);
+                    pushFollow(FollowSets000.FOLLOW_ruleCTS_in_ruleBuilding1671);
                     lv_ctsSystem_4_0=ruleCTS();
 
                     state._fsp--;
@@ -2070,24 +2130,24 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:804:3: ( (lv_accessControl_5_0= ruleAccessControl ) )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:814:3: ( (lv_accessControl_5_0= ruleAccessControl ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA20_0==28) ) {
-                alt20=1;
+            if ( (LA22_0==28) ) {
+                alt22=1;
             }
-            switch (alt20) {
+            switch (alt22) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:805:1: (lv_accessControl_5_0= ruleAccessControl )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:815:1: (lv_accessControl_5_0= ruleAccessControl )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:805:1: (lv_accessControl_5_0= ruleAccessControl )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:806:3: lv_accessControl_5_0= ruleAccessControl
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:815:1: (lv_accessControl_5_0= ruleAccessControl )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:816:3: lv_accessControl_5_0= ruleAccessControl
                     {
                      
                     	        newCompositeNode(grammarAccess.getBuildingAccess().getAccessControlAccessControlParserRuleCall_5_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleAccessControl_in_ruleBuilding1660);
+                    pushFollow(FollowSets000.FOLLOW_ruleAccessControl_in_ruleBuilding1693);
                     lv_accessControl_5_0=ruleAccessControl();
 
                     state._fsp--;
@@ -2112,24 +2172,24 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:822:3: ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:832:3: ( (lv_calendarSystem_6_0= ruleCalendarSystem ) )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA21_0==31) ) {
-                alt21=1;
+            if ( (LA23_0==31) ) {
+                alt23=1;
             }
-            switch (alt21) {
+            switch (alt23) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:823:1: (lv_calendarSystem_6_0= ruleCalendarSystem )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:833:1: (lv_calendarSystem_6_0= ruleCalendarSystem )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:823:1: (lv_calendarSystem_6_0= ruleCalendarSystem )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:824:3: lv_calendarSystem_6_0= ruleCalendarSystem
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:833:1: (lv_calendarSystem_6_0= ruleCalendarSystem )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:834:3: lv_calendarSystem_6_0= ruleCalendarSystem
                     {
                      
                     	        newCompositeNode(grammarAccess.getBuildingAccess().getCalendarSystemCalendarSystemParserRuleCall_6_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleCalendarSystem_in_ruleBuilding1682);
+                    pushFollow(FollowSets000.FOLLOW_ruleCalendarSystem_in_ruleBuilding1715);
                     lv_calendarSystem_6_0=ruleCalendarSystem();
 
                     state._fsp--;
@@ -2154,24 +2214,24 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:840:3: ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:850:3: ( (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem ) )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA22_0==32) ) {
-                alt22=1;
+            if ( (LA24_0==32) ) {
+                alt24=1;
             }
-            switch (alt22) {
+            switch (alt24) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:841:1: (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:851:1: (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:841:1: (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:842:3: lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:851:1: (lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:852:3: lv_meetingScheduleSystem_7_0= ruleMeetingScheduleSystem
                     {
                      
                     	        newCompositeNode(grammarAccess.getBuildingAccess().getMeetingScheduleSystemMeetingScheduleSystemParserRuleCall_7_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleMeetingScheduleSystem_in_ruleBuilding1704);
+                    pushFollow(FollowSets000.FOLLOW_ruleMeetingScheduleSystem_in_ruleBuilding1737);
                     lv_meetingScheduleSystem_7_0=ruleMeetingScheduleSystem();
 
                     state._fsp--;
@@ -2196,27 +2256,27 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:858:3: ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:868:3: ( ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )* )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA24_0==22) ) {
-                alt24=1;
+            if ( (LA26_0==22) ) {
+                alt26=1;
             }
-            switch (alt24) {
+            switch (alt26) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:858:4: ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )*
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:868:4: ( (lv_floors_8_0= ruleFloor ) ) ( (lv_floors_9_0= ruleFloor ) )*
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:858:4: ( (lv_floors_8_0= ruleFloor ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:859:1: (lv_floors_8_0= ruleFloor )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:868:4: ( (lv_floors_8_0= ruleFloor ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:869:1: (lv_floors_8_0= ruleFloor )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:859:1: (lv_floors_8_0= ruleFloor )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:860:3: lv_floors_8_0= ruleFloor
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:869:1: (lv_floors_8_0= ruleFloor )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:870:3: lv_floors_8_0= ruleFloor
                     {
                      
                     	        newCompositeNode(grammarAccess.getBuildingAccess().getFloorsFloorParserRuleCall_8_0_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleFloor_in_ruleBuilding1727);
+                    pushFollow(FollowSets000.FOLLOW_ruleFloor_in_ruleBuilding1760);
                     lv_floors_8_0=ruleFloor();
 
                     state._fsp--;
@@ -2238,28 +2298,28 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:876:2: ( (lv_floors_9_0= ruleFloor ) )*
-                    loop23:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:886:2: ( (lv_floors_9_0= ruleFloor ) )*
+                    loop25:
                     do {
-                        int alt23=2;
-                        int LA23_0 = input.LA(1);
+                        int alt25=2;
+                        int LA25_0 = input.LA(1);
 
-                        if ( (LA23_0==22) ) {
-                            alt23=1;
+                        if ( (LA25_0==22) ) {
+                            alt25=1;
                         }
 
 
-                        switch (alt23) {
+                        switch (alt25) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:877:1: (lv_floors_9_0= ruleFloor )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:887:1: (lv_floors_9_0= ruleFloor )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:877:1: (lv_floors_9_0= ruleFloor )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:878:3: lv_floors_9_0= ruleFloor
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:887:1: (lv_floors_9_0= ruleFloor )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:888:3: lv_floors_9_0= ruleFloor
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getBuildingAccess().getFloorsFloorParserRuleCall_8_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleFloor_in_ruleBuilding1748);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleFloor_in_ruleBuilding1781);
                     	    lv_floors_9_0=ruleFloor();
 
                     	    state._fsp--;
@@ -2283,7 +2343,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop23;
+                    	    break loop25;
                         }
                     } while (true);
 
@@ -2293,7 +2353,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleBuilding1763); 
+            otherlv_10=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleBuilding1796); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getBuildingAccess().getRightCurlyBracketKeyword_9());
                 
@@ -2318,7 +2378,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFloor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:906:1: entryRuleFloor returns [EObject current=null] : iv_ruleFloor= ruleFloor EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:916:1: entryRuleFloor returns [EObject current=null] : iv_ruleFloor= ruleFloor EOF ;
     public final EObject entryRuleFloor() throws RecognitionException {
         EObject current = null;
 
@@ -2326,17 +2386,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:907:2: (iv_ruleFloor= ruleFloor EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:908:2: iv_ruleFloor= ruleFloor EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:917:2: (iv_ruleFloor= ruleFloor EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:918:2: iv_ruleFloor= ruleFloor EOF
             {
              newCompositeNode(grammarAccess.getFloorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleFloor_in_entryRuleFloor1799);
+            pushFollow(FollowSets000.FOLLOW_ruleFloor_in_entryRuleFloor1832);
             iv_ruleFloor=ruleFloor();
 
             state._fsp--;
 
              current =iv_ruleFloor; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFloor1809); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFloor1842); 
 
             }
 
@@ -2354,7 +2414,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFloor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:915:1: ruleFloor returns [EObject current=null] : ( () otherlv_1= 'floor' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )? otherlv_8= '}' ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:925:1: ruleFloor returns [EObject current=null] : ( () otherlv_1= 'floor' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )? otherlv_8= '}' ) ;
     public final EObject ruleFloor() throws RecognitionException {
         EObject current = null;
 
@@ -2373,14 +2433,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:918:28: ( ( () otherlv_1= 'floor' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )? otherlv_8= '}' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:919:1: ( () otherlv_1= 'floor' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )? otherlv_8= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:928:28: ( ( () otherlv_1= 'floor' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )? otherlv_8= '}' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:929:1: ( () otherlv_1= 'floor' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )? otherlv_8= '}' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:919:1: ( () otherlv_1= 'floor' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )? otherlv_8= '}' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:919:2: () otherlv_1= 'floor' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )? otherlv_8= '}'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:929:1: ( () otherlv_1= 'floor' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )? otherlv_8= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:929:2: () otherlv_1= 'floor' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )? otherlv_8= '}'
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:919:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:920:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:929:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:930:5: 
             {
 
                     current = forceCreateModelElement(
@@ -2390,20 +2450,20 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleFloor1855); 
+            otherlv_1=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleFloor1888); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getFloorAccess().getFloorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:929:1: ( (lv_name_2_0= ruleEString ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:930:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:939:1: ( (lv_name_2_0= ruleEString ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:940:1: (lv_name_2_0= ruleEString )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:930:1: (lv_name_2_0= ruleEString )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:931:3: lv_name_2_0= ruleEString
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:940:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:941:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getFloorAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleFloor1876);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleFloor1909);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -2425,35 +2485,35 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleFloor1888); 
+            otherlv_3=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleFloor1921); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getFloorAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:951:1: (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:961:1: (otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )* )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA26_0==23) ) {
-                alt26=1;
+            if ( (LA28_0==23) ) {
+                alt28=1;
             }
-            switch (alt26) {
+            switch (alt28) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:951:3: otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )*
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:961:3: otherlv_4= 'room' ( (lv_rooms_5_0= ruleRoom ) ) (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )*
                     {
-                    otherlv_4=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleFloor1901); 
+                    otherlv_4=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleFloor1934); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getFloorAccess().getRoomKeyword_4_0());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:955:1: ( (lv_rooms_5_0= ruleRoom ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:956:1: (lv_rooms_5_0= ruleRoom )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:965:1: ( (lv_rooms_5_0= ruleRoom ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:966:1: (lv_rooms_5_0= ruleRoom )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:956:1: (lv_rooms_5_0= ruleRoom )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:957:3: lv_rooms_5_0= ruleRoom
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:966:1: (lv_rooms_5_0= ruleRoom )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:967:3: lv_rooms_5_0= ruleRoom
                     {
                      
                     	        newCompositeNode(grammarAccess.getFloorAccess().getRoomsRoomParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleRoom_in_ruleFloor1922);
+                    pushFollow(FollowSets000.FOLLOW_ruleRoom_in_ruleFloor1955);
                     lv_rooms_5_0=ruleRoom();
 
                     state._fsp--;
@@ -2475,35 +2535,35 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:973:2: (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )*
-                    loop25:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:983:2: (otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) ) )*
+                    loop27:
                     do {
-                        int alt25=2;
-                        int LA25_0 = input.LA(1);
+                        int alt27=2;
+                        int LA27_0 = input.LA(1);
 
-                        if ( (LA25_0==18) ) {
-                            alt25=1;
+                        if ( (LA27_0==18) ) {
+                            alt27=1;
                         }
 
 
-                        switch (alt25) {
+                        switch (alt27) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:973:4: otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:983:4: otherlv_6= ',' ( (lv_rooms_7_0= ruleRoom ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleFloor1935); 
+                    	    otherlv_6=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleFloor1968); 
 
                     	        	newLeafNode(otherlv_6, grammarAccess.getFloorAccess().getCommaKeyword_4_2_0());
                     	        
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:977:1: ( (lv_rooms_7_0= ruleRoom ) )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:978:1: (lv_rooms_7_0= ruleRoom )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:987:1: ( (lv_rooms_7_0= ruleRoom ) )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:988:1: (lv_rooms_7_0= ruleRoom )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:978:1: (lv_rooms_7_0= ruleRoom )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:979:3: lv_rooms_7_0= ruleRoom
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:988:1: (lv_rooms_7_0= ruleRoom )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:989:3: lv_rooms_7_0= ruleRoom
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getFloorAccess().getRoomsRoomParserRuleCall_4_2_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleRoom_in_ruleFloor1956);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleRoom_in_ruleFloor1989);
                     	    lv_rooms_7_0=ruleRoom();
 
                     	    state._fsp--;
@@ -2530,7 +2590,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop25;
+                    	    break loop27;
                         }
                     } while (true);
 
@@ -2540,7 +2600,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleFloor1972); 
+            otherlv_8=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleFloor2005); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getFloorAccess().getRightCurlyBracketKeyword_5());
                 
@@ -2565,7 +2625,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRoom"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1007:1: entryRuleRoom returns [EObject current=null] : iv_ruleRoom= ruleRoom EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1017:1: entryRuleRoom returns [EObject current=null] : iv_ruleRoom= ruleRoom EOF ;
     public final EObject entryRuleRoom() throws RecognitionException {
         EObject current = null;
 
@@ -2573,17 +2633,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1008:2: (iv_ruleRoom= ruleRoom EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1009:2: iv_ruleRoom= ruleRoom EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1018:2: (iv_ruleRoom= ruleRoom EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1019:2: iv_ruleRoom= ruleRoom EOF
             {
              newCompositeNode(grammarAccess.getRoomRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRoom_in_entryRuleRoom2008);
+            pushFollow(FollowSets000.FOLLOW_ruleRoom_in_entryRuleRoom2041);
             iv_ruleRoom=ruleRoom();
 
             state._fsp--;
 
              current =iv_ruleRoom; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRoom2018); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRoom2051); 
 
             }
 
@@ -2601,7 +2661,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRoom"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1016:1: ruleRoom returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' ) ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1026:1: ruleRoom returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' ) ) ;
     public final EObject ruleRoom() throws RecognitionException {
         EObject current = null;
 
@@ -2622,14 +2682,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1019:28: ( ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' ) ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1020:1: ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1029:28: ( ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' ) ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1030:1: ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' ) )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1020:1: ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1020:2: () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1030:1: ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1030:2: () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1020:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1021:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1030:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1031:5: 
             {
 
                     current = forceCreateModelElement(
@@ -2639,16 +2699,16 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1026:2: ( (lv_name_1_0= ruleEString ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1027:1: (lv_name_1_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1036:2: ( (lv_name_1_0= ruleEString ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1037:1: (lv_name_1_0= ruleEString )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1027:1: (lv_name_1_0= ruleEString )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1028:3: lv_name_1_0= ruleEString
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1037:1: (lv_name_1_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1038:3: lv_name_1_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getRoomAccess().getNameEStringParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleRoom2073);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleRoom2106);
             lv_name_1_0=ruleEString();
 
             state._fsp--;
@@ -2670,26 +2730,26 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1044:2: (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1054:2: (otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )* )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA28_0==24) ) {
-                alt28=1;
+            if ( (LA30_0==24) ) {
+                alt30=1;
             }
-            switch (alt28) {
+            switch (alt30) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1044:4: otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )*
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1054:4: otherlv_2= 'is of type' ( ( ruleEString ) ) ( ( ruleEString ) )*
                     {
-                    otherlv_2=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleRoom2086); 
+                    otherlv_2=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleRoom2119); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getRoomAccess().getIsOfTypeKeyword_2_0());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1048:1: ( ( ruleEString ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1049:1: ( ruleEString )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1058:1: ( ( ruleEString ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1059:1: ( ruleEString )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1049:1: ( ruleEString )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1050:3: ruleEString
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1059:1: ( ruleEString )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1060:3: ruleEString
                     {
 
                     			if (current==null) {
@@ -2699,7 +2759,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getRoomAccess().getExtendsRoomCrossReference_2_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleRoom2109);
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleRoom2142);
                     ruleEString();
 
                     state._fsp--;
@@ -2713,23 +2773,23 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1063:2: ( ( ruleEString ) )*
-                    loop27:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1073:2: ( ( ruleEString ) )*
+                    loop29:
                     do {
-                        int alt27=2;
-                        int LA27_0 = input.LA(1);
+                        int alt29=2;
+                        int LA29_0 = input.LA(1);
 
-                        if ( ((LA27_0>=RULE_STRING && LA27_0<=RULE_ID)) ) {
-                            alt27=1;
+                        if ( ((LA29_0>=RULE_STRING && LA29_0<=RULE_ID)) ) {
+                            alt29=1;
                         }
 
 
-                        switch (alt27) {
+                        switch (alt29) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1064:1: ( ruleEString )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1074:1: ( ruleEString )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1064:1: ( ruleEString )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1065:3: ruleEString
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1074:1: ( ruleEString )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1075:3: ruleEString
                     	    {
 
                     	    			if (current==null) {
@@ -2739,7 +2799,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	     
                     	    	        newCompositeNode(grammarAccess.getRoomAccess().getExtendsRoomCrossReference_2_2_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleRoom2132);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleRoom2165);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -2755,7 +2815,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop27;
+                    	    break loop29;
                         }
                     } while (true);
 
@@ -2765,34 +2825,34 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1078:5: (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1078:7: otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1088:5: (otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1088:7: otherlv_5= '{' ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )? otherlv_10= '}'
             {
-            otherlv_5=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleRoom2148); 
+            otherlv_5=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleRoom2181); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getRoomAccess().getLeftCurlyBracketKeyword_3_0());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1082:1: ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1092:1: ( ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )* )?
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA30_0==49) ) {
-                alt30=1;
+            if ( (LA32_0==50) ) {
+                alt32=1;
             }
-            switch (alt30) {
+            switch (alt32) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1082:2: ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )*
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1092:2: ( (lv_declareSensor_6_0= ruleSensorComponent ) ) ( (lv_declareSensor_7_0= ruleSensorComponent ) )*
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1082:2: ( (lv_declareSensor_6_0= ruleSensorComponent ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1083:1: (lv_declareSensor_6_0= ruleSensorComponent )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1092:2: ( (lv_declareSensor_6_0= ruleSensorComponent ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1093:1: (lv_declareSensor_6_0= ruleSensorComponent )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1083:1: (lv_declareSensor_6_0= ruleSensorComponent )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1084:3: lv_declareSensor_6_0= ruleSensorComponent
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1093:1: (lv_declareSensor_6_0= ruleSensorComponent )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1094:3: lv_declareSensor_6_0= ruleSensorComponent
                     {
                      
                     	        newCompositeNode(grammarAccess.getRoomAccess().getDeclareSensorSensorComponentParserRuleCall_3_1_0_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleSensorComponent_in_ruleRoom2170);
+                    pushFollow(FollowSets000.FOLLOW_ruleSensorComponent_in_ruleRoom2203);
                     lv_declareSensor_6_0=ruleSensorComponent();
 
                     state._fsp--;
@@ -2814,28 +2874,28 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1100:2: ( (lv_declareSensor_7_0= ruleSensorComponent ) )*
-                    loop29:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1110:2: ( (lv_declareSensor_7_0= ruleSensorComponent ) )*
+                    loop31:
                     do {
-                        int alt29=2;
-                        int LA29_0 = input.LA(1);
+                        int alt31=2;
+                        int LA31_0 = input.LA(1);
 
-                        if ( (LA29_0==49) ) {
-                            alt29=1;
+                        if ( (LA31_0==50) ) {
+                            alt31=1;
                         }
 
 
-                        switch (alt29) {
+                        switch (alt31) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1101:1: (lv_declareSensor_7_0= ruleSensorComponent )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1111:1: (lv_declareSensor_7_0= ruleSensorComponent )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1101:1: (lv_declareSensor_7_0= ruleSensorComponent )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1102:3: lv_declareSensor_7_0= ruleSensorComponent
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1111:1: (lv_declareSensor_7_0= ruleSensorComponent )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1112:3: lv_declareSensor_7_0= ruleSensorComponent
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getRoomAccess().getDeclareSensorSensorComponentParserRuleCall_3_1_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleSensorComponent_in_ruleRoom2191);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleSensorComponent_in_ruleRoom2224);
                     	    lv_declareSensor_7_0=ruleSensorComponent();
 
                     	    state._fsp--;
@@ -2859,7 +2919,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop29;
+                    	    break loop31;
                         }
                     } while (true);
 
@@ -2869,27 +2929,27 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1118:5: ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1128:5: ( ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )* )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA32_0==51) ) {
-                alt32=1;
+            if ( (LA34_0==52) ) {
+                alt34=1;
             }
-            switch (alt32) {
+            switch (alt34) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1118:6: ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )*
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1128:6: ( (lv_declareActuator_8_0= ruleActuatorComponent ) ) ( (lv_declareActuator_9_0= ruleActuatorComponent ) )*
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1118:6: ( (lv_declareActuator_8_0= ruleActuatorComponent ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1119:1: (lv_declareActuator_8_0= ruleActuatorComponent )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1128:6: ( (lv_declareActuator_8_0= ruleActuatorComponent ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1129:1: (lv_declareActuator_8_0= ruleActuatorComponent )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1119:1: (lv_declareActuator_8_0= ruleActuatorComponent )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1120:3: lv_declareActuator_8_0= ruleActuatorComponent
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1129:1: (lv_declareActuator_8_0= ruleActuatorComponent )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1130:3: lv_declareActuator_8_0= ruleActuatorComponent
                     {
                      
                     	        newCompositeNode(grammarAccess.getRoomAccess().getDeclareActuatorActuatorComponentParserRuleCall_3_2_0_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleActuatorComponent_in_ruleRoom2216);
+                    pushFollow(FollowSets000.FOLLOW_ruleActuatorComponent_in_ruleRoom2249);
                     lv_declareActuator_8_0=ruleActuatorComponent();
 
                     state._fsp--;
@@ -2911,28 +2971,28 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1136:2: ( (lv_declareActuator_9_0= ruleActuatorComponent ) )*
-                    loop31:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1146:2: ( (lv_declareActuator_9_0= ruleActuatorComponent ) )*
+                    loop33:
                     do {
-                        int alt31=2;
-                        int LA31_0 = input.LA(1);
+                        int alt33=2;
+                        int LA33_0 = input.LA(1);
 
-                        if ( (LA31_0==51) ) {
-                            alt31=1;
+                        if ( (LA33_0==52) ) {
+                            alt33=1;
                         }
 
 
-                        switch (alt31) {
+                        switch (alt33) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1137:1: (lv_declareActuator_9_0= ruleActuatorComponent )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1147:1: (lv_declareActuator_9_0= ruleActuatorComponent )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1137:1: (lv_declareActuator_9_0= ruleActuatorComponent )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1138:3: lv_declareActuator_9_0= ruleActuatorComponent
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1147:1: (lv_declareActuator_9_0= ruleActuatorComponent )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1148:3: lv_declareActuator_9_0= ruleActuatorComponent
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getRoomAccess().getDeclareActuatorActuatorComponentParserRuleCall_3_2_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleActuatorComponent_in_ruleRoom2237);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleActuatorComponent_in_ruleRoom2270);
                     	    lv_declareActuator_9_0=ruleActuatorComponent();
 
                     	    state._fsp--;
@@ -2956,7 +3016,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop31;
+                    	    break loop33;
                         }
                     } while (true);
 
@@ -2966,7 +3026,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleRoom2252); 
+            otherlv_10=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleRoom2285); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getRoomAccess().getRightCurlyBracketKeyword_3_3());
                 
@@ -2994,7 +3054,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCTS"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1166:1: entryRuleCTS returns [EObject current=null] : iv_ruleCTS= ruleCTS EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1176:1: entryRuleCTS returns [EObject current=null] : iv_ruleCTS= ruleCTS EOF ;
     public final EObject entryRuleCTS() throws RecognitionException {
         EObject current = null;
 
@@ -3002,17 +3062,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1167:2: (iv_ruleCTS= ruleCTS EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1168:2: iv_ruleCTS= ruleCTS EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1177:2: (iv_ruleCTS= ruleCTS EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1178:2: iv_ruleCTS= ruleCTS EOF
             {
              newCompositeNode(grammarAccess.getCTSRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleCTS_in_entryRuleCTS2289);
+            pushFollow(FollowSets000.FOLLOW_ruleCTS_in_entryRuleCTS2322);
             iv_ruleCTS=ruleCTS();
 
             state._fsp--;
 
              current =iv_ruleCTS; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCTS2299); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCTS2332); 
 
             }
 
@@ -3030,7 +3090,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCTS"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1175:1: ruleCTS returns [EObject current=null] : ( () otherlv_1= 'CTS' otherlv_2= '{' (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1185:1: ruleCTS returns [EObject current=null] : ( () otherlv_1= 'CTS' otherlv_2= '{' (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) ;
     public final EObject ruleCTS() throws RecognitionException {
         EObject current = null;
 
@@ -3057,14 +3117,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1178:28: ( ( () otherlv_1= 'CTS' otherlv_2= '{' (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1179:1: ( () otherlv_1= 'CTS' otherlv_2= '{' (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1188:28: ( ( () otherlv_1= 'CTS' otherlv_2= '{' (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1189:1: ( () otherlv_1= 'CTS' otherlv_2= '{' (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1179:1: ( () otherlv_1= 'CTS' otherlv_2= '{' (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1179:2: () otherlv_1= 'CTS' otherlv_2= '{' (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1189:1: ( () otherlv_1= 'CTS' otherlv_2= '{' (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1189:2: () otherlv_1= 'CTS' otherlv_2= '{' (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}'
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1179:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1180:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1189:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1190:5: 
             {
 
                     current = forceCreateModelElement(
@@ -3074,43 +3134,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleCTS2345); 
+            otherlv_1=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleCTS2378); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCTSAccess().getCTSKeyword_1());
                 
-            otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleCTS2357); 
+            otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleCTS2390); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getCTSAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1193:1: (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1203:1: (otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA34_0==26) ) {
-                alt34=1;
+            if ( (LA36_0==26) ) {
+                alt36=1;
             }
-            switch (alt34) {
+            switch (alt36) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1193:3: otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1203:3: otherlv_3= 'temperatureSensors' otherlv_4= '{' ( (lv_temperatureSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )* otherlv_8= '}'
                     {
-                    otherlv_3=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleCTS2370); 
+                    otherlv_3=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleCTS2403); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getCTSAccess().getTemperatureSensorsKeyword_3_0());
                         
-                    otherlv_4=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleCTS2382); 
+                    otherlv_4=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleCTS2415); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getCTSAccess().getLeftCurlyBracketKeyword_3_1());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1201:1: ( (lv_temperatureSensors_5_0= ruleSensor ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1202:1: (lv_temperatureSensors_5_0= ruleSensor )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1211:1: ( (lv_temperatureSensors_5_0= ruleSensor ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1212:1: (lv_temperatureSensors_5_0= ruleSensor )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1202:1: (lv_temperatureSensors_5_0= ruleSensor )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1203:3: lv_temperatureSensors_5_0= ruleSensor
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1212:1: (lv_temperatureSensors_5_0= ruleSensor )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1213:3: lv_temperatureSensors_5_0= ruleSensor
                     {
                      
                     	        newCompositeNode(grammarAccess.getCTSAccess().getTemperatureSensorsSensorParserRuleCall_3_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleCTS2403);
+                    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleCTS2436);
                     lv_temperatureSensors_5_0=ruleSensor();
 
                     state._fsp--;
@@ -3132,35 +3192,35 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1219:2: (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )*
-                    loop33:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1229:2: (otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) ) )*
+                    loop35:
                     do {
-                        int alt33=2;
-                        int LA33_0 = input.LA(1);
+                        int alt35=2;
+                        int LA35_0 = input.LA(1);
 
-                        if ( (LA33_0==18) ) {
-                            alt33=1;
+                        if ( (LA35_0==18) ) {
+                            alt35=1;
                         }
 
 
-                        switch (alt33) {
+                        switch (alt35) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1219:4: otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1229:4: otherlv_6= ',' ( (lv_temperatureSensors_7_0= ruleSensor ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleCTS2416); 
+                    	    otherlv_6=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleCTS2449); 
 
                     	        	newLeafNode(otherlv_6, grammarAccess.getCTSAccess().getCommaKeyword_3_3_0());
                     	        
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1223:1: ( (lv_temperatureSensors_7_0= ruleSensor ) )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1224:1: (lv_temperatureSensors_7_0= ruleSensor )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1233:1: ( (lv_temperatureSensors_7_0= ruleSensor ) )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1234:1: (lv_temperatureSensors_7_0= ruleSensor )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1224:1: (lv_temperatureSensors_7_0= ruleSensor )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1225:3: lv_temperatureSensors_7_0= ruleSensor
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1234:1: (lv_temperatureSensors_7_0= ruleSensor )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1235:3: lv_temperatureSensors_7_0= ruleSensor
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getCTSAccess().getTemperatureSensorsSensorParserRuleCall_3_3_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleCTS2437);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleCTS2470);
                     	    lv_temperatureSensors_7_0=ruleSensor();
 
                     	    state._fsp--;
@@ -3187,11 +3247,11 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop33;
+                    	    break loop35;
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleCTS2451); 
+                    otherlv_8=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleCTS2484); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getCTSAccess().getRightCurlyBracketKeyword_3_4());
                         
@@ -3201,35 +3261,35 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1245:3: (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )?
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1255:3: (otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}' )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA36_0==27) ) {
-                alt36=1;
+            if ( (LA38_0==27) ) {
+                alt38=1;
             }
-            switch (alt36) {
+            switch (alt38) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1245:5: otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1255:5: otherlv_9= 'ctsActuators' otherlv_10= '{' ( (lv_ctsActuators_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )* otherlv_14= '}'
                     {
-                    otherlv_9=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleCTS2466); 
+                    otherlv_9=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleCTS2499); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getCTSAccess().getCtsActuatorsKeyword_4_0());
                         
-                    otherlv_10=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleCTS2478); 
+                    otherlv_10=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleCTS2511); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getCTSAccess().getLeftCurlyBracketKeyword_4_1());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1253:1: ( (lv_ctsActuators_11_0= ruleActuator ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1254:1: (lv_ctsActuators_11_0= ruleActuator )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1263:1: ( (lv_ctsActuators_11_0= ruleActuator ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1264:1: (lv_ctsActuators_11_0= ruleActuator )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1254:1: (lv_ctsActuators_11_0= ruleActuator )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1255:3: lv_ctsActuators_11_0= ruleActuator
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1264:1: (lv_ctsActuators_11_0= ruleActuator )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1265:3: lv_ctsActuators_11_0= ruleActuator
                     {
                      
                     	        newCompositeNode(grammarAccess.getCTSAccess().getCtsActuatorsActuatorParserRuleCall_4_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleCTS2499);
+                    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleCTS2532);
                     lv_ctsActuators_11_0=ruleActuator();
 
                     state._fsp--;
@@ -3251,35 +3311,35 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1271:2: (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )*
-                    loop35:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1281:2: (otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) ) )*
+                    loop37:
                     do {
-                        int alt35=2;
-                        int LA35_0 = input.LA(1);
+                        int alt37=2;
+                        int LA37_0 = input.LA(1);
 
-                        if ( (LA35_0==18) ) {
-                            alt35=1;
+                        if ( (LA37_0==18) ) {
+                            alt37=1;
                         }
 
 
-                        switch (alt35) {
+                        switch (alt37) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1271:4: otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1281:4: otherlv_12= ',' ( (lv_ctsActuators_13_0= ruleActuator ) )
                     	    {
-                    	    otherlv_12=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleCTS2512); 
+                    	    otherlv_12=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleCTS2545); 
 
                     	        	newLeafNode(otherlv_12, grammarAccess.getCTSAccess().getCommaKeyword_4_3_0());
                     	        
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1275:1: ( (lv_ctsActuators_13_0= ruleActuator ) )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1276:1: (lv_ctsActuators_13_0= ruleActuator )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1285:1: ( (lv_ctsActuators_13_0= ruleActuator ) )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1286:1: (lv_ctsActuators_13_0= ruleActuator )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1276:1: (lv_ctsActuators_13_0= ruleActuator )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1277:3: lv_ctsActuators_13_0= ruleActuator
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1286:1: (lv_ctsActuators_13_0= ruleActuator )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1287:3: lv_ctsActuators_13_0= ruleActuator
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getCTSAccess().getCtsActuatorsActuatorParserRuleCall_4_3_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleCTS2533);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleCTS2566);
                     	    lv_ctsActuators_13_0=ruleActuator();
 
                     	    state._fsp--;
@@ -3306,11 +3366,11 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop35;
+                    	    break loop37;
                         }
                     } while (true);
 
-                    otherlv_14=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleCTS2547); 
+                    otherlv_14=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleCTS2580); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getCTSAccess().getRightCurlyBracketKeyword_4_4());
                         
@@ -3320,7 +3380,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_15=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleCTS2561); 
+            otherlv_15=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleCTS2594); 
 
                 	newLeafNode(otherlv_15, grammarAccess.getCTSAccess().getRightCurlyBracketKeyword_5());
                 
@@ -3345,7 +3405,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAccessControl"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1309:1: entryRuleAccessControl returns [EObject current=null] : iv_ruleAccessControl= ruleAccessControl EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1319:1: entryRuleAccessControl returns [EObject current=null] : iv_ruleAccessControl= ruleAccessControl EOF ;
     public final EObject entryRuleAccessControl() throws RecognitionException {
         EObject current = null;
 
@@ -3353,17 +3413,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1310:2: (iv_ruleAccessControl= ruleAccessControl EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1311:2: iv_ruleAccessControl= ruleAccessControl EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1320:2: (iv_ruleAccessControl= ruleAccessControl EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1321:2: iv_ruleAccessControl= ruleAccessControl EOF
             {
              newCompositeNode(grammarAccess.getAccessControlRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAccessControl_in_entryRuleAccessControl2597);
+            pushFollow(FollowSets000.FOLLOW_ruleAccessControl_in_entryRuleAccessControl2630);
             iv_ruleAccessControl=ruleAccessControl();
 
             state._fsp--;
 
              current =iv_ruleAccessControl; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAccessControl2607); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAccessControl2640); 
 
             }
 
@@ -3381,7 +3441,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAccessControl"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1318:1: ruleAccessControl returns [EObject current=null] : ( () otherlv_1= 'AccessControl' otherlv_2= '{' (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1328:1: ruleAccessControl returns [EObject current=null] : ( () otherlv_1= 'AccessControl' otherlv_2= '{' (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) ;
     public final EObject ruleAccessControl() throws RecognitionException {
         EObject current = null;
 
@@ -3408,14 +3468,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1321:28: ( ( () otherlv_1= 'AccessControl' otherlv_2= '{' (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1322:1: ( () otherlv_1= 'AccessControl' otherlv_2= '{' (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1331:28: ( ( () otherlv_1= 'AccessControl' otherlv_2= '{' (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1332:1: ( () otherlv_1= 'AccessControl' otherlv_2= '{' (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1322:1: ( () otherlv_1= 'AccessControl' otherlv_2= '{' (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1322:2: () otherlv_1= 'AccessControl' otherlv_2= '{' (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1332:1: ( () otherlv_1= 'AccessControl' otherlv_2= '{' (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1332:2: () otherlv_1= 'AccessControl' otherlv_2= '{' (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )? (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )? otherlv_15= '}'
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1322:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1323:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1332:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1333:5: 
             {
 
                     current = forceCreateModelElement(
@@ -3425,43 +3485,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleAccessControl2653); 
+            otherlv_1=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleAccessControl2686); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAccessControlAccess().getAccessControlKeyword_1());
                 
-            otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleAccessControl2665); 
+            otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleAccessControl2698); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getAccessControlAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1336:1: (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1346:1: (otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}' )?
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA38_0==29) ) {
-                alt38=1;
+            if ( (LA40_0==29) ) {
+                alt40=1;
             }
-            switch (alt38) {
+            switch (alt40) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1336:3: otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1346:3: otherlv_3= 'accessControlSensors' otherlv_4= '{' ( (lv_accessControlSensors_5_0= ruleSensor ) ) (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )* otherlv_8= '}'
                     {
-                    otherlv_3=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleAccessControl2678); 
+                    otherlv_3=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleAccessControl2711); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getAccessControlAccess().getAccessControlSensorsKeyword_3_0());
                         
-                    otherlv_4=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleAccessControl2690); 
+                    otherlv_4=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleAccessControl2723); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getAccessControlAccess().getLeftCurlyBracketKeyword_3_1());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1344:1: ( (lv_accessControlSensors_5_0= ruleSensor ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1345:1: (lv_accessControlSensors_5_0= ruleSensor )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1354:1: ( (lv_accessControlSensors_5_0= ruleSensor ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1355:1: (lv_accessControlSensors_5_0= ruleSensor )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1345:1: (lv_accessControlSensors_5_0= ruleSensor )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1346:3: lv_accessControlSensors_5_0= ruleSensor
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1355:1: (lv_accessControlSensors_5_0= ruleSensor )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1356:3: lv_accessControlSensors_5_0= ruleSensor
                     {
                      
                     	        newCompositeNode(grammarAccess.getAccessControlAccess().getAccessControlSensorsSensorParserRuleCall_3_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleAccessControl2711);
+                    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleAccessControl2744);
                     lv_accessControlSensors_5_0=ruleSensor();
 
                     state._fsp--;
@@ -3483,35 +3543,35 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1362:2: (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )*
-                    loop37:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1372:2: (otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) ) )*
+                    loop39:
                     do {
-                        int alt37=2;
-                        int LA37_0 = input.LA(1);
+                        int alt39=2;
+                        int LA39_0 = input.LA(1);
 
-                        if ( (LA37_0==18) ) {
-                            alt37=1;
+                        if ( (LA39_0==18) ) {
+                            alt39=1;
                         }
 
 
-                        switch (alt37) {
+                        switch (alt39) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1362:4: otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1372:4: otherlv_6= ',' ( (lv_accessControlSensors_7_0= ruleSensor ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleAccessControl2724); 
+                    	    otherlv_6=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleAccessControl2757); 
 
                     	        	newLeafNode(otherlv_6, grammarAccess.getAccessControlAccess().getCommaKeyword_3_3_0());
                     	        
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1366:1: ( (lv_accessControlSensors_7_0= ruleSensor ) )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1367:1: (lv_accessControlSensors_7_0= ruleSensor )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1376:1: ( (lv_accessControlSensors_7_0= ruleSensor ) )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1377:1: (lv_accessControlSensors_7_0= ruleSensor )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1367:1: (lv_accessControlSensors_7_0= ruleSensor )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1368:3: lv_accessControlSensors_7_0= ruleSensor
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1377:1: (lv_accessControlSensors_7_0= ruleSensor )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1378:3: lv_accessControlSensors_7_0= ruleSensor
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getAccessControlAccess().getAccessControlSensorsSensorParserRuleCall_3_3_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleAccessControl2745);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleAccessControl2778);
                     	    lv_accessControlSensors_7_0=ruleSensor();
 
                     	    state._fsp--;
@@ -3538,11 +3598,11 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop37;
+                    	    break loop39;
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleAccessControl2759); 
+                    otherlv_8=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleAccessControl2792); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getAccessControlAccess().getRightCurlyBracketKeyword_3_4());
                         
@@ -3552,35 +3612,35 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1388:3: (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1398:3: (otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}' )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA40_0==30) ) {
-                alt40=1;
+            if ( (LA42_0==30) ) {
+                alt42=1;
             }
-            switch (alt40) {
+            switch (alt42) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1388:5: otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1398:5: otherlv_9= 'accessControlDoorLockActuator' otherlv_10= '{' ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) ) (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )* otherlv_14= '}'
                     {
-                    otherlv_9=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleAccessControl2774); 
+                    otherlv_9=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleAccessControl2807); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getAccessControlAccess().getAccessControlDoorLockActuatorKeyword_4_0());
                         
-                    otherlv_10=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleAccessControl2786); 
+                    otherlv_10=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleAccessControl2819); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getAccessControlAccess().getLeftCurlyBracketKeyword_4_1());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1396:1: ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1397:1: (lv_accessControlDoorLockActuator_11_0= ruleActuator )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1406:1: ( (lv_accessControlDoorLockActuator_11_0= ruleActuator ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1407:1: (lv_accessControlDoorLockActuator_11_0= ruleActuator )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1397:1: (lv_accessControlDoorLockActuator_11_0= ruleActuator )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1398:3: lv_accessControlDoorLockActuator_11_0= ruleActuator
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1407:1: (lv_accessControlDoorLockActuator_11_0= ruleActuator )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1408:3: lv_accessControlDoorLockActuator_11_0= ruleActuator
                     {
                      
                     	        newCompositeNode(grammarAccess.getAccessControlAccess().getAccessControlDoorLockActuatorActuatorParserRuleCall_4_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleAccessControl2807);
+                    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleAccessControl2840);
                     lv_accessControlDoorLockActuator_11_0=ruleActuator();
 
                     state._fsp--;
@@ -3602,35 +3662,35 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1414:2: (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )*
-                    loop39:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1424:2: (otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) ) )*
+                    loop41:
                     do {
-                        int alt39=2;
-                        int LA39_0 = input.LA(1);
+                        int alt41=2;
+                        int LA41_0 = input.LA(1);
 
-                        if ( (LA39_0==18) ) {
-                            alt39=1;
+                        if ( (LA41_0==18) ) {
+                            alt41=1;
                         }
 
 
-                        switch (alt39) {
+                        switch (alt41) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1414:4: otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1424:4: otherlv_12= ',' ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) )
                     	    {
-                    	    otherlv_12=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleAccessControl2820); 
+                    	    otherlv_12=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleAccessControl2853); 
 
                     	        	newLeafNode(otherlv_12, grammarAccess.getAccessControlAccess().getCommaKeyword_4_3_0());
                     	        
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1418:1: ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1419:1: (lv_accessControlDoorLockActuator_13_0= ruleActuator )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1428:1: ( (lv_accessControlDoorLockActuator_13_0= ruleActuator ) )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1429:1: (lv_accessControlDoorLockActuator_13_0= ruleActuator )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1419:1: (lv_accessControlDoorLockActuator_13_0= ruleActuator )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1420:3: lv_accessControlDoorLockActuator_13_0= ruleActuator
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1429:1: (lv_accessControlDoorLockActuator_13_0= ruleActuator )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1430:3: lv_accessControlDoorLockActuator_13_0= ruleActuator
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getAccessControlAccess().getAccessControlDoorLockActuatorActuatorParserRuleCall_4_3_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleAccessControl2841);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleAccessControl2874);
                     	    lv_accessControlDoorLockActuator_13_0=ruleActuator();
 
                     	    state._fsp--;
@@ -3657,11 +3717,11 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop39;
+                    	    break loop41;
                         }
                     } while (true);
 
-                    otherlv_14=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleAccessControl2855); 
+                    otherlv_14=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleAccessControl2888); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getAccessControlAccess().getRightCurlyBracketKeyword_4_4());
                         
@@ -3671,7 +3731,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_15=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleAccessControl2869); 
+            otherlv_15=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleAccessControl2902); 
 
                 	newLeafNode(otherlv_15, grammarAccess.getAccessControlAccess().getRightCurlyBracketKeyword_5());
                 
@@ -3696,7 +3756,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCalendarSystem"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1452:1: entryRuleCalendarSystem returns [EObject current=null] : iv_ruleCalendarSystem= ruleCalendarSystem EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1462:1: entryRuleCalendarSystem returns [EObject current=null] : iv_ruleCalendarSystem= ruleCalendarSystem EOF ;
     public final EObject entryRuleCalendarSystem() throws RecognitionException {
         EObject current = null;
 
@@ -3704,17 +3764,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1453:2: (iv_ruleCalendarSystem= ruleCalendarSystem EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1454:2: iv_ruleCalendarSystem= ruleCalendarSystem EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1463:2: (iv_ruleCalendarSystem= ruleCalendarSystem EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1464:2: iv_ruleCalendarSystem= ruleCalendarSystem EOF
             {
              newCompositeNode(grammarAccess.getCalendarSystemRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleCalendarSystem_in_entryRuleCalendarSystem2905);
+            pushFollow(FollowSets000.FOLLOW_ruleCalendarSystem_in_entryRuleCalendarSystem2938);
             iv_ruleCalendarSystem=ruleCalendarSystem();
 
             state._fsp--;
 
              current =iv_ruleCalendarSystem; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCalendarSystem2915); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCalendarSystem2948); 
 
             }
 
@@ -3732,7 +3792,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCalendarSystem"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1461:1: ruleCalendarSystem returns [EObject current=null] : ( () otherlv_1= 'CalendarSystem' ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1471:1: ruleCalendarSystem returns [EObject current=null] : ( () otherlv_1= 'CalendarSystem' ) ;
     public final EObject ruleCalendarSystem() throws RecognitionException {
         EObject current = null;
 
@@ -3741,14 +3801,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1464:28: ( ( () otherlv_1= 'CalendarSystem' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1465:1: ( () otherlv_1= 'CalendarSystem' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1474:28: ( ( () otherlv_1= 'CalendarSystem' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1475:1: ( () otherlv_1= 'CalendarSystem' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1465:1: ( () otherlv_1= 'CalendarSystem' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1465:2: () otherlv_1= 'CalendarSystem'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1475:1: ( () otherlv_1= 'CalendarSystem' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1475:2: () otherlv_1= 'CalendarSystem'
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1465:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1466:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1475:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1476:5: 
             {
 
                     current = forceCreateModelElement(
@@ -3758,7 +3818,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleCalendarSystem2961); 
+            otherlv_1=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleCalendarSystem2994); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCalendarSystemAccess().getCalendarSystemKeyword_1());
                 
@@ -3783,7 +3843,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMeetingScheduleSystem"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1483:1: entryRuleMeetingScheduleSystem returns [EObject current=null] : iv_ruleMeetingScheduleSystem= ruleMeetingScheduleSystem EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1493:1: entryRuleMeetingScheduleSystem returns [EObject current=null] : iv_ruleMeetingScheduleSystem= ruleMeetingScheduleSystem EOF ;
     public final EObject entryRuleMeetingScheduleSystem() throws RecognitionException {
         EObject current = null;
 
@@ -3791,17 +3851,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1484:2: (iv_ruleMeetingScheduleSystem= ruleMeetingScheduleSystem EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1485:2: iv_ruleMeetingScheduleSystem= ruleMeetingScheduleSystem EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1494:2: (iv_ruleMeetingScheduleSystem= ruleMeetingScheduleSystem EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1495:2: iv_ruleMeetingScheduleSystem= ruleMeetingScheduleSystem EOF
             {
              newCompositeNode(grammarAccess.getMeetingScheduleSystemRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleMeetingScheduleSystem_in_entryRuleMeetingScheduleSystem2997);
+            pushFollow(FollowSets000.FOLLOW_ruleMeetingScheduleSystem_in_entryRuleMeetingScheduleSystem3030);
             iv_ruleMeetingScheduleSystem=ruleMeetingScheduleSystem();
 
             state._fsp--;
 
              current =iv_ruleMeetingScheduleSystem; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMeetingScheduleSystem3007); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMeetingScheduleSystem3040); 
 
             }
 
@@ -3819,7 +3879,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMeetingScheduleSystem"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1492:1: ruleMeetingScheduleSystem returns [EObject current=null] : ( () otherlv_1= 'MeetingScheduleSystem' ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1502:1: ruleMeetingScheduleSystem returns [EObject current=null] : ( () otherlv_1= 'MeetingScheduleSystem' ) ;
     public final EObject ruleMeetingScheduleSystem() throws RecognitionException {
         EObject current = null;
 
@@ -3828,14 +3888,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1495:28: ( ( () otherlv_1= 'MeetingScheduleSystem' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1496:1: ( () otherlv_1= 'MeetingScheduleSystem' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1505:28: ( ( () otherlv_1= 'MeetingScheduleSystem' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1506:1: ( () otherlv_1= 'MeetingScheduleSystem' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1496:1: ( () otherlv_1= 'MeetingScheduleSystem' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1496:2: () otherlv_1= 'MeetingScheduleSystem'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1506:1: ( () otherlv_1= 'MeetingScheduleSystem' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1506:2: () otherlv_1= 'MeetingScheduleSystem'
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1496:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1497:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1506:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1507:5: 
             {
 
                     current = forceCreateModelElement(
@@ -3845,7 +3905,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleMeetingScheduleSystem3053); 
+            otherlv_1=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleMeetingScheduleSystem3086); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getMeetingScheduleSystemAccess().getMeetingScheduleSystemKeyword_1());
                 
@@ -3870,7 +3930,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMotionSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1514:1: entryRuleMotionSensor returns [EObject current=null] : iv_ruleMotionSensor= ruleMotionSensor EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1524:1: entryRuleMotionSensor returns [EObject current=null] : iv_ruleMotionSensor= ruleMotionSensor EOF ;
     public final EObject entryRuleMotionSensor() throws RecognitionException {
         EObject current = null;
 
@@ -3878,17 +3938,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1515:2: (iv_ruleMotionSensor= ruleMotionSensor EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1516:2: iv_ruleMotionSensor= ruleMotionSensor EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1525:2: (iv_ruleMotionSensor= ruleMotionSensor EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1526:2: iv_ruleMotionSensor= ruleMotionSensor EOF
             {
              newCompositeNode(grammarAccess.getMotionSensorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleMotionSensor_in_entryRuleMotionSensor3089);
+            pushFollow(FollowSets000.FOLLOW_ruleMotionSensor_in_entryRuleMotionSensor3122);
             iv_ruleMotionSensor=ruleMotionSensor();
 
             state._fsp--;
 
              current =iv_ruleMotionSensor; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMotionSensor3099); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMotionSensor3132); 
 
             }
 
@@ -3906,7 +3966,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMotionSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1523:1: ruleMotionSensor returns [EObject current=null] : ( () otherlv_1= 'MotionSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1533:1: ruleMotionSensor returns [EObject current=null] : ( () otherlv_1= 'MotionSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleMotionSensor() throws RecognitionException {
         EObject current = null;
 
@@ -3921,14 +3981,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1526:28: ( ( () otherlv_1= 'MotionSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1527:1: ( () otherlv_1= 'MotionSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1536:28: ( ( () otherlv_1= 'MotionSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1537:1: ( () otherlv_1= 'MotionSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1527:1: ( () otherlv_1= 'MotionSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1527:2: () otherlv_1= 'MotionSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1537:1: ( () otherlv_1= 'MotionSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1537:2: () otherlv_1= 'MotionSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1527:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1528:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1537:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1538:5: 
             {
 
                     current = forceCreateModelElement(
@@ -3938,43 +3998,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleMotionSensor3145); 
+            otherlv_1=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleMotionSensor3178); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getMotionSensorAccess().getMotionSensorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1537:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1547:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA41_0==11) ) {
-                alt41=1;
+            if ( (LA43_0==11) ) {
+                alt43=1;
             }
-            switch (alt41) {
+            switch (alt43) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1537:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1547:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleMotionSensor3158); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleMotionSensor3191); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getMotionSensorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleMotionSensor3170); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleMotionSensor3203); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getMotionSensorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleMotionSensor3182); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleMotionSensor3215); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getMotionSensorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1549:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1550:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1559:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1560:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1550:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1551:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1560:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1561:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getMotionSensorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleMotionSensor3203);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleMotionSensor3236);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -3996,7 +4056,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleMotionSensor3215); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleMotionSensor3248); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getMotionSensorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -4027,7 +4087,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTemperatureSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1579:1: entryRuleTemperatureSensor returns [EObject current=null] : iv_ruleTemperatureSensor= ruleTemperatureSensor EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1589:1: entryRuleTemperatureSensor returns [EObject current=null] : iv_ruleTemperatureSensor= ruleTemperatureSensor EOF ;
     public final EObject entryRuleTemperatureSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4035,17 +4095,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1580:2: (iv_ruleTemperatureSensor= ruleTemperatureSensor EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1581:2: iv_ruleTemperatureSensor= ruleTemperatureSensor EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1590:2: (iv_ruleTemperatureSensor= ruleTemperatureSensor EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1591:2: iv_ruleTemperatureSensor= ruleTemperatureSensor EOF
             {
              newCompositeNode(grammarAccess.getTemperatureSensorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTemperatureSensor_in_entryRuleTemperatureSensor3253);
+            pushFollow(FollowSets000.FOLLOW_ruleTemperatureSensor_in_entryRuleTemperatureSensor3286);
             iv_ruleTemperatureSensor=ruleTemperatureSensor();
 
             state._fsp--;
 
              current =iv_ruleTemperatureSensor; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTemperatureSensor3263); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTemperatureSensor3296); 
 
             }
 
@@ -4063,7 +4123,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTemperatureSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1588:1: ruleTemperatureSensor returns [EObject current=null] : ( () otherlv_1= 'TemperatureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1598:1: ruleTemperatureSensor returns [EObject current=null] : ( () otherlv_1= 'TemperatureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleTemperatureSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4078,14 +4138,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1591:28: ( ( () otherlv_1= 'TemperatureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1592:1: ( () otherlv_1= 'TemperatureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1601:28: ( ( () otherlv_1= 'TemperatureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1602:1: ( () otherlv_1= 'TemperatureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1592:1: ( () otherlv_1= 'TemperatureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1592:2: () otherlv_1= 'TemperatureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1602:1: ( () otherlv_1= 'TemperatureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1602:2: () otherlv_1= 'TemperatureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1592:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1593:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1602:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1603:5: 
             {
 
                     current = forceCreateModelElement(
@@ -4095,43 +4155,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleTemperatureSensor3309); 
+            otherlv_1=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleTemperatureSensor3342); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTemperatureSensorAccess().getTemperatureSensorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1602:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1612:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA42_0==11) ) {
-                alt42=1;
+            if ( (LA44_0==11) ) {
+                alt44=1;
             }
-            switch (alt42) {
+            switch (alt44) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1602:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1612:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleTemperatureSensor3322); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleTemperatureSensor3355); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getTemperatureSensorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleTemperatureSensor3334); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleTemperatureSensor3367); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getTemperatureSensorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleTemperatureSensor3346); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleTemperatureSensor3379); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getTemperatureSensorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1614:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1615:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1624:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1625:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1615:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1616:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1625:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1626:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getTemperatureSensorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleTemperatureSensor3367);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleTemperatureSensor3400);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -4153,7 +4213,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTemperatureSensor3379); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTemperatureSensor3412); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getTemperatureSensorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -4184,7 +4244,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePressureSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1644:1: entryRulePressureSensor returns [EObject current=null] : iv_rulePressureSensor= rulePressureSensor EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1654:1: entryRulePressureSensor returns [EObject current=null] : iv_rulePressureSensor= rulePressureSensor EOF ;
     public final EObject entryRulePressureSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4192,17 +4252,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1645:2: (iv_rulePressureSensor= rulePressureSensor EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1646:2: iv_rulePressureSensor= rulePressureSensor EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1655:2: (iv_rulePressureSensor= rulePressureSensor EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1656:2: iv_rulePressureSensor= rulePressureSensor EOF
             {
              newCompositeNode(grammarAccess.getPressureSensorRule()); 
-            pushFollow(FollowSets000.FOLLOW_rulePressureSensor_in_entryRulePressureSensor3417);
+            pushFollow(FollowSets000.FOLLOW_rulePressureSensor_in_entryRulePressureSensor3450);
             iv_rulePressureSensor=rulePressureSensor();
 
             state._fsp--;
 
              current =iv_rulePressureSensor; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePressureSensor3427); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePressureSensor3460); 
 
             }
 
@@ -4220,7 +4280,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePressureSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1653:1: rulePressureSensor returns [EObject current=null] : ( () otherlv_1= 'PressureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1663:1: rulePressureSensor returns [EObject current=null] : ( () otherlv_1= 'PressureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject rulePressureSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4235,14 +4295,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1656:28: ( ( () otherlv_1= 'PressureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1657:1: ( () otherlv_1= 'PressureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1666:28: ( ( () otherlv_1= 'PressureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1667:1: ( () otherlv_1= 'PressureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1657:1: ( () otherlv_1= 'PressureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1657:2: () otherlv_1= 'PressureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1667:1: ( () otherlv_1= 'PressureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1667:2: () otherlv_1= 'PressureSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1657:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1658:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1667:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1668:5: 
             {
 
                     current = forceCreateModelElement(
@@ -4252,43 +4312,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,36,FollowSets000.FOLLOW_36_in_rulePressureSensor3473); 
+            otherlv_1=(Token)match(input,36,FollowSets000.FOLLOW_36_in_rulePressureSensor3506); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getPressureSensorAccess().getPressureSensorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1667:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1677:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA43_0==11) ) {
-                alt43=1;
+            if ( (LA45_0==11) ) {
+                alt45=1;
             }
-            switch (alt43) {
+            switch (alt45) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1667:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1677:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_rulePressureSensor3486); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_rulePressureSensor3519); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getPressureSensorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_rulePressureSensor3498); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_rulePressureSensor3531); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getPressureSensorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_rulePressureSensor3510); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_rulePressureSensor3543); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getPressureSensorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1679:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1680:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1689:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1690:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1680:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1681:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1690:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1691:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getPressureSensorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_rulePressureSensor3531);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_rulePressureSensor3564);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -4310,7 +4370,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_rulePressureSensor3543); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_rulePressureSensor3576); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getPressureSensorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -4341,7 +4401,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTouchSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1709:1: entryRuleTouchSensor returns [EObject current=null] : iv_ruleTouchSensor= ruleTouchSensor EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1719:1: entryRuleTouchSensor returns [EObject current=null] : iv_ruleTouchSensor= ruleTouchSensor EOF ;
     public final EObject entryRuleTouchSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4349,17 +4409,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1710:2: (iv_ruleTouchSensor= ruleTouchSensor EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1711:2: iv_ruleTouchSensor= ruleTouchSensor EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1720:2: (iv_ruleTouchSensor= ruleTouchSensor EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1721:2: iv_ruleTouchSensor= ruleTouchSensor EOF
             {
              newCompositeNode(grammarAccess.getTouchSensorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTouchSensor_in_entryRuleTouchSensor3581);
+            pushFollow(FollowSets000.FOLLOW_ruleTouchSensor_in_entryRuleTouchSensor3614);
             iv_ruleTouchSensor=ruleTouchSensor();
 
             state._fsp--;
 
              current =iv_ruleTouchSensor; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTouchSensor3591); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTouchSensor3624); 
 
             }
 
@@ -4377,7 +4437,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTouchSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1718:1: ruleTouchSensor returns [EObject current=null] : ( () otherlv_1= 'TouchSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1728:1: ruleTouchSensor returns [EObject current=null] : ( () otherlv_1= 'TouchSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleTouchSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4392,14 +4452,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1721:28: ( ( () otherlv_1= 'TouchSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1722:1: ( () otherlv_1= 'TouchSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1731:28: ( ( () otherlv_1= 'TouchSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1732:1: ( () otherlv_1= 'TouchSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1722:1: ( () otherlv_1= 'TouchSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1722:2: () otherlv_1= 'TouchSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1732:1: ( () otherlv_1= 'TouchSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1732:2: () otherlv_1= 'TouchSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1722:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1723:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1732:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1733:5: 
             {
 
                     current = forceCreateModelElement(
@@ -4409,43 +4469,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleTouchSensor3637); 
+            otherlv_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleTouchSensor3670); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTouchSensorAccess().getTouchSensorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1732:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1742:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA44_0==11) ) {
-                alt44=1;
+            if ( (LA46_0==11) ) {
+                alt46=1;
             }
-            switch (alt44) {
+            switch (alt46) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1732:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1742:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleTouchSensor3650); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleTouchSensor3683); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getTouchSensorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleTouchSensor3662); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleTouchSensor3695); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getTouchSensorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleTouchSensor3674); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleTouchSensor3707); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getTouchSensorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1744:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1745:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1754:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1755:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1745:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1746:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1755:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1756:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getTouchSensorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleTouchSensor3695);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleTouchSensor3728);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -4467,7 +4527,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTouchSensor3707); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTouchSensor3740); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getTouchSensorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -4498,7 +4558,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLightSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1774:1: entryRuleLightSensor returns [EObject current=null] : iv_ruleLightSensor= ruleLightSensor EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1784:1: entryRuleLightSensor returns [EObject current=null] : iv_ruleLightSensor= ruleLightSensor EOF ;
     public final EObject entryRuleLightSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4506,17 +4566,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1775:2: (iv_ruleLightSensor= ruleLightSensor EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1776:2: iv_ruleLightSensor= ruleLightSensor EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1785:2: (iv_ruleLightSensor= ruleLightSensor EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1786:2: iv_ruleLightSensor= ruleLightSensor EOF
             {
              newCompositeNode(grammarAccess.getLightSensorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLightSensor_in_entryRuleLightSensor3745);
+            pushFollow(FollowSets000.FOLLOW_ruleLightSensor_in_entryRuleLightSensor3778);
             iv_ruleLightSensor=ruleLightSensor();
 
             state._fsp--;
 
              current =iv_ruleLightSensor; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLightSensor3755); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLightSensor3788); 
 
             }
 
@@ -4534,7 +4594,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLightSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1783:1: ruleLightSensor returns [EObject current=null] : ( () otherlv_1= 'LightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1793:1: ruleLightSensor returns [EObject current=null] : ( () otherlv_1= 'LightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleLightSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4549,14 +4609,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1786:28: ( ( () otherlv_1= 'LightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1787:1: ( () otherlv_1= 'LightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1796:28: ( ( () otherlv_1= 'LightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1797:1: ( () otherlv_1= 'LightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1787:1: ( () otherlv_1= 'LightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1787:2: () otherlv_1= 'LightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1797:1: ( () otherlv_1= 'LightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1797:2: () otherlv_1= 'LightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1787:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1788:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1797:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1798:5: 
             {
 
                     current = forceCreateModelElement(
@@ -4566,43 +4626,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleLightSensor3801); 
+            otherlv_1=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleLightSensor3834); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getLightSensorAccess().getLightSensorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1797:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1807:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA45_0==11) ) {
-                alt45=1;
+            if ( (LA47_0==11) ) {
+                alt47=1;
             }
-            switch (alt45) {
+            switch (alt47) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1797:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1807:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleLightSensor3814); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleLightSensor3847); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getLightSensorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleLightSensor3826); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleLightSensor3859); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getLightSensorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleLightSensor3838); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleLightSensor3871); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getLightSensorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1809:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1810:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1819:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1820:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1810:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1811:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1820:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1821:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getLightSensorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleLightSensor3859);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleLightSensor3892);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -4624,7 +4684,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleLightSensor3871); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleLightSensor3904); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getLightSensorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -4655,7 +4715,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSmokeSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1839:1: entryRuleSmokeSensor returns [EObject current=null] : iv_ruleSmokeSensor= ruleSmokeSensor EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1849:1: entryRuleSmokeSensor returns [EObject current=null] : iv_ruleSmokeSensor= ruleSmokeSensor EOF ;
     public final EObject entryRuleSmokeSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4663,17 +4723,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1840:2: (iv_ruleSmokeSensor= ruleSmokeSensor EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1841:2: iv_ruleSmokeSensor= ruleSmokeSensor EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1850:2: (iv_ruleSmokeSensor= ruleSmokeSensor EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1851:2: iv_ruleSmokeSensor= ruleSmokeSensor EOF
             {
              newCompositeNode(grammarAccess.getSmokeSensorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleSmokeSensor_in_entryRuleSmokeSensor3909);
+            pushFollow(FollowSets000.FOLLOW_ruleSmokeSensor_in_entryRuleSmokeSensor3942);
             iv_ruleSmokeSensor=ruleSmokeSensor();
 
             state._fsp--;
 
              current =iv_ruleSmokeSensor; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSmokeSensor3919); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSmokeSensor3952); 
 
             }
 
@@ -4691,7 +4751,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSmokeSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1848:1: ruleSmokeSensor returns [EObject current=null] : ( () otherlv_1= 'SmokeSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1858:1: ruleSmokeSensor returns [EObject current=null] : ( () otherlv_1= 'SmokeSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleSmokeSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4706,14 +4766,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1851:28: ( ( () otherlv_1= 'SmokeSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1852:1: ( () otherlv_1= 'SmokeSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1861:28: ( ( () otherlv_1= 'SmokeSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1862:1: ( () otherlv_1= 'SmokeSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1852:1: ( () otherlv_1= 'SmokeSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1852:2: () otherlv_1= 'SmokeSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1862:1: ( () otherlv_1= 'SmokeSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1862:2: () otherlv_1= 'SmokeSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1852:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1853:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1862:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1863:5: 
             {
 
                     current = forceCreateModelElement(
@@ -4723,43 +4783,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleSmokeSensor3965); 
+            otherlv_1=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleSmokeSensor3998); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSmokeSensorAccess().getSmokeSensorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1862:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1872:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA46_0==11) ) {
-                alt46=1;
+            if ( (LA48_0==11) ) {
+                alt48=1;
             }
-            switch (alt46) {
+            switch (alt48) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1862:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1872:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleSmokeSensor3978); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleSmokeSensor4011); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getSmokeSensorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleSmokeSensor3990); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleSmokeSensor4023); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getSmokeSensorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleSmokeSensor4002); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleSmokeSensor4035); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getSmokeSensorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1874:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1875:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1884:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1885:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1875:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1876:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1885:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1886:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getSmokeSensorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleSmokeSensor4023);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleSmokeSensor4056);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -4781,7 +4841,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleSmokeSensor4035); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleSmokeSensor4068); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getSmokeSensorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -4812,7 +4872,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCO2Sensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1904:1: entryRuleCO2Sensor returns [EObject current=null] : iv_ruleCO2Sensor= ruleCO2Sensor EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1914:1: entryRuleCO2Sensor returns [EObject current=null] : iv_ruleCO2Sensor= ruleCO2Sensor EOF ;
     public final EObject entryRuleCO2Sensor() throws RecognitionException {
         EObject current = null;
 
@@ -4820,17 +4880,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1905:2: (iv_ruleCO2Sensor= ruleCO2Sensor EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1906:2: iv_ruleCO2Sensor= ruleCO2Sensor EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1915:2: (iv_ruleCO2Sensor= ruleCO2Sensor EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1916:2: iv_ruleCO2Sensor= ruleCO2Sensor EOF
             {
              newCompositeNode(grammarAccess.getCO2SensorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleCO2Sensor_in_entryRuleCO2Sensor4073);
+            pushFollow(FollowSets000.FOLLOW_ruleCO2Sensor_in_entryRuleCO2Sensor4106);
             iv_ruleCO2Sensor=ruleCO2Sensor();
 
             state._fsp--;
 
              current =iv_ruleCO2Sensor; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCO2Sensor4083); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCO2Sensor4116); 
 
             }
 
@@ -4848,7 +4908,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCO2Sensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1913:1: ruleCO2Sensor returns [EObject current=null] : ( () otherlv_1= 'CO2Sensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1923:1: ruleCO2Sensor returns [EObject current=null] : ( () otherlv_1= 'CO2Sensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleCO2Sensor() throws RecognitionException {
         EObject current = null;
 
@@ -4863,14 +4923,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1916:28: ( ( () otherlv_1= 'CO2Sensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1917:1: ( () otherlv_1= 'CO2Sensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1926:28: ( ( () otherlv_1= 'CO2Sensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1927:1: ( () otherlv_1= 'CO2Sensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1917:1: ( () otherlv_1= 'CO2Sensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1917:2: () otherlv_1= 'CO2Sensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1927:1: ( () otherlv_1= 'CO2Sensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1927:2: () otherlv_1= 'CO2Sensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1917:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1918:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1927:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1928:5: 
             {
 
                     current = forceCreateModelElement(
@@ -4880,43 +4940,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleCO2Sensor4129); 
+            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleCO2Sensor4162); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCO2SensorAccess().getCO2SensorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1927:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1937:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            if ( (LA47_0==11) ) {
-                alt47=1;
+            if ( (LA49_0==11) ) {
+                alt49=1;
             }
-            switch (alt47) {
+            switch (alt49) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1927:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1937:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleCO2Sensor4142); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleCO2Sensor4175); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getCO2SensorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleCO2Sensor4154); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleCO2Sensor4187); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getCO2SensorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleCO2Sensor4166); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleCO2Sensor4199); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getCO2SensorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1939:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1940:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1949:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1950:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1940:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1941:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1950:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1951:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getCO2SensorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleCO2Sensor4187);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleCO2Sensor4220);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -4938,7 +4998,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleCO2Sensor4199); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleCO2Sensor4232); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getCO2SensorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -4969,7 +5029,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInfraredLightSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1969:1: entryRuleInfraredLightSensor returns [EObject current=null] : iv_ruleInfraredLightSensor= ruleInfraredLightSensor EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1979:1: entryRuleInfraredLightSensor returns [EObject current=null] : iv_ruleInfraredLightSensor= ruleInfraredLightSensor EOF ;
     public final EObject entryRuleInfraredLightSensor() throws RecognitionException {
         EObject current = null;
 
@@ -4977,17 +5037,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1970:2: (iv_ruleInfraredLightSensor= ruleInfraredLightSensor EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1971:2: iv_ruleInfraredLightSensor= ruleInfraredLightSensor EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1980:2: (iv_ruleInfraredLightSensor= ruleInfraredLightSensor EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1981:2: iv_ruleInfraredLightSensor= ruleInfraredLightSensor EOF
             {
              newCompositeNode(grammarAccess.getInfraredLightSensorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleInfraredLightSensor_in_entryRuleInfraredLightSensor4237);
+            pushFollow(FollowSets000.FOLLOW_ruleInfraredLightSensor_in_entryRuleInfraredLightSensor4270);
             iv_ruleInfraredLightSensor=ruleInfraredLightSensor();
 
             state._fsp--;
 
              current =iv_ruleInfraredLightSensor; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleInfraredLightSensor4247); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleInfraredLightSensor4280); 
 
             }
 
@@ -5005,7 +5065,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInfraredLightSensor"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1978:1: ruleInfraredLightSensor returns [EObject current=null] : ( () otherlv_1= 'InfraredLightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1988:1: ruleInfraredLightSensor returns [EObject current=null] : ( () otherlv_1= 'InfraredLightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleInfraredLightSensor() throws RecognitionException {
         EObject current = null;
 
@@ -5020,14 +5080,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1981:28: ( ( () otherlv_1= 'InfraredLightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1982:1: ( () otherlv_1= 'InfraredLightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1991:28: ( ( () otherlv_1= 'InfraredLightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1992:1: ( () otherlv_1= 'InfraredLightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1982:1: ( () otherlv_1= 'InfraredLightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1982:2: () otherlv_1= 'InfraredLightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1992:1: ( () otherlv_1= 'InfraredLightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1992:2: () otherlv_1= 'InfraredLightSensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1982:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1983:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1992:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1993:5: 
             {
 
                     current = forceCreateModelElement(
@@ -5037,43 +5097,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleInfraredLightSensor4293); 
+            otherlv_1=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleInfraredLightSensor4326); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getInfraredLightSensorAccess().getInfraredLightSensorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1992:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2002:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA48_0==11) ) {
-                alt48=1;
+            if ( (LA50_0==11) ) {
+                alt50=1;
             }
-            switch (alt48) {
+            switch (alt50) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1992:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2002:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleInfraredLightSensor4306); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleInfraredLightSensor4339); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getInfraredLightSensorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleInfraredLightSensor4318); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleInfraredLightSensor4351); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getInfraredLightSensorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleInfraredLightSensor4330); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleInfraredLightSensor4363); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getInfraredLightSensorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2004:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2005:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2014:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2015:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2005:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2006:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2015:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2016:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getInfraredLightSensorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleInfraredLightSensor4351);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleInfraredLightSensor4384);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -5095,7 +5155,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleInfraredLightSensor4363); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleInfraredLightSensor4396); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getInfraredLightSensorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -5125,8 +5185,165 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleInfraredLightSensor"
 
 
+    // $ANTLR start "entryRuleHumiditySensor"
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2046:1: entryRuleHumiditySensor returns [EObject current=null] : iv_ruleHumiditySensor= ruleHumiditySensor EOF ;
+    public final EObject entryRuleHumiditySensor() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleHumiditySensor = null;
+
+
+        try {
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2047:2: (iv_ruleHumiditySensor= ruleHumiditySensor EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2048:2: iv_ruleHumiditySensor= ruleHumiditySensor EOF
+            {
+             newCompositeNode(grammarAccess.getHumiditySensorRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleHumiditySensor_in_entryRuleHumiditySensor4436);
+            iv_ruleHumiditySensor=ruleHumiditySensor();
+
+            state._fsp--;
+
+             current =iv_ruleHumiditySensor; 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleHumiditySensor4446); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleHumiditySensor"
+
+
+    // $ANTLR start "ruleHumiditySensor"
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2055:1: ruleHumiditySensor returns [EObject current=null] : ( () otherlv_1= 'HumiditySensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    public final EObject ruleHumiditySensor() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        AntlrDatatypeRuleToken lv_valueState_5_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2058:28: ( ( () otherlv_1= 'HumiditySensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2059:1: ( () otherlv_1= 'HumiditySensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            {
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2059:1: ( () otherlv_1= 'HumiditySensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2059:2: () otherlv_1= 'HumiditySensor' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            {
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2059:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2060:5: 
+            {
+
+                    current = forceCreateModelElement(
+                        grammarAccess.getHumiditySensorAccess().getHumiditySensorAction_0(),
+                        current);
+                
+
+            }
+
+            otherlv_1=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleHumiditySensor4492); 
+
+                	newLeafNode(otherlv_1, grammarAccess.getHumiditySensorAccess().getHumiditySensorKeyword_1());
+                
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2069:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt51=2;
+            int LA51_0 = input.LA(1);
+
+            if ( (LA51_0==11) ) {
+                alt51=1;
+            }
+            switch (alt51) {
+                case 1 :
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2069:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    {
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleHumiditySensor4505); 
+
+                        	newLeafNode(otherlv_2, grammarAccess.getHumiditySensorAccess().getLeftCurlyBracketKeyword_2_0());
+                        
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleHumiditySensor4517); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getHumiditySensorAccess().getValueStateKeyword_2_1());
+                        
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleHumiditySensor4529); 
+
+                        	newLeafNode(otherlv_4, grammarAccess.getHumiditySensorAccess().getEqualsSignKeyword_2_2());
+                        
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2081:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2082:1: (lv_valueState_5_0= ruleEInt )
+                    {
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2082:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2083:3: lv_valueState_5_0= ruleEInt
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getHumiditySensorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
+                    	    
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleHumiditySensor4550);
+                    lv_valueState_5_0=ruleEInt();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getHumiditySensorRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"valueState",
+                            		lv_valueState_5_0, 
+                            		"EInt");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleHumiditySensor4562); 
+
+                        	newLeafNode(otherlv_6, grammarAccess.getHumiditySensorAccess().getRightCurlyBracketKeyword_2_4());
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleHumiditySensor"
+
+
     // $ANTLR start "entryRuleEInt"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2038:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2111:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -5134,17 +5351,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2039:2: (iv_ruleEInt= ruleEInt EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2040:2: iv_ruleEInt= ruleEInt EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2112:2: (iv_ruleEInt= ruleEInt EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2113:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt4406);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt4601);
             iv_ruleEInt=ruleEInt();
 
             state._fsp--;
 
              current =iv_ruleEInt.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt4417); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt4612); 
 
             }
 
@@ -5162,7 +5379,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2047:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2120:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5172,24 +5389,24 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2050:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2051:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2123:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2124:1: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2051:1: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2051:2: (kw= '-' )? this_INT_1= RULE_INT
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2124:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2124:2: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2051:2: (kw= '-' )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2124:2: (kw= '-' )?
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA49_0==42) ) {
-                alt49=1;
+            if ( (LA52_0==43) ) {
+                alt52=1;
             }
-            switch (alt49) {
+            switch (alt52) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2052:2: kw= '-'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2125:2: kw= '-'
                     {
-                    kw=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleEInt4456); 
+                    kw=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleEInt4651); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0()); 
@@ -5200,7 +5417,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt4473); 
+            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt4668); 
 
             		current.merge(this_INT_1);
                 
@@ -5228,7 +5445,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLightSwitchActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2072:1: entryRuleLightSwitchActuator returns [EObject current=null] : iv_ruleLightSwitchActuator= ruleLightSwitchActuator EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2145:1: entryRuleLightSwitchActuator returns [EObject current=null] : iv_ruleLightSwitchActuator= ruleLightSwitchActuator EOF ;
     public final EObject entryRuleLightSwitchActuator() throws RecognitionException {
         EObject current = null;
 
@@ -5236,17 +5453,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2073:2: (iv_ruleLightSwitchActuator= ruleLightSwitchActuator EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2074:2: iv_ruleLightSwitchActuator= ruleLightSwitchActuator EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2146:2: (iv_ruleLightSwitchActuator= ruleLightSwitchActuator EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2147:2: iv_ruleLightSwitchActuator= ruleLightSwitchActuator EOF
             {
              newCompositeNode(grammarAccess.getLightSwitchActuatorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLightSwitchActuator_in_entryRuleLightSwitchActuator4518);
+            pushFollow(FollowSets000.FOLLOW_ruleLightSwitchActuator_in_entryRuleLightSwitchActuator4713);
             iv_ruleLightSwitchActuator=ruleLightSwitchActuator();
 
             state._fsp--;
 
              current =iv_ruleLightSwitchActuator; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLightSwitchActuator4528); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLightSwitchActuator4723); 
 
             }
 
@@ -5264,7 +5481,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLightSwitchActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2081:1: ruleLightSwitchActuator returns [EObject current=null] : ( () otherlv_1= 'LightSwitchActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2154:1: ruleLightSwitchActuator returns [EObject current=null] : ( () otherlv_1= 'LightSwitchActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleLightSwitchActuator() throws RecognitionException {
         EObject current = null;
 
@@ -5279,14 +5496,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2084:28: ( ( () otherlv_1= 'LightSwitchActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2085:1: ( () otherlv_1= 'LightSwitchActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2157:28: ( ( () otherlv_1= 'LightSwitchActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2158:1: ( () otherlv_1= 'LightSwitchActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2085:1: ( () otherlv_1= 'LightSwitchActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2085:2: () otherlv_1= 'LightSwitchActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2158:1: ( () otherlv_1= 'LightSwitchActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2158:2: () otherlv_1= 'LightSwitchActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2085:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2086:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2158:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2159:5: 
             {
 
                     current = forceCreateModelElement(
@@ -5296,43 +5513,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleLightSwitchActuator4574); 
+            otherlv_1=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleLightSwitchActuator4769); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getLightSwitchActuatorAccess().getLightSwitchActuatorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2095:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2168:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt53=2;
+            int LA53_0 = input.LA(1);
 
-            if ( (LA50_0==11) ) {
-                alt50=1;
+            if ( (LA53_0==11) ) {
+                alt53=1;
             }
-            switch (alt50) {
+            switch (alt53) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2095:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2168:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleLightSwitchActuator4587); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleLightSwitchActuator4782); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getLightSwitchActuatorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleLightSwitchActuator4599); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleLightSwitchActuator4794); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getLightSwitchActuatorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleLightSwitchActuator4611); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleLightSwitchActuator4806); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getLightSwitchActuatorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2107:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2108:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2180:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2181:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2108:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2109:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2181:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2182:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getLightSwitchActuatorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleLightSwitchActuator4632);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleLightSwitchActuator4827);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -5354,7 +5571,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleLightSwitchActuator4644); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleLightSwitchActuator4839); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getLightSwitchActuatorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -5385,7 +5602,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWindowActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2137:1: entryRuleWindowActuator returns [EObject current=null] : iv_ruleWindowActuator= ruleWindowActuator EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2210:1: entryRuleWindowActuator returns [EObject current=null] : iv_ruleWindowActuator= ruleWindowActuator EOF ;
     public final EObject entryRuleWindowActuator() throws RecognitionException {
         EObject current = null;
 
@@ -5393,17 +5610,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2138:2: (iv_ruleWindowActuator= ruleWindowActuator EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2139:2: iv_ruleWindowActuator= ruleWindowActuator EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2211:2: (iv_ruleWindowActuator= ruleWindowActuator EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2212:2: iv_ruleWindowActuator= ruleWindowActuator EOF
             {
              newCompositeNode(grammarAccess.getWindowActuatorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleWindowActuator_in_entryRuleWindowActuator4682);
+            pushFollow(FollowSets000.FOLLOW_ruleWindowActuator_in_entryRuleWindowActuator4877);
             iv_ruleWindowActuator=ruleWindowActuator();
 
             state._fsp--;
 
              current =iv_ruleWindowActuator; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleWindowActuator4692); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleWindowActuator4887); 
 
             }
 
@@ -5421,7 +5638,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWindowActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2146:1: ruleWindowActuator returns [EObject current=null] : ( () otherlv_1= 'WindowActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2219:1: ruleWindowActuator returns [EObject current=null] : ( () otherlv_1= 'WindowActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleWindowActuator() throws RecognitionException {
         EObject current = null;
 
@@ -5436,14 +5653,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2149:28: ( ( () otherlv_1= 'WindowActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2150:1: ( () otherlv_1= 'WindowActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2222:28: ( ( () otherlv_1= 'WindowActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2223:1: ( () otherlv_1= 'WindowActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2150:1: ( () otherlv_1= 'WindowActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2150:2: () otherlv_1= 'WindowActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2223:1: ( () otherlv_1= 'WindowActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2223:2: () otherlv_1= 'WindowActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2150:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2151:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2223:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2224:5: 
             {
 
                     current = forceCreateModelElement(
@@ -5453,43 +5670,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleWindowActuator4738); 
+            otherlv_1=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleWindowActuator4933); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getWindowActuatorAccess().getWindowActuatorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2160:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2233:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt54=2;
+            int LA54_0 = input.LA(1);
 
-            if ( (LA51_0==11) ) {
-                alt51=1;
+            if ( (LA54_0==11) ) {
+                alt54=1;
             }
-            switch (alt51) {
+            switch (alt54) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2160:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2233:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleWindowActuator4751); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleWindowActuator4946); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getWindowActuatorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleWindowActuator4763); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleWindowActuator4958); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getWindowActuatorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleWindowActuator4775); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleWindowActuator4970); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getWindowActuatorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2172:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2173:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2245:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2246:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2173:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2174:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2246:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2247:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getWindowActuatorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleWindowActuator4796);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleWindowActuator4991);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -5511,7 +5728,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleWindowActuator4808); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleWindowActuator5003); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getWindowActuatorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -5542,7 +5759,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHumidifierActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2202:1: entryRuleHumidifierActuator returns [EObject current=null] : iv_ruleHumidifierActuator= ruleHumidifierActuator EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2275:1: entryRuleHumidifierActuator returns [EObject current=null] : iv_ruleHumidifierActuator= ruleHumidifierActuator EOF ;
     public final EObject entryRuleHumidifierActuator() throws RecognitionException {
         EObject current = null;
 
@@ -5550,17 +5767,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2203:2: (iv_ruleHumidifierActuator= ruleHumidifierActuator EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2204:2: iv_ruleHumidifierActuator= ruleHumidifierActuator EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2276:2: (iv_ruleHumidifierActuator= ruleHumidifierActuator EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2277:2: iv_ruleHumidifierActuator= ruleHumidifierActuator EOF
             {
              newCompositeNode(grammarAccess.getHumidifierActuatorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleHumidifierActuator_in_entryRuleHumidifierActuator4846);
+            pushFollow(FollowSets000.FOLLOW_ruleHumidifierActuator_in_entryRuleHumidifierActuator5041);
             iv_ruleHumidifierActuator=ruleHumidifierActuator();
 
             state._fsp--;
 
              current =iv_ruleHumidifierActuator; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleHumidifierActuator4856); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleHumidifierActuator5051); 
 
             }
 
@@ -5578,7 +5795,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHumidifierActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2211:1: ruleHumidifierActuator returns [EObject current=null] : ( () otherlv_1= 'HumidifierActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2284:1: ruleHumidifierActuator returns [EObject current=null] : ( () otherlv_1= 'HumidifierActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleHumidifierActuator() throws RecognitionException {
         EObject current = null;
 
@@ -5593,14 +5810,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2214:28: ( ( () otherlv_1= 'HumidifierActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2215:1: ( () otherlv_1= 'HumidifierActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2287:28: ( ( () otherlv_1= 'HumidifierActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2288:1: ( () otherlv_1= 'HumidifierActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2215:1: ( () otherlv_1= 'HumidifierActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2215:2: () otherlv_1= 'HumidifierActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2288:1: ( () otherlv_1= 'HumidifierActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2288:2: () otherlv_1= 'HumidifierActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2215:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2216:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2288:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2289:5: 
             {
 
                     current = forceCreateModelElement(
@@ -5610,43 +5827,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleHumidifierActuator4902); 
+            otherlv_1=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleHumidifierActuator5097); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getHumidifierActuatorAccess().getHumidifierActuatorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2225:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2298:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt55=2;
+            int LA55_0 = input.LA(1);
 
-            if ( (LA52_0==11) ) {
-                alt52=1;
+            if ( (LA55_0==11) ) {
+                alt55=1;
             }
-            switch (alt52) {
+            switch (alt55) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2225:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2298:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleHumidifierActuator4915); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleHumidifierActuator5110); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getHumidifierActuatorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleHumidifierActuator4927); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleHumidifierActuator5122); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getHumidifierActuatorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleHumidifierActuator4939); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleHumidifierActuator5134); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getHumidifierActuatorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2237:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2238:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2310:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2311:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2238:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2239:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2311:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2312:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getHumidifierActuatorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleHumidifierActuator4960);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleHumidifierActuator5155);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -5668,7 +5885,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleHumidifierActuator4972); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleHumidifierActuator5167); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getHumidifierActuatorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -5699,7 +5916,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDoorActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2267:1: entryRuleDoorActuator returns [EObject current=null] : iv_ruleDoorActuator= ruleDoorActuator EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2340:1: entryRuleDoorActuator returns [EObject current=null] : iv_ruleDoorActuator= ruleDoorActuator EOF ;
     public final EObject entryRuleDoorActuator() throws RecognitionException {
         EObject current = null;
 
@@ -5707,17 +5924,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2268:2: (iv_ruleDoorActuator= ruleDoorActuator EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2269:2: iv_ruleDoorActuator= ruleDoorActuator EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2341:2: (iv_ruleDoorActuator= ruleDoorActuator EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2342:2: iv_ruleDoorActuator= ruleDoorActuator EOF
             {
              newCompositeNode(grammarAccess.getDoorActuatorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleDoorActuator_in_entryRuleDoorActuator5010);
+            pushFollow(FollowSets000.FOLLOW_ruleDoorActuator_in_entryRuleDoorActuator5205);
             iv_ruleDoorActuator=ruleDoorActuator();
 
             state._fsp--;
 
              current =iv_ruleDoorActuator; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDoorActuator5020); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDoorActuator5215); 
 
             }
 
@@ -5735,7 +5952,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDoorActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2276:1: ruleDoorActuator returns [EObject current=null] : ( () otherlv_1= 'DoorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2349:1: ruleDoorActuator returns [EObject current=null] : ( () otherlv_1= 'DoorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleDoorActuator() throws RecognitionException {
         EObject current = null;
 
@@ -5750,14 +5967,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2279:28: ( ( () otherlv_1= 'DoorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2280:1: ( () otherlv_1= 'DoorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2352:28: ( ( () otherlv_1= 'DoorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2353:1: ( () otherlv_1= 'DoorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2280:1: ( () otherlv_1= 'DoorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2280:2: () otherlv_1= 'DoorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2353:1: ( () otherlv_1= 'DoorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2353:2: () otherlv_1= 'DoorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2280:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2281:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2353:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2354:5: 
             {
 
                     current = forceCreateModelElement(
@@ -5767,43 +5984,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleDoorActuator5066); 
+            otherlv_1=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleDoorActuator5261); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getDoorActuatorAccess().getDoorActuatorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2290:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt53=2;
-            int LA53_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2363:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt56=2;
+            int LA56_0 = input.LA(1);
 
-            if ( (LA53_0==11) ) {
-                alt53=1;
+            if ( (LA56_0==11) ) {
+                alt56=1;
             }
-            switch (alt53) {
+            switch (alt56) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2290:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2363:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleDoorActuator5079); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleDoorActuator5274); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getDoorActuatorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleDoorActuator5091); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleDoorActuator5286); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getDoorActuatorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleDoorActuator5103); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleDoorActuator5298); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getDoorActuatorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2302:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2303:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2375:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2376:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2303:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2304:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2376:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2377:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getDoorActuatorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleDoorActuator5124);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleDoorActuator5319);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -5825,7 +6042,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleDoorActuator5136); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleDoorActuator5331); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getDoorActuatorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -5856,7 +6073,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRadiatorActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2332:1: entryRuleRadiatorActuator returns [EObject current=null] : iv_ruleRadiatorActuator= ruleRadiatorActuator EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2405:1: entryRuleRadiatorActuator returns [EObject current=null] : iv_ruleRadiatorActuator= ruleRadiatorActuator EOF ;
     public final EObject entryRuleRadiatorActuator() throws RecognitionException {
         EObject current = null;
 
@@ -5864,17 +6081,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2333:2: (iv_ruleRadiatorActuator= ruleRadiatorActuator EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2334:2: iv_ruleRadiatorActuator= ruleRadiatorActuator EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2406:2: (iv_ruleRadiatorActuator= ruleRadiatorActuator EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2407:2: iv_ruleRadiatorActuator= ruleRadiatorActuator EOF
             {
              newCompositeNode(grammarAccess.getRadiatorActuatorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRadiatorActuator_in_entryRuleRadiatorActuator5174);
+            pushFollow(FollowSets000.FOLLOW_ruleRadiatorActuator_in_entryRuleRadiatorActuator5369);
             iv_ruleRadiatorActuator=ruleRadiatorActuator();
 
             state._fsp--;
 
              current =iv_ruleRadiatorActuator; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRadiatorActuator5184); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRadiatorActuator5379); 
 
             }
 
@@ -5892,7 +6109,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRadiatorActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2341:1: ruleRadiatorActuator returns [EObject current=null] : ( () otherlv_1= 'RadiatorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2414:1: ruleRadiatorActuator returns [EObject current=null] : ( () otherlv_1= 'RadiatorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleRadiatorActuator() throws RecognitionException {
         EObject current = null;
 
@@ -5907,14 +6124,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2344:28: ( ( () otherlv_1= 'RadiatorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2345:1: ( () otherlv_1= 'RadiatorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2417:28: ( ( () otherlv_1= 'RadiatorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2418:1: ( () otherlv_1= 'RadiatorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2345:1: ( () otherlv_1= 'RadiatorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2345:2: () otherlv_1= 'RadiatorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2418:1: ( () otherlv_1= 'RadiatorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2418:2: () otherlv_1= 'RadiatorActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2345:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2346:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2418:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2419:5: 
             {
 
                     current = forceCreateModelElement(
@@ -5924,43 +6141,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleRadiatorActuator5230); 
+            otherlv_1=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleRadiatorActuator5425); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getRadiatorActuatorAccess().getRadiatorActuatorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2355:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2428:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt57=2;
+            int LA57_0 = input.LA(1);
 
-            if ( (LA54_0==11) ) {
-                alt54=1;
+            if ( (LA57_0==11) ) {
+                alt57=1;
             }
-            switch (alt54) {
+            switch (alt57) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2355:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2428:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleRadiatorActuator5243); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleRadiatorActuator5438); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getRadiatorActuatorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleRadiatorActuator5255); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleRadiatorActuator5450); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getRadiatorActuatorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleRadiatorActuator5267); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleRadiatorActuator5462); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getRadiatorActuatorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2367:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2368:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2440:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2441:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2368:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2369:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2441:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2442:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getRadiatorActuatorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleRadiatorActuator5288);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleRadiatorActuator5483);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -5982,7 +6199,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleRadiatorActuator5300); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleRadiatorActuator5495); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getRadiatorActuatorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -6013,7 +6230,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAudioAlarmActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2397:1: entryRuleAudioAlarmActuator returns [EObject current=null] : iv_ruleAudioAlarmActuator= ruleAudioAlarmActuator EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2470:1: entryRuleAudioAlarmActuator returns [EObject current=null] : iv_ruleAudioAlarmActuator= ruleAudioAlarmActuator EOF ;
     public final EObject entryRuleAudioAlarmActuator() throws RecognitionException {
         EObject current = null;
 
@@ -6021,17 +6238,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2398:2: (iv_ruleAudioAlarmActuator= ruleAudioAlarmActuator EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2399:2: iv_ruleAudioAlarmActuator= ruleAudioAlarmActuator EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2471:2: (iv_ruleAudioAlarmActuator= ruleAudioAlarmActuator EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2472:2: iv_ruleAudioAlarmActuator= ruleAudioAlarmActuator EOF
             {
              newCompositeNode(grammarAccess.getAudioAlarmActuatorRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAudioAlarmActuator_in_entryRuleAudioAlarmActuator5338);
+            pushFollow(FollowSets000.FOLLOW_ruleAudioAlarmActuator_in_entryRuleAudioAlarmActuator5533);
             iv_ruleAudioAlarmActuator=ruleAudioAlarmActuator();
 
             state._fsp--;
 
              current =iv_ruleAudioAlarmActuator; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAudioAlarmActuator5348); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAudioAlarmActuator5543); 
 
             }
 
@@ -6049,7 +6266,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAudioAlarmActuator"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2406:1: ruleAudioAlarmActuator returns [EObject current=null] : ( () otherlv_1= 'AudioAlarmActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2479:1: ruleAudioAlarmActuator returns [EObject current=null] : ( () otherlv_1= 'AudioAlarmActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) ;
     public final EObject ruleAudioAlarmActuator() throws RecognitionException {
         EObject current = null;
 
@@ -6064,14 +6281,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2409:28: ( ( () otherlv_1= 'AudioAlarmActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2410:1: ( () otherlv_1= 'AudioAlarmActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2482:28: ( ( () otherlv_1= 'AudioAlarmActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2483:1: ( () otherlv_1= 'AudioAlarmActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2410:1: ( () otherlv_1= 'AudioAlarmActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2410:2: () otherlv_1= 'AudioAlarmActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2483:1: ( () otherlv_1= 'AudioAlarmActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2483:2: () otherlv_1= 'AudioAlarmActuator' (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2410:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2411:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2483:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2484:5: 
             {
 
                     current = forceCreateModelElement(
@@ -6081,43 +6298,43 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleAudioAlarmActuator5394); 
+            otherlv_1=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleAudioAlarmActuator5589); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAudioAlarmActuatorAccess().getAudioAlarmActuatorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2420:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
-            int alt55=2;
-            int LA55_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2493:1: (otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}' )?
+            int alt58=2;
+            int LA58_0 = input.LA(1);
 
-            if ( (LA55_0==11) ) {
-                alt55=1;
+            if ( (LA58_0==11) ) {
+                alt58=1;
             }
-            switch (alt55) {
+            switch (alt58) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2420:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2493:3: otherlv_2= '{' otherlv_3= 'valueState' otherlv_4= '=' ( (lv_valueState_5_0= ruleEInt ) ) otherlv_6= '}'
                     {
-                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleAudioAlarmActuator5407); 
+                    otherlv_2=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleAudioAlarmActuator5602); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getAudioAlarmActuatorAccess().getLeftCurlyBracketKeyword_2_0());
                         
-                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleAudioAlarmActuator5419); 
+                    otherlv_3=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleAudioAlarmActuator5614); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getAudioAlarmActuatorAccess().getValueStateKeyword_2_1());
                         
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleAudioAlarmActuator5431); 
+                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleAudioAlarmActuator5626); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getAudioAlarmActuatorAccess().getEqualsSignKeyword_2_2());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2432:1: ( (lv_valueState_5_0= ruleEInt ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2433:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2505:1: ( (lv_valueState_5_0= ruleEInt ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2506:1: (lv_valueState_5_0= ruleEInt )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2433:1: (lv_valueState_5_0= ruleEInt )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2434:3: lv_valueState_5_0= ruleEInt
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2506:1: (lv_valueState_5_0= ruleEInt )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2507:3: lv_valueState_5_0= ruleEInt
                     {
                      
                     	        newCompositeNode(grammarAccess.getAudioAlarmActuatorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleAudioAlarmActuator5452);
+                    pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleAudioAlarmActuator5647);
                     lv_valueState_5_0=ruleEInt();
 
                     state._fsp--;
@@ -6139,7 +6356,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleAudioAlarmActuator5464); 
+                    otherlv_6=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleAudioAlarmActuator5659); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getAudioAlarmActuatorAccess().getRightCurlyBracketKeyword_2_4());
                         
@@ -6170,7 +6387,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSensorComponent"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2464:1: entryRuleSensorComponent returns [EObject current=null] : iv_ruleSensorComponent= ruleSensorComponent EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2537:1: entryRuleSensorComponent returns [EObject current=null] : iv_ruleSensorComponent= ruleSensorComponent EOF ;
     public final EObject entryRuleSensorComponent() throws RecognitionException {
         EObject current = null;
 
@@ -6178,17 +6395,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2465:2: (iv_ruleSensorComponent= ruleSensorComponent EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2466:2: iv_ruleSensorComponent= ruleSensorComponent EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2538:2: (iv_ruleSensorComponent= ruleSensorComponent EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2539:2: iv_ruleSensorComponent= ruleSensorComponent EOF
             {
              newCompositeNode(grammarAccess.getSensorComponentRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleSensorComponent_in_entryRuleSensorComponent5504);
+            pushFollow(FollowSets000.FOLLOW_ruleSensorComponent_in_entryRuleSensorComponent5699);
             iv_ruleSensorComponent=ruleSensorComponent();
 
             state._fsp--;
 
              current =iv_ruleSensorComponent; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSensorComponent5514); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSensorComponent5709); 
 
             }
 
@@ -6206,7 +6423,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSensorComponent"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2473:1: ruleSensorComponent returns [EObject current=null] : ( () otherlv_1= 'sensor ' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2546:1: ruleSensorComponent returns [EObject current=null] : ( () otherlv_1= 'sensor ' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )? ) ;
     public final EObject ruleSensorComponent() throws RecognitionException {
         EObject current = null;
 
@@ -6222,14 +6439,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2476:28: ( ( () otherlv_1= 'sensor ' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2477:1: ( () otherlv_1= 'sensor ' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2549:28: ( ( () otherlv_1= 'sensor ' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2550:1: ( () otherlv_1= 'sensor ' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2477:1: ( () otherlv_1= 'sensor ' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2477:2: () otherlv_1= 'sensor ' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2550:1: ( () otherlv_1= 'sensor ' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2550:2: () otherlv_1= 'sensor ' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2477:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2478:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2550:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2551:5: 
             {
 
                     current = forceCreateModelElement(
@@ -6239,20 +6456,20 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleSensorComponent5560); 
+            otherlv_1=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleSensorComponent5755); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSensorComponentAccess().getSensorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2487:1: ( (lv_name_2_0= ruleEString ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2488:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2560:1: ( (lv_name_2_0= ruleEString ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2561:1: (lv_name_2_0= ruleEString )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2488:1: (lv_name_2_0= ruleEString )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2489:3: lv_name_2_0= ruleEString
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2561:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2562:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getSensorComponentAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleSensorComponent5581);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleSensorComponent5776);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -6274,31 +6491,31 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2505:2: (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )?
-            int alt57=2;
-            int LA57_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2578:2: (otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )* )?
+            int alt60=2;
+            int LA60_0 = input.LA(1);
 
-            if ( (LA57_0==50) ) {
-                alt57=1;
+            if ( (LA60_0==51) ) {
+                alt60=1;
             }
-            switch (alt57) {
+            switch (alt60) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2505:4: otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )*
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2578:4: otherlv_3= 'is a ' ( (lv_sensors_4_0= ruleSensor ) ) ( (lv_sensors_5_0= ruleSensor ) )*
                     {
-                    otherlv_3=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleSensorComponent5594); 
+                    otherlv_3=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleSensorComponent5789); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getSensorComponentAccess().getIsAKeyword_3_0());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2509:1: ( (lv_sensors_4_0= ruleSensor ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2510:1: (lv_sensors_4_0= ruleSensor )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2582:1: ( (lv_sensors_4_0= ruleSensor ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2583:1: (lv_sensors_4_0= ruleSensor )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2510:1: (lv_sensors_4_0= ruleSensor )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2511:3: lv_sensors_4_0= ruleSensor
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2583:1: (lv_sensors_4_0= ruleSensor )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2584:3: lv_sensors_4_0= ruleSensor
                     {
                      
                     	        newCompositeNode(grammarAccess.getSensorComponentAccess().getSensorsSensorParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleSensorComponent5615);
+                    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleSensorComponent5810);
                     lv_sensors_4_0=ruleSensor();
 
                     state._fsp--;
@@ -6320,28 +6537,28 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2527:2: ( (lv_sensors_5_0= ruleSensor ) )*
-                    loop56:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2600:2: ( (lv_sensors_5_0= ruleSensor ) )*
+                    loop59:
                     do {
-                        int alt56=2;
-                        int LA56_0 = input.LA(1);
+                        int alt59=2;
+                        int LA59_0 = input.LA(1);
 
-                        if ( (LA56_0==33||(LA56_0>=35 && LA56_0<=41)) ) {
-                            alt56=1;
+                        if ( (LA59_0==33||(LA59_0>=35 && LA59_0<=42)) ) {
+                            alt59=1;
                         }
 
 
-                        switch (alt56) {
+                        switch (alt59) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2528:1: (lv_sensors_5_0= ruleSensor )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2601:1: (lv_sensors_5_0= ruleSensor )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2528:1: (lv_sensors_5_0= ruleSensor )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2529:3: lv_sensors_5_0= ruleSensor
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2601:1: (lv_sensors_5_0= ruleSensor )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2602:3: lv_sensors_5_0= ruleSensor
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getSensorComponentAccess().getSensorsSensorParserRuleCall_3_2_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleSensorComponent5636);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleSensor_in_ruleSensorComponent5831);
                     	    lv_sensors_5_0=ruleSensor();
 
                     	    state._fsp--;
@@ -6365,7 +6582,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop56;
+                    	    break loop59;
                         }
                     } while (true);
 
@@ -6396,7 +6613,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActuatorComponent"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2553:1: entryRuleActuatorComponent returns [EObject current=null] : iv_ruleActuatorComponent= ruleActuatorComponent EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2626:1: entryRuleActuatorComponent returns [EObject current=null] : iv_ruleActuatorComponent= ruleActuatorComponent EOF ;
     public final EObject entryRuleActuatorComponent() throws RecognitionException {
         EObject current = null;
 
@@ -6404,17 +6621,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2554:2: (iv_ruleActuatorComponent= ruleActuatorComponent EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2555:2: iv_ruleActuatorComponent= ruleActuatorComponent EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2627:2: (iv_ruleActuatorComponent= ruleActuatorComponent EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2628:2: iv_ruleActuatorComponent= ruleActuatorComponent EOF
             {
              newCompositeNode(grammarAccess.getActuatorComponentRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleActuatorComponent_in_entryRuleActuatorComponent5675);
+            pushFollow(FollowSets000.FOLLOW_ruleActuatorComponent_in_entryRuleActuatorComponent5870);
             iv_ruleActuatorComponent=ruleActuatorComponent();
 
             state._fsp--;
 
              current =iv_ruleActuatorComponent; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleActuatorComponent5685); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleActuatorComponent5880); 
 
             }
 
@@ -6432,7 +6649,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActuatorComponent"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2562:1: ruleActuatorComponent returns [EObject current=null] : ( () otherlv_1= 'actuator' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )? ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2635:1: ruleActuatorComponent returns [EObject current=null] : ( () otherlv_1= 'actuator' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )? ) ;
     public final EObject ruleActuatorComponent() throws RecognitionException {
         EObject current = null;
 
@@ -6448,14 +6665,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2565:28: ( ( () otherlv_1= 'actuator' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )? ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2566:1: ( () otherlv_1= 'actuator' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2638:28: ( ( () otherlv_1= 'actuator' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )? ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2639:1: ( () otherlv_1= 'actuator' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )? )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2566:1: ( () otherlv_1= 'actuator' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )? )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2566:2: () otherlv_1= 'actuator' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2639:1: ( () otherlv_1= 'actuator' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )? )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2639:2: () otherlv_1= 'actuator' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )?
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2566:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2567:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2639:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2640:5: 
             {
 
                     current = forceCreateModelElement(
@@ -6465,20 +6682,20 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleActuatorComponent5731); 
+            otherlv_1=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleActuatorComponent5926); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getActuatorComponentAccess().getActuatorKeyword_1());
                 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2576:1: ( (lv_name_2_0= ruleEString ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2577:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2649:1: ( (lv_name_2_0= ruleEString ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2650:1: (lv_name_2_0= ruleEString )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2577:1: (lv_name_2_0= ruleEString )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2578:3: lv_name_2_0= ruleEString
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2650:1: (lv_name_2_0= ruleEString )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2651:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getActuatorComponentAccess().getNameEStringParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleActuatorComponent5752);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleActuatorComponent5947);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -6500,31 +6717,31 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2594:2: (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )?
-            int alt59=2;
-            int LA59_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2667:2: (otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )* )?
+            int alt62=2;
+            int LA62_0 = input.LA(1);
 
-            if ( (LA59_0==50) ) {
-                alt59=1;
+            if ( (LA62_0==51) ) {
+                alt62=1;
             }
-            switch (alt59) {
+            switch (alt62) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2594:4: otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )*
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2667:4: otherlv_3= 'is a ' ( (lv_actuators_4_0= ruleActuator ) ) ( (lv_actuators_5_0= ruleActuator ) )*
                     {
-                    otherlv_3=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleActuatorComponent5765); 
+                    otherlv_3=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleActuatorComponent5960); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getActuatorComponentAccess().getIsAKeyword_3_0());
                         
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2598:1: ( (lv_actuators_4_0= ruleActuator ) )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2599:1: (lv_actuators_4_0= ruleActuator )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2671:1: ( (lv_actuators_4_0= ruleActuator ) )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2672:1: (lv_actuators_4_0= ruleActuator )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2599:1: (lv_actuators_4_0= ruleActuator )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2600:3: lv_actuators_4_0= ruleActuator
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2672:1: (lv_actuators_4_0= ruleActuator )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2673:3: lv_actuators_4_0= ruleActuator
                     {
                      
                     	        newCompositeNode(grammarAccess.getActuatorComponentAccess().getActuatorsActuatorParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleActuatorComponent5786);
+                    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleActuatorComponent5981);
                     lv_actuators_4_0=ruleActuator();
 
                     state._fsp--;
@@ -6546,28 +6763,28 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2616:2: ( (lv_actuators_5_0= ruleActuator ) )*
-                    loop58:
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2689:2: ( (lv_actuators_5_0= ruleActuator ) )*
+                    loop61:
                     do {
-                        int alt58=2;
-                        int LA58_0 = input.LA(1);
+                        int alt61=2;
+                        int LA61_0 = input.LA(1);
 
-                        if ( ((LA58_0>=43 && LA58_0<=48)) ) {
-                            alt58=1;
+                        if ( ((LA61_0>=44 && LA61_0<=49)) ) {
+                            alt61=1;
                         }
 
 
-                        switch (alt58) {
+                        switch (alt61) {
                     	case 1 :
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2617:1: (lv_actuators_5_0= ruleActuator )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2690:1: (lv_actuators_5_0= ruleActuator )
                     	    {
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2617:1: (lv_actuators_5_0= ruleActuator )
-                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2618:3: lv_actuators_5_0= ruleActuator
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2690:1: (lv_actuators_5_0= ruleActuator )
+                    	    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2691:3: lv_actuators_5_0= ruleActuator
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getActuatorComponentAccess().getActuatorsActuatorParserRuleCall_3_2_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleActuatorComponent5807);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleActuator_in_ruleActuatorComponent6002);
                     	    lv_actuators_5_0=ruleActuator();
 
                     	    state._fsp--;
@@ -6591,7 +6808,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop58;
+                    	    break loop61;
                         }
                     } while (true);
 
@@ -6622,7 +6839,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConditions"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2642:1: entryRuleConditions returns [EObject current=null] : iv_ruleConditions= ruleConditions EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2715:1: entryRuleConditions returns [EObject current=null] : iv_ruleConditions= ruleConditions EOF ;
     public final EObject entryRuleConditions() throws RecognitionException {
         EObject current = null;
 
@@ -6630,17 +6847,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2643:2: (iv_ruleConditions= ruleConditions EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2644:2: iv_ruleConditions= ruleConditions EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2716:2: (iv_ruleConditions= ruleConditions EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2717:2: iv_ruleConditions= ruleConditions EOF
             {
              newCompositeNode(grammarAccess.getConditionsRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConditions_in_entryRuleConditions5846);
+            pushFollow(FollowSets000.FOLLOW_ruleConditions_in_entryRuleConditions6041);
             iv_ruleConditions=ruleConditions();
 
             state._fsp--;
 
              current =iv_ruleConditions; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleConditions5856); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleConditions6051); 
 
             }
 
@@ -6658,7 +6875,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditions"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2651:1: ruleConditions returns [EObject current=null] : ( () otherlv_1= 'Conditions' ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2724:1: ruleConditions returns [EObject current=null] : ( () otherlv_1= 'Conditions' ) ;
     public final EObject ruleConditions() throws RecognitionException {
         EObject current = null;
 
@@ -6667,14 +6884,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2654:28: ( ( () otherlv_1= 'Conditions' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2655:1: ( () otherlv_1= 'Conditions' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2727:28: ( ( () otherlv_1= 'Conditions' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2728:1: ( () otherlv_1= 'Conditions' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2655:1: ( () otherlv_1= 'Conditions' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2655:2: () otherlv_1= 'Conditions'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2728:1: ( () otherlv_1= 'Conditions' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2728:2: () otherlv_1= 'Conditions'
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2655:2: ()
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2656:5: 
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2728:2: ()
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2729:5: 
             {
 
                     current = forceCreateModelElement(
@@ -6684,7 +6901,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleConditions5902); 
+            otherlv_1=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleConditions6097); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getConditionsAccess().getConditionsKeyword_1());
                 
@@ -6709,7 +6926,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEBoolean"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2673:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2746:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
     public final String entryRuleEBoolean() throws RecognitionException {
         String current = null;
 
@@ -6717,17 +6934,17 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2674:2: (iv_ruleEBoolean= ruleEBoolean EOF )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2675:2: iv_ruleEBoolean= ruleEBoolean EOF
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2747:2: (iv_ruleEBoolean= ruleEBoolean EOF )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2748:2: iv_ruleEBoolean= ruleEBoolean EOF
             {
              newCompositeNode(grammarAccess.getEBooleanRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEBoolean_in_entryRuleEBoolean5939);
+            pushFollow(FollowSets000.FOLLOW_ruleEBoolean_in_entryRuleEBoolean6134);
             iv_ruleEBoolean=ruleEBoolean();
 
             state._fsp--;
 
              current =iv_ruleEBoolean.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEBoolean5950); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEBoolean6145); 
 
             }
 
@@ -6745,7 +6962,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEBoolean"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2682:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2755:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleEBoolean() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6754,30 +6971,30 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2685:28: ( (kw= 'true' | kw= 'false' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2686:1: (kw= 'true' | kw= 'false' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2758:28: ( (kw= 'true' | kw= 'false' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2759:1: (kw= 'true' | kw= 'false' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2686:1: (kw= 'true' | kw= 'false' )
-            int alt60=2;
-            int LA60_0 = input.LA(1);
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2759:1: (kw= 'true' | kw= 'false' )
+            int alt63=2;
+            int LA63_0 = input.LA(1);
 
-            if ( (LA60_0==53) ) {
-                alt60=1;
+            if ( (LA63_0==54) ) {
+                alt63=1;
             }
-            else if ( (LA60_0==54) ) {
-                alt60=2;
+            else if ( (LA63_0==55) ) {
+                alt63=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 60, 0, input);
+                    new NoViableAltException("", 63, 0, input);
 
                 throw nvae;
             }
-            switch (alt60) {
+            switch (alt63) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2687:2: kw= 'true'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2760:2: kw= 'true'
                     {
-                    kw=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleEBoolean5988); 
+                    kw=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleEBoolean6183); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEBooleanAccess().getTrueKeyword_0()); 
@@ -6786,9 +7003,9 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2694:2: kw= 'false'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:2767:2: kw= 'false'
                     {
-                    kw=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleEBoolean6007); 
+                    kw=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleEBoolean6202); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEBooleanAccess().getFalseKeyword_1()); 
@@ -6854,244 +7071,253 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleSmokeSensor_in_ruleSensor815 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleCO2Sensor_in_ruleSensor842 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleInfraredLightSensor_in_ruleSensor869 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_entryRuleEString905 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEString916 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleEString956 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleEString982 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleState_in_entryRuleState1027 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleState1037 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_ruleState1083 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleState1104 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleState1122 = new BitSet(new long[]{0x0060000000000000L});
-        public static final BitSet FOLLOW_ruleEBoolean_in_ruleState1151 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePolicy_in_entryRulePolicy1186 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePolicy1196 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_rulePolicy1242 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_rulePolicy1263 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_17_in_rulePolicy1275 = new BitSet(new long[]{0x000003FA00080000L});
-        public static final BitSet FOLLOW_ruleSensor_in_rulePolicy1297 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_18_in_rulePolicy1310 = new BitSet(new long[]{0x000003FA00000000L});
-        public static final BitSet FOLLOW_ruleSensor_in_rulePolicy1331 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_19_in_rulePolicy1347 = new BitSet(new long[]{0x0001F80000100002L});
-        public static final BitSet FOLLOW_ruleActuator_in_rulePolicy1369 = new BitSet(new long[]{0x0000000000140002L});
-        public static final BitSet FOLLOW_18_in_rulePolicy1382 = new BitSet(new long[]{0x0001F80000000000L});
-        public static final BitSet FOLLOW_ruleActuator_in_rulePolicy1403 = new BitSet(new long[]{0x0000000000140002L});
-        public static final BitSet FOLLOW_20_in_rulePolicy1420 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_11_in_rulePolicy1432 = new BitSet(new long[]{0x0010000000002000L});
-        public static final BitSet FOLLOW_ruleConditions_in_rulePolicy1454 = new BitSet(new long[]{0x0010000000002000L});
-        public static final BitSet FOLLOW_ruleConditions_in_rulePolicy1475 = new BitSet(new long[]{0x0010000000002000L});
-        public static final BitSet FOLLOW_13_in_rulePolicy1490 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBuilding_in_entryRuleBuilding1528 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleBuilding1538 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_ruleBuilding1584 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleBuilding1605 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_11_in_ruleBuilding1617 = new BitSet(new long[]{0x0000000192402000L});
-        public static final BitSet FOLLOW_ruleCTS_in_ruleBuilding1638 = new BitSet(new long[]{0x0000000190402000L});
-        public static final BitSet FOLLOW_ruleAccessControl_in_ruleBuilding1660 = new BitSet(new long[]{0x0000000180402000L});
-        public static final BitSet FOLLOW_ruleCalendarSystem_in_ruleBuilding1682 = new BitSet(new long[]{0x0000000100402000L});
-        public static final BitSet FOLLOW_ruleMeetingScheduleSystem_in_ruleBuilding1704 = new BitSet(new long[]{0x0000000000402000L});
-        public static final BitSet FOLLOW_ruleFloor_in_ruleBuilding1727 = new BitSet(new long[]{0x0000000000402000L});
-        public static final BitSet FOLLOW_ruleFloor_in_ruleBuilding1748 = new BitSet(new long[]{0x0000000000402000L});
-        public static final BitSet FOLLOW_13_in_ruleBuilding1763 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleFloor_in_entryRuleFloor1799 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleFloor1809 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_ruleFloor1855 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleFloor1876 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_11_in_ruleFloor1888 = new BitSet(new long[]{0x0000000000802000L});
-        public static final BitSet FOLLOW_23_in_ruleFloor1901 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleRoom_in_ruleFloor1922 = new BitSet(new long[]{0x0000000000042000L});
-        public static final BitSet FOLLOW_18_in_ruleFloor1935 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleRoom_in_ruleFloor1956 = new BitSet(new long[]{0x0000000000042000L});
-        public static final BitSet FOLLOW_13_in_ruleFloor1972 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRoom_in_entryRuleRoom2008 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleRoom2018 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleRoom2073 = new BitSet(new long[]{0x0000000001000800L});
-        public static final BitSet FOLLOW_24_in_ruleRoom2086 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleRoom2109 = new BitSet(new long[]{0x0000000000000830L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleRoom2132 = new BitSet(new long[]{0x0000000000000830L});
-        public static final BitSet FOLLOW_11_in_ruleRoom2148 = new BitSet(new long[]{0x000A000000002000L});
-        public static final BitSet FOLLOW_ruleSensorComponent_in_ruleRoom2170 = new BitSet(new long[]{0x000A000000002000L});
-        public static final BitSet FOLLOW_ruleSensorComponent_in_ruleRoom2191 = new BitSet(new long[]{0x000A000000002000L});
-        public static final BitSet FOLLOW_ruleActuatorComponent_in_ruleRoom2216 = new BitSet(new long[]{0x0008000000002000L});
-        public static final BitSet FOLLOW_ruleActuatorComponent_in_ruleRoom2237 = new BitSet(new long[]{0x0008000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleRoom2252 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleCTS_in_entryRuleCTS2289 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleCTS2299 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_ruleCTS2345 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_11_in_ruleCTS2357 = new BitSet(new long[]{0x000000000C002000L});
-        public static final BitSet FOLLOW_26_in_ruleCTS2370 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_11_in_ruleCTS2382 = new BitSet(new long[]{0x000003FA00000000L});
-        public static final BitSet FOLLOW_ruleSensor_in_ruleCTS2403 = new BitSet(new long[]{0x0000000000042000L});
-        public static final BitSet FOLLOW_18_in_ruleCTS2416 = new BitSet(new long[]{0x000003FA00000000L});
-        public static final BitSet FOLLOW_ruleSensor_in_ruleCTS2437 = new BitSet(new long[]{0x0000000000042000L});
-        public static final BitSet FOLLOW_13_in_ruleCTS2451 = new BitSet(new long[]{0x0000000008002000L});
-        public static final BitSet FOLLOW_27_in_ruleCTS2466 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_11_in_ruleCTS2478 = new BitSet(new long[]{0x0001F80000000000L});
-        public static final BitSet FOLLOW_ruleActuator_in_ruleCTS2499 = new BitSet(new long[]{0x0000000000042000L});
-        public static final BitSet FOLLOW_18_in_ruleCTS2512 = new BitSet(new long[]{0x0001F80000000000L});
-        public static final BitSet FOLLOW_ruleActuator_in_ruleCTS2533 = new BitSet(new long[]{0x0000000000042000L});
-        public static final BitSet FOLLOW_13_in_ruleCTS2547 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleCTS2561 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAccessControl_in_entryRuleAccessControl2597 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAccessControl2607 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_ruleAccessControl2653 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_11_in_ruleAccessControl2665 = new BitSet(new long[]{0x0000000060002000L});
-        public static final BitSet FOLLOW_29_in_ruleAccessControl2678 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_11_in_ruleAccessControl2690 = new BitSet(new long[]{0x000003FA00000000L});
-        public static final BitSet FOLLOW_ruleSensor_in_ruleAccessControl2711 = new BitSet(new long[]{0x0000000000042000L});
-        public static final BitSet FOLLOW_18_in_ruleAccessControl2724 = new BitSet(new long[]{0x000003FA00000000L});
-        public static final BitSet FOLLOW_ruleSensor_in_ruleAccessControl2745 = new BitSet(new long[]{0x0000000000042000L});
-        public static final BitSet FOLLOW_13_in_ruleAccessControl2759 = new BitSet(new long[]{0x0000000040002000L});
-        public static final BitSet FOLLOW_30_in_ruleAccessControl2774 = new BitSet(new long[]{0x0000000000000800L});
-        public static final BitSet FOLLOW_11_in_ruleAccessControl2786 = new BitSet(new long[]{0x0001F80000000000L});
-        public static final BitSet FOLLOW_ruleActuator_in_ruleAccessControl2807 = new BitSet(new long[]{0x0000000000042000L});
-        public static final BitSet FOLLOW_18_in_ruleAccessControl2820 = new BitSet(new long[]{0x0001F80000000000L});
-        public static final BitSet FOLLOW_ruleActuator_in_ruleAccessControl2841 = new BitSet(new long[]{0x0000000000042000L});
-        public static final BitSet FOLLOW_13_in_ruleAccessControl2855 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleAccessControl2869 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleCalendarSystem_in_entryRuleCalendarSystem2905 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleCalendarSystem2915 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_ruleCalendarSystem2961 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMeetingScheduleSystem_in_entryRuleMeetingScheduleSystem2997 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleMeetingScheduleSystem3007 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_ruleMeetingScheduleSystem3053 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMotionSensor_in_entryRuleMotionSensor3089 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleMotionSensor3099 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_33_in_ruleMotionSensor3145 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleMotionSensor3158 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleMotionSensor3170 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleMotionSensor3182 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleMotionSensor3203 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleMotionSensor3215 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTemperatureSensor_in_entryRuleTemperatureSensor3253 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTemperatureSensor3263 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_35_in_ruleTemperatureSensor3309 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleTemperatureSensor3322 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleTemperatureSensor3334 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleTemperatureSensor3346 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleTemperatureSensor3367 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleTemperatureSensor3379 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePressureSensor_in_entryRulePressureSensor3417 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePressureSensor3427 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rulePressureSensor3473 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_rulePressureSensor3486 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_rulePressureSensor3498 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_rulePressureSensor3510 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_rulePressureSensor3531 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_rulePressureSensor3543 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTouchSensor_in_entryRuleTouchSensor3581 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTouchSensor3591 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_ruleTouchSensor3637 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleTouchSensor3650 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleTouchSensor3662 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleTouchSensor3674 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleTouchSensor3695 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleTouchSensor3707 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLightSensor_in_entryRuleLightSensor3745 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLightSensor3755 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_38_in_ruleLightSensor3801 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleLightSensor3814 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleLightSensor3826 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleLightSensor3838 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleLightSensor3859 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleLightSensor3871 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleSmokeSensor_in_entryRuleSmokeSensor3909 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleSmokeSensor3919 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_39_in_ruleSmokeSensor3965 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleSmokeSensor3978 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleSmokeSensor3990 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleSmokeSensor4002 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleSmokeSensor4023 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleSmokeSensor4035 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleCO2Sensor_in_entryRuleCO2Sensor4073 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleCO2Sensor4083 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_40_in_ruleCO2Sensor4129 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleCO2Sensor4142 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleCO2Sensor4154 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleCO2Sensor4166 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleCO2Sensor4187 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleCO2Sensor4199 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleInfraredLightSensor_in_entryRuleInfraredLightSensor4237 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleInfraredLightSensor4247 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_41_in_ruleInfraredLightSensor4293 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleInfraredLightSensor4306 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleInfraredLightSensor4318 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleInfraredLightSensor4330 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleInfraredLightSensor4351 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleInfraredLightSensor4363 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt4406 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEInt4417 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_42_in_ruleEInt4456 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt4473 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLightSwitchActuator_in_entryRuleLightSwitchActuator4518 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLightSwitchActuator4528 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_43_in_ruleLightSwitchActuator4574 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleLightSwitchActuator4587 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleLightSwitchActuator4599 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleLightSwitchActuator4611 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleLightSwitchActuator4632 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleLightSwitchActuator4644 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleWindowActuator_in_entryRuleWindowActuator4682 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleWindowActuator4692 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_44_in_ruleWindowActuator4738 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleWindowActuator4751 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleWindowActuator4763 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleWindowActuator4775 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleWindowActuator4796 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleWindowActuator4808 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleHumidifierActuator_in_entryRuleHumidifierActuator4846 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleHumidifierActuator4856 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_45_in_ruleHumidifierActuator4902 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleHumidifierActuator4915 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleHumidifierActuator4927 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleHumidifierActuator4939 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleHumidifierActuator4960 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleHumidifierActuator4972 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDoorActuator_in_entryRuleDoorActuator5010 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleDoorActuator5020 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_46_in_ruleDoorActuator5066 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleDoorActuator5079 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleDoorActuator5091 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleDoorActuator5103 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleDoorActuator5124 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleDoorActuator5136 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRadiatorActuator_in_entryRuleRadiatorActuator5174 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleRadiatorActuator5184 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_47_in_ruleRadiatorActuator5230 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleRadiatorActuator5243 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleRadiatorActuator5255 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleRadiatorActuator5267 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleRadiatorActuator5288 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleRadiatorActuator5300 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAudioAlarmActuator_in_entryRuleAudioAlarmActuator5338 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAudioAlarmActuator5348 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_48_in_ruleAudioAlarmActuator5394 = new BitSet(new long[]{0x0000000000000802L});
-        public static final BitSet FOLLOW_11_in_ruleAudioAlarmActuator5407 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleAudioAlarmActuator5419 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleAudioAlarmActuator5431 = new BitSet(new long[]{0x0000040000000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleAudioAlarmActuator5452 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleAudioAlarmActuator5464 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleSensorComponent_in_entryRuleSensorComponent5504 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleSensorComponent5514 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_49_in_ruleSensorComponent5560 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleSensorComponent5581 = new BitSet(new long[]{0x0004000000000002L});
-        public static final BitSet FOLLOW_50_in_ruleSensorComponent5594 = new BitSet(new long[]{0x000003FA00000000L});
-        public static final BitSet FOLLOW_ruleSensor_in_ruleSensorComponent5615 = new BitSet(new long[]{0x000003FA00000002L});
-        public static final BitSet FOLLOW_ruleSensor_in_ruleSensorComponent5636 = new BitSet(new long[]{0x000003FA00000002L});
-        public static final BitSet FOLLOW_ruleActuatorComponent_in_entryRuleActuatorComponent5675 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleActuatorComponent5685 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_51_in_ruleActuatorComponent5731 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleActuatorComponent5752 = new BitSet(new long[]{0x0004000000000002L});
-        public static final BitSet FOLLOW_50_in_ruleActuatorComponent5765 = new BitSet(new long[]{0x0001F80000000000L});
-        public static final BitSet FOLLOW_ruleActuator_in_ruleActuatorComponent5786 = new BitSet(new long[]{0x0001F80000000002L});
-        public static final BitSet FOLLOW_ruleActuator_in_ruleActuatorComponent5807 = new BitSet(new long[]{0x0001F80000000002L});
-        public static final BitSet FOLLOW_ruleConditions_in_entryRuleConditions5846 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleConditions5856 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_52_in_ruleConditions5902 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEBoolean_in_entryRuleEBoolean5939 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEBoolean5950 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_53_in_ruleEBoolean5988 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_54_in_ruleEBoolean6007 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleHumiditySensor_in_ruleSensor896 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_entryRuleEString932 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEString943 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleEString983 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleEString1009 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleState_in_entryRuleState1054 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleState1064 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_ruleState1110 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleState1131 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleState1149 = new BitSet(new long[]{0x00C0000000000000L});
+        public static final BitSet FOLLOW_ruleEBoolean_in_ruleState1178 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePolicy_in_entryRulePolicy1213 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePolicy1223 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_16_in_rulePolicy1269 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_rulePolicy1290 = new BitSet(new long[]{0x00000000001A0002L});
+        public static final BitSet FOLLOW_17_in_rulePolicy1303 = new BitSet(new long[]{0x000007FA00180002L});
+        public static final BitSet FOLLOW_ruleSensor_in_rulePolicy1325 = new BitSet(new long[]{0x00000000001C0002L});
+        public static final BitSet FOLLOW_18_in_rulePolicy1338 = new BitSet(new long[]{0x000007FA00000000L});
+        public static final BitSet FOLLOW_ruleSensor_in_rulePolicy1359 = new BitSet(new long[]{0x00000000001C0002L});
+        public static final BitSet FOLLOW_19_in_rulePolicy1378 = new BitSet(new long[]{0x0003F00000100002L});
+        public static final BitSet FOLLOW_ruleActuator_in_rulePolicy1400 = new BitSet(new long[]{0x0000000000140002L});
+        public static final BitSet FOLLOW_18_in_rulePolicy1413 = new BitSet(new long[]{0x0003F00000000000L});
+        public static final BitSet FOLLOW_ruleActuator_in_rulePolicy1434 = new BitSet(new long[]{0x0000000000140002L});
+        public static final BitSet FOLLOW_20_in_rulePolicy1453 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_11_in_rulePolicy1465 = new BitSet(new long[]{0x0020000000002000L});
+        public static final BitSet FOLLOW_ruleConditions_in_rulePolicy1487 = new BitSet(new long[]{0x0020000000002000L});
+        public static final BitSet FOLLOW_ruleConditions_in_rulePolicy1508 = new BitSet(new long[]{0x0020000000002000L});
+        public static final BitSet FOLLOW_13_in_rulePolicy1523 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleBuilding_in_entryRuleBuilding1561 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleBuilding1571 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_ruleBuilding1617 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleBuilding1638 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_11_in_ruleBuilding1650 = new BitSet(new long[]{0x0000000192402000L});
+        public static final BitSet FOLLOW_ruleCTS_in_ruleBuilding1671 = new BitSet(new long[]{0x0000000190402000L});
+        public static final BitSet FOLLOW_ruleAccessControl_in_ruleBuilding1693 = new BitSet(new long[]{0x0000000180402000L});
+        public static final BitSet FOLLOW_ruleCalendarSystem_in_ruleBuilding1715 = new BitSet(new long[]{0x0000000100402000L});
+        public static final BitSet FOLLOW_ruleMeetingScheduleSystem_in_ruleBuilding1737 = new BitSet(new long[]{0x0000000000402000L});
+        public static final BitSet FOLLOW_ruleFloor_in_ruleBuilding1760 = new BitSet(new long[]{0x0000000000402000L});
+        public static final BitSet FOLLOW_ruleFloor_in_ruleBuilding1781 = new BitSet(new long[]{0x0000000000402000L});
+        public static final BitSet FOLLOW_13_in_ruleBuilding1796 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleFloor_in_entryRuleFloor1832 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleFloor1842 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_ruleFloor1888 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleFloor1909 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_11_in_ruleFloor1921 = new BitSet(new long[]{0x0000000000802000L});
+        public static final BitSet FOLLOW_23_in_ruleFloor1934 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleRoom_in_ruleFloor1955 = new BitSet(new long[]{0x0000000000042000L});
+        public static final BitSet FOLLOW_18_in_ruleFloor1968 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleRoom_in_ruleFloor1989 = new BitSet(new long[]{0x0000000000042000L});
+        public static final BitSet FOLLOW_13_in_ruleFloor2005 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRoom_in_entryRuleRoom2041 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleRoom2051 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleRoom2106 = new BitSet(new long[]{0x0000000001000800L});
+        public static final BitSet FOLLOW_24_in_ruleRoom2119 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleRoom2142 = new BitSet(new long[]{0x0000000000000830L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleRoom2165 = new BitSet(new long[]{0x0000000000000830L});
+        public static final BitSet FOLLOW_11_in_ruleRoom2181 = new BitSet(new long[]{0x0014000000002000L});
+        public static final BitSet FOLLOW_ruleSensorComponent_in_ruleRoom2203 = new BitSet(new long[]{0x0014000000002000L});
+        public static final BitSet FOLLOW_ruleSensorComponent_in_ruleRoom2224 = new BitSet(new long[]{0x0014000000002000L});
+        public static final BitSet FOLLOW_ruleActuatorComponent_in_ruleRoom2249 = new BitSet(new long[]{0x0010000000002000L});
+        public static final BitSet FOLLOW_ruleActuatorComponent_in_ruleRoom2270 = new BitSet(new long[]{0x0010000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleRoom2285 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleCTS_in_entryRuleCTS2322 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleCTS2332 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_25_in_ruleCTS2378 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_11_in_ruleCTS2390 = new BitSet(new long[]{0x000000000C002000L});
+        public static final BitSet FOLLOW_26_in_ruleCTS2403 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_11_in_ruleCTS2415 = new BitSet(new long[]{0x000007FA00000000L});
+        public static final BitSet FOLLOW_ruleSensor_in_ruleCTS2436 = new BitSet(new long[]{0x0000000000042000L});
+        public static final BitSet FOLLOW_18_in_ruleCTS2449 = new BitSet(new long[]{0x000007FA00000000L});
+        public static final BitSet FOLLOW_ruleSensor_in_ruleCTS2470 = new BitSet(new long[]{0x0000000000042000L});
+        public static final BitSet FOLLOW_13_in_ruleCTS2484 = new BitSet(new long[]{0x0000000008002000L});
+        public static final BitSet FOLLOW_27_in_ruleCTS2499 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_11_in_ruleCTS2511 = new BitSet(new long[]{0x0003F00000000000L});
+        public static final BitSet FOLLOW_ruleActuator_in_ruleCTS2532 = new BitSet(new long[]{0x0000000000042000L});
+        public static final BitSet FOLLOW_18_in_ruleCTS2545 = new BitSet(new long[]{0x0003F00000000000L});
+        public static final BitSet FOLLOW_ruleActuator_in_ruleCTS2566 = new BitSet(new long[]{0x0000000000042000L});
+        public static final BitSet FOLLOW_13_in_ruleCTS2580 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleCTS2594 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAccessControl_in_entryRuleAccessControl2630 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAccessControl2640 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_28_in_ruleAccessControl2686 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_11_in_ruleAccessControl2698 = new BitSet(new long[]{0x0000000060002000L});
+        public static final BitSet FOLLOW_29_in_ruleAccessControl2711 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_11_in_ruleAccessControl2723 = new BitSet(new long[]{0x000007FA00000000L});
+        public static final BitSet FOLLOW_ruleSensor_in_ruleAccessControl2744 = new BitSet(new long[]{0x0000000000042000L});
+        public static final BitSet FOLLOW_18_in_ruleAccessControl2757 = new BitSet(new long[]{0x000007FA00000000L});
+        public static final BitSet FOLLOW_ruleSensor_in_ruleAccessControl2778 = new BitSet(new long[]{0x0000000000042000L});
+        public static final BitSet FOLLOW_13_in_ruleAccessControl2792 = new BitSet(new long[]{0x0000000040002000L});
+        public static final BitSet FOLLOW_30_in_ruleAccessControl2807 = new BitSet(new long[]{0x0000000000000800L});
+        public static final BitSet FOLLOW_11_in_ruleAccessControl2819 = new BitSet(new long[]{0x0003F00000000000L});
+        public static final BitSet FOLLOW_ruleActuator_in_ruleAccessControl2840 = new BitSet(new long[]{0x0000000000042000L});
+        public static final BitSet FOLLOW_18_in_ruleAccessControl2853 = new BitSet(new long[]{0x0003F00000000000L});
+        public static final BitSet FOLLOW_ruleActuator_in_ruleAccessControl2874 = new BitSet(new long[]{0x0000000000042000L});
+        public static final BitSet FOLLOW_13_in_ruleAccessControl2888 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleAccessControl2902 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleCalendarSystem_in_entryRuleCalendarSystem2938 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleCalendarSystem2948 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_ruleCalendarSystem2994 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMeetingScheduleSystem_in_entryRuleMeetingScheduleSystem3030 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleMeetingScheduleSystem3040 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_32_in_ruleMeetingScheduleSystem3086 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMotionSensor_in_entryRuleMotionSensor3122 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleMotionSensor3132 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_33_in_ruleMotionSensor3178 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleMotionSensor3191 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleMotionSensor3203 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleMotionSensor3215 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleMotionSensor3236 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleMotionSensor3248 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTemperatureSensor_in_entryRuleTemperatureSensor3286 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTemperatureSensor3296 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_35_in_ruleTemperatureSensor3342 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleTemperatureSensor3355 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleTemperatureSensor3367 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleTemperatureSensor3379 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleTemperatureSensor3400 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleTemperatureSensor3412 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePressureSensor_in_entryRulePressureSensor3450 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePressureSensor3460 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rulePressureSensor3506 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_rulePressureSensor3519 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_rulePressureSensor3531 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_rulePressureSensor3543 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_rulePressureSensor3564 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_rulePressureSensor3576 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTouchSensor_in_entryRuleTouchSensor3614 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTouchSensor3624 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_ruleTouchSensor3670 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleTouchSensor3683 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleTouchSensor3695 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleTouchSensor3707 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleTouchSensor3728 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleTouchSensor3740 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLightSensor_in_entryRuleLightSensor3778 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLightSensor3788 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_38_in_ruleLightSensor3834 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleLightSensor3847 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleLightSensor3859 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleLightSensor3871 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleLightSensor3892 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleLightSensor3904 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleSmokeSensor_in_entryRuleSmokeSensor3942 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleSmokeSensor3952 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_39_in_ruleSmokeSensor3998 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleSmokeSensor4011 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleSmokeSensor4023 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleSmokeSensor4035 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleSmokeSensor4056 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleSmokeSensor4068 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleCO2Sensor_in_entryRuleCO2Sensor4106 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleCO2Sensor4116 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_40_in_ruleCO2Sensor4162 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleCO2Sensor4175 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleCO2Sensor4187 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleCO2Sensor4199 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleCO2Sensor4220 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleCO2Sensor4232 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleInfraredLightSensor_in_entryRuleInfraredLightSensor4270 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleInfraredLightSensor4280 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_41_in_ruleInfraredLightSensor4326 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleInfraredLightSensor4339 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleInfraredLightSensor4351 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleInfraredLightSensor4363 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleInfraredLightSensor4384 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleInfraredLightSensor4396 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleHumiditySensor_in_entryRuleHumiditySensor4436 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleHumiditySensor4446 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_42_in_ruleHumiditySensor4492 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleHumiditySensor4505 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleHumiditySensor4517 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleHumiditySensor4529 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleHumiditySensor4550 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleHumiditySensor4562 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt4601 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEInt4612 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_43_in_ruleEInt4651 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt4668 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLightSwitchActuator_in_entryRuleLightSwitchActuator4713 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLightSwitchActuator4723 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_44_in_ruleLightSwitchActuator4769 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleLightSwitchActuator4782 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleLightSwitchActuator4794 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleLightSwitchActuator4806 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleLightSwitchActuator4827 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleLightSwitchActuator4839 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleWindowActuator_in_entryRuleWindowActuator4877 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleWindowActuator4887 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_45_in_ruleWindowActuator4933 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleWindowActuator4946 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleWindowActuator4958 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleWindowActuator4970 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleWindowActuator4991 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleWindowActuator5003 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleHumidifierActuator_in_entryRuleHumidifierActuator5041 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleHumidifierActuator5051 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_46_in_ruleHumidifierActuator5097 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleHumidifierActuator5110 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleHumidifierActuator5122 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleHumidifierActuator5134 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleHumidifierActuator5155 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleHumidifierActuator5167 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDoorActuator_in_entryRuleDoorActuator5205 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleDoorActuator5215 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_47_in_ruleDoorActuator5261 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleDoorActuator5274 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleDoorActuator5286 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleDoorActuator5298 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleDoorActuator5319 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleDoorActuator5331 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRadiatorActuator_in_entryRuleRadiatorActuator5369 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleRadiatorActuator5379 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_48_in_ruleRadiatorActuator5425 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleRadiatorActuator5438 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleRadiatorActuator5450 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleRadiatorActuator5462 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleRadiatorActuator5483 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleRadiatorActuator5495 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAudioAlarmActuator_in_entryRuleAudioAlarmActuator5533 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAudioAlarmActuator5543 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_49_in_ruleAudioAlarmActuator5589 = new BitSet(new long[]{0x0000000000000802L});
+        public static final BitSet FOLLOW_11_in_ruleAudioAlarmActuator5602 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleAudioAlarmActuator5614 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleAudioAlarmActuator5626 = new BitSet(new long[]{0x0000080000000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleAudioAlarmActuator5647 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleAudioAlarmActuator5659 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleSensorComponent_in_entryRuleSensorComponent5699 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleSensorComponent5709 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_50_in_ruleSensorComponent5755 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleSensorComponent5776 = new BitSet(new long[]{0x0008000000000002L});
+        public static final BitSet FOLLOW_51_in_ruleSensorComponent5789 = new BitSet(new long[]{0x000007FA00000000L});
+        public static final BitSet FOLLOW_ruleSensor_in_ruleSensorComponent5810 = new BitSet(new long[]{0x000007FA00000002L});
+        public static final BitSet FOLLOW_ruleSensor_in_ruleSensorComponent5831 = new BitSet(new long[]{0x000007FA00000002L});
+        public static final BitSet FOLLOW_ruleActuatorComponent_in_entryRuleActuatorComponent5870 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleActuatorComponent5880 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_52_in_ruleActuatorComponent5926 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleActuatorComponent5947 = new BitSet(new long[]{0x0008000000000002L});
+        public static final BitSet FOLLOW_51_in_ruleActuatorComponent5960 = new BitSet(new long[]{0x0003F00000000000L});
+        public static final BitSet FOLLOW_ruleActuator_in_ruleActuatorComponent5981 = new BitSet(new long[]{0x0003F00000000002L});
+        public static final BitSet FOLLOW_ruleActuator_in_ruleActuatorComponent6002 = new BitSet(new long[]{0x0003F00000000002L});
+        public static final BitSet FOLLOW_ruleConditions_in_entryRuleConditions6041 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleConditions6051 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_53_in_ruleConditions6097 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEBoolean_in_entryRuleEBoolean6134 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEBoolean6145 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_54_in_ruleEBoolean6183 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_55_in_ruleEBoolean6202 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

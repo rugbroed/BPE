@@ -134,7 +134,8 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 				}
 				else break;
 			case PolicyEnginePackage.HUMIDITY_SENSOR:
-				if(context == grammarAccess.getHumiditySensorRule()) {
+				if(context == grammarAccess.getHumiditySensorRule() ||
+				   context == grammarAccess.getSensorRule()) {
 					sequence_HumiditySensor(context, (HumiditySensor) semanticObject); 
 					return; 
 				}

@@ -18,12 +18,16 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public abstract class AbstractPolicyEngineDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PolicyEngineDslGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Policy___IsSpecifiedByKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q;
+	protected AbstractElementAlias match_Policy_UsesActuatorsKeyword_4_0_q;
+	protected AbstractElementAlias match_Policy_UsesSensorsKeyword_3_0_q;
+	protected AbstractElementAlias match_Policy___IsSpecifiedByKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PolicyEngineDslGrammarAccess) access;
-		match_Policy___IsSpecifiedByKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPolicyAccess().getIsSpecifiedByKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getPolicyAccess().getLeftCurlyBracketKeyword_7_1()), new TokenAlias(false, false, grammarAccess.getPolicyAccess().getRightCurlyBracketKeyword_7_3()));
+		match_Policy_UsesActuatorsKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getPolicyAccess().getUsesActuatorsKeyword_4_0());
+		match_Policy_UsesSensorsKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getPolicyAccess().getUsesSensorsKeyword_3_0());
+		match_Policy___IsSpecifiedByKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPolicyAccess().getIsSpecifiedByKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getPolicyAccess().getLeftCurlyBracketKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getPolicyAccess().getRightCurlyBracketKeyword_5_3()));
 	}
 	
 	@Override
@@ -49,17 +53,37 @@ public abstract class AbstractPolicyEngineDslSyntacticSequencer extends Abstract
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Policy___IsSpecifiedByKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q.equals(syntax))
-				emit_Policy___IsSpecifiedByKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Policy_UsesActuatorsKeyword_4_0_q.equals(syntax))
+				emit_Policy_UsesActuatorsKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Policy_UsesSensorsKeyword_3_0_q.equals(syntax))
+				emit_Policy_UsesSensorsKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Policy___IsSpecifiedByKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q.equals(syntax))
+				emit_Policy___IsSpecifiedByKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Syntax:
+	 *     'uses actuators'?
+	 */
+	protected void emit_Policy_UsesActuatorsKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'uses sensors'?
+	 */
+	protected void emit_Policy_UsesSensorsKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
 	 *     ('is specified by' '{' '}')?
 	 */
-	protected void emit_Policy___IsSpecifiedByKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Policy___IsSpecifiedByKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

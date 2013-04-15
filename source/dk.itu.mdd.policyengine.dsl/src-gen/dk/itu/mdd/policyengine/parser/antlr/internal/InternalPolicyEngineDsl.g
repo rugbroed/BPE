@@ -437,6 +437,16 @@ ruleSensor returns [EObject current=null]
         $current = $this_InfraredLightSensor_7.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getSensorAccess().getHumiditySensorParserRuleCall_8()); 
+    }
+    this_HumiditySensor_8=ruleHumiditySensor
+    { 
+        $current = $this_HumiditySensor_8.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -594,14 +604,14 @@ rulePolicy returns [EObject current=null]
 	    }
 
 )
-)	otherlv_3='uses sensors' 
+)(	otherlv_3='uses sensors' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getPolicyAccess().getUsesSensorsKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getPolicyAccess().getUsesSensorsKeyword_3_0());
     }
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesSensorsSensorParserRuleCall_4_0_0()); 
+	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesSensorsSensorParserRuleCall_3_1_0_0()); 
 	    }
 		lv_usesSensors_4_0=ruleSensor		{
 	        if ($current==null) {
@@ -618,12 +628,12 @@ rulePolicy returns [EObject current=null]
 )
 )(	otherlv_5=',' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getPolicyAccess().getCommaKeyword_4_1_0());
+    	newLeafNode(otherlv_5, grammarAccess.getPolicyAccess().getCommaKeyword_3_1_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesSensorsSensorParserRuleCall_4_1_1_0()); 
+	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesSensorsSensorParserRuleCall_3_1_1_1_0()); 
 	    }
 		lv_usesSensors_6_0=ruleSensor		{
 	        if ($current==null) {
@@ -638,14 +648,14 @@ rulePolicy returns [EObject current=null]
 	    }
 
 )
-))*)?	otherlv_7='uses actuators' 
+))*)?)?(	otherlv_7='uses actuators' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getPolicyAccess().getUsesActuatorsKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getPolicyAccess().getUsesActuatorsKeyword_4_0());
     }
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesActuatorParserRuleCall_6_0_0()); 
+	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesActuatorParserRuleCall_4_1_0_0()); 
 	    }
 		lv_uses_8_0=ruleActuator		{
 	        if ($current==null) {
@@ -662,12 +672,12 @@ rulePolicy returns [EObject current=null]
 )
 )(	otherlv_9=',' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getPolicyAccess().getCommaKeyword_6_1_0());
+    	newLeafNode(otherlv_9, grammarAccess.getPolicyAccess().getCommaKeyword_4_1_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesActuatorParserRuleCall_6_1_1_0()); 
+	        newCompositeNode(grammarAccess.getPolicyAccess().getUsesActuatorParserRuleCall_4_1_1_1_0()); 
 	    }
 		lv_uses_10_0=ruleActuator		{
 	        if ($current==null) {
@@ -682,18 +692,18 @@ rulePolicy returns [EObject current=null]
 	    }
 
 )
-))*)?(	otherlv_11='is specified by' 
+))*)?)?(	otherlv_11='is specified by' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getPolicyAccess().getIsSpecifiedByKeyword_7_0());
+    	newLeafNode(otherlv_11, grammarAccess.getPolicyAccess().getIsSpecifiedByKeyword_5_0());
     }
 	otherlv_12='{' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getPolicyAccess().getLeftCurlyBracketKeyword_7_1());
+    	newLeafNode(otherlv_12, grammarAccess.getPolicyAccess().getLeftCurlyBracketKeyword_5_1());
     }
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPolicyAccess().getSpecifiedByConditionsParserRuleCall_7_2_0_0()); 
+	        newCompositeNode(grammarAccess.getPolicyAccess().getSpecifiedByConditionsParserRuleCall_5_2_0_0()); 
 	    }
 		lv_specifiedBy_13_0=ruleConditions		{
 	        if ($current==null) {
@@ -711,7 +721,7 @@ rulePolicy returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPolicyAccess().getSpecifiedByConditionsParserRuleCall_7_2_1_0()); 
+	        newCompositeNode(grammarAccess.getPolicyAccess().getSpecifiedByConditionsParserRuleCall_5_2_1_0()); 
 	    }
 		lv_specifiedBy_14_0=ruleConditions		{
 	        if ($current==null) {
@@ -728,7 +738,7 @@ rulePolicy returns [EObject current=null]
 )
 )*)?	otherlv_15='}' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getPolicyAccess().getRightCurlyBracketKeyword_7_3());
+    	newLeafNode(otherlv_15, grammarAccess.getPolicyAccess().getRightCurlyBracketKeyword_5_3());
     }
 )?)
 ;
@@ -2029,6 +2039,69 @@ ruleInfraredLightSensor returns [EObject current=null]
 
 
 
+
+
+
+// Entry rule entryRuleHumiditySensor
+entryRuleHumiditySensor returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getHumiditySensorRule()); }
+	 iv_ruleHumiditySensor=ruleHumiditySensor 
+	 { $current=$iv_ruleHumiditySensor.current; } 
+	 EOF 
+;
+
+// Rule HumiditySensor
+ruleHumiditySensor returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getHumiditySensorAccess().getHumiditySensorAction_0(),
+            $current);
+    }
+)	otherlv_1='HumiditySensor' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getHumiditySensorAccess().getHumiditySensorKeyword_1());
+    }
+(	otherlv_2='{' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getHumiditySensorAccess().getLeftCurlyBracketKeyword_2_0());
+    }
+	otherlv_3='valueState' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getHumiditySensorAccess().getValueStateKeyword_2_1());
+    }
+	otherlv_4='=' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getHumiditySensorAccess().getEqualsSignKeyword_2_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getHumiditySensorAccess().getValueStateEIntParserRuleCall_2_3_0()); 
+	    }
+		lv_valueState_5_0=ruleEInt		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getHumiditySensorRule());
+	        }
+       		set(
+       			$current, 
+       			"valueState",
+        		lv_valueState_5_0, 
+        		"EInt");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_6='}' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getHumiditySensorAccess().getRightCurlyBracketKeyword_2_4());
+    }
+)?)
+;
 
 
 
