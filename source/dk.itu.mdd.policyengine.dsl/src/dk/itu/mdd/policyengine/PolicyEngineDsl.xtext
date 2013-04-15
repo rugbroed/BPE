@@ -62,14 +62,15 @@ Room returns Room:
 	name=EString
 	('is-of-type' extends+=[Room|EString] (extends+=[Room|EString])*)?
 	(
-		('is-controlled-by' policies+=[Policy|EString] (',' policies+=[Policy|EString])* )?
-		
-		(
-			('during' during+=[Schedule|EString] (',' during+=[Schedule|EString])*)
-			|
-			('during-allways')
+		('is-controlled-by' policies+=[Policy|EString] (',' policies+=[Policy|EString])*
+			(
+				('during' during+=[Schedule|EString] (',' during+=[Schedule|EString])*)
+				|
+				('during-allways')
+			)?
 		)?
 	)
+	
 	'{'
 		(declareSensor+=SensorComponent (declareSensor+=SensorComponent)*)?
 		(declareActuator+=ActuatorComponent (declareActuator+=ActuatorComponent)*)?

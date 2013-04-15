@@ -1015,9 +1015,9 @@ ruleRoom returns [EObject current=null]
 	    }
 
 )
-)*)?((	otherlv_5='is-controlled-by' 
+)*)?(	otherlv_5='is-controlled-by' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getRoomAccess().getIsControlledByKeyword_3_0_0());
+    	newLeafNode(otherlv_5, grammarAccess.getRoomAccess().getIsControlledByKeyword_3_0());
     }
 (
 (
@@ -1027,7 +1027,7 @@ ruleRoom returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getRoomAccess().getPoliciesPolicyCrossReference_3_0_1_0()); 
+	        newCompositeNode(grammarAccess.getRoomAccess().getPoliciesPolicyCrossReference_3_1_0()); 
 	    }
 		ruleEString		{ 
 	        afterParserOrEnumRuleCall();
@@ -1036,7 +1036,7 @@ ruleRoom returns [EObject current=null]
 )
 )(	otherlv_7=',' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getRoomAccess().getCommaKeyword_3_0_2_0());
+    	newLeafNode(otherlv_7, grammarAccess.getRoomAccess().getCommaKeyword_3_2_0());
     }
 (
 (
@@ -1046,16 +1046,16 @@ ruleRoom returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getRoomAccess().getPoliciesPolicyCrossReference_3_0_2_1_0()); 
+	        newCompositeNode(grammarAccess.getRoomAccess().getPoliciesPolicyCrossReference_3_2_1_0()); 
 	    }
 		ruleEString		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*)?((	otherlv_9='during' 
+))*((	otherlv_9='during' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getRoomAccess().getDuringKeyword_3_1_0_0());
+    	newLeafNode(otherlv_9, grammarAccess.getRoomAccess().getDuringKeyword_3_3_0_0());
     }
 (
 (
@@ -1065,7 +1065,7 @@ ruleRoom returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getRoomAccess().getDuringScheduleCrossReference_3_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getRoomAccess().getDuringScheduleCrossReference_3_3_0_1_0()); 
 	    }
 		ruleEString		{ 
 	        afterParserOrEnumRuleCall();
@@ -1074,7 +1074,7 @@ ruleRoom returns [EObject current=null]
 )
 )(	otherlv_11=',' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getRoomAccess().getCommaKeyword_3_1_0_2_0());
+    	newLeafNode(otherlv_11, grammarAccess.getRoomAccess().getCommaKeyword_3_3_0_2_0());
     }
 (
 (
@@ -1084,7 +1084,7 @@ ruleRoom returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getRoomAccess().getDuringScheduleCrossReference_3_1_0_2_1_0()); 
+	        newCompositeNode(grammarAccess.getRoomAccess().getDuringScheduleCrossReference_3_3_0_2_1_0()); 
 	    }
 		ruleEString		{ 
 	        afterParserOrEnumRuleCall();
@@ -1094,9 +1094,9 @@ ruleRoom returns [EObject current=null]
 ))*)
     |	otherlv_13='during-allways' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getRoomAccess().getDuringAllwaysKeyword_3_1_1());
+    	newLeafNode(otherlv_13, grammarAccess.getRoomAccess().getDuringAllwaysKeyword_3_3_1());
     }
-)?)	otherlv_14='{' 
+)?)?	otherlv_14='{' 
     {
     	newLeafNode(otherlv_14, grammarAccess.getRoomAccess().getLeftCurlyBracketKeyword_4());
     }

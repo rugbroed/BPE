@@ -31,6 +31,11 @@ BruelOgKjaer {
 	days SATURDAY, SUNDAY
 	from 00:00 to 00:00
 	
+	// Just to show that when having a room-type with no 'is-controlled-by' then
+	// there is no 'during' either!
+	room-type NoPolicyRoom {
+	}
+	
 	room-type TemperatureControlledRoom
 	is-controlled-by TemperatureControlPolicy
 	during WorkingWeekHours, LateWorkingWeekHours

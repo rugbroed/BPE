@@ -493,8 +493,7 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 	 *     (
 	 *         name=EString 
 	 *         (extends+=[Room|EString] extends+=[Room|EString]*)? 
-	 *         (policies+=[Policy|EString] policies+=[Policy|EString]*)? 
-	 *         (during+=[Schedule|EString] during+=[Schedule|EString]*)? 
+	 *         (policies+=[Policy|EString] policies+=[Policy|EString]* (during+=[Schedule|EString] during+=[Schedule|EString]*)?)? 
 	 *         (declareSensor+=SensorComponent declareSensor+=SensorComponent*)? 
 	 *         (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)?
 	 *     )
