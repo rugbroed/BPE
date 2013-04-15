@@ -1254,4 +1254,16 @@
     <element xmi:type="ecore:EReference" href="PolicyEngine.ecore#//Model/schedules"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_j0hoU6WaEeKKp-oC6DfnVw" points="[50, 7, -397, -56]$[380, 64, -67, 1]"/>
   </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_WYoZAKWcEeKKp-oC6DfnVw" type="3002" source="_1fFQ4KA8EeKSvqny81lm-w" target="_spXLUKOHEeK5kcUCS8-RZg">
+    <children xmi:type="notation:Node" xmi:id="_WYpAEKWcEeKKp-oC6DfnVw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WYpAEaWcEeKKp-oC6DfnVw" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_WYpnIKWcEeKKp-oC6DfnVw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WYpnIaWcEeKKp-oC6DfnVw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_WYoZAaWcEeKKp-oC6DfnVw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_WYoZAqWcEeKKp-oC6DfnVw" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="PolicyEngine.ecore#//Room/policies"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WYoZA6WcEeKKp-oC6DfnVw" points="[50, -7, -719, 84]$[719, -94, -50, -3]"/>
+  </edges>
 </notation:Diagram>

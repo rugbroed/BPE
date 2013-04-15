@@ -11,17 +11,14 @@ Model returns Model:
 		(stateDefinition+=State (stateDefinition+=State)*)?
 		(policyDefinition+=Policy (policyDefinition+=Policy)*)?
 		(schedules+=Schedule (schedules+=Schedule)*)?
-		('room-type' predefinedRooms+=Room (predefinedRooms+=Room)*)?
+		('room-type' predefinedRooms+=Room)*
 		(buildings+=Building (buildings+=Building)*)?
 	'}';
 
-Actuator returns Actuator:
-	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator;
-
-
-Sensor returns Sensor:
-	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor | InfraredLightSensor | HumiditySensor;
-
+State returns State:
+	{State}
+	'state' name=EString valueState?= '=' EBoolean
+	;
 
 Schedule returns Schedule:
 	{Schedule}
@@ -29,27 +26,6 @@ Schedule returns Schedule:
 	name=EString
 		('days' weekdays+=Weekdays ( "," weekdays+=Weekdays)*)?
 		('from' from=Time 'to' to=Time)?
-	;
-
-enum Weekdays:
-	MONDAY | TUESDAY | WEDENSDAY | THURSDAY| FRIDAY | SATURDAY | SUNDAY
-	;
-
-Time returns Time:
-	{Time}
-		(hours=EShort ':' minutes=EShort)?
-	;
-
-EShort returns ecore::EShort:
-	'-'? INT
-	;
-
-EString returns ecore::EString:
-	STRING | ID;
-
-State returns State:
-	{State}
-	'state' name=EString valueState?= '=' EBoolean
 	;
 
 Policy returns Policy:
@@ -84,11 +60,36 @@ Floor returns Floor:
 Room returns Room:
 	{Room}
 	name=EString
-	('is of type' extends+=[Room|EString] (extends+=[Room|EString])*)?
-	('{'
+	('is-of-type' extends+=[Room|EString] (extends+=[Room|EString])*)?
+	('is-controlled-by' policies+=[Policy|EString] (',' policies+=[Policy|EString])*)?
+	'{'
 		(declareSensor+=SensorComponent (declareSensor+=SensorComponent)*)?
 		(declareActuator+=ActuatorComponent (declareActuator+=ActuatorComponent)*)?
-	'}');
+	'}'
+	;
+
+enum Weekdays:
+	MONDAY | TUESDAY | WEDENSDAY | THURSDAY| FRIDAY | SATURDAY | SUNDAY
+	;
+
+Actuator returns Actuator:
+	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator;
+
+
+Sensor returns Sensor:
+	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor | InfraredLightSensor | HumiditySensor;
+
+Time returns Time:
+	{Time}
+		(hours=EShort ':' minutes=EShort)?
+	;
+
+EShort returns ecore::EShort:
+	'-'? INT
+	;
+
+EString returns ecore::EString:
+	STRING | ID;
 	
 CTS returns CTS:
 	{CTS}

@@ -3,6 +3,7 @@
 package dk.itu.mdd.policyengine.PolicyEngine.impl;
 
 import dk.itu.mdd.policyengine.PolicyEngine.ActuatorComponent;
+import dk.itu.mdd.policyengine.PolicyEngine.Policy;
 import dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage;
 import dk.itu.mdd.policyengine.PolicyEngine.Room;
 import dk.itu.mdd.policyengine.PolicyEngine.SensorComponent;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomImpl#getDeclareActuator <em>Declare Actuator</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomImpl#getExtends <em>Extends</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomImpl#getTimers <em>Timers</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomImpl#getPolicies <em>Policies</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +79,16 @@ public class RoomImpl extends NamedElementImpl implements Room {
 	 * @ordered
 	 */
 	protected EList<Timer> timers;
+
+	/**
+	 * The cached value of the '{@link #getPolicies() <em>Policies</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPolicies()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Policy> policies;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,6 +162,18 @@ public class RoomImpl extends NamedElementImpl implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Policy> getPolicies() {
+		if (policies == null) {
+			policies = new EObjectResolvingEList<Policy>(Policy.class, this, PolicyEnginePackage.ROOM__POLICIES);
+		}
+		return policies;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -179,6 +203,8 @@ public class RoomImpl extends NamedElementImpl implements Room {
 				return getExtends();
 			case PolicyEnginePackage.ROOM__TIMERS:
 				return getTimers();
+			case PolicyEnginePackage.ROOM__POLICIES:
+				return getPolicies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,6 +234,10 @@ public class RoomImpl extends NamedElementImpl implements Room {
 				getTimers().clear();
 				getTimers().addAll((Collection<? extends Timer>)newValue);
 				return;
+			case PolicyEnginePackage.ROOM__POLICIES:
+				getPolicies().clear();
+				getPolicies().addAll((Collection<? extends Policy>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -232,6 +262,9 @@ public class RoomImpl extends NamedElementImpl implements Room {
 			case PolicyEnginePackage.ROOM__TIMERS:
 				getTimers().clear();
 				return;
+			case PolicyEnginePackage.ROOM__POLICIES:
+				getPolicies().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,6 +285,8 @@ public class RoomImpl extends NamedElementImpl implements Room {
 				return extends_ != null && !extends_.isEmpty();
 			case PolicyEnginePackage.ROOM__TIMERS:
 				return timers != null && !timers.isEmpty();
+			case PolicyEnginePackage.ROOM__POLICIES:
+				return policies != null && !policies.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -85,6 +85,8 @@
         eType="#//Room"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timers" upperBound="-1"
         eType="#//Timer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="policies" upperBound="-1"
+        eType="#//Policy"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Floor" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" upperBound="-1"

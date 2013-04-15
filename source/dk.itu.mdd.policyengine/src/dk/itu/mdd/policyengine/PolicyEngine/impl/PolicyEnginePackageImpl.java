@@ -866,6 +866,15 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRoom_Policies() {
+		return (EReference)roomEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFloor() {
 		return floorEClass;
 	}
@@ -1150,6 +1159,7 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		createEReference(roomEClass, ROOM__DECLARE_ACTUATOR);
 		createEReference(roomEClass, ROOM__EXTENDS);
 		createEReference(roomEClass, ROOM__TIMERS);
+		createEReference(roomEClass, ROOM__POLICIES);
 
 		floorEClass = createEClass(FLOOR);
 		createEReference(floorEClass, FLOOR__ROOMS);
@@ -1322,6 +1332,7 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		initEReference(getRoom_DeclareActuator(), this.getActuatorComponent(), null, "declareActuator", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoom_Extends(), this.getRoom(), null, "extends", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoom_Timers(), this.getTimer(), null, "timers", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoom_Policies(), this.getPolicy(), null, "policies", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(floorEClass, Floor.class, "Floor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFloor_Rooms(), this.getRoom(), null, "rooms", null, 0, -1, Floor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

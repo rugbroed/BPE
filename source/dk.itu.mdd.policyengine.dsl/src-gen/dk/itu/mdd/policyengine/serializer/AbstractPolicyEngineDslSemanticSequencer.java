@@ -443,7 +443,7 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 	 *         (stateDefinition+=State stateDefinition+=State*)? 
 	 *         (policyDefinition+=Policy policyDefinition+=Policy*)? 
 	 *         (schedules+=Schedule schedules+=Schedule*)? 
-	 *         (predefinedRooms+=Room predefinedRooms+=Room*)? 
+	 *         predefinedRooms+=Room* 
 	 *         (buildings+=Building buildings+=Building*)?
 	 *     )
 	 */
@@ -493,6 +493,7 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 	 *     (
 	 *         name=EString 
 	 *         (extends+=[Room|EString] extends+=[Room|EString]*)? 
+	 *         (policies+=[Policy|EString] policies+=[Policy|EString]*)? 
 	 *         (declareSensor+=SensorComponent declareSensor+=SensorComponent*)? 
 	 *         (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)?
 	 *     )

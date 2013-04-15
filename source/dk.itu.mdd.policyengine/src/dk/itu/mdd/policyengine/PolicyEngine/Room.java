@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getDeclareActuator <em>Declare Actuator</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getExtends <em>Extends</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getTimers <em>Timers</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getPolicies <em>Policies</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,5 +88,21 @@ public interface Room extends NamedElement {
 	 * @generated
 	 */
 	EList<Timer> getTimers();
+
+	/**
+	 * Returns the value of the '<em><b>Policies</b></em>' reference list.
+	 * The list contents are of type {@link dk.itu.mdd.policyengine.PolicyEngine.Policy}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Policies</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Policies</em>' reference list.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getRoom_Policies()
+	 * @model
+	 * @generated
+	 */
+	EList<Policy> getPolicies();
 
 } // Room

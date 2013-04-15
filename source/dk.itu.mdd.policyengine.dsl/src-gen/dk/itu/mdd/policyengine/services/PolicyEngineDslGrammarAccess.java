@@ -44,8 +44,6 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRoomTypeKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cPredefinedRoomsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cPredefinedRoomsRoomParserRuleCall_6_1_0 = (RuleCall)cPredefinedRoomsAssignment_6_1.eContents().get(0);
-		private final Assignment cPredefinedRoomsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cPredefinedRoomsRoomParserRuleCall_6_2_0 = (RuleCall)cPredefinedRoomsAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Assignment cBuildingsAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
 		private final RuleCall cBuildingsBuildingParserRuleCall_7_0_0 = (RuleCall)cBuildingsAssignment_7_0.eContents().get(0);
@@ -55,13 +53,13 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Model:
 		//	{Model} name=EString "{" (stateDefinition+=State stateDefinition+=State*)? (policyDefinition+=Policy
-		//	policyDefinition+=Policy*)? (schedules+=Schedule schedules+=Schedule*)? ("room-type" predefinedRooms+=Room
-		//	predefinedRooms+=Room*)? (buildings+=Building buildings+=Building*)? "}";
+		//	policyDefinition+=Policy*)? (schedules+=Schedule schedules+=Schedule*)? ("room-type" predefinedRooms+=Room)*
+		//	(buildings+=Building buildings+=Building*)? "}";
 		public ParserRule getRule() { return rule; }
 
 		//{Model} name=EString "{" (stateDefinition+=State stateDefinition+=State*)? (policyDefinition+=Policy
-		//policyDefinition+=Policy*)? (schedules+=Schedule schedules+=Schedule*)? ("room-type" predefinedRooms+=Room
-		//predefinedRooms+=Room*)? (buildings+=Building buildings+=Building*)? "}"
+		//policyDefinition+=Policy*)? (schedules+=Schedule schedules+=Schedule*)? ("room-type" predefinedRooms+=Room)*
+		//(buildings+=Building buildings+=Building*)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{Model}
@@ -121,7 +119,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Schedule
 		public RuleCall getSchedulesScheduleParserRuleCall_5_1_0() { return cSchedulesScheduleParserRuleCall_5_1_0; }
 
-		//("room-type" predefinedRooms+=Room predefinedRooms+=Room*)?
+		//("room-type" predefinedRooms+=Room)*
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"room-type"
@@ -132,12 +130,6 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Room
 		public RuleCall getPredefinedRoomsRoomParserRuleCall_6_1_0() { return cPredefinedRoomsRoomParserRuleCall_6_1_0; }
-
-		//predefinedRooms+=Room*
-		public Assignment getPredefinedRoomsAssignment_6_2() { return cPredefinedRoomsAssignment_6_2; }
-
-		//Room
-		public RuleCall getPredefinedRoomsRoomParserRuleCall_6_2_0() { return cPredefinedRoomsRoomParserRuleCall_6_2_0; }
 
 		//(buildings+=Building buildings+=Building*)?
 		public Group getGroup_7() { return cGroup_7; }
@@ -158,90 +150,44 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
-	public class ActuatorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Actuator");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cLightSwitchActuatorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cWindowActuatorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cHumidifierActuatorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cDoorActuatorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cRadiatorActuatorParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cAudioAlarmActuatorParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+	public class StateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "State");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cStateAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cStateKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cValueStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cValueStateEqualsSignKeyword_3_0 = (Keyword)cValueStateAssignment_3.eContents().get(0);
+		private final RuleCall cEBooleanParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
-		//Actuator:
-		//	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator;
+		//State:
+		//	{State} "state" name=EString valueState?="=" EBoolean;
 		public ParserRule getRule() { return rule; }
 
-		//LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//{State} "state" name=EString valueState?="=" EBoolean
+		public Group getGroup() { return cGroup; }
 
-		//LightSwitchActuator
-		public RuleCall getLightSwitchActuatorParserRuleCall_0() { return cLightSwitchActuatorParserRuleCall_0; }
+		//{State}
+		public Action getStateAction_0() { return cStateAction_0; }
 
-		//WindowActuator
-		public RuleCall getWindowActuatorParserRuleCall_1() { return cWindowActuatorParserRuleCall_1; }
+		//"state"
+		public Keyword getStateKeyword_1() { return cStateKeyword_1; }
 
-		//HumidifierActuator
-		public RuleCall getHumidifierActuatorParserRuleCall_2() { return cHumidifierActuatorParserRuleCall_2; }
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
-		//DoorActuator
-		public RuleCall getDoorActuatorParserRuleCall_3() { return cDoorActuatorParserRuleCall_3; }
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//RadiatorActuator
-		public RuleCall getRadiatorActuatorParserRuleCall_4() { return cRadiatorActuatorParserRuleCall_4; }
+		//valueState?="="
+		public Assignment getValueStateAssignment_3() { return cValueStateAssignment_3; }
 
-		//AudioAlarmActuator
-		public RuleCall getAudioAlarmActuatorParserRuleCall_5() { return cAudioAlarmActuatorParserRuleCall_5; }
-	}
+		//"="
+		public Keyword getValueStateEqualsSignKeyword_3_0() { return cValueStateEqualsSignKeyword_3_0; }
 
-	public class SensorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Sensor");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cMotionSensorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cTemperatureSensorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cPressureSensorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cTouchSensorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cLightSensorParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cSmokeSensorParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cCO2SensorParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cInfraredLightSensorParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cHumiditySensorParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
-		
-		//Sensor:
-		//	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor |
-		//	InfraredLightSensor | HumiditySensor;
-		public ParserRule getRule() { return rule; }
-
-		//MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor |
-		//InfraredLightSensor | HumiditySensor
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//MotionSensor
-		public RuleCall getMotionSensorParserRuleCall_0() { return cMotionSensorParserRuleCall_0; }
-
-		//TemperatureSensor
-		public RuleCall getTemperatureSensorParserRuleCall_1() { return cTemperatureSensorParserRuleCall_1; }
-
-		//PressureSensor
-		public RuleCall getPressureSensorParserRuleCall_2() { return cPressureSensorParserRuleCall_2; }
-
-		//TouchSensor
-		public RuleCall getTouchSensorParserRuleCall_3() { return cTouchSensorParserRuleCall_3; }
-
-		//LightSensor
-		public RuleCall getLightSensorParserRuleCall_4() { return cLightSensorParserRuleCall_4; }
-
-		//SmokeSensor
-		public RuleCall getSmokeSensorParserRuleCall_5() { return cSmokeSensorParserRuleCall_5; }
-
-		//CO2Sensor
-		public RuleCall getCO2SensorParserRuleCall_6() { return cCO2SensorParserRuleCall_6; }
-
-		//InfraredLightSensor
-		public RuleCall getInfraredLightSensorParserRuleCall_7() { return cInfraredLightSensorParserRuleCall_7; }
-
-		//HumiditySensor
-		public RuleCall getHumiditySensorParserRuleCall_8() { return cHumiditySensorParserRuleCall_8; }
+		//EBoolean
+		public RuleCall getEBooleanParserRuleCall_4() { return cEBooleanParserRuleCall_4; }
 	}
 
 	public class ScheduleElements extends AbstractParserRuleElementFinder {
@@ -332,126 +278,6 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Time
 		public RuleCall getToTimeParserRuleCall_4_3_0() { return cToTimeParserRuleCall_4_3_0; }
-	}
-
-	public class TimeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Time");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cTimeAction_0 = (Action)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Assignment cHoursAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cHoursEShortParserRuleCall_1_0_0 = (RuleCall)cHoursAssignment_1_0.eContents().get(0);
-		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cMinutesAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cMinutesEShortParserRuleCall_1_2_0 = (RuleCall)cMinutesAssignment_1_2.eContents().get(0);
-		
-		//Time:
-		//	{Time} (hours=EShort ":" minutes=EShort)?;
-		public ParserRule getRule() { return rule; }
-
-		//{Time} (hours=EShort ":" minutes=EShort)?
-		public Group getGroup() { return cGroup; }
-
-		//{Time}
-		public Action getTimeAction_0() { return cTimeAction_0; }
-
-		//(hours=EShort ":" minutes=EShort)?
-		public Group getGroup_1() { return cGroup_1; }
-
-		//hours=EShort
-		public Assignment getHoursAssignment_1_0() { return cHoursAssignment_1_0; }
-
-		//EShort
-		public RuleCall getHoursEShortParserRuleCall_1_0_0() { return cHoursEShortParserRuleCall_1_0_0; }
-
-		//":"
-		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
-
-		//minutes=EShort
-		public Assignment getMinutesAssignment_1_2() { return cMinutesAssignment_1_2; }
-
-		//EShort
-		public RuleCall getMinutesEShortParserRuleCall_1_2_0() { return cMinutesEShortParserRuleCall_1_2_0; }
-	}
-
-	public class EShortElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EShort");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		
-		//EShort returns ecore::EShort:
-		//	"-"? INT;
-		public ParserRule getRule() { return rule; }
-
-		//"-"? INT
-		public Group getGroup() { return cGroup; }
-
-		//"-"?
-		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
-	}
-
-	public class EStringElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EString");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//EString returns ecore::EString:
-		//	STRING | ID;
-		public ParserRule getRule() { return rule; }
-
-		//STRING | ID
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
-	}
-
-	public class StateElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "State");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cStateAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cStateKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Assignment cValueStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Keyword cValueStateEqualsSignKeyword_3_0 = (Keyword)cValueStateAssignment_3.eContents().get(0);
-		private final RuleCall cEBooleanParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		
-		//State:
-		//	{State} "state" name=EString valueState?="=" EBoolean;
-		public ParserRule getRule() { return rule; }
-
-		//{State} "state" name=EString valueState?="=" EBoolean
-		public Group getGroup() { return cGroup; }
-
-		//{State}
-		public Action getStateAction_0() { return cStateAction_0; }
-
-		//"state"
-		public Keyword getStateKeyword_1() { return cStateKeyword_1; }
-
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-
-		//valueState?="="
-		public Assignment getValueStateAssignment_3() { return cValueStateAssignment_3; }
-
-		//"="
-		public Keyword getValueStateEqualsSignKeyword_3_0() { return cValueStateEqualsSignKeyword_3_0; }
-
-		//EBoolean
-		public RuleCall getEBooleanParserRuleCall_4() { return cEBooleanParserRuleCall_4; }
 	}
 
 	public class PolicyElements extends AbstractParserRuleElementFinder {
@@ -767,28 +593,37 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cExtendsRoomCrossReference_2_2_0 = (CrossReference)cExtendsAssignment_2_2.eContents().get(0);
 		private final RuleCall cExtendsRoomEStringParserRuleCall_2_2_0_1 = (RuleCall)cExtendsRoomCrossReference_2_2_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Assignment cDeclareSensorAssignment_3_1_0 = (Assignment)cGroup_3_1.eContents().get(0);
-		private final RuleCall cDeclareSensorSensorComponentParserRuleCall_3_1_0_0 = (RuleCall)cDeclareSensorAssignment_3_1_0.eContents().get(0);
-		private final Assignment cDeclareSensorAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cDeclareSensorSensorComponentParserRuleCall_3_1_1_0 = (RuleCall)cDeclareSensorAssignment_3_1_1.eContents().get(0);
+		private final Keyword cIsControlledByKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cPoliciesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cPoliciesPolicyCrossReference_3_1_0 = (CrossReference)cPoliciesAssignment_3_1.eContents().get(0);
+		private final RuleCall cPoliciesPolicyEStringParserRuleCall_3_1_0_1 = (RuleCall)cPoliciesPolicyCrossReference_3_1_0.eContents().get(1);
 		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
-		private final Assignment cDeclareActuatorAssignment_3_2_0 = (Assignment)cGroup_3_2.eContents().get(0);
-		private final RuleCall cDeclareActuatorActuatorComponentParserRuleCall_3_2_0_0 = (RuleCall)cDeclareActuatorAssignment_3_2_0.eContents().get(0);
-		private final Assignment cDeclareActuatorAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final RuleCall cDeclareActuatorActuatorComponentParserRuleCall_3_2_1_0 = (RuleCall)cDeclareActuatorAssignment_3_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Assignment cPoliciesAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final CrossReference cPoliciesPolicyCrossReference_3_2_1_0 = (CrossReference)cPoliciesAssignment_3_2_1.eContents().get(0);
+		private final RuleCall cPoliciesPolicyEStringParserRuleCall_3_2_1_0_1 = (RuleCall)cPoliciesPolicyCrossReference_3_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Assignment cDeclareSensorAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final RuleCall cDeclareSensorSensorComponentParserRuleCall_5_0_0 = (RuleCall)cDeclareSensorAssignment_5_0.eContents().get(0);
+		private final Assignment cDeclareSensorAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cDeclareSensorSensorComponentParserRuleCall_5_1_0 = (RuleCall)cDeclareSensorAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Assignment cDeclareActuatorAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final RuleCall cDeclareActuatorActuatorComponentParserRuleCall_6_0_0 = (RuleCall)cDeclareActuatorAssignment_6_0.eContents().get(0);
+		private final Assignment cDeclareActuatorAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cDeclareActuatorActuatorComponentParserRuleCall_6_1_0 = (RuleCall)cDeclareActuatorAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Room:
-		//	{Room} name=EString ("is of type" extends+=[Room|EString] extends+=[Room|EString]*)? ("{"
-		//	(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
-		//	declareActuator+=ActuatorComponent*)? "}");
+		//	{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
+		//	policies+=[Policy|EString] ("," policies+=[Policy|EString])*)? "{" (declareSensor+=SensorComponent
+		//	declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{Room} name=EString ("is of type" extends+=[Room|EString] extends+=[Room|EString]*)? ("{"
-		//(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
-		//declareActuator+=ActuatorComponent*)? "}")
+		//{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
+		//policies+=[Policy|EString] ("," policies+=[Policy|EString])*)? "{" (declareSensor+=SensorComponent
+		//declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{Room}
@@ -800,10 +635,10 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
 
-		//("is of type" extends+=[Room|EString] extends+=[Room|EString]*)?
+		//("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"is of type"
+		//"is-of-type"
 		public Keyword getIsOfTypeKeyword_2_0() { return cIsOfTypeKeyword_2_0; }
 
 		//extends+=[Room|EString]
@@ -824,45 +659,237 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getExtendsRoomEStringParserRuleCall_2_2_0_1() { return cExtendsRoomEStringParserRuleCall_2_2_0_1; }
 
-		//"{" (declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
-		//declareActuator+=ActuatorComponent*)? "}"
+		//("is-controlled-by" policies+=[Policy|EString] ("," policies+=[Policy|EString])*)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
+		//"is-controlled-by"
+		public Keyword getIsControlledByKeyword_3_0() { return cIsControlledByKeyword_3_0; }
 
-		//(declareSensor+=SensorComponent declareSensor+=SensorComponent*)?
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		//policies+=[Policy|EString]
+		public Assignment getPoliciesAssignment_3_1() { return cPoliciesAssignment_3_1; }
 
-		//declareSensor+=SensorComponent
-		public Assignment getDeclareSensorAssignment_3_1_0() { return cDeclareSensorAssignment_3_1_0; }
+		//[Policy|EString]
+		public CrossReference getPoliciesPolicyCrossReference_3_1_0() { return cPoliciesPolicyCrossReference_3_1_0; }
 
-		//SensorComponent
-		public RuleCall getDeclareSensorSensorComponentParserRuleCall_3_1_0_0() { return cDeclareSensorSensorComponentParserRuleCall_3_1_0_0; }
+		//EString
+		public RuleCall getPoliciesPolicyEStringParserRuleCall_3_1_0_1() { return cPoliciesPolicyEStringParserRuleCall_3_1_0_1; }
 
-		//declareSensor+=SensorComponent*
-		public Assignment getDeclareSensorAssignment_3_1_1() { return cDeclareSensorAssignment_3_1_1; }
-
-		//SensorComponent
-		public RuleCall getDeclareSensorSensorComponentParserRuleCall_3_1_1_0() { return cDeclareSensorSensorComponentParserRuleCall_3_1_1_0; }
-
-		//(declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)?
+		//("," policies+=[Policy|EString])*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
+		//","
+		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
+
+		//policies+=[Policy|EString]
+		public Assignment getPoliciesAssignment_3_2_1() { return cPoliciesAssignment_3_2_1; }
+
+		//[Policy|EString]
+		public CrossReference getPoliciesPolicyCrossReference_3_2_1_0() { return cPoliciesPolicyCrossReference_3_2_1_0; }
+
+		//EString
+		public RuleCall getPoliciesPolicyEStringParserRuleCall_3_2_1_0_1() { return cPoliciesPolicyEStringParserRuleCall_3_2_1_0_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+
+		//(declareSensor+=SensorComponent declareSensor+=SensorComponent*)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//declareSensor+=SensorComponent
+		public Assignment getDeclareSensorAssignment_5_0() { return cDeclareSensorAssignment_5_0; }
+
+		//SensorComponent
+		public RuleCall getDeclareSensorSensorComponentParserRuleCall_5_0_0() { return cDeclareSensorSensorComponentParserRuleCall_5_0_0; }
+
+		//declareSensor+=SensorComponent*
+		public Assignment getDeclareSensorAssignment_5_1() { return cDeclareSensorAssignment_5_1; }
+
+		//SensorComponent
+		public RuleCall getDeclareSensorSensorComponentParserRuleCall_5_1_0() { return cDeclareSensorSensorComponentParserRuleCall_5_1_0; }
+
+		//(declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)?
+		public Group getGroup_6() { return cGroup_6; }
+
 		//declareActuator+=ActuatorComponent
-		public Assignment getDeclareActuatorAssignment_3_2_0() { return cDeclareActuatorAssignment_3_2_0; }
+		public Assignment getDeclareActuatorAssignment_6_0() { return cDeclareActuatorAssignment_6_0; }
 
 		//ActuatorComponent
-		public RuleCall getDeclareActuatorActuatorComponentParserRuleCall_3_2_0_0() { return cDeclareActuatorActuatorComponentParserRuleCall_3_2_0_0; }
+		public RuleCall getDeclareActuatorActuatorComponentParserRuleCall_6_0_0() { return cDeclareActuatorActuatorComponentParserRuleCall_6_0_0; }
 
 		//declareActuator+=ActuatorComponent*
-		public Assignment getDeclareActuatorAssignment_3_2_1() { return cDeclareActuatorAssignment_3_2_1; }
+		public Assignment getDeclareActuatorAssignment_6_1() { return cDeclareActuatorAssignment_6_1; }
 
 		//ActuatorComponent
-		public RuleCall getDeclareActuatorActuatorComponentParserRuleCall_3_2_1_0() { return cDeclareActuatorActuatorComponentParserRuleCall_3_2_1_0; }
+		public RuleCall getDeclareActuatorActuatorComponentParserRuleCall_6_1_0() { return cDeclareActuatorActuatorComponentParserRuleCall_6_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3_3() { return cRightCurlyBracketKeyword_3_3; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+	}
+
+	public class ActuatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Actuator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cLightSwitchActuatorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cWindowActuatorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cHumidifierActuatorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cDoorActuatorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cRadiatorActuatorParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cAudioAlarmActuatorParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		
+		//Actuator:
+		//	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator;
+		public ParserRule getRule() { return rule; }
+
+		//LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//LightSwitchActuator
+		public RuleCall getLightSwitchActuatorParserRuleCall_0() { return cLightSwitchActuatorParserRuleCall_0; }
+
+		//WindowActuator
+		public RuleCall getWindowActuatorParserRuleCall_1() { return cWindowActuatorParserRuleCall_1; }
+
+		//HumidifierActuator
+		public RuleCall getHumidifierActuatorParserRuleCall_2() { return cHumidifierActuatorParserRuleCall_2; }
+
+		//DoorActuator
+		public RuleCall getDoorActuatorParserRuleCall_3() { return cDoorActuatorParserRuleCall_3; }
+
+		//RadiatorActuator
+		public RuleCall getRadiatorActuatorParserRuleCall_4() { return cRadiatorActuatorParserRuleCall_4; }
+
+		//AudioAlarmActuator
+		public RuleCall getAudioAlarmActuatorParserRuleCall_5() { return cAudioAlarmActuatorParserRuleCall_5; }
+	}
+
+	public class SensorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Sensor");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cMotionSensorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTemperatureSensorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPressureSensorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cTouchSensorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cLightSensorParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cSmokeSensorParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cCO2SensorParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cInfraredLightSensorParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cHumiditySensorParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		
+		//Sensor:
+		//	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor |
+		//	InfraredLightSensor | HumiditySensor;
+		public ParserRule getRule() { return rule; }
+
+		//MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor |
+		//InfraredLightSensor | HumiditySensor
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//MotionSensor
+		public RuleCall getMotionSensorParserRuleCall_0() { return cMotionSensorParserRuleCall_0; }
+
+		//TemperatureSensor
+		public RuleCall getTemperatureSensorParserRuleCall_1() { return cTemperatureSensorParserRuleCall_1; }
+
+		//PressureSensor
+		public RuleCall getPressureSensorParserRuleCall_2() { return cPressureSensorParserRuleCall_2; }
+
+		//TouchSensor
+		public RuleCall getTouchSensorParserRuleCall_3() { return cTouchSensorParserRuleCall_3; }
+
+		//LightSensor
+		public RuleCall getLightSensorParserRuleCall_4() { return cLightSensorParserRuleCall_4; }
+
+		//SmokeSensor
+		public RuleCall getSmokeSensorParserRuleCall_5() { return cSmokeSensorParserRuleCall_5; }
+
+		//CO2Sensor
+		public RuleCall getCO2SensorParserRuleCall_6() { return cCO2SensorParserRuleCall_6; }
+
+		//InfraredLightSensor
+		public RuleCall getInfraredLightSensorParserRuleCall_7() { return cInfraredLightSensorParserRuleCall_7; }
+
+		//HumiditySensor
+		public RuleCall getHumiditySensorParserRuleCall_8() { return cHumiditySensorParserRuleCall_8; }
+	}
+
+	public class TimeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Time");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cTimeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cHoursAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cHoursEShortParserRuleCall_1_0_0 = (RuleCall)cHoursAssignment_1_0.eContents().get(0);
+		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cMinutesAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cMinutesEShortParserRuleCall_1_2_0 = (RuleCall)cMinutesAssignment_1_2.eContents().get(0);
+		
+		//Time:
+		//	{Time} (hours=EShort ":" minutes=EShort)?;
+		public ParserRule getRule() { return rule; }
+
+		//{Time} (hours=EShort ":" minutes=EShort)?
+		public Group getGroup() { return cGroup; }
+
+		//{Time}
+		public Action getTimeAction_0() { return cTimeAction_0; }
+
+		//(hours=EShort ":" minutes=EShort)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//hours=EShort
+		public Assignment getHoursAssignment_1_0() { return cHoursAssignment_1_0; }
+
+		//EShort
+		public RuleCall getHoursEShortParserRuleCall_1_0_0() { return cHoursEShortParserRuleCall_1_0_0; }
+
+		//":"
+		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
+
+		//minutes=EShort
+		public Assignment getMinutesAssignment_1_2() { return cMinutesAssignment_1_2; }
+
+		//EShort
+		public RuleCall getMinutesEShortParserRuleCall_1_2_0() { return cMinutesEShortParserRuleCall_1_2_0; }
+	}
+
+	public class EShortElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EShort");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//EShort returns ecore::EShort:
+		//	"-"? INT;
+		public ParserRule getRule() { return rule; }
+
+		//"-"? INT
+		public Group getGroup() { return cGroup; }
+
+		//"-"?
+		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+	}
+
+	public class EStringElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EString");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//EString returns ecore::EString:
+		//	STRING | ID;
+		public ParserRule getRule() { return rule; }
+
+		//STRING | ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 
 	public class CTSElements extends AbstractParserRuleElementFinder {
@@ -2178,18 +2205,18 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	private ModelElements pModel;
-	private ActuatorElements pActuator;
-	private SensorElements pSensor;
-	private ScheduleElements pSchedule;
-	private WeekdaysElements unknownRuleWeekdays;
-	private TimeElements pTime;
-	private EShortElements pEShort;
-	private EStringElements pEString;
 	private StateElements pState;
+	private ScheduleElements pSchedule;
 	private PolicyElements pPolicy;
 	private BuildingElements pBuilding;
 	private FloorElements pFloor;
 	private RoomElements pRoom;
+	private WeekdaysElements unknownRuleWeekdays;
+	private ActuatorElements pActuator;
+	private SensorElements pSensor;
+	private TimeElements pTime;
+	private EShortElements pEShort;
+	private EStringElements pEString;
 	private CTSElements pCTS;
 	private AccessControlElements pAccessControl;
 	private CalendarSystemElements pCalendarSystem;
@@ -2257,8 +2284,8 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Model:
 	//	{Model} name=EString "{" (stateDefinition+=State stateDefinition+=State*)? (policyDefinition+=Policy
-	//	policyDefinition+=Policy*)? (schedules+=Schedule schedules+=Schedule*)? ("room-type" predefinedRooms+=Room
-	//	predefinedRooms+=Room*)? (buildings+=Building buildings+=Building*)? "}";
+	//	policyDefinition+=Policy*)? (schedules+=Schedule schedules+=Schedule*)? ("room-type" predefinedRooms+=Room)*
+	//	(buildings+=Building buildings+=Building*)? "}";
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
@@ -2267,25 +2294,14 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 
-	//Actuator:
-	//	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator;
-	public ActuatorElements getActuatorAccess() {
-		return (pActuator != null) ? pActuator : (pActuator = new ActuatorElements());
+	//State:
+	//	{State} "state" name=EString valueState?="=" EBoolean;
+	public StateElements getStateAccess() {
+		return (pState != null) ? pState : (pState = new StateElements());
 	}
 	
-	public ParserRule getActuatorRule() {
-		return getActuatorAccess().getRule();
-	}
-
-	//Sensor:
-	//	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor |
-	//	InfraredLightSensor | HumiditySensor;
-	public SensorElements getSensorAccess() {
-		return (pSensor != null) ? pSensor : (pSensor = new SensorElements());
-	}
-	
-	public ParserRule getSensorRule() {
-		return getSensorAccess().getRule();
+	public ParserRule getStateRule() {
+		return getStateAccess().getRule();
 	}
 
 	//Schedule:
@@ -2297,56 +2313,6 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getScheduleRule() {
 		return getScheduleAccess().getRule();
-	}
-
-	//enum Weekdays:
-	//	MONDAY | TUESDAY | WEDENSDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY;
-	public WeekdaysElements getWeekdaysAccess() {
-		return (unknownRuleWeekdays != null) ? unknownRuleWeekdays : (unknownRuleWeekdays = new WeekdaysElements());
-	}
-	
-	public EnumRule getWeekdaysRule() {
-		return getWeekdaysAccess().getRule();
-	}
-
-	//Time:
-	//	{Time} (hours=EShort ":" minutes=EShort)?;
-	public TimeElements getTimeAccess() {
-		return (pTime != null) ? pTime : (pTime = new TimeElements());
-	}
-	
-	public ParserRule getTimeRule() {
-		return getTimeAccess().getRule();
-	}
-
-	//EShort returns ecore::EShort:
-	//	"-"? INT;
-	public EShortElements getEShortAccess() {
-		return (pEShort != null) ? pEShort : (pEShort = new EShortElements());
-	}
-	
-	public ParserRule getEShortRule() {
-		return getEShortAccess().getRule();
-	}
-
-	//EString returns ecore::EString:
-	//	STRING | ID;
-	public EStringElements getEStringAccess() {
-		return (pEString != null) ? pEString : (pEString = new EStringElements());
-	}
-	
-	public ParserRule getEStringRule() {
-		return getEStringAccess().getRule();
-	}
-
-	//State:
-	//	{State} "state" name=EString valueState?="=" EBoolean;
-	public StateElements getStateAccess() {
-		return (pState != null) ? pState : (pState = new StateElements());
-	}
-	
-	public ParserRule getStateRule() {
-		return getStateAccess().getRule();
 	}
 
 	//Policy:
@@ -2383,15 +2349,76 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Room:
-	//	{Room} name=EString ("is of type" extends+=[Room|EString] extends+=[Room|EString]*)? ("{"
-	//	(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
-	//	declareActuator+=ActuatorComponent*)? "}");
+	//	{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
+	//	policies+=[Policy|EString] ("," policies+=[Policy|EString])*)? "{" (declareSensor+=SensorComponent
+	//	declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}";
 	public RoomElements getRoomAccess() {
 		return (pRoom != null) ? pRoom : (pRoom = new RoomElements());
 	}
 	
 	public ParserRule getRoomRule() {
 		return getRoomAccess().getRule();
+	}
+
+	//enum Weekdays:
+	//	MONDAY | TUESDAY | WEDENSDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY;
+	public WeekdaysElements getWeekdaysAccess() {
+		return (unknownRuleWeekdays != null) ? unknownRuleWeekdays : (unknownRuleWeekdays = new WeekdaysElements());
+	}
+	
+	public EnumRule getWeekdaysRule() {
+		return getWeekdaysAccess().getRule();
+	}
+
+	//Actuator:
+	//	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator;
+	public ActuatorElements getActuatorAccess() {
+		return (pActuator != null) ? pActuator : (pActuator = new ActuatorElements());
+	}
+	
+	public ParserRule getActuatorRule() {
+		return getActuatorAccess().getRule();
+	}
+
+	//Sensor:
+	//	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor |
+	//	InfraredLightSensor | HumiditySensor;
+	public SensorElements getSensorAccess() {
+		return (pSensor != null) ? pSensor : (pSensor = new SensorElements());
+	}
+	
+	public ParserRule getSensorRule() {
+		return getSensorAccess().getRule();
+	}
+
+	//Time:
+	//	{Time} (hours=EShort ":" minutes=EShort)?;
+	public TimeElements getTimeAccess() {
+		return (pTime != null) ? pTime : (pTime = new TimeElements());
+	}
+	
+	public ParserRule getTimeRule() {
+		return getTimeAccess().getRule();
+	}
+
+	//EShort returns ecore::EShort:
+	//	"-"? INT;
+	public EShortElements getEShortAccess() {
+		return (pEShort != null) ? pEShort : (pEShort = new EShortElements());
+	}
+	
+	public ParserRule getEShortRule() {
+		return getEShortAccess().getRule();
+	}
+
+	//EString returns ecore::EString:
+	//	STRING | ID;
+	public EStringElements getEStringAccess() {
+		return (pEString != null) ? pEString : (pEString = new EStringElements());
+	}
+	
+	public ParserRule getEStringRule() {
+		return getEStringAccess().getRule();
 	}
 
 	//CTS:
