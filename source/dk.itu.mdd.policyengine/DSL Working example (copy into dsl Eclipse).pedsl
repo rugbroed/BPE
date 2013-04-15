@@ -1,0 +1,32 @@
+BruelOgKjaer {
+	state humidityAlarm = false
+	state fireAlarm = false
+
+	policy TemperatureControlPolicy
+	uses sensors TemperatureSensor
+	uses actuators RadiatorActuator
+	is specified by {
+	}
+	
+	policy HumidityMonitoringPolicy
+	uses sensors HumiditySensor
+	uses actuators HumidifierActuator
+	is specified by {
+	}
+	
+	schedule WorkingWeekHours 
+	days MONDAY, TUESDAY, WEDENSDAY, THURSDAY, FRIDAY
+	from 06:00 to 18:00
+
+	schedule LateWorkingWeekHours
+	days MONDAY, TUESDAY, WEDENSDAY, THURSDAY, FRIDAY
+	from 18:00 to 22:00
+	
+	schedule LockdownWeekHours
+	days MONDAY, TUESDAY, WEDENSDAY, THURSDAY, FRIDAY
+	from 22:00 to 06:00
+	
+	schedule LockdownWeekendHours
+	days SATURDAY, SUNDAY
+	from 00:00 to 00:00
+}
