@@ -10,7 +10,7 @@ Model returns Model:
 	'{'
 		(stateDefinition+=State (stateDefinition+=State)*)?
 		(policyDefinition+=Policy (policyDefinition+=Policy)*)?
-		(predefinedRooms+=Room (predefinedRooms+=Room)*)?
+		('room-type' predefinedRooms+=Room (predefinedRooms+=Room)*)?
 		(buildings+=Building (buildings+=Building)*)?
 	'}';
 
@@ -33,8 +33,8 @@ Policy returns Policy:
 	{Policy}
 	'policy'
 	name=EString
-	'uses sensors' (usesSensors+=Sensor ("," usesSensors+=Sensor)*)?
-	'uses actuators' (uses+=Actuator ("," uses+=Actuator)*)?
+	'uses sensors' (usesSensors+=Sensor (',' usesSensors+=Sensor)*)?
+	'uses actuators' (uses+=Actuator (',' uses+=Actuator)*)?
 	('is specified by' '{' specifiedBy+=Conditions (specifiedBy+=Conditions)* '}')?
 	;
 
@@ -55,37 +55,32 @@ Floor returns Floor:
 	'floor'
 	name=EString
 	'{'
-		('rooms' '{' rooms+=Room ( "," rooms+=Room)* '}' )?
+		('room' rooms+=Room (',' rooms+=Room)*)?
 	'}';
 
 Room returns Room:
 	{Room}
-	'room type'
 	name=EString
-	('is of type ' extends+=[Room|EString] (extends+=[Room|EString])*)?
+	('is of type' extends+=[Room|EString] (extends+=[Room|EString])*)?
 	'{'
 		(declareSensor+=SensorComponent (declareSensor+=SensorComponent)*)?
 		(declareActuator+=ActuatorComponent (declareActuator+=ActuatorComponent)*)?
 	'}';
-
-
-
-
 	
 CTS returns CTS:
 	{CTS}
 	'CTS'
 	'{'
-		('temperatureSensors' '{' temperatureSensors+=Sensor ( "," temperatureSensors+=Sensor)* '}' )?
-		('ctsActuators' '{' ctsActuators+=Actuator ( "," ctsActuators+=Actuator)* '}' )?
+		('temperatureSensors' '{' temperatureSensors+=Sensor ( ',' temperatureSensors+=Sensor)* '}' )?
+		('ctsActuators' '{' ctsActuators+=Actuator ( ',' ctsActuators+=Actuator)* '}' )?
 	'}';
 
 AccessControl returns AccessControl:
 	{AccessControl}
 	'AccessControl'
 	'{'
-		('accessControlSensors' '{' accessControlSensors+=Sensor ( "," accessControlSensors+=Sensor)* '}' )?
-		('accessControlDoorLockActuator' '{' accessControlDoorLockActuator+=Actuator ( "," accessControlDoorLockActuator+=Actuator)* '}' )?
+		('accessControlSensors' '{' accessControlSensors+=Sensor ( ',' accessControlSensors+=Sensor)* '}' )?
+		('accessControlDoorLockActuator' '{' accessControlDoorLockActuator+=Actuator ( ',' accessControlDoorLockActuator+=Actuator)* '}' )?
 	'}';
 
 CalendarSystem returns CalendarSystem:

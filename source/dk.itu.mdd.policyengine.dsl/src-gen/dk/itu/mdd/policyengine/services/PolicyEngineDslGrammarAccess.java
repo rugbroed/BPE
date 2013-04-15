@@ -36,10 +36,11 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPolicyDefinitionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cPolicyDefinitionPolicyParserRuleCall_4_1_0 = (RuleCall)cPolicyDefinitionAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Assignment cPredefinedRoomsAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final RuleCall cPredefinedRoomsRoomParserRuleCall_5_0_0 = (RuleCall)cPredefinedRoomsAssignment_5_0.eContents().get(0);
+		private final Keyword cRoomTypeKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cPredefinedRoomsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final RuleCall cPredefinedRoomsRoomParserRuleCall_5_1_0 = (RuleCall)cPredefinedRoomsAssignment_5_1.eContents().get(0);
+		private final Assignment cPredefinedRoomsAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cPredefinedRoomsRoomParserRuleCall_5_2_0 = (RuleCall)cPredefinedRoomsAssignment_5_2.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Assignment cBuildingsAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
 		private final RuleCall cBuildingsBuildingParserRuleCall_6_0_0 = (RuleCall)cBuildingsAssignment_6_0.eContents().get(0);
@@ -49,13 +50,13 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Model:
 		//	{Model} name=EString "{" (stateDefinition+=State stateDefinition+=State*)? (policyDefinition+=Policy
-		//	policyDefinition+=Policy*)? (predefinedRooms+=Room predefinedRooms+=Room*)? (buildings+=Building
+		//	policyDefinition+=Policy*)? ("room-type" predefinedRooms+=Room predefinedRooms+=Room*)? (buildings+=Building
 		//	buildings+=Building*)? "}";
 		public ParserRule getRule() { return rule; }
 
 		//{Model} name=EString "{" (stateDefinition+=State stateDefinition+=State*)? (policyDefinition+=Policy
-		//policyDefinition+=Policy*)? (predefinedRooms+=Room predefinedRooms+=Room*)? (buildings+=Building buildings+=Building*)?
-		//"}"
+		//policyDefinition+=Policy*)? ("room-type" predefinedRooms+=Room predefinedRooms+=Room*)? (buildings+=Building
+		//buildings+=Building*)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{Model}
@@ -100,20 +101,23 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Policy
 		public RuleCall getPolicyDefinitionPolicyParserRuleCall_4_1_0() { return cPolicyDefinitionPolicyParserRuleCall_4_1_0; }
 
-		//(predefinedRooms+=Room predefinedRooms+=Room*)?
+		//("room-type" predefinedRooms+=Room predefinedRooms+=Room*)?
 		public Group getGroup_5() { return cGroup_5; }
 
+		//"room-type"
+		public Keyword getRoomTypeKeyword_5_0() { return cRoomTypeKeyword_5_0; }
+
 		//predefinedRooms+=Room
-		public Assignment getPredefinedRoomsAssignment_5_0() { return cPredefinedRoomsAssignment_5_0; }
-
-		//Room
-		public RuleCall getPredefinedRoomsRoomParserRuleCall_5_0_0() { return cPredefinedRoomsRoomParserRuleCall_5_0_0; }
-
-		//predefinedRooms+=Room*
 		public Assignment getPredefinedRoomsAssignment_5_1() { return cPredefinedRoomsAssignment_5_1; }
 
 		//Room
 		public RuleCall getPredefinedRoomsRoomParserRuleCall_5_1_0() { return cPredefinedRoomsRoomParserRuleCall_5_1_0; }
+
+		//predefinedRooms+=Room*
+		public Assignment getPredefinedRoomsAssignment_5_2() { return cPredefinedRoomsAssignment_5_2; }
+
+		//Room
+		public RuleCall getPredefinedRoomsRoomParserRuleCall_5_2_0() { return cPredefinedRoomsRoomParserRuleCall_5_2_0; }
 
 		//(buildings+=Building buildings+=Building*)?
 		public Group getGroup_6() { return cGroup_6; }
@@ -236,43 +240,29 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 
-	public class BuildingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Building");
+	public class StateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "State");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cBuildingAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cBuildingKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cStateAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cStateKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cCtsSystemAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cCtsSystemCTSParserRuleCall_4_0 = (RuleCall)cCtsSystemAssignment_4.eContents().get(0);
-		private final Assignment cAccessControlAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cAccessControlAccessControlParserRuleCall_5_0 = (RuleCall)cAccessControlAssignment_5.eContents().get(0);
-		private final Assignment cCalendarSystemAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cCalendarSystemCalendarSystemParserRuleCall_6_0 = (RuleCall)cCalendarSystemAssignment_6.eContents().get(0);
-		private final Assignment cMeetingScheduleSystemAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cMeetingScheduleSystemMeetingScheduleSystemParserRuleCall_7_0 = (RuleCall)cMeetingScheduleSystemAssignment_7.eContents().get(0);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Assignment cFloorsAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
-		private final RuleCall cFloorsFloorParserRuleCall_8_0_0 = (RuleCall)cFloorsAssignment_8_0.eContents().get(0);
-		private final Assignment cFloorsAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cFloorsFloorParserRuleCall_8_1_0 = (RuleCall)cFloorsAssignment_8_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cValueStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cValueStateEqualsSignKeyword_3_0 = (Keyword)cValueStateAssignment_3.eContents().get(0);
+		private final RuleCall cEBooleanParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
-		//Building:
-		//	{Building} "building" name=EString "{" ctsSystem=CTS? accessControl=AccessControl? calendarSystem=CalendarSystem?
-		//	meetingScheduleSystem=MeetingScheduleSystem? (floors+=Floor floors+=Floor*)? "}";
+		//State:
+		//	{State} "state" name=EString valueState?="=" EBoolean;
 		public ParserRule getRule() { return rule; }
 
-		//{Building} "building" name=EString "{" ctsSystem=CTS? accessControl=AccessControl? calendarSystem=CalendarSystem?
-		//meetingScheduleSystem=MeetingScheduleSystem? (floors+=Floor floors+=Floor*)? "}"
+		//{State} "state" name=EString valueState?="=" EBoolean
 		public Group getGroup() { return cGroup; }
 
-		//{Building}
-		public Action getBuildingAction_0() { return cBuildingAction_0; }
+		//{State}
+		public Action getStateAction_0() { return cStateAction_0; }
 
-		//"building"
-		public Keyword getBuildingKeyword_1() { return cBuildingKeyword_1; }
+		//"state"
+		public Keyword getStateKeyword_1() { return cStateKeyword_1; }
 
 		//name=EString
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -280,162 +270,14 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		//valueState?="="
+		public Assignment getValueStateAssignment_3() { return cValueStateAssignment_3; }
 
-		//ctsSystem=CTS?
-		public Assignment getCtsSystemAssignment_4() { return cCtsSystemAssignment_4; }
+		//"="
+		public Keyword getValueStateEqualsSignKeyword_3_0() { return cValueStateEqualsSignKeyword_3_0; }
 
-		//CTS
-		public RuleCall getCtsSystemCTSParserRuleCall_4_0() { return cCtsSystemCTSParserRuleCall_4_0; }
-
-		//accessControl=AccessControl?
-		public Assignment getAccessControlAssignment_5() { return cAccessControlAssignment_5; }
-
-		//AccessControl
-		public RuleCall getAccessControlAccessControlParserRuleCall_5_0() { return cAccessControlAccessControlParserRuleCall_5_0; }
-
-		//calendarSystem=CalendarSystem?
-		public Assignment getCalendarSystemAssignment_6() { return cCalendarSystemAssignment_6; }
-
-		//CalendarSystem
-		public RuleCall getCalendarSystemCalendarSystemParserRuleCall_6_0() { return cCalendarSystemCalendarSystemParserRuleCall_6_0; }
-
-		//meetingScheduleSystem=MeetingScheduleSystem?
-		public Assignment getMeetingScheduleSystemAssignment_7() { return cMeetingScheduleSystemAssignment_7; }
-
-		//MeetingScheduleSystem
-		public RuleCall getMeetingScheduleSystemMeetingScheduleSystemParserRuleCall_7_0() { return cMeetingScheduleSystemMeetingScheduleSystemParserRuleCall_7_0; }
-
-		//(floors+=Floor floors+=Floor*)?
-		public Group getGroup_8() { return cGroup_8; }
-
-		//floors+=Floor
-		public Assignment getFloorsAssignment_8_0() { return cFloorsAssignment_8_0; }
-
-		//Floor
-		public RuleCall getFloorsFloorParserRuleCall_8_0_0() { return cFloorsFloorParserRuleCall_8_0_0; }
-
-		//floors+=Floor*
-		public Assignment getFloorsAssignment_8_1() { return cFloorsAssignment_8_1; }
-
-		//Floor
-		public RuleCall getFloorsFloorParserRuleCall_8_1_0() { return cFloorsFloorParserRuleCall_8_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
-	}
-
-	public class RoomElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Room");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cRoomAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cRoomTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cIsOfTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cExtendsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cExtendsRoomCrossReference_3_1_0 = (CrossReference)cExtendsAssignment_3_1.eContents().get(0);
-		private final RuleCall cExtendsRoomEStringParserRuleCall_3_1_0_1 = (RuleCall)cExtendsRoomCrossReference_3_1_0.eContents().get(1);
-		private final Assignment cExtendsAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final CrossReference cExtendsRoomCrossReference_3_2_0 = (CrossReference)cExtendsAssignment_3_2.eContents().get(0);
-		private final RuleCall cExtendsRoomEStringParserRuleCall_3_2_0_1 = (RuleCall)cExtendsRoomCrossReference_3_2_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Assignment cDeclareSensorAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final RuleCall cDeclareSensorSensorComponentParserRuleCall_5_0_0 = (RuleCall)cDeclareSensorAssignment_5_0.eContents().get(0);
-		private final Assignment cDeclareSensorAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cDeclareSensorSensorComponentParserRuleCall_5_1_0 = (RuleCall)cDeclareSensorAssignment_5_1.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Assignment cDeclareActuatorAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
-		private final RuleCall cDeclareActuatorActuatorComponentParserRuleCall_6_0_0 = (RuleCall)cDeclareActuatorAssignment_6_0.eContents().get(0);
-		private final Assignment cDeclareActuatorAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cDeclareActuatorActuatorComponentParserRuleCall_6_1_0 = (RuleCall)cDeclareActuatorAssignment_6_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		
-		//Room:
-		//	{Room} "room type" name=EString ("is of type " extends+=[Room|EString] extends+=[Room|EString]*)? "{"
-		//	(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
-		//	declareActuator+=ActuatorComponent*)? "}";
-		public ParserRule getRule() { return rule; }
-
-		//{Room} "room type" name=EString ("is of type " extends+=[Room|EString] extends+=[Room|EString]*)? "{"
-		//(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
-		//declareActuator+=ActuatorComponent*)? "}"
-		public Group getGroup() { return cGroup; }
-
-		//{Room}
-		public Action getRoomAction_0() { return cRoomAction_0; }
-
-		//"room type"
-		public Keyword getRoomTypeKeyword_1() { return cRoomTypeKeyword_1; }
-
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-
-		//("is of type " extends+=[Room|EString] extends+=[Room|EString]*)?
-		public Group getGroup_3() { return cGroup_3; }
-
-		//"is of type "
-		public Keyword getIsOfTypeKeyword_3_0() { return cIsOfTypeKeyword_3_0; }
-
-		//extends+=[Room|EString]
-		public Assignment getExtendsAssignment_3_1() { return cExtendsAssignment_3_1; }
-
-		//[Room|EString]
-		public CrossReference getExtendsRoomCrossReference_3_1_0() { return cExtendsRoomCrossReference_3_1_0; }
-
-		//EString
-		public RuleCall getExtendsRoomEStringParserRuleCall_3_1_0_1() { return cExtendsRoomEStringParserRuleCall_3_1_0_1; }
-
-		//extends+=[Room|EString]*
-		public Assignment getExtendsAssignment_3_2() { return cExtendsAssignment_3_2; }
-
-		//[Room|EString]
-		public CrossReference getExtendsRoomCrossReference_3_2_0() { return cExtendsRoomCrossReference_3_2_0; }
-
-		//EString
-		public RuleCall getExtendsRoomEStringParserRuleCall_3_2_0_1() { return cExtendsRoomEStringParserRuleCall_3_2_0_1; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
-
-		//(declareSensor+=SensorComponent declareSensor+=SensorComponent*)?
-		public Group getGroup_5() { return cGroup_5; }
-
-		//declareSensor+=SensorComponent
-		public Assignment getDeclareSensorAssignment_5_0() { return cDeclareSensorAssignment_5_0; }
-
-		//SensorComponent
-		public RuleCall getDeclareSensorSensorComponentParserRuleCall_5_0_0() { return cDeclareSensorSensorComponentParserRuleCall_5_0_0; }
-
-		//declareSensor+=SensorComponent*
-		public Assignment getDeclareSensorAssignment_5_1() { return cDeclareSensorAssignment_5_1; }
-
-		//SensorComponent
-		public RuleCall getDeclareSensorSensorComponentParserRuleCall_5_1_0() { return cDeclareSensorSensorComponentParserRuleCall_5_1_0; }
-
-		//(declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)?
-		public Group getGroup_6() { return cGroup_6; }
-
-		//declareActuator+=ActuatorComponent
-		public Assignment getDeclareActuatorAssignment_6_0() { return cDeclareActuatorAssignment_6_0; }
-
-		//ActuatorComponent
-		public RuleCall getDeclareActuatorActuatorComponentParserRuleCall_6_0_0() { return cDeclareActuatorActuatorComponentParserRuleCall_6_0_0; }
-
-		//declareActuator+=ActuatorComponent*
-		public Assignment getDeclareActuatorAssignment_6_1() { return cDeclareActuatorAssignment_6_1; }
-
-		//ActuatorComponent
-		public RuleCall getDeclareActuatorActuatorComponentParserRuleCall_6_1_0() { return cDeclareActuatorActuatorComponentParserRuleCall_6_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		//EBoolean
+		public RuleCall getEBooleanParserRuleCall_4() { return cEBooleanParserRuleCall_4; }
 	}
 
 	public class PolicyElements extends AbstractParserRuleElementFinder {
@@ -564,29 +406,43 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
 	}
 
-	public class StateElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "State");
+	public class BuildingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Building");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cStateAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cStateKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cBuildingAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cBuildingKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Assignment cValueStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Keyword cValueStateEqualsSignKeyword_3_0 = (Keyword)cValueStateAssignment_3.eContents().get(0);
-		private final RuleCall cEBooleanParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cCtsSystemAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCtsSystemCTSParserRuleCall_4_0 = (RuleCall)cCtsSystemAssignment_4.eContents().get(0);
+		private final Assignment cAccessControlAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cAccessControlAccessControlParserRuleCall_5_0 = (RuleCall)cAccessControlAssignment_5.eContents().get(0);
+		private final Assignment cCalendarSystemAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cCalendarSystemCalendarSystemParserRuleCall_6_0 = (RuleCall)cCalendarSystemAssignment_6.eContents().get(0);
+		private final Assignment cMeetingScheduleSystemAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cMeetingScheduleSystemMeetingScheduleSystemParserRuleCall_7_0 = (RuleCall)cMeetingScheduleSystemAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Assignment cFloorsAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
+		private final RuleCall cFloorsFloorParserRuleCall_8_0_0 = (RuleCall)cFloorsAssignment_8_0.eContents().get(0);
+		private final Assignment cFloorsAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cFloorsFloorParserRuleCall_8_1_0 = (RuleCall)cFloorsAssignment_8_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
-		//State:
-		//	{State} "state" name=EString valueState?="=" EBoolean;
+		//Building:
+		//	{Building} "building" name=EString "{" ctsSystem=CTS? accessControl=AccessControl? calendarSystem=CalendarSystem?
+		//	meetingScheduleSystem=MeetingScheduleSystem? (floors+=Floor floors+=Floor*)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{State} "state" name=EString valueState?="=" EBoolean
+		//{Building} "building" name=EString "{" ctsSystem=CTS? accessControl=AccessControl? calendarSystem=CalendarSystem?
+		//meetingScheduleSystem=MeetingScheduleSystem? (floors+=Floor floors+=Floor*)? "}"
 		public Group getGroup() { return cGroup; }
 
-		//{State}
-		public Action getStateAction_0() { return cStateAction_0; }
+		//{Building}
+		public Action getBuildingAction_0() { return cBuildingAction_0; }
 
-		//"state"
-		public Keyword getStateKeyword_1() { return cStateKeyword_1; }
+		//"building"
+		public Keyword getBuildingKeyword_1() { return cBuildingKeyword_1; }
 
 		//name=EString
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -594,14 +450,225 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//valueState?="="
-		public Assignment getValueStateAssignment_3() { return cValueStateAssignment_3; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//"="
-		public Keyword getValueStateEqualsSignKeyword_3_0() { return cValueStateEqualsSignKeyword_3_0; }
+		//ctsSystem=CTS?
+		public Assignment getCtsSystemAssignment_4() { return cCtsSystemAssignment_4; }
 
-		//EBoolean
-		public RuleCall getEBooleanParserRuleCall_4() { return cEBooleanParserRuleCall_4; }
+		//CTS
+		public RuleCall getCtsSystemCTSParserRuleCall_4_0() { return cCtsSystemCTSParserRuleCall_4_0; }
+
+		//accessControl=AccessControl?
+		public Assignment getAccessControlAssignment_5() { return cAccessControlAssignment_5; }
+
+		//AccessControl
+		public RuleCall getAccessControlAccessControlParserRuleCall_5_0() { return cAccessControlAccessControlParserRuleCall_5_0; }
+
+		//calendarSystem=CalendarSystem?
+		public Assignment getCalendarSystemAssignment_6() { return cCalendarSystemAssignment_6; }
+
+		//CalendarSystem
+		public RuleCall getCalendarSystemCalendarSystemParserRuleCall_6_0() { return cCalendarSystemCalendarSystemParserRuleCall_6_0; }
+
+		//meetingScheduleSystem=MeetingScheduleSystem?
+		public Assignment getMeetingScheduleSystemAssignment_7() { return cMeetingScheduleSystemAssignment_7; }
+
+		//MeetingScheduleSystem
+		public RuleCall getMeetingScheduleSystemMeetingScheduleSystemParserRuleCall_7_0() { return cMeetingScheduleSystemMeetingScheduleSystemParserRuleCall_7_0; }
+
+		//(floors+=Floor floors+=Floor*)?
+		public Group getGroup_8() { return cGroup_8; }
+
+		//floors+=Floor
+		public Assignment getFloorsAssignment_8_0() { return cFloorsAssignment_8_0; }
+
+		//Floor
+		public RuleCall getFloorsFloorParserRuleCall_8_0_0() { return cFloorsFloorParserRuleCall_8_0_0; }
+
+		//floors+=Floor*
+		public Assignment getFloorsAssignment_8_1() { return cFloorsAssignment_8_1; }
+
+		//Floor
+		public RuleCall getFloorsFloorParserRuleCall_8_1_0() { return cFloorsFloorParserRuleCall_8_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+
+	public class FloorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Floor");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cFloorAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cFloorKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cRoomKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cRoomsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cRoomsRoomParserRuleCall_4_1_0 = (RuleCall)cRoomsAssignment_4_1.eContents().get(0);
+		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
+		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Assignment cRoomsAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final RuleCall cRoomsRoomParserRuleCall_4_2_1_0 = (RuleCall)cRoomsAssignment_4_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Floor:
+		//	{Floor} "floor" name=EString "{" ("room" rooms+=Room ("," rooms+=Room)*)? "}";
+		public ParserRule getRule() { return rule; }
+
+		//{Floor} "floor" name=EString "{" ("room" rooms+=Room ("," rooms+=Room)*)? "}"
+		public Group getGroup() { return cGroup; }
+
+		//{Floor}
+		public Action getFloorAction_0() { return cFloorAction_0; }
+
+		//"floor"
+		public Keyword getFloorKeyword_1() { return cFloorKeyword_1; }
+
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+
+		//("room" rooms+=Room ("," rooms+=Room)*)?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"room"
+		public Keyword getRoomKeyword_4_0() { return cRoomKeyword_4_0; }
+
+		//rooms+=Room
+		public Assignment getRoomsAssignment_4_1() { return cRoomsAssignment_4_1; }
+
+		//Room
+		public RuleCall getRoomsRoomParserRuleCall_4_1_0() { return cRoomsRoomParserRuleCall_4_1_0; }
+
+		//("," rooms+=Room)*
+		public Group getGroup_4_2() { return cGroup_4_2; }
+
+		//","
+		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
+
+		//rooms+=Room
+		public Assignment getRoomsAssignment_4_2_1() { return cRoomsAssignment_4_2_1; }
+
+		//Room
+		public RuleCall getRoomsRoomParserRuleCall_4_2_1_0() { return cRoomsRoomParserRuleCall_4_2_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+
+	public class RoomElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Room");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cRoomAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cIsOfTypeKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cExtendsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cExtendsRoomCrossReference_2_1_0 = (CrossReference)cExtendsAssignment_2_1.eContents().get(0);
+		private final RuleCall cExtendsRoomEStringParserRuleCall_2_1_0_1 = (RuleCall)cExtendsRoomCrossReference_2_1_0.eContents().get(1);
+		private final Assignment cExtendsAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final CrossReference cExtendsRoomCrossReference_2_2_0 = (CrossReference)cExtendsAssignment_2_2.eContents().get(0);
+		private final RuleCall cExtendsRoomEStringParserRuleCall_2_2_0_1 = (RuleCall)cExtendsRoomCrossReference_2_2_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cDeclareSensorAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cDeclareSensorSensorComponentParserRuleCall_4_0_0 = (RuleCall)cDeclareSensorAssignment_4_0.eContents().get(0);
+		private final Assignment cDeclareSensorAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cDeclareSensorSensorComponentParserRuleCall_4_1_0 = (RuleCall)cDeclareSensorAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Assignment cDeclareActuatorAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final RuleCall cDeclareActuatorActuatorComponentParserRuleCall_5_0_0 = (RuleCall)cDeclareActuatorAssignment_5_0.eContents().get(0);
+		private final Assignment cDeclareActuatorAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cDeclareActuatorActuatorComponentParserRuleCall_5_1_0 = (RuleCall)cDeclareActuatorAssignment_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//Room:
+		//	{Room} name=EString ("is of type" extends+=[Room|EString] extends+=[Room|EString]*)? "{"
+		//	(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
+		//	declareActuator+=ActuatorComponent*)? "}";
+		public ParserRule getRule() { return rule; }
+
+		//{Room} name=EString ("is of type" extends+=[Room|EString] extends+=[Room|EString]*)? "{" (declareSensor+=SensorComponent
+		//declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}"
+		public Group getGroup() { return cGroup; }
+
+		//{Room}
+		public Action getRoomAction_0() { return cRoomAction_0; }
+
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//EString
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+
+		//("is of type" extends+=[Room|EString] extends+=[Room|EString]*)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"is of type"
+		public Keyword getIsOfTypeKeyword_2_0() { return cIsOfTypeKeyword_2_0; }
+
+		//extends+=[Room|EString]
+		public Assignment getExtendsAssignment_2_1() { return cExtendsAssignment_2_1; }
+
+		//[Room|EString]
+		public CrossReference getExtendsRoomCrossReference_2_1_0() { return cExtendsRoomCrossReference_2_1_0; }
+
+		//EString
+		public RuleCall getExtendsRoomEStringParserRuleCall_2_1_0_1() { return cExtendsRoomEStringParserRuleCall_2_1_0_1; }
+
+		//extends+=[Room|EString]*
+		public Assignment getExtendsAssignment_2_2() { return cExtendsAssignment_2_2; }
+
+		//[Room|EString]
+		public CrossReference getExtendsRoomCrossReference_2_2_0() { return cExtendsRoomCrossReference_2_2_0; }
+
+		//EString
+		public RuleCall getExtendsRoomEStringParserRuleCall_2_2_0_1() { return cExtendsRoomEStringParserRuleCall_2_2_0_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+
+		//(declareSensor+=SensorComponent declareSensor+=SensorComponent*)?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//declareSensor+=SensorComponent
+		public Assignment getDeclareSensorAssignment_4_0() { return cDeclareSensorAssignment_4_0; }
+
+		//SensorComponent
+		public RuleCall getDeclareSensorSensorComponentParserRuleCall_4_0_0() { return cDeclareSensorSensorComponentParserRuleCall_4_0_0; }
+
+		//declareSensor+=SensorComponent*
+		public Assignment getDeclareSensorAssignment_4_1() { return cDeclareSensorAssignment_4_1; }
+
+		//SensorComponent
+		public RuleCall getDeclareSensorSensorComponentParserRuleCall_4_1_0() { return cDeclareSensorSensorComponentParserRuleCall_4_1_0; }
+
+		//(declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//declareActuator+=ActuatorComponent
+		public Assignment getDeclareActuatorAssignment_5_0() { return cDeclareActuatorAssignment_5_0; }
+
+		//ActuatorComponent
+		public RuleCall getDeclareActuatorActuatorComponentParserRuleCall_5_0_0() { return cDeclareActuatorActuatorComponentParserRuleCall_5_0_0; }
+
+		//declareActuator+=ActuatorComponent*
+		public Assignment getDeclareActuatorAssignment_5_1() { return cDeclareActuatorAssignment_5_1; }
+
+		//ActuatorComponent
+		public RuleCall getDeclareActuatorActuatorComponentParserRuleCall_5_1_0() { return cDeclareActuatorActuatorComponentParserRuleCall_5_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class CTSElements extends AbstractParserRuleElementFinder {
@@ -865,82 +932,6 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"MeetingScheduleSystem"
 		public Keyword getMeetingScheduleSystemKeyword_1() { return cMeetingScheduleSystemKeyword_1; }
-	}
-
-	public class FloorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Floor");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cFloorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cFloorKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cRoomsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cRoomsAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cRoomsRoomParserRuleCall_4_2_0 = (RuleCall)cRoomsAssignment_4_2.eContents().get(0);
-		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
-		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
-		private final Assignment cRoomsAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cRoomsRoomParserRuleCall_4_3_1_0 = (RuleCall)cRoomsAssignment_4_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//Floor:
-		//	{Floor} "floor" name=EString "{" ("rooms" "{" rooms+=Room ("," rooms+=Room)* "}")? "}";
-		public ParserRule getRule() { return rule; }
-
-		//{Floor} "floor" name=EString "{" ("rooms" "{" rooms+=Room ("," rooms+=Room)* "}")? "}"
-		public Group getGroup() { return cGroup; }
-
-		//{Floor}
-		public Action getFloorAction_0() { return cFloorAction_0; }
-
-		//"floor"
-		public Keyword getFloorKeyword_1() { return cFloorKeyword_1; }
-
-		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-
-		//("rooms" "{" rooms+=Room ("," rooms+=Room)* "}")?
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"rooms"
-		public Keyword getRoomsKeyword_4_0() { return cRoomsKeyword_4_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
-
-		//rooms+=Room
-		public Assignment getRoomsAssignment_4_2() { return cRoomsAssignment_4_2; }
-
-		//Room
-		public RuleCall getRoomsRoomParserRuleCall_4_2_0() { return cRoomsRoomParserRuleCall_4_2_0; }
-
-		//("," rooms+=Room)*
-		public Group getGroup_4_3() { return cGroup_4_3; }
-
-		//","
-		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
-
-		//rooms+=Room
-		public Assignment getRoomsAssignment_4_3_1() { return cRoomsAssignment_4_3_1; }
-
-		//Room
-		public RuleCall getRoomsRoomParserRuleCall_4_3_1_0() { return cRoomsRoomParserRuleCall_4_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class MotionSensorElements extends AbstractParserRuleElementFinder {
@@ -1928,15 +1919,15 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	private ActuatorElements pActuator;
 	private SensorElements pSensor;
 	private EStringElements pEString;
-	private BuildingElements pBuilding;
-	private RoomElements pRoom;
-	private PolicyElements pPolicy;
 	private StateElements pState;
+	private PolicyElements pPolicy;
+	private BuildingElements pBuilding;
+	private FloorElements pFloor;
+	private RoomElements pRoom;
 	private CTSElements pCTS;
 	private AccessControlElements pAccessControl;
 	private CalendarSystemElements pCalendarSystem;
 	private MeetingScheduleSystemElements pMeetingScheduleSystem;
-	private FloorElements pFloor;
 	private MotionSensorElements pMotionSensor;
 	private TemperatureSensorElements pTemperatureSensor;
 	private PressureSensorElements pPressureSensor;
@@ -2000,7 +1991,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Model:
 	//	{Model} name=EString "{" (stateDefinition+=State stateDefinition+=State*)? (policyDefinition+=Policy
-	//	policyDefinition+=Policy*)? (predefinedRooms+=Room predefinedRooms+=Room*)? (buildings+=Building
+	//	policyDefinition+=Policy*)? ("room-type" predefinedRooms+=Room predefinedRooms+=Room*)? (buildings+=Building
 	//	buildings+=Building*)? "}";
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
@@ -2041,27 +2032,14 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getEStringAccess().getRule();
 	}
 
-	//Building:
-	//	{Building} "building" name=EString "{" ctsSystem=CTS? accessControl=AccessControl? calendarSystem=CalendarSystem?
-	//	meetingScheduleSystem=MeetingScheduleSystem? (floors+=Floor floors+=Floor*)? "}";
-	public BuildingElements getBuildingAccess() {
-		return (pBuilding != null) ? pBuilding : (pBuilding = new BuildingElements());
+	//State:
+	//	{State} "state" name=EString valueState?="=" EBoolean;
+	public StateElements getStateAccess() {
+		return (pState != null) ? pState : (pState = new StateElements());
 	}
 	
-	public ParserRule getBuildingRule() {
-		return getBuildingAccess().getRule();
-	}
-
-	//Room:
-	//	{Room} "room type" name=EString ("is of type " extends+=[Room|EString] extends+=[Room|EString]*)? "{"
-	//	(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
-	//	declareActuator+=ActuatorComponent*)? "}";
-	public RoomElements getRoomAccess() {
-		return (pRoom != null) ? pRoom : (pRoom = new RoomElements());
-	}
-	
-	public ParserRule getRoomRule() {
-		return getRoomAccess().getRule();
+	public ParserRule getStateRule() {
+		return getStateAccess().getRule();
 	}
 
 	//Policy:
@@ -2075,14 +2053,37 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getPolicyAccess().getRule();
 	}
 
-	//State:
-	//	{State} "state" name=EString valueState?="=" EBoolean;
-	public StateElements getStateAccess() {
-		return (pState != null) ? pState : (pState = new StateElements());
+	//Building:
+	//	{Building} "building" name=EString "{" ctsSystem=CTS? accessControl=AccessControl? calendarSystem=CalendarSystem?
+	//	meetingScheduleSystem=MeetingScheduleSystem? (floors+=Floor floors+=Floor*)? "}";
+	public BuildingElements getBuildingAccess() {
+		return (pBuilding != null) ? pBuilding : (pBuilding = new BuildingElements());
 	}
 	
-	public ParserRule getStateRule() {
-		return getStateAccess().getRule();
+	public ParserRule getBuildingRule() {
+		return getBuildingAccess().getRule();
+	}
+
+	//Floor:
+	//	{Floor} "floor" name=EString "{" ("room" rooms+=Room ("," rooms+=Room)*)? "}";
+	public FloorElements getFloorAccess() {
+		return (pFloor != null) ? pFloor : (pFloor = new FloorElements());
+	}
+	
+	public ParserRule getFloorRule() {
+		return getFloorAccess().getRule();
+	}
+
+	//Room:
+	//	{Room} name=EString ("is of type" extends+=[Room|EString] extends+=[Room|EString]*)? "{"
+	//	(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
+	//	declareActuator+=ActuatorComponent*)? "}";
+	public RoomElements getRoomAccess() {
+		return (pRoom != null) ? pRoom : (pRoom = new RoomElements());
+	}
+	
+	public ParserRule getRoomRule() {
+		return getRoomAccess().getRule();
 	}
 
 	//CTS:
@@ -2126,16 +2127,6 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMeetingScheduleSystemRule() {
 		return getMeetingScheduleSystemAccess().getRule();
-	}
-
-	//Floor:
-	//	{Floor} "floor" name=EString "{" ("rooms" "{" rooms+=Room ("," rooms+=Room)* "}")? "}";
-	public FloorElements getFloorAccess() {
-		return (pFloor != null) ? pFloor : (pFloor = new FloorElements());
-	}
-	
-	public ParserRule getFloorRule() {
-		return getFloorAccess().getRule();
 	}
 
 	//MotionSensor:
