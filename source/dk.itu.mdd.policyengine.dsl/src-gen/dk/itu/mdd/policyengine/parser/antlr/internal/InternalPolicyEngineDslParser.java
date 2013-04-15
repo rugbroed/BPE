@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'room-type'", "'}'", "'state'", "'='", "'schedule'", "'days'", "','", "'from'", "'to'", "'policy'", "'uses sensors'", "'uses actuators'", "'is specified by'", "'building'", "'floor'", "'room'", "'is-of-type'", "'is-controlled-by'", "'during'", "'during-allways'", "':'", "'-'", "'CTS'", "'temperatureSensors'", "'ctsActuators'", "'AccessControl'", "'accessControlSensors'", "'accessControlDoorLockActuator'", "'CalendarSystem'", "'MeetingScheduleSystem'", "'MotionSensor'", "'valueState'", "'TemperatureSensor'", "'PressureSensor'", "'TouchSensor'", "'LightSensor'", "'SmokeSensor'", "'CO2Sensor'", "'InfraredLightSensor'", "'HumiditySensor'", "'LightSwitchActuator'", "'WindowActuator'", "'HumidifierActuator'", "'DoorActuator'", "'RadiatorActuator'", "'AudioAlarmActuator'", "'sensor '", "'is a '", "'actuator'", "'Conditions'", "'true'", "'false'", "'MONDAY'", "'TUESDAY'", "'WEDENSDAY'", "'THURSDAY'", "'FRIDAY'", "'SATURDAY'", "'SUNDAY'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'room-type'", "'}'", "'state'", "'='", "'schedule'", "'days'", "','", "'from'", "'to'", "'policy'", "'uses sensors'", "'uses actuators'", "'is specified by'", "'building'", "'floor'", "'room'", "'is-of-type'", "'is-controlled-by'", "'during'", "'during-always'", "':'", "'-'", "'CTS'", "'temperatureSensors'", "'ctsActuators'", "'AccessControl'", "'accessControlSensors'", "'accessControlDoorLockActuator'", "'CalendarSystem'", "'MeetingScheduleSystem'", "'MotionSensor'", "'valueState'", "'TemperatureSensor'", "'PressureSensor'", "'TouchSensor'", "'LightSensor'", "'SmokeSensor'", "'CO2Sensor'", "'InfraredLightSensor'", "'HumiditySensor'", "'LightSwitchActuator'", "'WindowActuator'", "'HumidifierActuator'", "'DoorActuator'", "'RadiatorActuator'", "'AudioAlarmActuator'", "'sensor '", "'is a '", "'actuator'", "'Conditions'", "'true'", "'false'", "'MONDAY'", "'TUESDAY'", "'WEDNESDAY'", "'THURSDAY'", "'FRIDAY'", "'SATURDAY'", "'SUNDAY'"
     };
     public static final int T__68=68;
     public static final int T__69=69;
@@ -2418,7 +2418,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRoom"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:956:1: ruleRoom returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is-of-type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-allways' )? )? otherlv_14= '{' ( ( (lv_declareSensor_15_0= ruleSensorComponent ) ) ( (lv_declareSensor_16_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_17_0= ruleActuatorComponent ) ) ( (lv_declareActuator_18_0= ruleActuatorComponent ) )* )? otherlv_19= '}' ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:956:1: ruleRoom returns [EObject current=null] : ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is-of-type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-always' )? )? otherlv_14= '{' ( ( (lv_declareSensor_15_0= ruleSensorComponent ) ) ( (lv_declareSensor_16_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_17_0= ruleActuatorComponent ) ) ( (lv_declareActuator_18_0= ruleActuatorComponent ) )* )? otherlv_19= '}' ) ;
     public final EObject ruleRoom() throws RecognitionException {
         EObject current = null;
 
@@ -2444,11 +2444,11 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:959:28: ( ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is-of-type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-allways' )? )? otherlv_14= '{' ( ( (lv_declareSensor_15_0= ruleSensorComponent ) ) ( (lv_declareSensor_16_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_17_0= ruleActuatorComponent ) ) ( (lv_declareActuator_18_0= ruleActuatorComponent ) )* )? otherlv_19= '}' ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:960:1: ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is-of-type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-allways' )? )? otherlv_14= '{' ( ( (lv_declareSensor_15_0= ruleSensorComponent ) ) ( (lv_declareSensor_16_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_17_0= ruleActuatorComponent ) ) ( (lv_declareActuator_18_0= ruleActuatorComponent ) )* )? otherlv_19= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:959:28: ( ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is-of-type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-always' )? )? otherlv_14= '{' ( ( (lv_declareSensor_15_0= ruleSensorComponent ) ) ( (lv_declareSensor_16_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_17_0= ruleActuatorComponent ) ) ( (lv_declareActuator_18_0= ruleActuatorComponent ) )* )? otherlv_19= '}' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:960:1: ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is-of-type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-always' )? )? otherlv_14= '{' ( ( (lv_declareSensor_15_0= ruleSensorComponent ) ) ( (lv_declareSensor_16_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_17_0= ruleActuatorComponent ) ) ( (lv_declareActuator_18_0= ruleActuatorComponent ) )* )? otherlv_19= '}' )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:960:1: ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is-of-type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-allways' )? )? otherlv_14= '{' ( ( (lv_declareSensor_15_0= ruleSensorComponent ) ) ( (lv_declareSensor_16_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_17_0= ruleActuatorComponent ) ) ( (lv_declareActuator_18_0= ruleActuatorComponent ) )* )? otherlv_19= '}' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:960:2: () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is-of-type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-allways' )? )? otherlv_14= '{' ( ( (lv_declareSensor_15_0= ruleSensorComponent ) ) ( (lv_declareSensor_16_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_17_0= ruleActuatorComponent ) ) ( (lv_declareActuator_18_0= ruleActuatorComponent ) )* )? otherlv_19= '}'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:960:1: ( () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is-of-type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-always' )? )? otherlv_14= '{' ( ( (lv_declareSensor_15_0= ruleSensorComponent ) ) ( (lv_declareSensor_16_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_17_0= ruleActuatorComponent ) ) ( (lv_declareActuator_18_0= ruleActuatorComponent ) )* )? otherlv_19= '}' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:960:2: () ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'is-of-type' ( ( ruleEString ) ) ( ( ruleEString ) )* )? (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-always' )? )? otherlv_14= '{' ( ( (lv_declareSensor_15_0= ruleSensorComponent ) ) ( (lv_declareSensor_16_0= ruleSensorComponent ) )* )? ( ( (lv_declareActuator_17_0= ruleActuatorComponent ) ) ( (lv_declareActuator_18_0= ruleActuatorComponent ) )* )? otherlv_19= '}'
             {
             // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:960:2: ()
             // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:961:5: 
@@ -2587,7 +2587,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1018:5: (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-allways' )? )?
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1018:5: (otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-always' )? )?
             int alt35=2;
             int LA35_0 = input.LA(1);
 
@@ -2596,7 +2596,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt35) {
                 case 1 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1018:7: otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-allways' )?
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1018:7: otherlv_5= 'is-controlled-by' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-always' )?
                     {
                     otherlv_5=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleRoom1801); 
 
@@ -2686,7 +2686,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1056:4: ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-allways' )?
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1056:4: ( (otherlv_9= 'during' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* ) | otherlv_13= 'during-always' )?
                     int alt34=3;
                     int LA34_0 = input.LA(1);
 
@@ -2798,11 +2798,11 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1095:7: otherlv_13= 'during-allways'
+                            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:1095:7: otherlv_13= 'during-always'
                             {
                             otherlv_13=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleRoom1956); 
 
-                                	newLeafNode(otherlv_13, grammarAccess.getRoomAccess().getDuringAllwaysKeyword_3_3_1());
+                                	newLeafNode(otherlv_13, grammarAccess.getRoomAccess().getDuringAlwaysKeyword_3_3_1());
                                 
 
                             }
@@ -7937,7 +7937,7 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWeekdays"
-    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3118:1: ruleWeekdays returns [Enumerator current=null] : ( (enumLiteral_0= 'MONDAY' ) | (enumLiteral_1= 'TUESDAY' ) | (enumLiteral_2= 'WEDENSDAY' ) | (enumLiteral_3= 'THURSDAY' ) | (enumLiteral_4= 'FRIDAY' ) | (enumLiteral_5= 'SATURDAY' ) | (enumLiteral_6= 'SUNDAY' ) ) ;
+    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3118:1: ruleWeekdays returns [Enumerator current=null] : ( (enumLiteral_0= 'MONDAY' ) | (enumLiteral_1= 'TUESDAY' ) | (enumLiteral_2= 'WEDNESDAY' ) | (enumLiteral_3= 'THURSDAY' ) | (enumLiteral_4= 'FRIDAY' ) | (enumLiteral_5= 'SATURDAY' ) | (enumLiteral_6= 'SUNDAY' ) ) ;
     public final Enumerator ruleWeekdays() throws RecognitionException {
         Enumerator current = null;
 
@@ -7951,10 +7951,10 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3120:28: ( ( (enumLiteral_0= 'MONDAY' ) | (enumLiteral_1= 'TUESDAY' ) | (enumLiteral_2= 'WEDENSDAY' ) | (enumLiteral_3= 'THURSDAY' ) | (enumLiteral_4= 'FRIDAY' ) | (enumLiteral_5= 'SATURDAY' ) | (enumLiteral_6= 'SUNDAY' ) ) )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3121:1: ( (enumLiteral_0= 'MONDAY' ) | (enumLiteral_1= 'TUESDAY' ) | (enumLiteral_2= 'WEDENSDAY' ) | (enumLiteral_3= 'THURSDAY' ) | (enumLiteral_4= 'FRIDAY' ) | (enumLiteral_5= 'SATURDAY' ) | (enumLiteral_6= 'SUNDAY' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3120:28: ( ( (enumLiteral_0= 'MONDAY' ) | (enumLiteral_1= 'TUESDAY' ) | (enumLiteral_2= 'WEDNESDAY' ) | (enumLiteral_3= 'THURSDAY' ) | (enumLiteral_4= 'FRIDAY' ) | (enumLiteral_5= 'SATURDAY' ) | (enumLiteral_6= 'SUNDAY' ) ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3121:1: ( (enumLiteral_0= 'MONDAY' ) | (enumLiteral_1= 'TUESDAY' ) | (enumLiteral_2= 'WEDNESDAY' ) | (enumLiteral_3= 'THURSDAY' ) | (enumLiteral_4= 'FRIDAY' ) | (enumLiteral_5= 'SATURDAY' ) | (enumLiteral_6= 'SUNDAY' ) )
             {
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3121:1: ( (enumLiteral_0= 'MONDAY' ) | (enumLiteral_1= 'TUESDAY' ) | (enumLiteral_2= 'WEDENSDAY' ) | (enumLiteral_3= 'THURSDAY' ) | (enumLiteral_4= 'FRIDAY' ) | (enumLiteral_5= 'SATURDAY' ) | (enumLiteral_6= 'SUNDAY' ) )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3121:1: ( (enumLiteral_0= 'MONDAY' ) | (enumLiteral_1= 'TUESDAY' ) | (enumLiteral_2= 'WEDNESDAY' ) | (enumLiteral_3= 'THURSDAY' ) | (enumLiteral_4= 'FRIDAY' ) | (enumLiteral_5= 'SATURDAY' ) | (enumLiteral_6= 'SUNDAY' ) )
             int alt74=7;
             switch ( input.LA(1) ) {
             case 64:
@@ -8035,15 +8035,15 @@ public class InternalPolicyEngineDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3133:6: (enumLiteral_2= 'WEDENSDAY' )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3133:6: (enumLiteral_2= 'WEDNESDAY' )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3133:6: (enumLiteral_2= 'WEDENSDAY' )
-                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3133:8: enumLiteral_2= 'WEDENSDAY'
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3133:6: (enumLiteral_2= 'WEDNESDAY' )
+                    // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:3133:8: enumLiteral_2= 'WEDNESDAY'
                     {
                     enumLiteral_2=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleWeekdays6988); 
 
-                            current = grammarAccess.getWeekdaysAccess().getWEDENSDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                            newLeafNode(enumLiteral_2, grammarAccess.getWeekdaysAccess().getWEDENSDAYEnumLiteralDeclaration_2()); 
+                            current = grammarAccess.getWeekdaysAccess().getWEDNESDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_2, grammarAccess.getWeekdaysAccess().getWEDNESDAYEnumLiteralDeclaration_2()); 
                         
 
                     }

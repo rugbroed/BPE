@@ -10,7 +10,7 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="PolicyEngine.ecore#//Weekdays">
       <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/MONDAY"/>
       <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/TUESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/WEDENSDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/WEDNESDAY"/>
       <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/THURSDAY"/>
       <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/FRIDAY"/>
       <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/SATURDAY"/>

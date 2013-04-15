@@ -1376,7 +1376,7 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		initEEnum(weekdaysEEnum, Weekdays.class, "Weekdays");
 		addEEnumLiteral(weekdaysEEnum, Weekdays.MONDAY);
 		addEEnumLiteral(weekdaysEEnum, Weekdays.TUESDAY);
-		addEEnumLiteral(weekdaysEEnum, Weekdays.WEDENSDAY);
+		addEEnumLiteral(weekdaysEEnum, Weekdays.WEDNESDAY);
 		addEEnumLiteral(weekdaysEEnum, Weekdays.THURSDAY);
 		addEEnumLiteral(weekdaysEEnum, Weekdays.FRIDAY);
 		addEEnumLiteral(weekdaysEEnum, Weekdays.SATURDAY);

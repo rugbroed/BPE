@@ -1100,11 +1100,11 @@ rule__Room__Alternatives_3_3
 )
 
     |(
-{ before(grammarAccess.getRoomAccess().getDuringAllwaysKeyword_3_3_1()); }
+{ before(grammarAccess.getRoomAccess().getDuringAlwaysKeyword_3_3_1()); }
 
-	'during-allways' 
+	'during-always' 
 
-{ after(grammarAccess.getRoomAccess().getDuringAllwaysKeyword_3_3_1()); }
+{ after(grammarAccess.getRoomAccess().getDuringAlwaysKeyword_3_3_1()); }
 )
 
 ;
@@ -1290,10 +1290,10 @@ rule__Weekdays__Alternatives
 )
 
     |(
-{ before(grammarAccess.getWeekdaysAccess().getWEDENSDAYEnumLiteralDeclaration_2()); }
-(	'WEDENSDAY' 
+{ before(grammarAccess.getWeekdaysAccess().getWEDNESDAYEnumLiteralDeclaration_2()); }
+(	'WEDNESDAY' 
 )
-{ after(grammarAccess.getWeekdaysAccess().getWEDENSDAYEnumLiteralDeclaration_2()); }
+{ after(grammarAccess.getWeekdaysAccess().getWEDNESDAYEnumLiteralDeclaration_2()); }
 )
 
     |(

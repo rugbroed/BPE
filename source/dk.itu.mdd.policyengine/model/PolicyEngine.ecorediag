@@ -608,7 +608,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_yPRQEaWZEeKKp-oC6DfnVw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_y7dnsKWZEeKKp-oC6DfnVw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="PolicyEngine.ecore#//Weekdays/WEDENSDAY"/>
+        <element xmi:type="ecore:EEnumLiteral" href="PolicyEngine.ecore#//Weekdays/WEDNESDAY"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_y7dnsaWZEeKKp-oC6DfnVw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_zbWosKWZEeKKp-oC6DfnVw" type="2006">

@@ -78,7 +78,7 @@ Room returns Room:
 	;
 
 enum Weekdays:
-	MONDAY | TUESDAY | WEDENSDAY | THURSDAY| FRIDAY | SATURDAY | SUNDAY
+	MONDAY | TUESDAY | WEDNESDAY | THURSDAY| FRIDAY | SATURDAY | SUNDAY
 	;
 
 Actuator returns Actuator:

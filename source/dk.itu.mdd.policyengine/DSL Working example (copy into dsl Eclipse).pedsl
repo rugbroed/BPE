@@ -16,15 +16,15 @@ BruelOgKjaer {
 	}
 	
 	schedule WorkingWeekHours 
-	days MONDAY, TUESDAY, WEDENSDAY, THURSDAY, FRIDAY
+	days MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY
 	from 06:00 to 18:00
 
 	schedule LateWorkingWeekHours
-	days MONDAY, TUESDAY, WEDENSDAY, THURSDAY, FRIDAY
+	days MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY
 	from 18:00 to 22:00
 	
 	schedule LockdownWeekHours
-	days MONDAY, TUESDAY, WEDENSDAY, THURSDAY, FRIDAY
+	days MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY
 	from 22:00 to 06:00
 	
 	schedule LockdownWeekendHours
@@ -46,7 +46,7 @@ BruelOgKjaer {
 	
 	room-type HumidityControlledRoom
 	is-controlled-by HumidityMonitoringPolicy
-	during-allways
+	during-always
 	{
 		sensor humidifierSensor is a HumiditySensor		
 		actuator humidifierActuator is a HumidifierActuator

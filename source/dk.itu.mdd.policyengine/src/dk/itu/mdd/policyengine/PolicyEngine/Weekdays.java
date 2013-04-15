@@ -39,16 +39,14 @@ public enum Weekdays implements Enumerator {
 	TUESDAY(1, "TUESDAY", "TUESDAY"),
 
 	/**
-	 * The '<em><b>WEDENSDAY</b></em>' literal object.
+	 * The '<em><b>WEDNESDAY</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #WEDENSDAY_VALUE
+	 * @see #WEDNESDAY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	WEDENSDAY(2, "WEDENSDAY", "WEDENSDAY"),
-
-	/**
+	WEDNESDAY(2, "WEDNESDAY", "WEDNESDAY"), /**
 	 * The '<em><b>THURSDAY</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,19 +117,19 @@ public enum Weekdays implements Enumerator {
 	public static final int TUESDAY_VALUE = 1;
 
 	/**
-	 * The '<em><b>WEDENSDAY</b></em>' literal value.
+	 * The '<em><b>WEDNESDAY</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>WEDENSDAY</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>WEDNESDAY</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #WEDENSDAY
+	 * @see #WEDNESDAY
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WEDENSDAY_VALUE = 2;
+	public static final int WEDNESDAY_VALUE = 2;
 
 	/**
 	 * The '<em><b>THURSDAY</b></em>' literal value.
@@ -203,7 +201,7 @@ public enum Weekdays implements Enumerator {
 		new Weekdays[] {
 			MONDAY,
 			TUESDAY,
-			WEDENSDAY,
+			WEDNESDAY,
 			THURSDAY,
 			FRIDAY,
 			SATURDAY,
@@ -260,7 +258,7 @@ public enum Weekdays implements Enumerator {
 		switch (value) {
 			case MONDAY_VALUE: return MONDAY;
 			case TUESDAY_VALUE: return TUESDAY;
-			case WEDENSDAY_VALUE: return WEDENSDAY;
+			case WEDNESDAY_VALUE: return WEDNESDAY;
 			case THURSDAY_VALUE: return THURSDAY;
 			case FRIDAY_VALUE: return FRIDAY;
 			case SATURDAY_VALUE: return SATURDAY;

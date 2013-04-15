@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPolicyEngineDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'during-allways'", "'true'", "'false'", "'MONDAY'", "'TUESDAY'", "'WEDENSDAY'", "'THURSDAY'", "'FRIDAY'", "'SATURDAY'", "'SUNDAY'", "'{'", "'}'", "'room-type'", "'state'", "'schedule'", "'days'", "','", "'from'", "'to'", "'policy'", "'uses sensors'", "'uses actuators'", "'is specified by'", "'building'", "'floor'", "'room'", "'is-of-type'", "'is-controlled-by'", "'during'", "':'", "'-'", "'CTS'", "'temperatureSensors'", "'ctsActuators'", "'AccessControl'", "'accessControlSensors'", "'accessControlDoorLockActuator'", "'CalendarSystem'", "'MeetingScheduleSystem'", "'MotionSensor'", "'valueState'", "'='", "'TemperatureSensor'", "'PressureSensor'", "'TouchSensor'", "'LightSensor'", "'SmokeSensor'", "'CO2Sensor'", "'InfraredLightSensor'", "'HumiditySensor'", "'LightSwitchActuator'", "'WindowActuator'", "'HumidifierActuator'", "'DoorActuator'", "'RadiatorActuator'", "'AudioAlarmActuator'", "'sensor '", "'is a '", "'actuator'", "'Conditions'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'during-always'", "'true'", "'false'", "'MONDAY'", "'TUESDAY'", "'WEDNESDAY'", "'THURSDAY'", "'FRIDAY'", "'SATURDAY'", "'SUNDAY'", "'{'", "'}'", "'room-type'", "'state'", "'schedule'", "'days'", "','", "'from'", "'to'", "'policy'", "'uses sensors'", "'uses actuators'", "'is specified by'", "'building'", "'floor'", "'room'", "'is-of-type'", "'is-controlled-by'", "'during'", "':'", "'-'", "'CTS'", "'temperatureSensors'", "'ctsActuators'", "'AccessControl'", "'accessControlSensors'", "'accessControlDoorLockActuator'", "'CalendarSystem'", "'MeetingScheduleSystem'", "'MotionSensor'", "'valueState'", "'='", "'TemperatureSensor'", "'PressureSensor'", "'TouchSensor'", "'LightSensor'", "'SmokeSensor'", "'CO2Sensor'", "'InfraredLightSensor'", "'HumiditySensor'", "'LightSwitchActuator'", "'WindowActuator'", "'HumidifierActuator'", "'DoorActuator'", "'RadiatorActuator'", "'AudioAlarmActuator'", "'sensor '", "'is a '", "'actuator'", "'Conditions'"
     };
     public static final int T__68=68;
     public static final int T__69=69;
@@ -2950,13 +2950,13 @@ public class InternalPolicyEngineDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Room__Alternatives_3_3"
-    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1091:1: rule__Room__Alternatives_3_3 : ( ( ( rule__Room__Group_3_3_0__0 ) ) | ( 'during-allways' ) );
+    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1091:1: rule__Room__Alternatives_3_3 : ( ( ( rule__Room__Group_3_3_0__0 ) ) | ( 'during-always' ) );
     public final void rule__Room__Alternatives_3_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1095:1: ( ( ( rule__Room__Group_3_3_0__0 ) ) | ( 'during-allways' ) )
+            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1095:1: ( ( ( rule__Room__Group_3_3_0__0 ) ) | ( 'during-always' ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2999,14 +2999,14 @@ public class InternalPolicyEngineDslParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1102:6: ( 'during-allways' )
+                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1102:6: ( 'during-always' )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1102:6: ( 'during-allways' )
-                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1103:1: 'during-allways'
+                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1102:6: ( 'during-always' )
+                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1103:1: 'during-always'
                     {
-                     before(grammarAccess.getRoomAccess().getDuringAllwaysKeyword_3_3_1()); 
+                     before(grammarAccess.getRoomAccess().getDuringAlwaysKeyword_3_3_1()); 
                     match(input,11,FollowSets000.FOLLOW_11_in_rule__Room__Alternatives_3_32289); 
-                     after(grammarAccess.getRoomAccess().getDuringAllwaysKeyword_3_3_1()); 
+                     after(grammarAccess.getRoomAccess().getDuringAlwaysKeyword_3_3_1()); 
 
                     }
 
@@ -3603,13 +3603,13 @@ public class InternalPolicyEngineDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Weekdays__Alternatives"
-    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1273:1: rule__Weekdays__Alternatives : ( ( ( 'MONDAY' ) ) | ( ( 'TUESDAY' ) ) | ( ( 'WEDENSDAY' ) ) | ( ( 'THURSDAY' ) ) | ( ( 'FRIDAY' ) ) | ( ( 'SATURDAY' ) ) | ( ( 'SUNDAY' ) ) );
+    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1273:1: rule__Weekdays__Alternatives : ( ( ( 'MONDAY' ) ) | ( ( 'TUESDAY' ) ) | ( ( 'WEDNESDAY' ) ) | ( ( 'THURSDAY' ) ) | ( ( 'FRIDAY' ) ) | ( ( 'SATURDAY' ) ) | ( ( 'SUNDAY' ) ) );
     public final void rule__Weekdays__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1277:1: ( ( ( 'MONDAY' ) ) | ( ( 'TUESDAY' ) ) | ( ( 'WEDENSDAY' ) ) | ( ( 'THURSDAY' ) ) | ( ( 'FRIDAY' ) ) | ( ( 'SATURDAY' ) ) | ( ( 'SUNDAY' ) ) )
+            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1277:1: ( ( ( 'MONDAY' ) ) | ( ( 'TUESDAY' ) ) | ( ( 'WEDNESDAY' ) ) | ( ( 'THURSDAY' ) ) | ( ( 'FRIDAY' ) ) | ( ( 'SATURDAY' ) ) | ( ( 'SUNDAY' ) ) )
             int alt6=7;
             switch ( input.LA(1) ) {
             case 14:
@@ -3698,20 +3698,20 @@ public class InternalPolicyEngineDslParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 3 :
-                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1292:6: ( ( 'WEDENSDAY' ) )
+                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1292:6: ( ( 'WEDNESDAY' ) )
                     {
-                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1292:6: ( ( 'WEDENSDAY' ) )
-                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1293:1: ( 'WEDENSDAY' )
+                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1292:6: ( ( 'WEDNESDAY' ) )
+                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1293:1: ( 'WEDNESDAY' )
                     {
-                     before(grammarAccess.getWeekdaysAccess().getWEDENSDAYEnumLiteralDeclaration_2()); 
-                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1294:1: ( 'WEDENSDAY' )
-                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1294:3: 'WEDENSDAY'
+                     before(grammarAccess.getWeekdaysAccess().getWEDNESDAYEnumLiteralDeclaration_2()); 
+                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1294:1: ( 'WEDNESDAY' )
+                    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:1294:3: 'WEDNESDAY'
                     {
                     match(input,16,FollowSets000.FOLLOW_16_in_rule__Weekdays__Alternatives2755); 
 
                     }
 
-                     after(grammarAccess.getWeekdaysAccess().getWEDENSDAYEnumLiteralDeclaration_2()); 
+                     after(grammarAccess.getWeekdaysAccess().getWEDNESDAYEnumLiteralDeclaration_2()); 
 
                     }
 

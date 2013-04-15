@@ -613,7 +613,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDuringAssignment_3_3_0_2_1 = (Assignment)cGroup_3_3_0_2.eContents().get(1);
 		private final CrossReference cDuringScheduleCrossReference_3_3_0_2_1_0 = (CrossReference)cDuringAssignment_3_3_0_2_1.eContents().get(0);
 		private final RuleCall cDuringScheduleEStringParserRuleCall_3_3_0_2_1_0_1 = (RuleCall)cDuringScheduleCrossReference_3_3_0_2_1_0.eContents().get(1);
-		private final Keyword cDuringAllwaysKeyword_3_3_1 = (Keyword)cAlternatives_3_3.eContents().get(1);
+		private final Keyword cDuringAlwaysKeyword_3_3_1 = (Keyword)cAlternatives_3_3.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Assignment cDeclareSensorAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
@@ -630,13 +630,13 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Room:
 		//	{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
 		//	policies+=[Policy|EString] ("," policies+=[Policy|EString])* ("during" during+=[Schedule|EString] (","
-		//	during+=[Schedule|EString])* | "during-allways")?)? "{" (declareSensor+=SensorComponent
+		//	during+=[Schedule|EString])* | "during-always")?)? "{" (declareSensor+=SensorComponent
 		//	declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}";
 		public ParserRule getRule() { return rule; }
 
 		//{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
 		//policies+=[Policy|EString] ("," policies+=[Policy|EString])* ("during" during+=[Schedule|EString] (","
-		//during+=[Schedule|EString])* | "during-allways")?)? "{" (declareSensor+=SensorComponent
+		//during+=[Schedule|EString])* | "during-always")?)? "{" (declareSensor+=SensorComponent
 		//declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}"
 		public Group getGroup() { return cGroup; }
 
@@ -674,7 +674,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getExtendsRoomEStringParserRuleCall_2_2_0_1() { return cExtendsRoomEStringParserRuleCall_2_2_0_1; }
 
 		//("is-controlled-by" policies+=[Policy|EString] ("," policies+=[Policy|EString])* ("during" during+=[Schedule|EString]
-		//("," during+=[Schedule|EString])* | "during-allways")?)?
+		//("," during+=[Schedule|EString])* | "during-always")?)?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"is-controlled-by"
@@ -704,7 +704,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPoliciesPolicyEStringParserRuleCall_3_2_1_0_1() { return cPoliciesPolicyEStringParserRuleCall_3_2_1_0_1; }
 
-		//("during" during+=[Schedule|EString] ("," during+=[Schedule|EString])* | "during-allways")?
+		//("during" during+=[Schedule|EString] ("," during+=[Schedule|EString])* | "during-always")?
 		public Alternatives getAlternatives_3_3() { return cAlternatives_3_3; }
 
 		//"during" during+=[Schedule|EString] ("," during+=[Schedule|EString])*
@@ -737,8 +737,8 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDuringScheduleEStringParserRuleCall_3_3_0_2_1_0_1() { return cDuringScheduleEStringParserRuleCall_3_3_0_2_1_0_1; }
 
-		//"during-allways"
-		public Keyword getDuringAllwaysKeyword_3_3_1() { return cDuringAllwaysKeyword_3_3_1; }
+		//"during-always"
+		public Keyword getDuringAlwaysKeyword_3_3_1() { return cDuringAlwaysKeyword_3_3_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
@@ -2194,8 +2194,8 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMONDAYMONDAYKeyword_0_0 = (Keyword)cMONDAYEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cTUESDAYEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cTUESDAYTUESDAYKeyword_1_0 = (Keyword)cTUESDAYEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cWEDENSDAYEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cWEDENSDAYWEDENSDAYKeyword_2_0 = (Keyword)cWEDENSDAYEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cWEDNESDAYEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cWEDNESDAYWEDNESDAYKeyword_2_0 = (Keyword)cWEDNESDAYEnumLiteralDeclaration_2.eContents().get(0);
 		private final EnumLiteralDeclaration cTHURSDAYEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
 		private final Keyword cTHURSDAYTHURSDAYKeyword_3_0 = (Keyword)cTHURSDAYEnumLiteralDeclaration_3.eContents().get(0);
 		private final EnumLiteralDeclaration cFRIDAYEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
@@ -2206,10 +2206,10 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSUNDAYSUNDAYKeyword_6_0 = (Keyword)cSUNDAYEnumLiteralDeclaration_6.eContents().get(0);
 		
 		//enum Weekdays:
-		//	MONDAY | TUESDAY | WEDENSDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY;
+		//	MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY;
 		public EnumRule getRule() { return rule; }
 
-		//MONDAY | TUESDAY | WEDENSDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY
+		//MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//MONDAY
@@ -2224,11 +2224,11 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"TUESDAY"
 		public Keyword getTUESDAYTUESDAYKeyword_1_0() { return cTUESDAYTUESDAYKeyword_1_0; }
 
-		//WEDENSDAY
-		public EnumLiteralDeclaration getWEDENSDAYEnumLiteralDeclaration_2() { return cWEDENSDAYEnumLiteralDeclaration_2; }
+		//WEDNESDAY
+		public EnumLiteralDeclaration getWEDNESDAYEnumLiteralDeclaration_2() { return cWEDNESDAYEnumLiteralDeclaration_2; }
 
-		//"WEDENSDAY"
-		public Keyword getWEDENSDAYWEDENSDAYKeyword_2_0() { return cWEDENSDAYWEDENSDAYKeyword_2_0; }
+		//"WEDNESDAY"
+		public Keyword getWEDNESDAYWEDNESDAYKeyword_2_0() { return cWEDNESDAYWEDNESDAYKeyword_2_0; }
 
 		//THURSDAY
 		public EnumLiteralDeclaration getTHURSDAYEnumLiteralDeclaration_3() { return cTHURSDAYEnumLiteralDeclaration_3; }
@@ -2402,7 +2402,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Room:
 	//	{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
 	//	policies+=[Policy|EString] ("," policies+=[Policy|EString])* ("during" during+=[Schedule|EString] (","
-	//	during+=[Schedule|EString])* | "during-allways")?)? "{" (declareSensor+=SensorComponent
+	//	during+=[Schedule|EString])* | "during-always")?)? "{" (declareSensor+=SensorComponent
 	//	declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}";
 	public RoomElements getRoomAccess() {
 		return (pRoom != null) ? pRoom : (pRoom = new RoomElements());
@@ -2413,7 +2413,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum Weekdays:
-	//	MONDAY | TUESDAY | WEDENSDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY;
+	//	MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY;
 	public WeekdaysElements getWeekdaysAccess() {
 		return (unknownRuleWeekdays != null) ? unknownRuleWeekdays : (unknownRuleWeekdays = new WeekdaysElements());
 	}

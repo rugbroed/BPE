@@ -99,10 +99,10 @@ public class InternalPolicyEngineDslLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:11:7: ( 'during-allways' )
-            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:11:9: 'during-allways'
+            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:11:7: ( 'during-always' )
+            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:11:9: 'during-always'
             {
-            match("during-allways"); 
+            match("during-always"); 
 
 
             }
@@ -204,10 +204,10 @@ public class InternalPolicyEngineDslLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:16:7: ( 'WEDENSDAY' )
-            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:16:9: 'WEDENSDAY'
+            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:16:7: ( 'WEDNESDAY' )
+            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:16:9: 'WEDNESDAY'
             {
-            match("WEDENSDAY"); 
+            match("WEDNESDAY"); 
 
 
             }
@@ -2376,11 +2376,11 @@ public class InternalPolicyEngineDslLexer extends Lexer {
         "\1\151\2\uffff\1\123\1\154\1\62\1\156\1\163\1\143\1\144\1\143\1"+
         "\154\1\uffff\1\145\1\147\1\146\1\155\1\157\1\144\5\uffff\1\151\1"+
         "\163\1\145\1\uffff\1\160\1\163\1\155\1\157\1\104\1\164\1\151\1\123"+
-        "\1\122\1\160\1\143\1\105\1\144\1\104\1\125\1\104\1\153\1\155\1\164"+
+        "\1\122\1\160\1\143\1\116\1\144\1\104\1\125\1\104\1\153\1\155\1\164"+
         "\1\145\1\163\1\151\1\163\1\141\1\143\1\154\1\60\1\145\1\123\1\144"+
         "\1\101\1\145\1\151\1\145\2\165\1\163\1\150\1\162\1\151\1\162\1\151"+
         "\1\156\2\60\2\145\1\60\1\162\1\101\1\151\1\157\1\104\1\123\1\145"+
-        "\1\150\1\116\1\157\1\101\1\122\1\101\1\145\1\55\1\145\1\144\1\157"+
+        "\1\150\1\105\1\157\1\101\1\122\1\101\1\145\1\55\1\145\1\144\1\157"+
         "\1\143\1\40\4\uffff\1\144\1\uffff\1\156\1\145\1\151\1\143\1\163"+
         "\1\157\1\163\1\141\1\145\1\163\1\164\1\141\1\144\1\101\1\141\1\147"+
         "\2\uffff\1\162\1\60\1\uffff\1\60\1\131\2\156\1\101\1\104\1\162\2"+
@@ -2424,11 +2424,11 @@ public class InternalPolicyEngineDslLexer extends Lexer {
         "\1\55\1\151\2\uffff\1\123\1\154\1\62\1\156\1\163\1\143\1\144\1\164"+
         "\1\154\1\uffff\1\145\1\147\1\146\1\155\1\157\1\144\5\uffff\1\151"+
         "\1\163\1\145\1\uffff\1\160\1\163\1\155\1\157\1\104\1\164\1\151\1"+
-        "\123\1\122\1\160\1\143\1\105\1\144\1\104\1\125\1\104\1\153\1\155"+
+        "\123\1\122\1\160\1\143\1\116\1\144\1\104\1\125\1\104\1\153\1\155"+
         "\1\164\1\145\1\163\1\151\2\163\1\157\1\154\1\172\1\145\1\123\1\144"+
         "\1\101\1\145\1\151\1\145\2\165\1\163\1\150\1\162\1\151\1\162\1\151"+
         "\1\156\2\172\2\145\1\172\1\162\1\101\1\151\1\157\1\104\1\123\1\145"+
-        "\1\150\1\116\1\157\1\101\1\122\1\101\1\145\1\172\1\145\1\144\1\157"+
+        "\1\150\1\105\1\157\1\101\1\122\1\101\1\145\1\172\1\145\1\144\1\157"+
         "\1\143\1\40\4\uffff\1\144\1\uffff\1\156\1\145\1\151\1\143\1\163"+
         "\1\157\1\163\1\141\1\145\1\163\1\164\1\141\1\144\1\101\1\141\1\147"+
         "\2\uffff\1\162\1\172\1\uffff\1\172\1\131\2\156\1\101\1\104\1\162"+
@@ -2477,7 +2477,7 @@ public class InternalPolicyEngineDslLexer extends Lexer {
         "\25\uffff\1\67\2\uffff\1\53\6\uffff\1\41\1\uffff\1\70\4\uffff\1"+
         "\65\3\uffff\1\63\1\61\1\uffff\1\44\1\uffff\1\47\10\uffff\1\45";
     static final String DFA12_specialS =
-        "\1\2\42\uffff\1\1\1\0\u01f1\uffff}>";
+        "\1\0\42\uffff\1\2\1\1\u01f1\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\47\2\46\2\47\1\46\22\47\1\46\1\47\1\43\4\47\1\44\4\47\1"+
             "\15\1\23\1\47\1\45\12\42\1\22\2\47\1\31\3\47\1\26\1\41\1\24"+
@@ -3059,26 +3059,6 @@ public class InternalPolicyEngineDslLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_36 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_36>='\u0000' && LA12_36<='\uFFFF')) ) {s = 92;}
-
-                        else s = 39;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_35 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_35>='\u0000' && LA12_35<='\uFFFF')) ) {s = 92;}
-
-                        else s = 39;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -3159,6 +3139,26 @@ public class InternalPolicyEngineDslLexer extends Lexer {
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 38;}
 
                         else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||LA12_0=='.'||(LA12_0>=';' && LA12_0<='<')||(LA12_0>='>' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 39;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA12_36 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_36>='\u0000' && LA12_36<='\uFFFF')) ) {s = 92;}
+
+                        else s = 39;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_35 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_35>='\u0000' && LA12_35<='\uFFFF')) ) {s = 92;}
+
+                        else s = 39;
 
                         if ( s>=0 ) return s;
                         break;

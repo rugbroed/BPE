@@ -1092,9 +1092,9 @@ ruleRoom returns [EObject current=null]
 
 )
 ))*)
-    |	otherlv_13='during-allways' 
+    |	otherlv_13='during-always' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getRoomAccess().getDuringAllwaysKeyword_3_3_1());
+    	newLeafNode(otherlv_13, grammarAccess.getRoomAccess().getDuringAlwaysKeyword_3_3_1());
     }
 )?)?	otherlv_14='{' 
     {
@@ -3130,10 +3130,10 @@ ruleWeekdays returns [Enumerator current=null]
         newLeafNode(enumLiteral_1, grammarAccess.getWeekdaysAccess().getTUESDAYEnumLiteralDeclaration_1()); 
     }
 )
-    |(	enumLiteral_2='WEDENSDAY' 
+    |(	enumLiteral_2='WEDNESDAY' 
 	{
-        $current = grammarAccess.getWeekdaysAccess().getWEDENSDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getWeekdaysAccess().getWEDENSDAYEnumLiteralDeclaration_2()); 
+        $current = grammarAccess.getWeekdaysAccess().getWEDNESDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getWeekdaysAccess().getWEDNESDAYEnumLiteralDeclaration_2()); 
     }
 )
     |(	enumLiteral_3='THURSDAY' 

@@ -515,10 +515,10 @@ public class InternalPolicyEngineDslLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:31:7: ( 'during-allways' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:31:9: 'during-allways'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:31:7: ( 'during-always' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:31:9: 'during-always'
             {
-            match("during-allways"); 
+            match("during-always"); 
 
 
             }
@@ -1248,10 +1248,10 @@ public class InternalPolicyEngineDslLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:66:7: ( 'WEDENSDAY' )
-            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:66:9: 'WEDENSDAY'
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:66:7: ( 'WEDNESDAY' )
+            // ../dk.itu.mdd.policyengine.dsl/src-gen/dk/itu/mdd/policyengine/parser/antlr/internal/InternalPolicyEngineDsl.g:66:9: 'WEDNESDAY'
             {
-            match("WEDENSDAY"); 
+            match("WEDNESDAY"); 
 
 
             }
@@ -2378,11 +2378,11 @@ public class InternalPolicyEngineDslLexer extends Lexer {
         "\164\1\145\2\163\1\151\1\155\1\157\1\163\1\uffff\1\160\1\145\1\151"+
         "\1\163\1\141\1\143\1\154\1\60\1\145\1\123\1\144\1\101\1\145\1\151"+
         "\1\145\1\165\1\164\1\151\1\104\1\165\1\160\1\143\1\123\1\122\1\163"+
-        "\1\150\1\153\1\125\1\104\1\162\1\151\1\144\1\105\1\162\1\151\1\104"+
+        "\1\150\1\153\1\125\1\104\1\162\1\151\1\144\1\116\1\162\1\151\1\104"+
         "\1\55\1\145\1\144\1\157\1\60\1\156\1\60\1\162\2\145\1\60\1\143\1"+
         "\40\4\uffff\1\144\1\uffff\1\156\1\145\1\151\1\143\1\163\1\157\1"+
         "\163\1\141\1\151\1\157\1\101\2\145\1\150\1\104\1\123\1\163\1\164"+
-        "\1\145\1\122\1\101\1\141\1\144\1\157\1\116\1\101\1\141\1\101\2\uffff"+
+        "\1\145\1\122\1\101\1\141\1\144\1\157\1\105\1\101\1\141\1\101\2\uffff"+
         "\1\60\1\165\1\162\1\uffff\1\147\1\uffff\2\60\1\162\1\uffff\1\171"+
         "\1\141\1\151\1\144\1\156\2\164\1\163\1\101\1\163\1\164\2\156\1\131"+
         "\1\123\1\162\1\123\1\101\1\104\1\165\2\123\1\104\1\131\1\162\1\151"+
@@ -2426,11 +2426,11 @@ public class InternalPolicyEngineDslLexer extends Lexer {
         "\1\155\1\164\1\145\2\163\1\151\1\155\1\157\1\163\1\uffff\1\160\1"+
         "\145\1\151\2\163\1\157\1\154\1\172\1\145\1\123\1\144\1\101\1\145"+
         "\1\151\1\145\1\165\1\164\1\151\1\104\1\165\1\160\1\143\1\123\1\122"+
-        "\1\163\1\150\1\153\1\125\1\104\1\162\1\151\1\144\1\105\1\162\1\151"+
+        "\1\163\1\150\1\153\1\125\1\104\1\162\1\151\1\144\1\116\1\162\1\151"+
         "\1\104\1\172\1\145\1\144\1\157\1\172\1\156\1\172\1\162\2\145\1\172"+
         "\1\143\1\40\4\uffff\1\144\1\uffff\1\156\1\145\1\151\1\143\1\163"+
         "\1\157\1\163\1\141\1\151\1\157\1\101\2\145\1\150\1\104\1\123\1\163"+
-        "\1\164\1\145\1\122\1\101\1\141\1\144\1\157\1\116\1\101\1\141\1\101"+
+        "\1\164\1\145\1\122\1\101\1\141\1\144\1\157\1\105\1\101\1\141\1\101"+
         "\2\uffff\1\172\1\165\1\162\1\uffff\1\147\1\uffff\2\172\1\162\1\uffff"+
         "\1\171\1\163\1\151\1\144\1\156\2\164\1\163\1\101\1\163\1\164\2\156"+
         "\1\131\1\123\1\162\1\123\1\101\1\104\1\165\2\123\1\104\1\131\1\162"+

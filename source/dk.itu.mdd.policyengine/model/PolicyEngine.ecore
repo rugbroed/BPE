@@ -119,7 +119,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="Weekdays">
     <eLiterals name="MONDAY"/>
     <eLiterals name="TUESDAY" value="1"/>
-    <eLiterals name="WEDENSDAY" value="2"/>
+    <eLiterals name="WEDNESDAY" value="2"/>
     <eLiterals name="THURSDAY" value="3"/>
     <eLiterals name="FRIDAY" value="4"/>
     <eLiterals name="SATURDAY" value="5"/>
