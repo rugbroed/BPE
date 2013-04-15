@@ -24,6 +24,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -177,23 +178,59 @@ ruleModel returns [EObject current=null]
 	    }
 
 )
-)*)?(	otherlv_7='room-type' 
+)*)?((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getModelAccess().getSchedulesScheduleParserRuleCall_5_0_0()); 
+	    }
+		lv_schedules_7_0=ruleSchedule		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	        }
+       		add(
+       			$current, 
+       			"schedules",
+        		lv_schedules_7_0, 
+        		"Schedule");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getModelAccess().getSchedulesScheduleParserRuleCall_5_1_0()); 
+	    }
+		lv_schedules_8_0=ruleSchedule		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	        }
+       		add(
+       			$current, 
+       			"schedules",
+        		lv_schedules_8_0, 
+        		"Schedule");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)?(	otherlv_9='room-type' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getModelAccess().getRoomTypeKeyword_5_0());
+    	newLeafNode(otherlv_9, grammarAccess.getModelAccess().getRoomTypeKeyword_6_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getPredefinedRoomsRoomParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getPredefinedRoomsRoomParserRuleCall_6_1_0()); 
 	    }
-		lv_predefinedRooms_8_0=ruleRoom		{
+		lv_predefinedRooms_10_0=ruleRoom		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModelRule());
 	        }
        		add(
        			$current, 
        			"predefinedRooms",
-        		lv_predefinedRooms_8_0, 
+        		lv_predefinedRooms_10_0, 
         		"Room");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -202,16 +239,16 @@ ruleModel returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getPredefinedRoomsRoomParserRuleCall_5_2_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getPredefinedRoomsRoomParserRuleCall_6_2_0()); 
 	    }
-		lv_predefinedRooms_9_0=ruleRoom		{
+		lv_predefinedRooms_11_0=ruleRoom		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModelRule());
 	        }
        		add(
        			$current, 
        			"predefinedRooms",
-        		lv_predefinedRooms_9_0, 
+        		lv_predefinedRooms_11_0, 
         		"Room");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -220,16 +257,16 @@ ruleModel returns [EObject current=null]
 )*)?((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getBuildingsBuildingParserRuleCall_6_0_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getBuildingsBuildingParserRuleCall_7_0_0()); 
 	    }
-		lv_buildings_10_0=ruleBuilding		{
+		lv_buildings_12_0=ruleBuilding		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModelRule());
 	        }
        		add(
        			$current, 
        			"buildings",
-        		lv_buildings_10_0, 
+        		lv_buildings_12_0, 
         		"Building");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -238,24 +275,24 @@ ruleModel returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getBuildingsBuildingParserRuleCall_6_1_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getBuildingsBuildingParserRuleCall_7_1_0()); 
 	    }
-		lv_buildings_11_0=ruleBuilding		{
+		lv_buildings_13_0=ruleBuilding		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModelRule());
 	        }
        		add(
        			$current, 
        			"buildings",
-        		lv_buildings_11_0, 
+        		lv_buildings_13_0, 
         		"Building");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*)?	otherlv_12='}' 
+)*)?	otherlv_14='}' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_14, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;
@@ -449,6 +486,244 @@ ruleSensor returns [EObject current=null]
     }
 )
 ;
+
+
+
+
+
+// Entry rule entryRuleSchedule
+entryRuleSchedule returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getScheduleRule()); }
+	 iv_ruleSchedule=ruleSchedule 
+	 { $current=$iv_ruleSchedule.current; } 
+	 EOF 
+;
+
+// Rule Schedule
+ruleSchedule returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getScheduleAccess().getScheduleAction_0(),
+            $current);
+    }
+)	otherlv_1='schedule' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getScheduleAccess().getScheduleKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getScheduleAccess().getNameEStringParserRuleCall_2_0()); 
+	    }
+		lv_name_2_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getScheduleRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_3='days' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getScheduleAccess().getDaysKeyword_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getScheduleAccess().getWeekdaysWeekdaysEnumRuleCall_3_1_0()); 
+	    }
+		lv_weekdays_4_0=ruleWeekdays		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getScheduleRule());
+	        }
+       		add(
+       			$current, 
+       			"weekdays",
+        		lv_weekdays_4_0, 
+        		"Weekdays");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_5=',' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getScheduleAccess().getCommaKeyword_3_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getScheduleAccess().getWeekdaysWeekdaysEnumRuleCall_3_2_1_0()); 
+	    }
+		lv_weekdays_6_0=ruleWeekdays		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getScheduleRule());
+	        }
+       		add(
+       			$current, 
+       			"weekdays",
+        		lv_weekdays_6_0, 
+        		"Weekdays");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)?(	otherlv_7='from' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getScheduleAccess().getFromKeyword_4_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getScheduleAccess().getFromTimeParserRuleCall_4_1_0()); 
+	    }
+		lv_from_8_0=ruleTime		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getScheduleRule());
+	        }
+       		set(
+       			$current, 
+       			"from",
+        		lv_from_8_0, 
+        		"Time");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_9='to' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getScheduleAccess().getToKeyword_4_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getScheduleAccess().getToTimeParserRuleCall_4_3_0()); 
+	    }
+		lv_to_10_0=ruleTime		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getScheduleRule());
+	        }
+       		set(
+       			$current, 
+       			"to",
+        		lv_to_10_0, 
+        		"Time");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
+;
+
+
+
+
+
+// Entry rule entryRuleTime
+entryRuleTime returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTimeRule()); }
+	 iv_ruleTime=ruleTime 
+	 { $current=$iv_ruleTime.current; } 
+	 EOF 
+;
+
+// Rule Time
+ruleTime returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getTimeAccess().getTimeAction_0(),
+            $current);
+    }
+)((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTimeAccess().getHoursEShortParserRuleCall_1_0_0()); 
+	    }
+		lv_hours_1_0=ruleEShort		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTimeRule());
+	        }
+       		set(
+       			$current, 
+       			"hours",
+        		lv_hours_1_0, 
+        		"EShort");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2=':' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getTimeAccess().getColonKeyword_1_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTimeAccess().getMinutesEShortParserRuleCall_1_2_0()); 
+	    }
+		lv_minutes_3_0=ruleEShort		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTimeRule());
+	        }
+       		set(
+       			$current, 
+       			"minutes",
+        		lv_minutes_3_0, 
+        		"EShort");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
+;
+
+
+
+
+
+// Entry rule entryRuleEShort
+entryRuleEShort returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEShortRule()); } 
+	 iv_ruleEShort=ruleEShort 
+	 { $current=$iv_ruleEShort.current.getText(); }  
+	 EOF 
+;
+
+// Rule EShort
+ruleEShort returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEShortAccess().getHyphenMinusKeyword_0()); 
+    }
+)?    this_INT_1=RULE_INT    {
+		$current.merge(this_INT_1);
+    }
+
+    { 
+    newLeafNode(this_INT_1, grammarAccess.getEShortAccess().getINTTerminalRuleCall_1()); 
+    }
+)
+    ;
 
 
 
@@ -2773,6 +3048,55 @@ ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
     ;
 
 
+
+
+
+// Rule Weekdays
+ruleWeekdays returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='MONDAY' 
+	{
+        $current = grammarAccess.getWeekdaysAccess().getMONDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getWeekdaysAccess().getMONDAYEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='TUESDAY' 
+	{
+        $current = grammarAccess.getWeekdaysAccess().getTUESDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getWeekdaysAccess().getTUESDAYEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='WEDENSDAY' 
+	{
+        $current = grammarAccess.getWeekdaysAccess().getWEDENSDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getWeekdaysAccess().getWEDENSDAYEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='THURSDAY' 
+	{
+        $current = grammarAccess.getWeekdaysAccess().getTHURSDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getWeekdaysAccess().getTHURSDAYEnumLiteralDeclaration_3()); 
+    }
+)
+    |(	enumLiteral_4='FRIDAY' 
+	{
+        $current = grammarAccess.getWeekdaysAccess().getFRIDAYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_4, grammarAccess.getWeekdaysAccess().getFRIDAYEnumLiteralDeclaration_4()); 
+    }
+)
+    |(	enumLiteral_5='SATURDAY' 
+	{
+        $current = grammarAccess.getWeekdaysAccess().getSATURDAYEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_5, grammarAccess.getWeekdaysAccess().getSATURDAYEnumLiteralDeclaration_5()); 
+    }
+)
+    |(	enumLiteral_6='SUNDAY' 
+	{
+        $current = grammarAccess.getWeekdaysAccess().getSUNDAYEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_6, grammarAccess.getWeekdaysAccess().getSUNDAYEnumLiteralDeclaration_6()); 
+    }
+));
 
 
 

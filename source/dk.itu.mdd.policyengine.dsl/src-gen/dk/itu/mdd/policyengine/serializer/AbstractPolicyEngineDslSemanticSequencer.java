@@ -26,10 +26,12 @@ import dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage;
 import dk.itu.mdd.policyengine.PolicyEngine.PressureSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.RadiatorActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.Room;
+import dk.itu.mdd.policyengine.PolicyEngine.Schedule;
 import dk.itu.mdd.policyengine.PolicyEngine.SensorComponent;
 import dk.itu.mdd.policyengine.PolicyEngine.SmokeSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.State;
 import dk.itu.mdd.policyengine.PolicyEngine.TemperatureSensor;
+import dk.itu.mdd.policyengine.PolicyEngine.Time;
 import dk.itu.mdd.policyengine.PolicyEngine.TouchSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.WindowActuator;
 import dk.itu.mdd.policyengine.services.PolicyEngineDslGrammarAccess;
@@ -206,6 +208,12 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 					return; 
 				}
 				else break;
+			case PolicyEnginePackage.SCHEDULE:
+				if(context == grammarAccess.getScheduleRule()) {
+					sequence_Schedule(context, (Schedule) semanticObject); 
+					return; 
+				}
+				else break;
 			case PolicyEnginePackage.SENSOR_COMPONENT:
 				if(context == grammarAccess.getSensorComponentRule()) {
 					sequence_SensorComponent(context, (SensorComponent) semanticObject); 
@@ -229,6 +237,12 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 				if(context == grammarAccess.getSensorRule() ||
 				   context == grammarAccess.getTemperatureSensorRule()) {
 					sequence_TemperatureSensor(context, (TemperatureSensor) semanticObject); 
+					return; 
+				}
+				else break;
+			case PolicyEnginePackage.TIME:
+				if(context == grammarAccess.getTimeRule()) {
+					sequence_Time(context, (Time) semanticObject); 
 					return; 
 				}
 				else break;
@@ -428,6 +442,7 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 	 *         name=EString 
 	 *         (stateDefinition+=State stateDefinition+=State*)? 
 	 *         (policyDefinition+=Policy policyDefinition+=Policy*)? 
+	 *         (schedules+=Schedule schedules+=Schedule*)? 
 	 *         (predefinedRooms+=Room predefinedRooms+=Room*)? 
 	 *         (buildings+=Building buildings+=Building*)?
 	 *     )
@@ -489,6 +504,15 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 	
 	/**
 	 * Constraint:
+	 *     (name=EString (weekdays+=Weekdays weekdays+=Weekdays*)? (from=Time to=Time)?)
+	 */
+	protected void sequence_Schedule(EObject context, Schedule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=EString (sensors+=Sensor sensors+=Sensor*)?)
 	 */
 	protected void sequence_SensorComponent(EObject context, SensorComponent semanticObject) {
@@ -529,6 +553,15 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 	 *     (valueState=EInt?)
 	 */
 	protected void sequence_TemperatureSensor(EObject context, TemperatureSensor semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((hours=EShort minutes=EShort)?)
+	 */
+	protected void sequence_Time(EObject context, Time semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

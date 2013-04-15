@@ -4,6 +4,7 @@ package dk.itu.mdd.policyengine.PolicyEngine;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -158,13 +159,22 @@ public interface PolicyEnginePackage extends EPackage {
 	int BUILDING__FLOORS = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Timers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUILDING__TIMERS = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Building</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUILDING_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int BUILDING_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Building</em>' class.
@@ -231,13 +241,31 @@ public interface PolicyEnginePackage extends EPackage {
 	int MODEL__STATE_DEFINITION = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Timers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__TIMERS = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Schedules</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__SCHEDULES = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int MODEL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -1229,13 +1257,22 @@ public interface PolicyEnginePackage extends EPackage {
 	int ROOM__EXTENDS = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Timers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__TIMERS = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ROOM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -1275,13 +1312,22 @@ public interface PolicyEnginePackage extends EPackage {
 	int FLOOR__ROOMS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Timers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOOR__TIMERS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Floor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int FLOOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Floor</em>' class.
@@ -1478,6 +1524,164 @@ public interface PolicyEnginePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.TimerImpl <em>Timer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.TimerImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getTimer()
+	 * @generated
+	 */
+	int TIMER = 34;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMER__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Timer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Timer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMER_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ScheduleImpl <em>Schedule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.ScheduleImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getSchedule()
+	 * @generated
+	 */
+	int SCHEDULE = 35;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Weekdays</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE__WEEKDAYS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE__FROM = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>To</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE__TO = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Schedule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Schedule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.TimeImpl <em>Time</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.TimeImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getTime()
+	 * @generated
+	 */
+	int TIME = 36;
+
+	/**
+	 * The feature id for the '<em><b>Hours</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME__HOURS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Minutes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME__MINUTES = 1;
+
+	/**
+	 * The number of structural features of the '<em>Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.Weekdays <em>Weekdays</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Weekdays
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getWeekdays()
+	 * @generated
+	 */
+	int WEEKDAYS = 37;
+
+
+	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.Building <em>Building</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1543,6 +1747,17 @@ public interface PolicyEnginePackage extends EPackage {
 	EReference getBuilding_Floors();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link dk.itu.mdd.policyengine.PolicyEngine.Building#getTimers <em>Timers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Timers</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Building#getTimers()
+	 * @see #getBuilding()
+	 * @generated
+	 */
+	EReference getBuilding_Timers();
+
+	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.Model <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1595,6 +1810,28 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getModel_StateDefinition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dk.itu.mdd.policyengine.PolicyEngine.Model#getTimers <em>Timers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Timers</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Model#getTimers()
+	 * @see #getModel()
+	 * @generated
+	 */
+	EReference getModel_Timers();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dk.itu.mdd.policyengine.PolicyEngine.Model#getSchedules <em>Schedules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Schedules</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Model#getSchedules()
+	 * @see #getModel()
+	 * @generated
+	 */
+	EReference getModel_Schedules();
 
 	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.LightSwitchActuator <em>Light Switch Actuator</em>}'.
@@ -1988,6 +2225,17 @@ public interface PolicyEnginePackage extends EPackage {
 	EReference getRoom_Extends();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getTimers <em>Timers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Timers</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Room#getTimers()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EReference getRoom_Timers();
+
+	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.Floor <em>Floor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2007,6 +2255,17 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFloor_Rooms();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link dk.itu.mdd.policyengine.PolicyEngine.Floor#getTimers <em>Timers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Timers</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Floor#getTimers()
+	 * @see #getFloor()
+	 * @generated
+	 */
+	EReference getFloor_Timers();
 
 	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.ActuatorComponent <em>Actuator Component</em>}'.
@@ -2093,6 +2352,101 @@ public interface PolicyEnginePackage extends EPackage {
 	EClass getConditions();
 
 	/**
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.Timer <em>Timer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Timer</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Timer
+	 * @generated
+	 */
+	EClass getTimer();
+
+	/**
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.Schedule <em>Schedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Schedule</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Schedule
+	 * @generated
+	 */
+	EClass getSchedule();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link dk.itu.mdd.policyengine.PolicyEngine.Schedule#getWeekdays <em>Weekdays</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Weekdays</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Schedule#getWeekdays()
+	 * @see #getSchedule()
+	 * @generated
+	 */
+	EAttribute getSchedule_Weekdays();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dk.itu.mdd.policyengine.PolicyEngine.Schedule#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>From</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Schedule#getFrom()
+	 * @see #getSchedule()
+	 * @generated
+	 */
+	EReference getSchedule_From();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link dk.itu.mdd.policyengine.PolicyEngine.Schedule#getTo <em>To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>To</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Schedule#getTo()
+	 * @see #getSchedule()
+	 * @generated
+	 */
+	EReference getSchedule_To();
+
+	/**
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.Time <em>Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Time</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Time
+	 * @generated
+	 */
+	EClass getTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dk.itu.mdd.policyengine.PolicyEngine.Time#getHours <em>Hours</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hours</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Time#getHours()
+	 * @see #getTime()
+	 * @generated
+	 */
+	EAttribute getTime_Hours();
+
+	/**
+	 * Returns the meta object for the attribute '{@link dk.itu.mdd.policyengine.PolicyEngine.Time#getMinutes <em>Minutes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Minutes</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Time#getMinutes()
+	 * @see #getTime()
+	 * @generated
+	 */
+	EAttribute getTime_Minutes();
+
+	/**
+	 * Returns the meta object for enum '{@link dk.itu.mdd.policyengine.PolicyEngine.Weekdays <em>Weekdays</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Weekdays</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Weekdays
+	 * @generated
+	 */
+	EEnum getWeekdays();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2166,6 +2520,14 @@ public interface PolicyEnginePackage extends EPackage {
 		EReference BUILDING__FLOORS = eINSTANCE.getBuilding_Floors();
 
 		/**
+		 * The meta object literal for the '<em><b>Timers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUILDING__TIMERS = eINSTANCE.getBuilding_Timers();
+
+		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ModelImpl <em>Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2206,6 +2568,22 @@ public interface PolicyEnginePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MODEL__STATE_DEFINITION = eINSTANCE.getModel_StateDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Timers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL__TIMERS = eINSTANCE.getModel_Timers();
+
+		/**
+		 * The meta object literal for the '<em><b>Schedules</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL__SCHEDULES = eINSTANCE.getModel_Schedules();
 
 		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.LightSwitchActuatorImpl <em>Light Switch Actuator</em>}' class.
@@ -2566,6 +2944,14 @@ public interface PolicyEnginePackage extends EPackage {
 		EReference ROOM__EXTENDS = eINSTANCE.getRoom_Extends();
 
 		/**
+		 * The meta object literal for the '<em><b>Timers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM__TIMERS = eINSTANCE.getRoom_Timers();
+
+		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.FloorImpl <em>Floor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2582,6 +2968,14 @@ public interface PolicyEnginePackage extends EPackage {
 		 * @generated
 		 */
 		EReference FLOOR__ROOMS = eINSTANCE.getFloor_Rooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Timers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FLOOR__TIMERS = eINSTANCE.getFloor_Timers();
 
 		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ActuatorComponentImpl <em>Actuator Component</em>}' class.
@@ -2654,6 +3048,86 @@ public interface PolicyEnginePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONDITIONS = eINSTANCE.getConditions();
+
+		/**
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.TimerImpl <em>Timer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.TimerImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getTimer()
+		 * @generated
+		 */
+		EClass TIMER = eINSTANCE.getTimer();
+
+		/**
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ScheduleImpl <em>Schedule</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.ScheduleImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getSchedule()
+		 * @generated
+		 */
+		EClass SCHEDULE = eINSTANCE.getSchedule();
+
+		/**
+		 * The meta object literal for the '<em><b>Weekdays</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEDULE__WEEKDAYS = eINSTANCE.getSchedule_Weekdays();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULE__FROM = eINSTANCE.getSchedule_From();
+
+		/**
+		 * The meta object literal for the '<em><b>To</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULE__TO = eINSTANCE.getSchedule_To();
+
+		/**
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.TimeImpl <em>Time</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.TimeImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getTime()
+		 * @generated
+		 */
+		EClass TIME = eINSTANCE.getTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Hours</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME__HOURS = eINSTANCE.getTime_Hours();
+
+		/**
+		 * The meta object literal for the '<em><b>Minutes</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME__MINUTES = eINSTANCE.getTime_Minutes();
+
+		/**
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.Weekdays <em>Weekdays</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.Weekdays
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getWeekdays()
+		 * @generated
+		 */
+		EEnum WEEKDAYS = eINSTANCE.getWeekdays();
 
 	}
 

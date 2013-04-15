@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Floor#getRooms <em>Rooms</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Floor#getTimers <em>Timers</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,5 +37,21 @@ public interface Floor extends NamedElement {
 	 * @generated
 	 */
 	EList<Room> getRooms();
+
+	/**
+	 * Returns the value of the '<em><b>Timers</b></em>' containment reference list.
+	 * The list contents are of type {@link dk.itu.mdd.policyengine.PolicyEngine.Timer}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Timers</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Timers</em>' containment reference list.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getFloor_Timers()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Timer> getTimers();
 
 } // Floor

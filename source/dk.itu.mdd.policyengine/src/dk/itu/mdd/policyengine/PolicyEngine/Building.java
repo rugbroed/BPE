@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Building#getCalendarSystem <em>Calendar System</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Building#getMeetingScheduleSystem <em>Meeting Schedule System</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Building#getFloors <em>Floors</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Building#getTimers <em>Timers</em>}</li>
  * </ul>
  * </p>
  *
@@ -144,5 +145,21 @@ public interface Building extends NamedElement {
 	 * @generated
 	 */
 	EList<Floor> getFloors();
+
+	/**
+	 * Returns the value of the '<em><b>Timers</b></em>' containment reference list.
+	 * The list contents are of type {@link dk.itu.mdd.policyengine.PolicyEngine.Timer}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Timers</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Timers</em>' containment reference list.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getBuilding_Timers()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Timer> getTimers();
 
 } // Building

@@ -5,6 +5,7 @@ package dk.itu.mdd.policyengine.PolicyEngine.impl;
 import dk.itu.mdd.policyengine.PolicyEngine.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -87,8 +88,41 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 			case PolicyEnginePackage.POLICY: return createPolicy();
 			case PolicyEnginePackage.STATE: return createState();
 			case PolicyEnginePackage.CONDITIONS: return createConditions();
+			case PolicyEnginePackage.TIMER: return createTimer();
+			case PolicyEnginePackage.SCHEDULE: return createSchedule();
+			case PolicyEnginePackage.TIME: return createTime();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case PolicyEnginePackage.WEEKDAYS:
+				return createWeekdaysFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case PolicyEnginePackage.WEEKDAYS:
+				return convertWeekdaysToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -400,6 +434,56 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 	public Conditions createConditions() {
 		ConditionsImpl conditions = new ConditionsImpl();
 		return conditions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Timer createTimer() {
+		TimerImpl timer = new TimerImpl();
+		return timer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Schedule createSchedule() {
+		ScheduleImpl schedule = new ScheduleImpl();
+		return schedule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Time createTime() {
+		TimeImpl time = new TimeImpl();
+		return time;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Weekdays createWeekdaysFromString(EDataType eDataType, String initialValue) {
+		Weekdays result = Weekdays.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertWeekdaysToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

@@ -30,16 +30,21 @@ import dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage;
 import dk.itu.mdd.policyengine.PolicyEngine.PressureSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.RadiatorActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.Room;
+import dk.itu.mdd.policyengine.PolicyEngine.Schedule;
 import dk.itu.mdd.policyengine.PolicyEngine.Sensor;
 import dk.itu.mdd.policyengine.PolicyEngine.SensorComponent;
 import dk.itu.mdd.policyengine.PolicyEngine.SmokeSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.State;
 import dk.itu.mdd.policyengine.PolicyEngine.TemperatureSensor;
+import dk.itu.mdd.policyengine.PolicyEngine.Time;
+import dk.itu.mdd.policyengine.PolicyEngine.Timer;
 import dk.itu.mdd.policyengine.PolicyEngine.TouchSensor;
+import dk.itu.mdd.policyengine.PolicyEngine.Weekdays;
 import dk.itu.mdd.policyengine.PolicyEngine.WindowActuator;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -291,6 +296,34 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	private EClass conditionsEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass timerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass scheduleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass timeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum weekdaysEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -410,6 +443,15 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBuilding_Timers() {
+		return (EReference)buildingEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getModel() {
 		return modelEClass;
 	}
@@ -448,6 +490,24 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 */
 	public EReference getModel_StateDefinition() {
 		return (EReference)modelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModel_Timers() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModel_Schedules() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -797,6 +857,15 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRoom_Timers() {
+		return (EReference)roomEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFloor() {
 		return floorEClass;
 	}
@@ -808,6 +877,15 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 */
 	public EReference getFloor_Rooms() {
 		return (EReference)floorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFloor_Timers() {
+		return (EReference)floorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -887,6 +965,87 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTimer() {
+		return timerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSchedule() {
+		return scheduleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSchedule_Weekdays() {
+		return (EAttribute)scheduleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSchedule_From() {
+		return (EReference)scheduleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSchedule_To() {
+		return (EReference)scheduleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTime() {
+		return timeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTime_Hours() {
+		return (EAttribute)timeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTime_Minutes() {
+		return (EAttribute)timeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getWeekdays() {
+		return weekdaysEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PolicyEngineFactory getPolicyEngineFactory() {
 		return (PolicyEngineFactory)getEFactoryInstance();
 	}
@@ -916,12 +1075,15 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		createEReference(buildingEClass, BUILDING__CALENDAR_SYSTEM);
 		createEReference(buildingEClass, BUILDING__MEETING_SCHEDULE_SYSTEM);
 		createEReference(buildingEClass, BUILDING__FLOORS);
+		createEReference(buildingEClass, BUILDING__TIMERS);
 
 		modelEClass = createEClass(MODEL);
 		createEReference(modelEClass, MODEL__BUILDINGS);
 		createEReference(modelEClass, MODEL__PREDEFINED_ROOMS);
 		createEReference(modelEClass, MODEL__POLICY_DEFINITION);
 		createEReference(modelEClass, MODEL__STATE_DEFINITION);
+		createEReference(modelEClass, MODEL__TIMERS);
+		createEReference(modelEClass, MODEL__SCHEDULES);
 
 		lightSwitchActuatorEClass = createEClass(LIGHT_SWITCH_ACTUATOR);
 
@@ -987,9 +1149,11 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		createEReference(roomEClass, ROOM__DECLARE_SENSOR);
 		createEReference(roomEClass, ROOM__DECLARE_ACTUATOR);
 		createEReference(roomEClass, ROOM__EXTENDS);
+		createEReference(roomEClass, ROOM__TIMERS);
 
 		floorEClass = createEClass(FLOOR);
 		createEReference(floorEClass, FLOOR__ROOMS);
+		createEReference(floorEClass, FLOOR__TIMERS);
 
 		actuatorComponentEClass = createEClass(ACTUATOR_COMPONENT);
 
@@ -1002,6 +1166,20 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		createEAttribute(stateEClass, STATE__VALUE_STATE);
 
 		conditionsEClass = createEClass(CONDITIONS);
+
+		timerEClass = createEClass(TIMER);
+
+		scheduleEClass = createEClass(SCHEDULE);
+		createEAttribute(scheduleEClass, SCHEDULE__WEEKDAYS);
+		createEReference(scheduleEClass, SCHEDULE__FROM);
+		createEReference(scheduleEClass, SCHEDULE__TO);
+
+		timeEClass = createEClass(TIME);
+		createEAttribute(timeEClass, TIME__HOURS);
+		createEAttribute(timeEClass, TIME__MINUTES);
+
+		// Create enums
+		weekdaysEEnum = createEEnum(WEEKDAYS);
 	}
 
 	/**
@@ -1059,6 +1237,8 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		actuatorComponentEClass.getESuperTypes().add(this.getNamedElement());
 		policyEClass.getESuperTypes().add(this.getNamedElement());
 		stateEClass.getESuperTypes().add(this.getNamedElement());
+		timerEClass.getESuperTypes().add(this.getNamedElement());
+		scheduleEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(buildingEClass, Building.class, "Building", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1067,12 +1247,15 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		initEReference(getBuilding_CalendarSystem(), this.getCalendarSystem(), null, "calendarSystem", null, 0, 1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBuilding_MeetingScheduleSystem(), this.getMeetingScheduleSystem(), null, "meetingScheduleSystem", null, 0, 1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBuilding_Floors(), this.getFloor(), null, "floors", null, 0, -1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBuilding_Timers(), this.getTimer(), null, "timers", null, 0, -1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModel_Buildings(), this.getBuilding(), null, "buildings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_PredefinedRooms(), this.getRoom(), null, "predefinedRooms", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_PolicyDefinition(), this.getPolicy(), null, "policyDefinition", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_StateDefinition(), this.getState(), null, "stateDefinition", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Timers(), this.getTimer(), null, "timers", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Schedules(), this.getSchedule(), null, "schedules", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lightSwitchActuatorEClass, LightSwitchActuator.class, "LightSwitchActuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1138,9 +1321,11 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		initEReference(getRoom_DeclareSensor(), this.getSensorComponent(), null, "declareSensor", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoom_DeclareActuator(), this.getActuatorComponent(), null, "declareActuator", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoom_Extends(), this.getRoom(), null, "extends", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoom_Timers(), this.getTimer(), null, "timers", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(floorEClass, Floor.class, "Floor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFloor_Rooms(), this.getRoom(), null, "rooms", null, 0, -1, Floor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFloor_Timers(), this.getTimer(), null, "timers", null, 0, -1, Floor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorComponentEClass, ActuatorComponent.class, "ActuatorComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1153,6 +1338,27 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		initEAttribute(getState_ValueState(), ecorePackage.getEBoolean(), "valueState", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionsEClass, Conditions.class, "Conditions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(timerEClass, Timer.class, "Timer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(scheduleEClass, Schedule.class, "Schedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSchedule_Weekdays(), this.getWeekdays(), "weekdays", null, 0, -1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchedule_From(), this.getTime(), null, "from", null, 0, 1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchedule_To(), this.getTime(), null, "to", null, 0, 1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(timeEClass, Time.class, "Time", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTime_Hours(), ecorePackage.getEShort(), "hours", null, 0, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTime_Minutes(), ecorePackage.getEShort(), "minutes", null, 0, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(weekdaysEEnum, Weekdays.class, "Weekdays");
+		addEEnumLiteral(weekdaysEEnum, Weekdays.MONDAY);
+		addEEnumLiteral(weekdaysEEnum, Weekdays.TUESDAY);
+		addEEnumLiteral(weekdaysEEnum, Weekdays.WEDENSDAY);
+		addEEnumLiteral(weekdaysEEnum, Weekdays.THURSDAY);
+		addEEnumLiteral(weekdaysEEnum, Weekdays.FRIDAY);
+		addEEnumLiteral(weekdaysEEnum, Weekdays.SATURDAY);
+		addEEnumLiteral(weekdaysEEnum, Weekdays.SUNDAY);
 
 		// Create resource
 		createResource(eNS_URI);

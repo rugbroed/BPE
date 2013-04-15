@@ -10,6 +10,7 @@ import dk.itu.mdd.policyengine.PolicyEngine.Floor;
 import dk.itu.mdd.policyengine.PolicyEngine.MeetingScheduleSystem;
 import dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage;
 
+import dk.itu.mdd.policyengine.PolicyEngine.Timer;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -37,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.BuildingImpl#getCalendarSystem <em>Calendar System</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.BuildingImpl#getMeetingScheduleSystem <em>Meeting Schedule System</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.BuildingImpl#getFloors <em>Floors</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.BuildingImpl#getTimers <em>Timers</em>}</li>
  * </ul>
  * </p>
  *
@@ -92,6 +94,16 @@ public class BuildingImpl extends NamedElementImpl implements Building {
 	 * @ordered
 	 */
 	protected EList<Floor> floors;
+
+	/**
+	 * The cached value of the '{@link #getTimers() <em>Timers</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Timer> timers;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -301,6 +313,18 @@ public class BuildingImpl extends NamedElementImpl implements Building {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Timer> getTimers() {
+		if (timers == null) {
+			timers = new EObjectContainmentEList<Timer>(Timer.class, this, PolicyEnginePackage.BUILDING__TIMERS);
+		}
+		return timers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -314,6 +338,8 @@ public class BuildingImpl extends NamedElementImpl implements Building {
 				return basicSetMeetingScheduleSystem(null, msgs);
 			case PolicyEnginePackage.BUILDING__FLOORS:
 				return ((InternalEList<?>)getFloors()).basicRemove(otherEnd, msgs);
+			case PolicyEnginePackage.BUILDING__TIMERS:
+				return ((InternalEList<?>)getTimers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -336,6 +362,8 @@ public class BuildingImpl extends NamedElementImpl implements Building {
 				return getMeetingScheduleSystem();
 			case PolicyEnginePackage.BUILDING__FLOORS:
 				return getFloors();
+			case PolicyEnginePackage.BUILDING__TIMERS:
+				return getTimers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -365,6 +393,10 @@ public class BuildingImpl extends NamedElementImpl implements Building {
 				getFloors().clear();
 				getFloors().addAll((Collection<? extends Floor>)newValue);
 				return;
+			case PolicyEnginePackage.BUILDING__TIMERS:
+				getTimers().clear();
+				getTimers().addAll((Collection<? extends Timer>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -392,6 +424,9 @@ public class BuildingImpl extends NamedElementImpl implements Building {
 			case PolicyEnginePackage.BUILDING__FLOORS:
 				getFloors().clear();
 				return;
+			case PolicyEnginePackage.BUILDING__TIMERS:
+				getTimers().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -414,6 +449,8 @@ public class BuildingImpl extends NamedElementImpl implements Building {
 				return meetingScheduleSystem != null;
 			case PolicyEnginePackage.BUILDING__FLOORS:
 				return floors != null && !floors.isEmpty();
+			case PolicyEnginePackage.BUILDING__TIMERS:
+				return timers != null && !timers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

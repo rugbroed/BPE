@@ -7,18 +7,30 @@
   <foreignModel>PolicyEngine.ecore</foreignModel>
   <genPackages prefix="PolicyEngine" basePackage="dk.itu.mdd.policyengine" disposableProviderFactory="true"
       ecorePackage="PolicyEngine.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PolicyEngine.ecore#//Weekdays">
+      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/MONDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/TUESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/WEDENSDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/THURSDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/FRIDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/SATURDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/SUNDAY"/>
+    </genEnums>
     <genClasses ecoreClass="PolicyEngine.ecore#//Building">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/ctsSystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/accessControl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/calendarSystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/meetingScheduleSystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/floors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/timers"/>
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/buildings"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/predefinedRooms"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/policyDefinition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/stateDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/timers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Model/schedules"/>
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//LightSwitchActuator"/>
     <genClasses image="false" ecoreClass="PolicyEngine.ecore#//Sensor"/>
@@ -64,9 +76,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/declareSensor"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/declareActuator"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/extends"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/timers"/>
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//Floor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Floor/rooms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Floor/timers"/>
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//ActuatorComponent"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//Policy">
@@ -78,5 +92,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//State/valueState"/>
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//Conditions"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Timer"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Schedule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//Schedule/weekdays"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Schedule/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Schedule/to"/>
+    </genClasses>
+    <genClasses ecoreClass="PolicyEngine.ecore#//Time">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//Time/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//Time/minutes"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

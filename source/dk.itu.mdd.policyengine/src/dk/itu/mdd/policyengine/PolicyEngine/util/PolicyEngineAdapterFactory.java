@@ -204,6 +204,18 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 				return createConditionsAdapter();
 			}
 			@Override
+			public Adapter caseTimer(Timer object) {
+				return createTimerAdapter();
+			}
+			@Override
+			public Adapter caseSchedule(Schedule object) {
+				return createScheduleAdapter();
+			}
+			@Override
+			public Adapter caseTime(Time object) {
+				return createTimeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -696,6 +708,48 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConditionsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.Timer <em>Timer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Timer
+	 * @generated
+	 */
+	public Adapter createTimerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.Schedule <em>Schedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Schedule
+	 * @generated
+	 */
+	public Adapter createScheduleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.Time <em>Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Time
+	 * @generated
+	 */
+	public Adapter createTimeAdapter() {
 		return null;
 	}
 

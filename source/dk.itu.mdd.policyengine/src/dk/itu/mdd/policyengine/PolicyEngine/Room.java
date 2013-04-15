@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getDeclareSensor <em>Declare Sensor</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getDeclareActuator <em>Declare Actuator</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getExtends <em>Extends</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getTimers <em>Timers</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,5 +71,21 @@ public interface Room extends NamedElement {
 	 * @generated
 	 */
 	EList<Room> getExtends();
+
+	/**
+	 * Returns the value of the '<em><b>Timers</b></em>' containment reference list.
+	 * The list contents are of type {@link dk.itu.mdd.policyengine.PolicyEngine.Timer}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Timers</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Timers</em>' containment reference list.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getRoom_Timers()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Timer> getTimers();
 
 } // Room

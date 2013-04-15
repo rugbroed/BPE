@@ -7,6 +7,7 @@ import dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage;
 import dk.itu.mdd.policyengine.PolicyEngine.Room;
 import dk.itu.mdd.policyengine.PolicyEngine.SensorComponent;
 
+import dk.itu.mdd.policyengine.PolicyEngine.Timer;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomImpl#getDeclareSensor <em>Declare Sensor</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomImpl#getDeclareActuator <em>Declare Actuator</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomImpl#getExtends <em>Extends</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomImpl#getTimers <em>Timers</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,6 +67,16 @@ public class RoomImpl extends NamedElementImpl implements Room {
 	 * @ordered
 	 */
 	protected EList<Room> extends_;
+
+	/**
+	 * The cached value of the '{@link #getTimers() <em>Timers</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Timer> timers;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +138,18 @@ public class RoomImpl extends NamedElementImpl implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Timer> getTimers() {
+		if (timers == null) {
+			timers = new EObjectContainmentEList<Timer>(Timer.class, this, PolicyEnginePackage.ROOM__TIMERS);
+		}
+		return timers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -133,6 +157,8 @@ public class RoomImpl extends NamedElementImpl implements Room {
 				return ((InternalEList<?>)getDeclareSensor()).basicRemove(otherEnd, msgs);
 			case PolicyEnginePackage.ROOM__DECLARE_ACTUATOR:
 				return ((InternalEList<?>)getDeclareActuator()).basicRemove(otherEnd, msgs);
+			case PolicyEnginePackage.ROOM__TIMERS:
+				return ((InternalEList<?>)getTimers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -151,6 +177,8 @@ public class RoomImpl extends NamedElementImpl implements Room {
 				return getDeclareActuator();
 			case PolicyEnginePackage.ROOM__EXTENDS:
 				return getExtends();
+			case PolicyEnginePackage.ROOM__TIMERS:
+				return getTimers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,6 +204,10 @@ public class RoomImpl extends NamedElementImpl implements Room {
 				getExtends().clear();
 				getExtends().addAll((Collection<? extends Room>)newValue);
 				return;
+			case PolicyEnginePackage.ROOM__TIMERS:
+				getTimers().clear();
+				getTimers().addAll((Collection<? extends Timer>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -197,6 +229,9 @@ public class RoomImpl extends NamedElementImpl implements Room {
 			case PolicyEnginePackage.ROOM__EXTENDS:
 				getExtends().clear();
 				return;
+			case PolicyEnginePackage.ROOM__TIMERS:
+				getTimers().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -215,6 +250,8 @@ public class RoomImpl extends NamedElementImpl implements Room {
 				return declareActuator != null && !declareActuator.isEmpty();
 			case PolicyEnginePackage.ROOM__EXTENDS:
 				return extends_ != null && !extends_.isEmpty();
+			case PolicyEnginePackage.ROOM__TIMERS:
+				return timers != null && !timers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

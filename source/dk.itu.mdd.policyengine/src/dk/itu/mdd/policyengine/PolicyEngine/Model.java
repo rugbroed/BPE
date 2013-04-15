@@ -16,6 +16,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Model#getPredefinedRooms <em>Predefined Rooms</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Model#getPolicyDefinition <em>Policy Definition</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Model#getStateDefinition <em>State Definition</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Model#getTimers <em>Timers</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Model#getSchedules <em>Schedules</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,5 +89,37 @@ public interface Model extends NamedElement {
 	 * @generated
 	 */
 	EList<State> getStateDefinition();
+
+	/**
+	 * Returns the value of the '<em><b>Timers</b></em>' containment reference list.
+	 * The list contents are of type {@link dk.itu.mdd.policyengine.PolicyEngine.Timer}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Timers</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Timers</em>' containment reference list.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getModel_Timers()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Timer> getTimers();
+
+	/**
+	 * Returns the value of the '<em><b>Schedules</b></em>' containment reference list.
+	 * The list contents are of type {@link dk.itu.mdd.policyengine.PolicyEngine.Schedule}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Schedules</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Schedules</em>' containment reference list.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getModel_Schedules()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Schedule> getSchedules();
 
 } // Model

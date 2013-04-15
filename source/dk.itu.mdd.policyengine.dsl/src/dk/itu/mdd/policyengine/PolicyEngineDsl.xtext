@@ -10,6 +10,7 @@ Model returns Model:
 	'{'
 		(stateDefinition+=State (stateDefinition+=State)*)?
 		(policyDefinition+=Policy (policyDefinition+=Policy)*)?
+		(schedules+=Schedule (schedules+=Schedule)*)?
 		('room-type' predefinedRooms+=Room (predefinedRooms+=Room)*)?
 		(buildings+=Building (buildings+=Building)*)?
 	'}';
@@ -20,6 +21,28 @@ Actuator returns Actuator:
 
 Sensor returns Sensor:
 	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor | InfraredLightSensor | HumiditySensor;
+
+
+Schedule returns Schedule:
+	{Schedule}
+	'schedule'
+	name=EString
+		('days' weekdays+=Weekdays ( "," weekdays+=Weekdays)*)?
+		('from' from=Time 'to' to=Time)?
+	;
+
+enum Weekdays:
+	MONDAY | TUESDAY | WEDENSDAY | THURSDAY| FRIDAY | SATURDAY | SUNDAY
+	;
+
+Time returns Time:
+	{Time}
+		(hours=EShort ':' minutes=EShort)?
+	;
+
+EShort returns ecore::EShort:
+	'-'? INT
+	;
 
 EString returns ecore::EString:
 	STRING | ID;

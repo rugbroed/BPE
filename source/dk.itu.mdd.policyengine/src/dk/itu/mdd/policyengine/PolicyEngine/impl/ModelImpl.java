@@ -7,8 +7,10 @@ import dk.itu.mdd.policyengine.PolicyEngine.Model;
 import dk.itu.mdd.policyengine.PolicyEngine.Policy;
 import dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage;
 import dk.itu.mdd.policyengine.PolicyEngine.Room;
+import dk.itu.mdd.policyengine.PolicyEngine.Schedule;
 import dk.itu.mdd.policyengine.PolicyEngine.State;
 
+import dk.itu.mdd.policyengine.PolicyEngine.Timer;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -32,6 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ModelImpl#getPredefinedRooms <em>Predefined Rooms</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ModelImpl#getPolicyDefinition <em>Policy Definition</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ModelImpl#getStateDefinition <em>State Definition</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ModelImpl#getTimers <em>Timers</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ModelImpl#getSchedules <em>Schedules</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +81,26 @@ public class ModelImpl extends NamedElementImpl implements Model {
 	 * @ordered
 	 */
 	protected EList<State> stateDefinition;
+
+	/**
+	 * The cached value of the '{@link #getTimers() <em>Timers</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Timer> timers;
+
+	/**
+	 * The cached value of the '{@link #getSchedules() <em>Schedules</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSchedules()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Schedule> schedules;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,6 +174,30 @@ public class ModelImpl extends NamedElementImpl implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Timer> getTimers() {
+		if (timers == null) {
+			timers = new EObjectContainmentEList<Timer>(Timer.class, this, PolicyEnginePackage.MODEL__TIMERS);
+		}
+		return timers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Schedule> getSchedules() {
+		if (schedules == null) {
+			schedules = new EObjectContainmentEList<Schedule>(Schedule.class, this, PolicyEnginePackage.MODEL__SCHEDULES);
+		}
+		return schedules;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -161,6 +209,10 @@ public class ModelImpl extends NamedElementImpl implements Model {
 				return ((InternalEList<?>)getPolicyDefinition()).basicRemove(otherEnd, msgs);
 			case PolicyEnginePackage.MODEL__STATE_DEFINITION:
 				return ((InternalEList<?>)getStateDefinition()).basicRemove(otherEnd, msgs);
+			case PolicyEnginePackage.MODEL__TIMERS:
+				return ((InternalEList<?>)getTimers()).basicRemove(otherEnd, msgs);
+			case PolicyEnginePackage.MODEL__SCHEDULES:
+				return ((InternalEList<?>)getSchedules()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -181,6 +233,10 @@ public class ModelImpl extends NamedElementImpl implements Model {
 				return getPolicyDefinition();
 			case PolicyEnginePackage.MODEL__STATE_DEFINITION:
 				return getStateDefinition();
+			case PolicyEnginePackage.MODEL__TIMERS:
+				return getTimers();
+			case PolicyEnginePackage.MODEL__SCHEDULES:
+				return getSchedules();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,6 +266,14 @@ public class ModelImpl extends NamedElementImpl implements Model {
 				getStateDefinition().clear();
 				getStateDefinition().addAll((Collection<? extends State>)newValue);
 				return;
+			case PolicyEnginePackage.MODEL__TIMERS:
+				getTimers().clear();
+				getTimers().addAll((Collection<? extends Timer>)newValue);
+				return;
+			case PolicyEnginePackage.MODEL__SCHEDULES:
+				getSchedules().clear();
+				getSchedules().addAll((Collection<? extends Schedule>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -234,6 +298,12 @@ public class ModelImpl extends NamedElementImpl implements Model {
 			case PolicyEnginePackage.MODEL__STATE_DEFINITION:
 				getStateDefinition().clear();
 				return;
+			case PolicyEnginePackage.MODEL__TIMERS:
+				getTimers().clear();
+				return;
+			case PolicyEnginePackage.MODEL__SCHEDULES:
+				getSchedules().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,6 +324,10 @@ public class ModelImpl extends NamedElementImpl implements Model {
 				return policyDefinition != null && !policyDefinition.isEmpty();
 			case PolicyEnginePackage.MODEL__STATE_DEFINITION:
 				return stateDefinition != null && !stateDefinition.isEmpty();
+			case PolicyEnginePackage.MODEL__TIMERS:
+				return timers != null && !timers.isEmpty();
+			case PolicyEnginePackage.MODEL__SCHEDULES:
+				return schedules != null && !schedules.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

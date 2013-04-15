@@ -6,6 +6,7 @@ import dk.itu.mdd.policyengine.PolicyEngine.Floor;
 import dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage;
 import dk.itu.mdd.policyengine.PolicyEngine.Room;
 
+import dk.itu.mdd.policyengine.PolicyEngine.Timer;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.FloorImpl#getRooms <em>Rooms</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.FloorImpl#getTimers <em>Timers</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +43,16 @@ public class FloorImpl extends NamedElementImpl implements Floor {
 	 * @ordered
 	 */
 	protected EList<Room> rooms;
+
+	/**
+	 * The cached value of the '{@link #getTimers() <em>Timers</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Timer> timers;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,11 +90,25 @@ public class FloorImpl extends NamedElementImpl implements Floor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Timer> getTimers() {
+		if (timers == null) {
+			timers = new EObjectContainmentEList<Timer>(Timer.class, this, PolicyEnginePackage.FLOOR__TIMERS);
+		}
+		return timers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PolicyEnginePackage.FLOOR__ROOMS:
 				return ((InternalEList<?>)getRooms()).basicRemove(otherEnd, msgs);
+			case PolicyEnginePackage.FLOOR__TIMERS:
+				return ((InternalEList<?>)getTimers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -97,6 +123,8 @@ public class FloorImpl extends NamedElementImpl implements Floor {
 		switch (featureID) {
 			case PolicyEnginePackage.FLOOR__ROOMS:
 				return getRooms();
+			case PolicyEnginePackage.FLOOR__TIMERS:
+				return getTimers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,6 +142,10 @@ public class FloorImpl extends NamedElementImpl implements Floor {
 				getRooms().clear();
 				getRooms().addAll((Collection<? extends Room>)newValue);
 				return;
+			case PolicyEnginePackage.FLOOR__TIMERS:
+				getTimers().clear();
+				getTimers().addAll((Collection<? extends Timer>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -129,6 +161,9 @@ public class FloorImpl extends NamedElementImpl implements Floor {
 			case PolicyEnginePackage.FLOOR__ROOMS:
 				getRooms().clear();
 				return;
+			case PolicyEnginePackage.FLOOR__TIMERS:
+				getTimers().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,6 +178,8 @@ public class FloorImpl extends NamedElementImpl implements Floor {
 		switch (featureID) {
 			case PolicyEnginePackage.FLOOR__ROOMS:
 				return rooms != null && !rooms.isEmpty();
+			case PolicyEnginePackage.FLOOR__TIMERS:
+				return timers != null && !timers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
