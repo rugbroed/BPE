@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPolicyEngineDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'{'", "'}'", "'building'", "'room'", "'is of type '", "'policy'", "'uses sensors'", "'uses actuators'", "','", "'is specified by'", "'state'", "'CTS'", "'temperatureSensors'", "'ctsActuators'", "'AccessControl'", "'accessControlSensors'", "'accessControlDoorLockActuator'", "'CalendarSystem'", "'MeetingScheduleSystem'", "'floor'", "'rooms'", "'MotionSensor'", "'valueState'", "'='", "'TemperatureSensor'", "'PressureSensor'", "'TouchSensor'", "'LightSensor'", "'SmokeSensor'", "'CO2Sensor'", "'InfraredLightSensor'", "'-'", "'LightSwitchActuator'", "'WindowActuator'", "'HumidifierActuator'", "'DoorActuator'", "'RadiatorActuator'", "'AudioAlarmActuator'", "'sensor '", "'is a '", "'actuator'", "'Conditions'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'{'", "'}'", "'building'", "'room type'", "'is of type '", "'policy'", "'uses sensors'", "'uses actuators'", "','", "'is specified by'", "'state'", "'CTS'", "'temperatureSensors'", "'ctsActuators'", "'AccessControl'", "'accessControlSensors'", "'accessControlDoorLockActuator'", "'CalendarSystem'", "'MeetingScheduleSystem'", "'floor'", "'rooms'", "'MotionSensor'", "'valueState'", "'='", "'TemperatureSensor'", "'PressureSensor'", "'TouchSensor'", "'LightSensor'", "'SmokeSensor'", "'CO2Sensor'", "'InfraredLightSensor'", "'-'", "'LightSwitchActuator'", "'WindowActuator'", "'HumidifierActuator'", "'DoorActuator'", "'RadiatorActuator'", "'AudioAlarmActuator'", "'sensor '", "'is a '", "'actuator'", "'Conditions'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -5704,21 +5704,21 @@ public class InternalPolicyEngineDslParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Room__Group__1__Impl"
-    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:2034:1: rule__Room__Group__1__Impl : ( 'room' ) ;
+    // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:2034:1: rule__Room__Group__1__Impl : ( 'room type' ) ;
     public final void rule__Room__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:2038:1: ( ( 'room' ) )
-            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:2039:1: ( 'room' )
+            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:2038:1: ( ( 'room type' ) )
+            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:2039:1: ( 'room type' )
             {
-            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:2039:1: ( 'room' )
-            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:2040:1: 'room'
+            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:2039:1: ( 'room type' )
+            // ../dk.itu.mdd.policyengine.dsl.ui/src-gen/dk/itu/mdd/policyengine/ui/contentassist/antlr/internal/InternalPolicyEngineDsl.g:2040:1: 'room type'
             {
-             before(grammarAccess.getRoomAccess().getRoomKeyword_1()); 
+             before(grammarAccess.getRoomAccess().getRoomTypeKeyword_1()); 
             match(input,16,FollowSets000.FOLLOW_16_in_rule__Room__Group__1__Impl4199); 
-             after(grammarAccess.getRoomAccess().getRoomKeyword_1()); 
+             after(grammarAccess.getRoomAccess().getRoomTypeKeyword_1()); 
 
             }
 

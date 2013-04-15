@@ -38,7 +38,7 @@ Building returns Building:
 
 Room returns Room:
 	{Room}
-	'room'
+	'room type'
 	name=EString
 	('is of type ' extends+=[Room|EString] (extends+=[Room|EString])*)?
 	'{'

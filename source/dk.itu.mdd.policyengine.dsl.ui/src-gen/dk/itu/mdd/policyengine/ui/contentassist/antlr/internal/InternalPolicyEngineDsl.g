@@ -2037,11 +2037,11 @@ rule__Room__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getRoomAccess().getRoomKeyword_1()); }
+{ before(grammarAccess.getRoomAccess().getRoomTypeKeyword_1()); }
 
-	'room' 
+	'room type' 
 
-{ after(grammarAccess.getRoomAccess().getRoomKeyword_1()); }
+{ after(grammarAccess.getRoomAccess().getRoomTypeKeyword_1()); }
 )
 
 ;

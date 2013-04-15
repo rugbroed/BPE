@@ -330,7 +330,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Room");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cRoomAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cRoomKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cRoomTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
@@ -355,12 +355,12 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Room:
-		//	{Room} "room" name=EString ("is of type " extends+=[Room|EString] extends+=[Room|EString]*)? "{"
+		//	{Room} "room type" name=EString ("is of type " extends+=[Room|EString] extends+=[Room|EString]*)? "{"
 		//	(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
 		//	declareActuator+=ActuatorComponent*)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{Room} "room" name=EString ("is of type " extends+=[Room|EString] extends+=[Room|EString]*)? "{"
+		//{Room} "room type" name=EString ("is of type " extends+=[Room|EString] extends+=[Room|EString]*)? "{"
 		//(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
 		//declareActuator+=ActuatorComponent*)? "}"
 		public Group getGroup() { return cGroup; }
@@ -368,8 +368,8 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//{Room}
 		public Action getRoomAction_0() { return cRoomAction_0; }
 
-		//"room"
-		public Keyword getRoomKeyword_1() { return cRoomKeyword_1; }
+		//"room type"
+		public Keyword getRoomTypeKeyword_1() { return cRoomTypeKeyword_1; }
 
 		//name=EString
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -2053,7 +2053,7 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Room:
-	//	{Room} "room" name=EString ("is of type " extends+=[Room|EString] extends+=[Room|EString]*)? "{"
+	//	{Room} "room type" name=EString ("is of type " extends+=[Room|EString] extends+=[Room|EString]*)? "{"
 	//	(declareSensor+=SensorComponent declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent
 	//	declareActuator+=ActuatorComponent*)? "}";
 	public RoomElements getRoomAccess() {

@@ -661,9 +661,9 @@ ruleRoom returns [EObject current=null]
             grammarAccess.getRoomAccess().getRoomAction_0(),
             $current);
     }
-)	otherlv_1='room' 
+)	otherlv_1='room type' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getRoomAccess().getRoomKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getRoomAccess().getRoomTypeKeyword_1());
     }
 (
 (
