@@ -32,12 +32,17 @@ BruelOgKjaer {
 	from 00:00 to 00:00
 	
 	room-type TemperatureControlledRoom
-	is-controlled-by TemperatureControlPolicy {
+	is-controlled-by TemperatureControlPolicy
+	during WorkingWeekHours, LateWorkingWeekHours
+	{
 		sensor officeTemperatureSensor is a TemperatureSensor
 		actuator officeRadiatorActuator is a RadiatorActuator
 	}
 	
-	room-type HumidityControlledRoom {
+	room-type HumidityControlledRoom
+	is-controlled-by HumidityMonitoringPolicy
+	during-allways
+	{
 		sensor humidifierSensor is a HumiditySensor		
 		actuator humidifierActuator is a HumidifierActuator
 	}

@@ -78,6 +78,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/extends"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/timers"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/policies"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Room/during"/>
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//Floor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Floor/rooms"/>

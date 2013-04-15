@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getExtends <em>Extends</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getTimers <em>Timers</em>}</li>
  *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getPolicies <em>Policies</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getDuring <em>During</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,5 +105,21 @@ public interface Room extends NamedElement {
 	 * @generated
 	 */
 	EList<Policy> getPolicies();
+
+	/**
+	 * Returns the value of the '<em><b>During</b></em>' reference list.
+	 * The list contents are of type {@link dk.itu.mdd.policyengine.PolicyEngine.Schedule}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>During</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>During</em>' reference list.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getRoom_During()
+	 * @model
+	 * @generated
+	 */
+	EList<Schedule> getDuring();
 
 } // Room

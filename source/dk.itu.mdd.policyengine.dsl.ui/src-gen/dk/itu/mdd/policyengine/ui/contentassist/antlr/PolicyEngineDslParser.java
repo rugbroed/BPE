@@ -37,6 +37,7 @@ public class PolicyEngineDslParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getRoomAccess().getAlternatives_3_1(), "rule__Room__Alternatives_3_1");
 					put(grammarAccess.getActuatorAccess().getAlternatives(), "rule__Actuator__Alternatives");
 					put(grammarAccess.getSensorAccess().getAlternatives(), "rule__Sensor__Alternatives");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
@@ -70,7 +71,10 @@ public class PolicyEngineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRoomAccess().getGroup(), "rule__Room__Group__0");
 					put(grammarAccess.getRoomAccess().getGroup_2(), "rule__Room__Group_2__0");
 					put(grammarAccess.getRoomAccess().getGroup_3(), "rule__Room__Group_3__0");
-					put(grammarAccess.getRoomAccess().getGroup_3_2(), "rule__Room__Group_3_2__0");
+					put(grammarAccess.getRoomAccess().getGroup_3_0(), "rule__Room__Group_3_0__0");
+					put(grammarAccess.getRoomAccess().getGroup_3_0_2(), "rule__Room__Group_3_0_2__0");
+					put(grammarAccess.getRoomAccess().getGroup_3_1_0(), "rule__Room__Group_3_1_0__0");
+					put(grammarAccess.getRoomAccess().getGroup_3_1_0_2(), "rule__Room__Group_3_1_0_2__0");
 					put(grammarAccess.getRoomAccess().getGroup_5(), "rule__Room__Group_5__0");
 					put(grammarAccess.getRoomAccess().getGroup_6(), "rule__Room__Group_6__0");
 					put(grammarAccess.getTimeAccess().getGroup(), "rule__Time__Group__0");
@@ -165,8 +169,10 @@ public class PolicyEngineDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRoomAccess().getNameAssignment_1(), "rule__Room__NameAssignment_1");
 					put(grammarAccess.getRoomAccess().getExtendsAssignment_2_1(), "rule__Room__ExtendsAssignment_2_1");
 					put(grammarAccess.getRoomAccess().getExtendsAssignment_2_2(), "rule__Room__ExtendsAssignment_2_2");
-					put(grammarAccess.getRoomAccess().getPoliciesAssignment_3_1(), "rule__Room__PoliciesAssignment_3_1");
-					put(grammarAccess.getRoomAccess().getPoliciesAssignment_3_2_1(), "rule__Room__PoliciesAssignment_3_2_1");
+					put(grammarAccess.getRoomAccess().getPoliciesAssignment_3_0_1(), "rule__Room__PoliciesAssignment_3_0_1");
+					put(grammarAccess.getRoomAccess().getPoliciesAssignment_3_0_2_1(), "rule__Room__PoliciesAssignment_3_0_2_1");
+					put(grammarAccess.getRoomAccess().getDuringAssignment_3_1_0_1(), "rule__Room__DuringAssignment_3_1_0_1");
+					put(grammarAccess.getRoomAccess().getDuringAssignment_3_1_0_2_1(), "rule__Room__DuringAssignment_3_1_0_2_1");
 					put(grammarAccess.getRoomAccess().getDeclareSensorAssignment_5_0(), "rule__Room__DeclareSensorAssignment_5_0");
 					put(grammarAccess.getRoomAccess().getDeclareSensorAssignment_5_1(), "rule__Room__DeclareSensorAssignment_5_1");
 					put(grammarAccess.getRoomAccess().getDeclareActuatorAssignment_6_0(), "rule__Room__DeclareActuatorAssignment_6_0");

@@ -21,6 +21,7 @@ public abstract class AbstractPolicyEngineDslSyntacticSequencer extends Abstract
 	protected AbstractElementAlias match_Policy_UsesActuatorsKeyword_4_0_q;
 	protected AbstractElementAlias match_Policy_UsesSensorsKeyword_3_0_q;
 	protected AbstractElementAlias match_Policy___IsSpecifiedByKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q;
+	protected AbstractElementAlias match_Room_DuringAllwaysKeyword_3_1_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -28,6 +29,7 @@ public abstract class AbstractPolicyEngineDslSyntacticSequencer extends Abstract
 		match_Policy_UsesActuatorsKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getPolicyAccess().getUsesActuatorsKeyword_4_0());
 		match_Policy_UsesSensorsKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getPolicyAccess().getUsesSensorsKeyword_3_0());
 		match_Policy___IsSpecifiedByKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPolicyAccess().getIsSpecifiedByKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getPolicyAccess().getLeftCurlyBracketKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getPolicyAccess().getRightCurlyBracketKeyword_5_3()));
+		match_Room_DuringAllwaysKeyword_3_1_1_q = new TokenAlias(false, true, grammarAccess.getRoomAccess().getDuringAllwaysKeyword_3_1_1());
 	}
 	
 	@Override
@@ -59,6 +61,8 @@ public abstract class AbstractPolicyEngineDslSyntacticSequencer extends Abstract
 				emit_Policy_UsesSensorsKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Policy___IsSpecifiedByKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q.equals(syntax))
 				emit_Policy___IsSpecifiedByKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Room_DuringAllwaysKeyword_3_1_1_q.equals(syntax))
+				emit_Room_DuringAllwaysKeyword_3_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -84,6 +88,14 @@ public abstract class AbstractPolicyEngineDslSyntacticSequencer extends Abstract
 	 *     ('is specified by' '{' '}')?
 	 */
 	protected void emit_Policy___IsSpecifiedByKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'during-allways'?
+	 */
+	protected void emit_Room_DuringAllwaysKeyword_3_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -1015,9 +1015,9 @@ ruleRoom returns [EObject current=null]
 	    }
 
 )
-)*)?(	otherlv_5='is-controlled-by' 
+)*)?((	otherlv_5='is-controlled-by' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getRoomAccess().getIsControlledByKeyword_3_0());
+    	newLeafNode(otherlv_5, grammarAccess.getRoomAccess().getIsControlledByKeyword_3_0_0());
     }
 (
 (
@@ -1027,7 +1027,7 @@ ruleRoom returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getRoomAccess().getPoliciesPolicyCrossReference_3_1_0()); 
+	        newCompositeNode(grammarAccess.getRoomAccess().getPoliciesPolicyCrossReference_3_0_1_0()); 
 	    }
 		ruleEString		{ 
 	        afterParserOrEnumRuleCall();
@@ -1036,7 +1036,7 @@ ruleRoom returns [EObject current=null]
 )
 )(	otherlv_7=',' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getRoomAccess().getCommaKeyword_3_2_0());
+    	newLeafNode(otherlv_7, grammarAccess.getRoomAccess().getCommaKeyword_3_0_2_0());
     }
 (
 (
@@ -1046,30 +1046,73 @@ ruleRoom returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getRoomAccess().getPoliciesPolicyCrossReference_3_2_1_0()); 
+	        newCompositeNode(grammarAccess.getRoomAccess().getPoliciesPolicyCrossReference_3_0_2_1_0()); 
 	    }
 		ruleEString		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*)?	otherlv_9='{' 
+))*)?((	otherlv_9='during' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getRoomAccess().getLeftCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_9, grammarAccess.getRoomAccess().getDuringKeyword_3_1_0_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRoomRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getRoomAccess().getDuringScheduleCrossReference_3_1_0_1_0()); 
+	    }
+		ruleEString		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_11=',' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getRoomAccess().getCommaKeyword_3_1_0_2_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRoomRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getRoomAccess().getDuringScheduleCrossReference_3_1_0_2_1_0()); 
+	    }
+		ruleEString		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)
+    |	otherlv_13='during-allways' 
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getRoomAccess().getDuringAllwaysKeyword_3_1_1());
+    }
+)?)	otherlv_14='{' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getRoomAccess().getLeftCurlyBracketKeyword_4());
     }
 ((
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRoomAccess().getDeclareSensorSensorComponentParserRuleCall_5_0_0()); 
 	    }
-		lv_declareSensor_10_0=ruleSensorComponent		{
+		lv_declareSensor_15_0=ruleSensorComponent		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRoomRule());
 	        }
        		add(
        			$current, 
        			"declareSensor",
-        		lv_declareSensor_10_0, 
+        		lv_declareSensor_15_0, 
         		"SensorComponent");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1080,14 +1123,14 @@ ruleRoom returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getRoomAccess().getDeclareSensorSensorComponentParserRuleCall_5_1_0()); 
 	    }
-		lv_declareSensor_11_0=ruleSensorComponent		{
+		lv_declareSensor_16_0=ruleSensorComponent		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRoomRule());
 	        }
        		add(
        			$current, 
        			"declareSensor",
-        		lv_declareSensor_11_0, 
+        		lv_declareSensor_16_0, 
         		"SensorComponent");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1098,14 +1141,14 @@ ruleRoom returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getRoomAccess().getDeclareActuatorActuatorComponentParserRuleCall_6_0_0()); 
 	    }
-		lv_declareActuator_12_0=ruleActuatorComponent		{
+		lv_declareActuator_17_0=ruleActuatorComponent		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRoomRule());
 	        }
        		add(
        			$current, 
        			"declareActuator",
-        		lv_declareActuator_12_0, 
+        		lv_declareActuator_17_0, 
         		"ActuatorComponent");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1116,22 +1159,22 @@ ruleRoom returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getRoomAccess().getDeclareActuatorActuatorComponentParserRuleCall_6_1_0()); 
 	    }
-		lv_declareActuator_13_0=ruleActuatorComponent		{
+		lv_declareActuator_18_0=ruleActuatorComponent		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRoomRule());
 	        }
        		add(
        			$current, 
        			"declareActuator",
-        		lv_declareActuator_13_0, 
+        		lv_declareActuator_18_0, 
         		"ActuatorComponent");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*)?	otherlv_14='}' 
+)*)?	otherlv_19='}' 
     {
-    	newLeafNode(otherlv_14, grammarAccess.getRoomAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_19, grammarAccess.getRoomAccess().getRightCurlyBracketKeyword_7());
     }
 )
 ;

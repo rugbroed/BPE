@@ -593,15 +593,28 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cExtendsRoomCrossReference_2_2_0 = (CrossReference)cExtendsAssignment_2_2.eContents().get(0);
 		private final RuleCall cExtendsRoomEStringParserRuleCall_2_2_0_1 = (RuleCall)cExtendsRoomCrossReference_2_2_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cIsControlledByKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cPoliciesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cPoliciesPolicyCrossReference_3_1_0 = (CrossReference)cPoliciesAssignment_3_1.eContents().get(0);
-		private final RuleCall cPoliciesPolicyEStringParserRuleCall_3_1_0_1 = (RuleCall)cPoliciesPolicyCrossReference_3_1_0.eContents().get(1);
-		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
-		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
-		private final Assignment cPoliciesAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final CrossReference cPoliciesPolicyCrossReference_3_2_1_0 = (CrossReference)cPoliciesAssignment_3_2_1.eContents().get(0);
-		private final RuleCall cPoliciesPolicyEStringParserRuleCall_3_2_1_0_1 = (RuleCall)cPoliciesPolicyCrossReference_3_2_1_0.eContents().get(1);
+		private final Group cGroup_3_0 = (Group)cGroup_3.eContents().get(0);
+		private final Keyword cIsControlledByKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
+		private final Assignment cPoliciesAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
+		private final CrossReference cPoliciesPolicyCrossReference_3_0_1_0 = (CrossReference)cPoliciesAssignment_3_0_1.eContents().get(0);
+		private final RuleCall cPoliciesPolicyEStringParserRuleCall_3_0_1_0_1 = (RuleCall)cPoliciesPolicyCrossReference_3_0_1_0.eContents().get(1);
+		private final Group cGroup_3_0_2 = (Group)cGroup_3_0.eContents().get(2);
+		private final Keyword cCommaKeyword_3_0_2_0 = (Keyword)cGroup_3_0_2.eContents().get(0);
+		private final Assignment cPoliciesAssignment_3_0_2_1 = (Assignment)cGroup_3_0_2.eContents().get(1);
+		private final CrossReference cPoliciesPolicyCrossReference_3_0_2_1_0 = (CrossReference)cPoliciesAssignment_3_0_2_1.eContents().get(0);
+		private final RuleCall cPoliciesPolicyEStringParserRuleCall_3_0_2_1_0_1 = (RuleCall)cPoliciesPolicyCrossReference_3_0_2_1_0.eContents().get(1);
+		private final Alternatives cAlternatives_3_1 = (Alternatives)cGroup_3.eContents().get(1);
+		private final Group cGroup_3_1_0 = (Group)cAlternatives_3_1.eContents().get(0);
+		private final Keyword cDuringKeyword_3_1_0_0 = (Keyword)cGroup_3_1_0.eContents().get(0);
+		private final Assignment cDuringAssignment_3_1_0_1 = (Assignment)cGroup_3_1_0.eContents().get(1);
+		private final CrossReference cDuringScheduleCrossReference_3_1_0_1_0 = (CrossReference)cDuringAssignment_3_1_0_1.eContents().get(0);
+		private final RuleCall cDuringScheduleEStringParserRuleCall_3_1_0_1_0_1 = (RuleCall)cDuringScheduleCrossReference_3_1_0_1_0.eContents().get(1);
+		private final Group cGroup_3_1_0_2 = (Group)cGroup_3_1_0.eContents().get(2);
+		private final Keyword cCommaKeyword_3_1_0_2_0 = (Keyword)cGroup_3_1_0_2.eContents().get(0);
+		private final Assignment cDuringAssignment_3_1_0_2_1 = (Assignment)cGroup_3_1_0_2.eContents().get(1);
+		private final CrossReference cDuringScheduleCrossReference_3_1_0_2_1_0 = (CrossReference)cDuringAssignment_3_1_0_2_1.eContents().get(0);
+		private final RuleCall cDuringScheduleEStringParserRuleCall_3_1_0_2_1_0_1 = (RuleCall)cDuringScheduleCrossReference_3_1_0_2_1_0.eContents().get(1);
+		private final Keyword cDuringAllwaysKeyword_3_1_1 = (Keyword)cAlternatives_3_1.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Assignment cDeclareSensorAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
@@ -616,13 +629,15 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Room:
-		//	{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
-		//	policies+=[Policy|EString] ("," policies+=[Policy|EString])*)? "{" (declareSensor+=SensorComponent
+		//	{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? (("is-controlled-by"
+		//	policies+=[Policy|EString] ("," policies+=[Policy|EString])*)? ("during" during+=[Schedule|EString] (","
+		//	during+=[Schedule|EString])* | "during-allways")?) "{" (declareSensor+=SensorComponent
 		//	declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
-		//policies+=[Policy|EString] ("," policies+=[Policy|EString])*)? "{" (declareSensor+=SensorComponent
+		//{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? (("is-controlled-by"
+		//policies+=[Policy|EString] ("," policies+=[Policy|EString])*)? ("during" during+=[Schedule|EString] (","
+		//during+=[Schedule|EString])* | "during-allways")?) "{" (declareSensor+=SensorComponent
 		//declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}"
 		public Group getGroup() { return cGroup; }
 
@@ -659,35 +674,75 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getExtendsRoomEStringParserRuleCall_2_2_0_1() { return cExtendsRoomEStringParserRuleCall_2_2_0_1; }
 
-		//("is-controlled-by" policies+=[Policy|EString] ("," policies+=[Policy|EString])*)?
+		//("is-controlled-by" policies+=[Policy|EString] ("," policies+=[Policy|EString])*)? ("during" during+=[Schedule|EString]
+		//("," during+=[Schedule|EString])* | "during-allways")?
 		public Group getGroup_3() { return cGroup_3; }
 
+		//("is-controlled-by" policies+=[Policy|EString] ("," policies+=[Policy|EString])*)?
+		public Group getGroup_3_0() { return cGroup_3_0; }
+
 		//"is-controlled-by"
-		public Keyword getIsControlledByKeyword_3_0() { return cIsControlledByKeyword_3_0; }
+		public Keyword getIsControlledByKeyword_3_0_0() { return cIsControlledByKeyword_3_0_0; }
 
 		//policies+=[Policy|EString]
-		public Assignment getPoliciesAssignment_3_1() { return cPoliciesAssignment_3_1; }
+		public Assignment getPoliciesAssignment_3_0_1() { return cPoliciesAssignment_3_0_1; }
 
 		//[Policy|EString]
-		public CrossReference getPoliciesPolicyCrossReference_3_1_0() { return cPoliciesPolicyCrossReference_3_1_0; }
+		public CrossReference getPoliciesPolicyCrossReference_3_0_1_0() { return cPoliciesPolicyCrossReference_3_0_1_0; }
 
 		//EString
-		public RuleCall getPoliciesPolicyEStringParserRuleCall_3_1_0_1() { return cPoliciesPolicyEStringParserRuleCall_3_1_0_1; }
+		public RuleCall getPoliciesPolicyEStringParserRuleCall_3_0_1_0_1() { return cPoliciesPolicyEStringParserRuleCall_3_0_1_0_1; }
 
 		//("," policies+=[Policy|EString])*
-		public Group getGroup_3_2() { return cGroup_3_2; }
+		public Group getGroup_3_0_2() { return cGroup_3_0_2; }
 
 		//","
-		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
+		public Keyword getCommaKeyword_3_0_2_0() { return cCommaKeyword_3_0_2_0; }
 
 		//policies+=[Policy|EString]
-		public Assignment getPoliciesAssignment_3_2_1() { return cPoliciesAssignment_3_2_1; }
+		public Assignment getPoliciesAssignment_3_0_2_1() { return cPoliciesAssignment_3_0_2_1; }
 
 		//[Policy|EString]
-		public CrossReference getPoliciesPolicyCrossReference_3_2_1_0() { return cPoliciesPolicyCrossReference_3_2_1_0; }
+		public CrossReference getPoliciesPolicyCrossReference_3_0_2_1_0() { return cPoliciesPolicyCrossReference_3_0_2_1_0; }
 
 		//EString
-		public RuleCall getPoliciesPolicyEStringParserRuleCall_3_2_1_0_1() { return cPoliciesPolicyEStringParserRuleCall_3_2_1_0_1; }
+		public RuleCall getPoliciesPolicyEStringParserRuleCall_3_0_2_1_0_1() { return cPoliciesPolicyEStringParserRuleCall_3_0_2_1_0_1; }
+
+		//("during" during+=[Schedule|EString] ("," during+=[Schedule|EString])* | "during-allways")?
+		public Alternatives getAlternatives_3_1() { return cAlternatives_3_1; }
+
+		//"during" during+=[Schedule|EString] ("," during+=[Schedule|EString])*
+		public Group getGroup_3_1_0() { return cGroup_3_1_0; }
+
+		//"during"
+		public Keyword getDuringKeyword_3_1_0_0() { return cDuringKeyword_3_1_0_0; }
+
+		//during+=[Schedule|EString]
+		public Assignment getDuringAssignment_3_1_0_1() { return cDuringAssignment_3_1_0_1; }
+
+		//[Schedule|EString]
+		public CrossReference getDuringScheduleCrossReference_3_1_0_1_0() { return cDuringScheduleCrossReference_3_1_0_1_0; }
+
+		//EString
+		public RuleCall getDuringScheduleEStringParserRuleCall_3_1_0_1_0_1() { return cDuringScheduleEStringParserRuleCall_3_1_0_1_0_1; }
+
+		//("," during+=[Schedule|EString])*
+		public Group getGroup_3_1_0_2() { return cGroup_3_1_0_2; }
+
+		//","
+		public Keyword getCommaKeyword_3_1_0_2_0() { return cCommaKeyword_3_1_0_2_0; }
+
+		//during+=[Schedule|EString]
+		public Assignment getDuringAssignment_3_1_0_2_1() { return cDuringAssignment_3_1_0_2_1; }
+
+		//[Schedule|EString]
+		public CrossReference getDuringScheduleCrossReference_3_1_0_2_1_0() { return cDuringScheduleCrossReference_3_1_0_2_1_0; }
+
+		//EString
+		public RuleCall getDuringScheduleEStringParserRuleCall_3_1_0_2_1_0_1() { return cDuringScheduleEStringParserRuleCall_3_1_0_2_1_0_1; }
+
+		//"during-allways"
+		public Keyword getDuringAllwaysKeyword_3_1_1() { return cDuringAllwaysKeyword_3_1_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
@@ -2349,8 +2404,9 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Room:
-	//	{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? ("is-controlled-by"
-	//	policies+=[Policy|EString] ("," policies+=[Policy|EString])*)? "{" (declareSensor+=SensorComponent
+	//	{Room} name=EString ("is-of-type" extends+=[Room|EString] extends+=[Room|EString]*)? (("is-controlled-by"
+	//	policies+=[Policy|EString] ("," policies+=[Policy|EString])*)? ("during" during+=[Schedule|EString] (","
+	//	during+=[Schedule|EString])* | "during-allways")?) "{" (declareSensor+=SensorComponent
 	//	declareSensor+=SensorComponent*)? (declareActuator+=ActuatorComponent declareActuator+=ActuatorComponent*)? "}";
 	public RoomElements getRoomAccess() {
 		return (pRoom != null) ? pRoom : (pRoom = new RoomElements());

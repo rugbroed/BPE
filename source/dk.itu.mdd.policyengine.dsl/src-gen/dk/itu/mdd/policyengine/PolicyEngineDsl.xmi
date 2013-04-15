@@ -277,18 +277,9 @@
             </terminal>
           </elements>
         </elements>
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="is-controlled-by"/>
-          <elements xsi:type="xtext:Assignment" feature="policies" operator="+=">
-            <terminal xsi:type="xtext:CrossReference">
-              <type metamodel="/0/@metamodelDeclarations.0">
-                <classifier xsi:type="ecore:EClass" href="platform:/resource/dk.itu.mdd.policyengine/model/PolicyEngine.ecore#//Policy"/>
-              </type>
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
-            </terminal>
-          </elements>
-          <elements xsi:type="xtext:Group" cardinality="*">
-            <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Group" cardinality="?">
+            <elements xsi:type="xtext:Keyword" value="is-controlled-by"/>
             <elements xsi:type="xtext:Assignment" feature="policies" operator="+=">
               <terminal xsi:type="xtext:CrossReference">
                 <type metamodel="/0/@metamodelDeclarations.0">
@@ -297,6 +288,42 @@
                 <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
               </terminal>
             </elements>
+            <elements xsi:type="xtext:Group" cardinality="*">
+              <elements xsi:type="xtext:Keyword" value=","/>
+              <elements xsi:type="xtext:Assignment" feature="policies" operator="+=">
+                <terminal xsi:type="xtext:CrossReference">
+                  <type metamodel="/0/@metamodelDeclarations.0">
+                    <classifier xsi:type="ecore:EClass" href="platform:/resource/dk.itu.mdd.policyengine/model/PolicyEngine.ecore#//Policy"/>
+                  </type>
+                  <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+                </terminal>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Alternatives" cardinality="?">
+            <elements xsi:type="xtext:Group">
+              <elements xsi:type="xtext:Keyword" value="during"/>
+              <elements xsi:type="xtext:Assignment" feature="during" operator="+=">
+                <terminal xsi:type="xtext:CrossReference">
+                  <type metamodel="/0/@metamodelDeclarations.0">
+                    <classifier xsi:type="ecore:EClass" href="platform:/resource/dk.itu.mdd.policyengine/model/PolicyEngine.ecore#//Schedule"/>
+                  </type>
+                  <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+                </terminal>
+              </elements>
+              <elements xsi:type="xtext:Group" cardinality="*">
+                <elements xsi:type="xtext:Keyword" value=","/>
+                <elements xsi:type="xtext:Assignment" feature="during" operator="+=">
+                  <terminal xsi:type="xtext:CrossReference">
+                    <type metamodel="/0/@metamodelDeclarations.0">
+                      <classifier xsi:type="ecore:EClass" href="platform:/resource/dk.itu.mdd.policyengine/model/PolicyEngine.ecore#//Schedule"/>
+                    </type>
+                    <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+                  </terminal>
+                </elements>
+              </elements>
+            </elements>
+            <elements xsi:type="xtext:Keyword" value="during-allways"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>

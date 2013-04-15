@@ -1275,13 +1275,22 @@ public interface PolicyEnginePackage extends EPackage {
 	int ROOM__POLICIES = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>During</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__DURING = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int ROOM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -2256,6 +2265,17 @@ public interface PolicyEnginePackage extends EPackage {
 	EReference getRoom_Policies();
 
 	/**
+	 * Returns the meta object for the reference list '{@link dk.itu.mdd.policyengine.PolicyEngine.Room#getDuring <em>During</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>During</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.Room#getDuring()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EReference getRoom_During();
+
+	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.Floor <em>Floor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2978,6 +2998,14 @@ public interface PolicyEnginePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOM__POLICIES = eINSTANCE.getRoom_Policies();
+
+		/**
+		 * The meta object literal for the '<em><b>During</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM__DURING = eINSTANCE.getRoom_During();
 
 		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.FloorImpl <em>Floor</em>}' class.
