@@ -24,6 +24,20 @@ Sensor returns Sensor:
 EString returns ecore::EString:
 	STRING | ID;
 
+State returns State:
+	{State}
+	'state' name=EString valueState?= '=' EBoolean
+	;
+
+Policy returns Policy:
+	{Policy}
+	'policy'
+	name=EString
+	'uses sensors' (usesSensors+=Sensor ("," usesSensors+=Sensor)*)?
+	'uses actuators' (uses+=Actuator ("," uses+=Actuator)*)?
+	('is specified by' '{' specifiedBy+=Conditions (specifiedBy+=Conditions)* '}')?
+	;
+
 Building returns Building:
 	{Building}
 	'building'
@@ -36,6 +50,14 @@ Building returns Building:
 		(floors+=Floor (floors+=Floor)*)?
 	'}';
 
+Floor returns Floor:
+	{Floor}
+	'floor'
+	name=EString
+	'{'
+		('rooms' '{' rooms+=Room ( "," rooms+=Room)* '}' )?
+	'}';
+
 Room returns Room:
 	{Room}
 	'room type'
@@ -46,19 +68,9 @@ Room returns Room:
 		(declareActuator+=ActuatorComponent (declareActuator+=ActuatorComponent)*)?
 	'}';
 
-Policy returns Policy:
-	{Policy}
-	'policy'
-	name=EString
-	'uses sensors' (usesSensors+=Sensor ("," usesSensors+=Sensor)*)?
-	'uses actuators' (uses+=Actuator ("," uses+=Actuator)*)?
-	('is specified by' '{' specifiedBy+=Conditions (specifiedBy+=Conditions)* '}')?
-	;
 
-State returns State:
-	{State}
-	'state' name=EString valueState?= '=' EBoolean
-	;
+
+
 	
 CTS returns CTS:
 	{CTS}
@@ -86,13 +98,6 @@ MeetingScheduleSystem returns MeetingScheduleSystem:
 	'MeetingScheduleSystem'
 	;
 
-Floor returns Floor:
-	{Floor}
-	'floor'
-	name=EString
-	'{'
-		('rooms' '{' rooms+=Room ( "," rooms+=Room)* '}' )?
-	'}';
 
 MotionSensor returns MotionSensor:
 	{MotionSensor}
