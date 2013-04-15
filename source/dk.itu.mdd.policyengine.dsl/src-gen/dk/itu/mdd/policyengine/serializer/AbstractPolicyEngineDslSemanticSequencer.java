@@ -425,9 +425,9 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         (predefinedRooms+=Room predefinedRooms+=Room*)? 
-	 *         (policyDefinition+=Policy policyDefinition+=Policy*)? 
 	 *         (stateDefinition+=State stateDefinition+=State*)? 
+	 *         (policyDefinition+=Policy policyDefinition+=Policy*)? 
+	 *         (predefinedRooms+=Room predefinedRooms+=Room*)? 
 	 *         (buildings+=Building buildings+=Building*)?
 	 *     )
 	 */
@@ -447,7 +447,7 @@ public abstract class AbstractPolicyEngineDslSemanticSequencer extends AbstractD
 	
 	/**
 	 * Constraint:
-	 *     (name=EString (uses+=Actuator uses+=Actuator*)? (usesSensors+=Sensor usesSensors+=Sensor*)? (specifiedBy+=Conditions specifiedBy+=Conditions*)?)
+	 *     (name=EString (usesSensors+=Sensor usesSensors+=Sensor*)? (uses+=Actuator uses+=Actuator*)? (specifiedBy+=Conditions specifiedBy+=Conditions*)?)
 	 */
 	protected void sequence_Policy(EObject context, Policy semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

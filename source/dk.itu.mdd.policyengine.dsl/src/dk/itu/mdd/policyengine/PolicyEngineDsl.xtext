@@ -8,9 +8,9 @@ Model returns Model:
 	{Model}
 	name=EString
 	'{'
-		(predefinedRooms+=Room (predefinedRooms+=Room)*)?
-		(policyDefinition+=Policy (policyDefinition+=Policy)*)?
 		(stateDefinition+=State (stateDefinition+=State)*)?
+		(policyDefinition+=Policy (policyDefinition+=Policy)*)?
+		(predefinedRooms+=Room (predefinedRooms+=Room)*)?
 		(buildings+=Building (buildings+=Building)*)?
 	'}';
 
@@ -50,10 +50,9 @@ Policy returns Policy:
 	{Policy}
 	'policy'
 	name=EString
-	'uses'
-	(uses+=Actuator (uses+=Actuator)*)?
-	(usesSensors+=Sensor (usesSensors+=Sensor)*)?
-	('is specified by' '{' specifiedBy+=Conditions (specifiedBy+=Conditions)*)?
+	'uses sensors' (usesSensors+=Sensor ("," usesSensors+=Sensor)*)?
+	'uses actuators' (uses+=Actuator ("," uses+=Actuator)*)?
+	('is specified by' '{' specifiedBy+=Conditions (specifiedBy+=Conditions)* '}')?
 	;
 
 State returns State:

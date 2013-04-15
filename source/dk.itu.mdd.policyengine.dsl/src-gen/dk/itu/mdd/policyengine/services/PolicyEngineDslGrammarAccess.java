@@ -26,20 +26,20 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cPredefinedRoomsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final RuleCall cPredefinedRoomsRoomParserRuleCall_3_0_0 = (RuleCall)cPredefinedRoomsAssignment_3_0.eContents().get(0);
-		private final Assignment cPredefinedRoomsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cPredefinedRoomsRoomParserRuleCall_3_1_0 = (RuleCall)cPredefinedRoomsAssignment_3_1.eContents().get(0);
+		private final Assignment cStateDefinitionAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cStateDefinitionStateParserRuleCall_3_0_0 = (RuleCall)cStateDefinitionAssignment_3_0.eContents().get(0);
+		private final Assignment cStateDefinitionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cStateDefinitionStateParserRuleCall_3_1_0 = (RuleCall)cStateDefinitionAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Assignment cPolicyDefinitionAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
 		private final RuleCall cPolicyDefinitionPolicyParserRuleCall_4_0_0 = (RuleCall)cPolicyDefinitionAssignment_4_0.eContents().get(0);
 		private final Assignment cPolicyDefinitionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cPolicyDefinitionPolicyParserRuleCall_4_1_0 = (RuleCall)cPolicyDefinitionAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Assignment cStateDefinitionAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final RuleCall cStateDefinitionStateParserRuleCall_5_0_0 = (RuleCall)cStateDefinitionAssignment_5_0.eContents().get(0);
-		private final Assignment cStateDefinitionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cStateDefinitionStateParserRuleCall_5_1_0 = (RuleCall)cStateDefinitionAssignment_5_1.eContents().get(0);
+		private final Assignment cPredefinedRoomsAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final RuleCall cPredefinedRoomsRoomParserRuleCall_5_0_0 = (RuleCall)cPredefinedRoomsAssignment_5_0.eContents().get(0);
+		private final Assignment cPredefinedRoomsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cPredefinedRoomsRoomParserRuleCall_5_1_0 = (RuleCall)cPredefinedRoomsAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Assignment cBuildingsAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
 		private final RuleCall cBuildingsBuildingParserRuleCall_6_0_0 = (RuleCall)cBuildingsAssignment_6_0.eContents().get(0);
@@ -48,14 +48,14 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Model:
-		//	{Model} name=EString "{" (predefinedRooms+=Room predefinedRooms+=Room*)? (policyDefinition+=Policy
-		//	policyDefinition+=Policy*)? (stateDefinition+=State stateDefinition+=State*)? (buildings+=Building
+		//	{Model} name=EString "{" (stateDefinition+=State stateDefinition+=State*)? (policyDefinition+=Policy
+		//	policyDefinition+=Policy*)? (predefinedRooms+=Room predefinedRooms+=Room*)? (buildings+=Building
 		//	buildings+=Building*)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{Model} name=EString "{" (predefinedRooms+=Room predefinedRooms+=Room*)? (policyDefinition+=Policy
-		//policyDefinition+=Policy*)? (stateDefinition+=State stateDefinition+=State*)? (buildings+=Building
-		//buildings+=Building*)? "}"
+		//{Model} name=EString "{" (stateDefinition+=State stateDefinition+=State*)? (policyDefinition+=Policy
+		//policyDefinition+=Policy*)? (predefinedRooms+=Room predefinedRooms+=Room*)? (buildings+=Building buildings+=Building*)?
+		//"}"
 		public Group getGroup() { return cGroup; }
 
 		//{Model}
@@ -70,20 +70,20 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//(predefinedRooms+=Room predefinedRooms+=Room*)?
+		//(stateDefinition+=State stateDefinition+=State*)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//predefinedRooms+=Room
-		public Assignment getPredefinedRoomsAssignment_3_0() { return cPredefinedRoomsAssignment_3_0; }
+		//stateDefinition+=State
+		public Assignment getStateDefinitionAssignment_3_0() { return cStateDefinitionAssignment_3_0; }
 
-		//Room
-		public RuleCall getPredefinedRoomsRoomParserRuleCall_3_0_0() { return cPredefinedRoomsRoomParserRuleCall_3_0_0; }
+		//State
+		public RuleCall getStateDefinitionStateParserRuleCall_3_0_0() { return cStateDefinitionStateParserRuleCall_3_0_0; }
 
-		//predefinedRooms+=Room*
-		public Assignment getPredefinedRoomsAssignment_3_1() { return cPredefinedRoomsAssignment_3_1; }
+		//stateDefinition+=State*
+		public Assignment getStateDefinitionAssignment_3_1() { return cStateDefinitionAssignment_3_1; }
 
-		//Room
-		public RuleCall getPredefinedRoomsRoomParserRuleCall_3_1_0() { return cPredefinedRoomsRoomParserRuleCall_3_1_0; }
+		//State
+		public RuleCall getStateDefinitionStateParserRuleCall_3_1_0() { return cStateDefinitionStateParserRuleCall_3_1_0; }
 
 		//(policyDefinition+=Policy policyDefinition+=Policy*)?
 		public Group getGroup_4() { return cGroup_4; }
@@ -100,20 +100,20 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Policy
 		public RuleCall getPolicyDefinitionPolicyParserRuleCall_4_1_0() { return cPolicyDefinitionPolicyParserRuleCall_4_1_0; }
 
-		//(stateDefinition+=State stateDefinition+=State*)?
+		//(predefinedRooms+=Room predefinedRooms+=Room*)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//stateDefinition+=State
-		public Assignment getStateDefinitionAssignment_5_0() { return cStateDefinitionAssignment_5_0; }
+		//predefinedRooms+=Room
+		public Assignment getPredefinedRoomsAssignment_5_0() { return cPredefinedRoomsAssignment_5_0; }
 
-		//State
-		public RuleCall getStateDefinitionStateParserRuleCall_5_0_0() { return cStateDefinitionStateParserRuleCall_5_0_0; }
+		//Room
+		public RuleCall getPredefinedRoomsRoomParserRuleCall_5_0_0() { return cPredefinedRoomsRoomParserRuleCall_5_0_0; }
 
-		//stateDefinition+=State*
-		public Assignment getStateDefinitionAssignment_5_1() { return cStateDefinitionAssignment_5_1; }
+		//predefinedRooms+=Room*
+		public Assignment getPredefinedRoomsAssignment_5_1() { return cPredefinedRoomsAssignment_5_1; }
 
-		//State
-		public RuleCall getStateDefinitionStateParserRuleCall_5_1_0() { return cStateDefinitionStateParserRuleCall_5_1_0; }
+		//Room
+		public RuleCall getPredefinedRoomsRoomParserRuleCall_5_1_0() { return cPredefinedRoomsRoomParserRuleCall_5_1_0; }
 
 		//(buildings+=Building buildings+=Building*)?
 		public Group getGroup_6() { return cGroup_6; }
@@ -445,32 +445,38 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPolicyKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cUsesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cUsesSensorsKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cUsesAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cUsesActuatorParserRuleCall_4_0_0 = (RuleCall)cUsesAssignment_4_0.eContents().get(0);
-		private final Assignment cUsesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cUsesActuatorParserRuleCall_4_1_0 = (RuleCall)cUsesAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Assignment cUsesSensorsAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final RuleCall cUsesSensorsSensorParserRuleCall_5_0_0 = (RuleCall)cUsesSensorsAssignment_5_0.eContents().get(0);
-		private final Assignment cUsesSensorsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cUsesSensorsSensorParserRuleCall_5_1_0 = (RuleCall)cUsesSensorsAssignment_5_1.eContents().get(0);
+		private final Assignment cUsesSensorsAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cUsesSensorsSensorParserRuleCall_4_0_0 = (RuleCall)cUsesSensorsAssignment_4_0.eContents().get(0);
+		private final Group cGroup_4_1 = (Group)cGroup_4.eContents().get(1);
+		private final Keyword cCommaKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
+		private final Assignment cUsesSensorsAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
+		private final RuleCall cUsesSensorsSensorParserRuleCall_4_1_1_0 = (RuleCall)cUsesSensorsAssignment_4_1_1.eContents().get(0);
+		private final Keyword cUsesActuatorsKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cIsSpecifiedByKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cSpecifiedByAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cSpecifiedByConditionsParserRuleCall_6_2_0 = (RuleCall)cSpecifiedByAssignment_6_2.eContents().get(0);
-		private final Assignment cSpecifiedByAssignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
-		private final RuleCall cSpecifiedByConditionsParserRuleCall_6_3_0 = (RuleCall)cSpecifiedByAssignment_6_3.eContents().get(0);
+		private final Assignment cUsesAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final RuleCall cUsesActuatorParserRuleCall_6_0_0 = (RuleCall)cUsesAssignment_6_0.eContents().get(0);
+		private final Group cGroup_6_1 = (Group)cGroup_6.eContents().get(1);
+		private final Keyword cCommaKeyword_6_1_0 = (Keyword)cGroup_6_1.eContents().get(0);
+		private final Assignment cUsesAssignment_6_1_1 = (Assignment)cGroup_6_1.eContents().get(1);
+		private final RuleCall cUsesActuatorParserRuleCall_6_1_1_0 = (RuleCall)cUsesAssignment_6_1_1.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cIsSpecifiedByKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cSpecifiedByAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cSpecifiedByConditionsParserRuleCall_7_2_0 = (RuleCall)cSpecifiedByAssignment_7_2.eContents().get(0);
+		private final Assignment cSpecifiedByAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
+		private final RuleCall cSpecifiedByConditionsParserRuleCall_7_3_0 = (RuleCall)cSpecifiedByAssignment_7_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
 		
 		//Policy:
-		//	{Policy} "policy" name=EString "uses" (uses+=Actuator uses+=Actuator*)? (usesSensors+=Sensor usesSensors+=Sensor*)?
-		//	("is specified by" "{" specifiedBy+=Conditions specifiedBy+=Conditions*)?;
+		//	{Policy} "policy" name=EString "uses sensors" (usesSensors+=Sensor ("," usesSensors+=Sensor)*)? "uses actuators"
+		//	(uses+=Actuator ("," uses+=Actuator)*)? ("is specified by" "{" specifiedBy+=Conditions specifiedBy+=Conditions* "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//{Policy} "policy" name=EString "uses" (uses+=Actuator uses+=Actuator*)? (usesSensors+=Sensor usesSensors+=Sensor*)?
-		//("is specified by" "{" specifiedBy+=Conditions specifiedBy+=Conditions*)?
+		//{Policy} "policy" name=EString "uses sensors" (usesSensors+=Sensor ("," usesSensors+=Sensor)*)? "uses actuators"
+		//(uses+=Actuator ("," uses+=Actuator)*)? ("is specified by" "{" specifiedBy+=Conditions specifiedBy+=Conditions* "}")?
 		public Group getGroup() { return cGroup; }
 
 		//{Policy}
@@ -485,59 +491,77 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"uses"
-		public Keyword getUsesKeyword_3() { return cUsesKeyword_3; }
+		//"uses sensors"
+		public Keyword getUsesSensorsKeyword_3() { return cUsesSensorsKeyword_3; }
 
-		//(uses+=Actuator uses+=Actuator*)?
+		//(usesSensors+=Sensor ("," usesSensors+=Sensor)*)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//uses+=Actuator
-		public Assignment getUsesAssignment_4_0() { return cUsesAssignment_4_0; }
+		//usesSensors+=Sensor
+		public Assignment getUsesSensorsAssignment_4_0() { return cUsesSensorsAssignment_4_0; }
 
-		//Actuator
-		public RuleCall getUsesActuatorParserRuleCall_4_0_0() { return cUsesActuatorParserRuleCall_4_0_0; }
+		//Sensor
+		public RuleCall getUsesSensorsSensorParserRuleCall_4_0_0() { return cUsesSensorsSensorParserRuleCall_4_0_0; }
 
-		//uses+=Actuator*
-		public Assignment getUsesAssignment_4_1() { return cUsesAssignment_4_1; }
+		//("," usesSensors+=Sensor)*
+		public Group getGroup_4_1() { return cGroup_4_1; }
 
-		//Actuator
-		public RuleCall getUsesActuatorParserRuleCall_4_1_0() { return cUsesActuatorParserRuleCall_4_1_0; }
-
-		//(usesSensors+=Sensor usesSensors+=Sensor*)?
-		public Group getGroup_5() { return cGroup_5; }
+		//","
+		public Keyword getCommaKeyword_4_1_0() { return cCommaKeyword_4_1_0; }
 
 		//usesSensors+=Sensor
-		public Assignment getUsesSensorsAssignment_5_0() { return cUsesSensorsAssignment_5_0; }
+		public Assignment getUsesSensorsAssignment_4_1_1() { return cUsesSensorsAssignment_4_1_1; }
 
 		//Sensor
-		public RuleCall getUsesSensorsSensorParserRuleCall_5_0_0() { return cUsesSensorsSensorParserRuleCall_5_0_0; }
+		public RuleCall getUsesSensorsSensorParserRuleCall_4_1_1_0() { return cUsesSensorsSensorParserRuleCall_4_1_1_0; }
 
-		//usesSensors+=Sensor*
-		public Assignment getUsesSensorsAssignment_5_1() { return cUsesSensorsAssignment_5_1; }
+		//"uses actuators"
+		public Keyword getUsesActuatorsKeyword_5() { return cUsesActuatorsKeyword_5; }
 
-		//Sensor
-		public RuleCall getUsesSensorsSensorParserRuleCall_5_1_0() { return cUsesSensorsSensorParserRuleCall_5_1_0; }
-
-		//("is specified by" "{" specifiedBy+=Conditions specifiedBy+=Conditions*)?
+		//(uses+=Actuator ("," uses+=Actuator)*)?
 		public Group getGroup_6() { return cGroup_6; }
 
+		//uses+=Actuator
+		public Assignment getUsesAssignment_6_0() { return cUsesAssignment_6_0; }
+
+		//Actuator
+		public RuleCall getUsesActuatorParserRuleCall_6_0_0() { return cUsesActuatorParserRuleCall_6_0_0; }
+
+		//("," uses+=Actuator)*
+		public Group getGroup_6_1() { return cGroup_6_1; }
+
+		//","
+		public Keyword getCommaKeyword_6_1_0() { return cCommaKeyword_6_1_0; }
+
+		//uses+=Actuator
+		public Assignment getUsesAssignment_6_1_1() { return cUsesAssignment_6_1_1; }
+
+		//Actuator
+		public RuleCall getUsesActuatorParserRuleCall_6_1_1_0() { return cUsesActuatorParserRuleCall_6_1_1_0; }
+
+		//("is specified by" "{" specifiedBy+=Conditions specifiedBy+=Conditions* "}")?
+		public Group getGroup_7() { return cGroup_7; }
+
 		//"is specified by"
-		public Keyword getIsSpecifiedByKeyword_6_0() { return cIsSpecifiedByKeyword_6_0; }
+		public Keyword getIsSpecifiedByKeyword_7_0() { return cIsSpecifiedByKeyword_7_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
+		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
 
 		//specifiedBy+=Conditions
-		public Assignment getSpecifiedByAssignment_6_2() { return cSpecifiedByAssignment_6_2; }
+		public Assignment getSpecifiedByAssignment_7_2() { return cSpecifiedByAssignment_7_2; }
 
 		//Conditions
-		public RuleCall getSpecifiedByConditionsParserRuleCall_6_2_0() { return cSpecifiedByConditionsParserRuleCall_6_2_0; }
+		public RuleCall getSpecifiedByConditionsParserRuleCall_7_2_0() { return cSpecifiedByConditionsParserRuleCall_7_2_0; }
 
 		//specifiedBy+=Conditions*
-		public Assignment getSpecifiedByAssignment_6_3() { return cSpecifiedByAssignment_6_3; }
+		public Assignment getSpecifiedByAssignment_7_3() { return cSpecifiedByAssignment_7_3; }
 
 		//Conditions
-		public RuleCall getSpecifiedByConditionsParserRuleCall_6_3_0() { return cSpecifiedByConditionsParserRuleCall_6_3_0; }
+		public RuleCall getSpecifiedByConditionsParserRuleCall_7_3_0() { return cSpecifiedByConditionsParserRuleCall_7_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
 	}
 
 	public class StateElements extends AbstractParserRuleElementFinder {
@@ -1975,8 +1999,8 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	{Model} name=EString "{" (predefinedRooms+=Room predefinedRooms+=Room*)? (policyDefinition+=Policy
-	//	policyDefinition+=Policy*)? (stateDefinition+=State stateDefinition+=State*)? (buildings+=Building
+	//	{Model} name=EString "{" (stateDefinition+=State stateDefinition+=State*)? (policyDefinition+=Policy
+	//	policyDefinition+=Policy*)? (predefinedRooms+=Room predefinedRooms+=Room*)? (buildings+=Building
 	//	buildings+=Building*)? "}";
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
@@ -2041,8 +2065,8 @@ public class PolicyEngineDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Policy:
-	//	{Policy} "policy" name=EString "uses" (uses+=Actuator uses+=Actuator*)? (usesSensors+=Sensor usesSensors+=Sensor*)?
-	//	("is specified by" "{" specifiedBy+=Conditions specifiedBy+=Conditions*)?;
+	//	{Policy} "policy" name=EString "uses sensors" (usesSensors+=Sensor ("," usesSensors+=Sensor)*)? "uses actuators"
+	//	(uses+=Actuator ("," uses+=Actuator)*)? ("is specified by" "{" specifiedBy+=Conditions specifiedBy+=Conditions* "}")?;
 	public PolicyElements getPolicyAccess() {
 		return (pPolicy != null) ? pPolicy : (pPolicy = new PolicyElements());
 	}
