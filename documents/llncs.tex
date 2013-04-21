@@ -1,6 +1,8 @@
 \documentclass{llncs}
 \usepackage{makeidx}
 \usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
 \begin{document}
 \frontmatter
 \pagestyle{headings}
@@ -17,30 +19,18 @@
 Modern buildings often consists of many different types of sensors and actuators. It is a complex task to control and manage them, especially when aiming for optimal energy efficiency and human comfort. If easily specified automated control of buildings were achievable, the result would be reduction on energy usage and natural resources like gas and water. We specify a building automation DSL based on requirements obtained during interviews with several large companies. Using the DSL we show that all building management requests can be achieved.
 
 \section{Introduction}
-Energy and natural resources are precious commodities. In~\cite{janssen2004towards} it is stated that residential buildings use about 89\% of the total energy consumption on space heating and cooling and water heating. Electric appliances uses 11\%. Other buildings use 79\% of the total energy consumption on space heating and cooling, water heating and lighting. Manually controlling buildings for energy efficiency and optimal human comfort is a time-consuming and inefficient task, if even possible, and the controller have to know a lot of different equipment as well as information about the building. Modern buildings today often come equipped with a suite of sensors and actuators, opening up for a degree of customizable control. Building automation is therefore not only possible, but also needed. \textit{"Worldwide, there is no doubt that efficient energy saving is only possible with modern BA based on networking in all levels of abstraction."}~\cite{dietrich2010communication}. Constructing resource efficient buildings makes sense, both in a political and economical perspective. 
+Energy and natural resources are precious commodities. In~\cite{janssen2004towards} it is stated that residential buildings use about 89\% of the total energy consumption on space heating and cooling and water heating. Electric appliances uses 11\%. Other buildings use 79\% of the total energy consumption on space heating and cooling, water heating and lighting. Manually controlling buildings for energy efficiency and optimal human comfort is a time-consuming and inefficient task, if even possible, and the controller have to know a lot of different equipment as well as information about the building. It is, however, achievable using building automation. \textit{"Worldwide, there is no doubt that efficient energy saving is only possible with modern BA based on networking in all levels of abstraction."}~\cite{dietrich2010communication}. Constructing resource efficient buildings makes sense, both in a political and economical perspective. Modern buildings today often come equipped with a suite of sensors and actuators, opening up for a degree of customizable control.
 
-Our collective need is therefore that buildings can adapt to the users and the sensor-perceived environment. This can be achieved by developing governing \textit{policies} (defined as pieces of code) based on input like semi-static data, dynamic data and sensor input, which control the actuators thereby leading to the desired building state.
+Our collective need is therefore that buildings can adapt to the users and the sensor-perceived environment. This can be achieved by developing governing policies (defined as pieces of code) based on input like semi-static data, dynamic data and sensor input, which control the actuators thereby leading to the desired building state.
 
-Merriam-Webster defines \textit{a policy} as; "A definite course or method of action selected from among alternatives and in light of given conditions to guide and determine present and future decisions."
-
-In this paper we interview companies regarding their need for building automation \textit{policies}. We then analyze the interviews and iteratively specify a DSL for building automation. We then show, by example, that our proposed DSL can capture the need and intend requested during the interviews.
+In this paper we interview companies regarding their need for manual and automated building control. We then analyze the interviews and iteratively specify a DSL for building automation. We when show, by example, that our proposed DSL can capture the need and intend requested during the interviews.
 
 The structure of the paper is as follows. We will start by discussing the\nameref{sec:relatedwork} and compare it to ours. Then we will move on to~\nameref{sec:method}, followed by a section on~\nameref{sec:design}. We will then explain our~ \nameref{sec:evaluation}, and it's findings in the~\nameref{sec:discussion} section. Lastly, we will sum up our findings in~\nameref{sec:conclusion}.
 
 \section{Related work}\label{sec:relatedwork}
 
 \section{Method}\label{sec:method}
-Since building control resides with Facility Management we found it pertinent to interview company employees within, or close, to this function. We conducted open-ended interviews with these companies and documented their content by handwritten notes. Some were recorded by audio. The main purpose of the interviews was to document;
-
-\begin{enumerate}
-	\item existing governing rules, implicit or explicit.
-	\item requests for new governing rules regardless of their practicality or feasibility.
-\end{enumerate}
-
-When conducting the interviews, we stressed that practicality or feasibility should not factor in on the requests for new governing rules. This proved hard for the interviewees. Some interviews were therefore conducted over several sessions, giving the interviewees time to think creatively. 
-
-We used only the danish and english language to give examples on 
- existing building policies and facilitate the discovery of new, relevant ones without taking the limitations of technology (like the expressiveness of a programming language) into account. We will analyse the interviews, and use both Eclipse and EMF to build a meta model for a domain specific language that is rich enough to express the policies. Using the model and XText, we will develop the grammar needed, in order to have syntactical code completion in a running a Policy Engine Editor based on Eclipse. Finally, we will use the Policy Engine Editor to write the policies.
+Since building control resides with Facility Management we found it pertinent to interview company employees within, or close, to this function. We will conduct open-ended interviews and document these by audio and/or video. The main purpose of the interviews is to document existing building policies and facilitate the discovery of new, relevant ones without taking the limitations of technology (like the expressiveness of a programming language) into account. We will analyse the interviews, and use both Eclipse and EMF to build a meta model for a domain specific language that is rich enough to express the policies. Using the model and XText, we will develop the grammar needed, in order to have syntactical code completion in a running a Policy Engine Editor based on Eclipse. Finally, we will use the Policy Engine Editor to write the policies.
 
 We therefore base the validity of this project on the requirements defined by the professionals working in Facility Management, and use their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
 
