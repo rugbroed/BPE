@@ -1,18 +1,6 @@
 \documentclass{llncs}
 \usepackage{makeidx}
 \usepackage[pdftex]{hyperref}
-\usepackage{listings}
-
-\lstdefinelanguage{Xtext}{
- morekeywords={grammar, with, hidden, generate, as, import, returns, current, terminal, enum},
- keywordstyle=[2]{\textbf},
- morecomment=[l]{//}, 
- morecomment=[s]{/*}{*/}, 
- morestring=[b]",
- tabsize=4}
- 
-\newcommand{\lstXtext}[1]{\lstinline[breaklines=true,language=Xtext,basicstyle=\listingsfontinline,mathescape,literate={\-}{}{0\discretionary{-}{}{}}]\S#1\S}
-
 \begin{document}
 \frontmatter
 \pagestyle{headings}
@@ -40,11 +28,7 @@ In this paper we interview companies regarding their need for building automatio
 The structure of the paper is as follows. We will start by discussing the\nameref{sec:relatedwork} and compare it to ours. Then we will move on to~\nameref{sec:method}, followed by a section on~\nameref{sec:design}. We will then explain our~ \nameref{sec:evaluation}, and it's findings in the~\nameref{sec:discussion} section. Lastly, we will sum up our findings in~\nameref{sec:conclusion}.
 
 \section{Related work}\label{sec:relatedwork}
-A lot of research have already been done in home and building automation, spanning from low level communication protocols like BACnet, LonWorks and EIB/KNX~\cite{communication} to full system implementations. There exists, however, not that much work on user friendly DSL designs, where everyday building concepts is mixed with time constraints and conditional logic for building automation. 
-
-In~\cite{smartscript} a DSL named SmartScript is developed. Based on a publish/subscribe paradigm it is intended for appliance control, and implemented with a KNX adapter. It allows grouping of devices, so it is possible for example to turn on the light and dim it using the same 'light' concept, even though the light switch and dimmer are two separate electronic components. The language features three types of statements; Action, If and Loop. There are two actions; Set and Get. Although it is possible to use the group concept, it does not seem to be possible to define the entire building with rooms based on different types. This results in a long collection of variables, even for small and simple buildings. Also, the script seems to be operating on a much lower abstraction level than our DSL, maybe due to it's implementation that seems to have pulled the DSL more into the direction of a GPL. 
-
-In~\cite{habitation} there is a clear distinction between usage of the domain experts (called the Catalog View) and the domain users (called the Application view). A graphical editor is used when designing an application, by dragging and dropping types into flows that will be orderly executed. However, the user designing the application still have to get comfortable with concepts such as \textit{standard functional units}, \textit{FUnitLinks} and \textit{Scenes}. Again, our DSL is at a higher abstraction level. However, the catalog view can be considered being the current state of our metamodel, where the different concepts are defined. Our model only operates on concepts already known to people expected to work with building automation like \textit{Building, Floor, Room, Sensor, Actuator, Schedule, and Policy}. Besides form the obvious difference that our DSL is text-based, versus the graphical editor in Habitation, our flow resides in the combinatory logic derived from time schedules, room types, boolean states and conditional logic specified in the policies. This will become evident in the \nameref{subsec:dsldesign} section.
+A lot of research have already been done in home and building automation, spanning from low level communication protocols like 
 
 \section{Method}\label{sec:method}
 We have tailored our method as follows;
@@ -67,33 +51,14 @@ Since building control resides with Facility Management we found it pertinent to
 	\item requests for new governing rules regardless of their practicality or feasibility.
 \end{enumerate}
 
-In order to gather enough material to conceptualize a proper DSL, we interviewed people from the below list of companies.\\ 
-
-\begin{table}[htdp]
-\begin{center}
-\begin{tabular}{|c|c|}
-	\textbf{Name}\\
-	\hline 
-	Br\"{u}el \& Kj\ae r\\
-	Bygningsstyrelsen\\
-	IT-University of Copenhagen\\
-	K\o benhavns Tekniske Skole\\
-	ST Aerospace - Denmark\\
-	UNI-C\\
-\end{tabular}
-\end{center}
-\label{tab:interviewees}
-\caption{People from these companies were interviewed.}
-\end{table}%
-
 When conducting the interviews, we stressed that practicality or feasibility should not factor in on the requests for new governing rules. This proved hard for the interviewees. Some interviews were therefore conducted over several sessions, giving the interviewees time to think creatively. 
 
-We used only the danish and english language to give examples on existing building policies and facilitate the discovery of new, relevant ones. This was done to avoid the limitations of technology, like the expressiveness of a programming language.
+We used only the danish and english language to give examples on existing building policies and facilitate the discovery of new, relevant ones. This was done to avoid the limitations of technology, like the expressiveness of a programming language. 
 
 \subsection{DSL Design}\label{subsec:dsldesign}
-By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we have build a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that we, based on our programming experience, believe had a consistent, and forthcoming syntax and conceptual constructs. We used our Policy Engine DSL editor to write the policies.
+By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we have build a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that, based on our programming experience, we believe had a consistent, and forthcoming syntaxt and conceptual constructs. We used our Policy Engine DSL to write the policies.
 
-We therefore base this project on the requirements defined by the professionals working in Facility Management, and use their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
+We therefore base the validity of this project on the requirements defined by the professionals working in Facility Management, and use their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
 
 \subsection{Evaluation}\label{subsec:method-evaluation}
 
@@ -104,22 +69,6 @@ Something about how we prepared the questionnaire and what the results were.
 Something about how we prepared requests for policies, and how the students solved the exercises.
 
 \section{Design}\label{sec:design}
-During the analysis of the interviews, it was evident that two concepts clearly was needed if we were to tailor design a DSL for the interviewed companies;
-\begin{enumerate}
-	\item \textit{Time}. Time have to be an integral part of the DSL, and not just in regards to internal policy logic. Several interviewees mention concepts such as; weekdays, weekends, normal working hours, holidays, night, day, morning etc.
-	\item \textit{Bulding specification}. When discussing rule sets, policies and building automation behavior, all the interviewees related to their requests with terminology rooted in concepts revolving buildings, ie. rooms, room types, radiators, windows, blinds etc.
-\end{enumerate}
-
-We will go into details about our DSL concept in the \nameref{discussion} section.
-
-\begin{lstlisting}[language=Xtext, caption={Just a test}, label={lst:Test}]
-
-
-\end{lstlisting}
-
-
-
-
 
 \section{Evaluation}\label{sec:evaluation}
 
