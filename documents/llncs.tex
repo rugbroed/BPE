@@ -1,6 +1,18 @@
 \documentclass{llncs}
 \usepackage{makeidx}
 \usepackage[pdftex]{hyperref}
+\usepackage{listings}
+
+\lstdefinelanguage{Xtext}{
+ morekeywords={grammar, with, hidden, generate, as, import, returns, current, terminal, enum},
+ keywordstyle=[2]{\textbf},
+ morecomment=[l]{//}, 
+ morecomment=[s]{/*}{*/}, 
+ morestring=[b]",
+ tabsize=4}
+ 
+\newcommand{\lstXtext}[1]{\lstinline[breaklines=true,language=Xtext,basicstyle=\listingsfontinline,mathescape,literate={\-}{}{0\discretionary{-}{}{}}]\S#1\S}
+
 \begin{document}
 \frontmatter
 \pagestyle{headings}
@@ -12,12 +24,110 @@
 \institute{IT-University of Copenhagen, Denmark,\\
 \email{kben@itu.dk}, \email{kkon@itu.dk}, \email{eker@itu.dk}}
 \maketitle
-\section{Project Proposal}
-Natural resources are a precious commodity and are to be used sustainably. Constructing resource efficient buildings makes sense, both in a political and economical perspective. Modern buildings today might come equipped with a suite of sensors and actuators, opening up for a degree of customizable control. Our collective need is that buildings can adapt to the users and the sensor-perceived environment, either automatically or manually. This can be achieved by developing policies based on input like semi-static data, dynamic data and sensor input, which control the actuators thereby leading to the desired building state.
 
-Since the task of specifying building policies typically resides in the area of Facility Management, we find it pertinent to interview company employees from positions within. We will conduct open-ended interviews and document these by audio and/or video. The main purpose of the interviews is to document existing building policies and facilitate the discovery of new, relevant ones without taking the limitations of technology (like the expressiveness of a programming language) into account. We will analyse the interviews, and use both Eclipse and EMF to build a meta model for a domain specific language that is rich enough to express the policies. Using the model and XText, we will develop the grammar needed, in order to have syntactical code completion in a running a Policy Engine Editor based on Eclipse. Finally, we will use the Policy Engine Editor to write the policies.
+\section{Abstract}
+Modern buildings often consists of many different types of sensors and actuators. It is a complex task to control and manage them, especially when aiming for optimal energy efficiency and human comfort. If easily specified automated control of buildings were achievable, the result would be reduction on energy usage and natural resources like gas and water. We specify a building automation DSL based on requirements obtained during interviews with several large companies. Using the DSL we show that all building management requests can be achieved.
 
-We therefore base the validity of this project on the requirements defined by the professionals working in Facility Management, and use their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
+\section{Introduction}
+Energy and natural resources are precious commodities. In~\cite{janssen2004towards} it is stated that residential buildings use about 89\% of the total energy consumption on space heating and cooling and water heating. Electric appliances uses 11\%. Other buildings use 79\% of the total energy consumption on space heating and cooling, water heating and lighting. Manually controlling buildings for energy efficiency and optimal human comfort is a time-consuming and inefficient task, if even possible, and the controller have to know a lot of different equipment as well as information about the building. Modern buildings today often come equipped with a suite of sensors and actuators, opening up for a degree of customizable control. Building automation is therefore not only possible, but also needed. \textit{"Worldwide, there is no doubt that efficient energy saving is only possible with modern BA based on networking in all levels of abstraction."}~\cite{dietrich2010communication}. Constructing resource efficient buildings makes sense, both in a political and economical perspective. 
 
-If time permits, we might develop parts of the execution, compare the DSL to existing available software solutions and develop a visual editor.
+Our collective need is therefore that buildings can adapt to the users and the sensor-perceived environment. This can be achieved by developing governing \textit{policies} (defined as pieces of code) based on input like semi-static data, dynamic data and sensor input, which control the actuators thereby leading to the desired building state.
+
+Merriam-Webster defines \textit{a policy} as; "A definite course or method of action selected from among alternatives and in light of given conditions to guide and determine present and future decisions."
+
+In this paper we interview companies regarding their need for building automation \textit{policies}. We then analyze the interviews and iteratively specify a DSL for building automation. We then show, by example, that our proposed DSL can capture the need and intend requested during the interviews.
+
+The structure of the paper is as follows. We will start by discussing the\nameref{sec:relatedwork} and compare it to ours. Then we will move on to~\nameref{sec:method}, followed by a section on~\nameref{sec:design}. We will then explain our~ \nameref{sec:evaluation}, and it's findings in the~\nameref{sec:discussion} section. Lastly, we will sum up our findings in~\nameref{sec:conclusion}.
+
+\section{Related work}\label{sec:relatedwork}
+A lot of research have already been done in home and building automation, spanning from low level communication protocols like BACnet, LonWorks and EIB/KNX~\cite{communication} to full system implementations. There exists, however, not that much work on user friendly DSL designs, where everyday building concepts is mixed with time constraints and conditional logic for building automation. 
+
+In~\cite{smartscript} a DSL named SmartScript is developed. Based on a publish/subscribe paradigm it is intended for appliance control, and implemented with a KNX adapter. It allows grouping of devices, so it is possible for example to turn on the light and dim it using the same 'light' concept, even though the light switch and dimmer are two separate electronic components. The language features three types of statements; Action, If and Loop. There are two actions; Set and Get. Although it is possible to use the group concept, it does not seem to be possible to define the entire building with rooms based on different types. This results in a long collection of variables, even for small and simple buildings. Also, the script seems to be operating on a much lower abstraction level than our DSL, maybe due to it's implementation that seems to have pulled the DSL more into the direction of a GPL. 
+
+In~\cite{habitation} there is a clear distinction between usage of the domain experts (called the Catalog View) and the domain users (called the Application view). A graphical editor is used when designing an application, by dragging and dropping types into flows that will be orderly executed. However, the user designing the application still have to get comfortable with concepts such as \textit{standard functional units}, \textit{FUnitLinks} and \textit{Scenes}. Again, our DSL is at a higher abstraction level. However, the catalog view can be considered being the current state of our metamodel, where the different concepts are defined. Our model only operates on concepts already known to people expected to work with building automation like \textit{Building, Floor, Room, Sensor, Actuator, Schedule, and Policy}. Besides form the obvious difference that our DSL is text-based, versus the graphical editor in Habitation, our flow resides in the combinatory logic derived from time schedules, room types, boolean states and conditional logic specified in the policies. This will become evident in the \nameref{subsec:dsldesign} section.
+
+\section{Method}\label{sec:method}
+We have tailored our method as follows;
+
+\begin{enumerate}
+	\item Analysis: We conducted open-ended interviews with people working in, or close, to FM in various Danish companies.
+	\item Design and development: We designed a building automation policy DSL based on an analysis of the interviews
+	\item Evaluation: We evaluated the DSL in two ways;
+	\begin{enumerate}
+		\item We asked our interviewees to look at the DSL (not sure!) and fill our a questionnaire
+		\item We conducted sessions with students having to write different policies, and analyzed their behavior
+	\end{enumerate}
+\end{enumerate}
+
+\subsection{Interviews}\label{subsec:interviews}
+Since building control resides with Facility Management we found it pertinent to interview company employees within, or close, to this function. We conducted open-ended interviews with these companies and documented their content by handwritten notes. Some were recorded by audio. The main purpose of the interviews was to document;
+
+\begin{enumerate}
+	\item existing governing rules, implicit or explicit.
+	\item requests for new governing rules regardless of their practicality or feasibility.
+\end{enumerate}
+
+In order to gather enough material to conceptualize a proper DSL, we interviewed people from the below list of companies.\\ 
+
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|}
+	\textbf{Name}\\
+	\hline 
+	Br\"{u}el \& Kj\ae r\\
+	Bygningsstyrelsen\\
+	IT-University of Copenhagen\\
+	K\o benhavns Tekniske Skole\\
+	ST Aerospace - Denmark\\
+	UNI-C\\
+\end{tabular}
+\end{center}
+\label{tab:interviewees}
+\caption{People from these companies were interviewed.}
+\end{table}%
+
+When conducting the interviews, we stressed that practicality or feasibility should not factor in on the requests for new governing rules. This proved hard for the interviewees. Some interviews were therefore conducted over several sessions, giving the interviewees time to think creatively. 
+
+We used only the danish and english language to give examples on existing building policies and facilitate the discovery of new, relevant ones. This was done to avoid the limitations of technology, like the expressiveness of a programming language.
+
+\subsection{DSL Design}\label{subsec:dsldesign}
+By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we have build a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that we, based on our programming experience, believe had a consistent, and forthcoming syntax and conceptual constructs. We used our Policy Engine DSL editor to write the policies.
+
+We therefore base this project on the requirements defined by the professionals working in Facility Management, and use their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
+
+\subsection{Evaluation}\label{subsec:method-evaluation}
+
+\subsubsection{Interviewee evaluation}\label{subsec:interviewee-evaluation}
+Something about how we prepared the questionnaire and what the results were.
+
+\subsubsection{Student Behavioral Evaluation}\label{subsec:student-evaluation}
+Something about how we prepared requests for policies, and how the students solved the exercises.
+
+\section{Design}\label{sec:design}
+During the analysis of the interviews, it was evident that two concepts clearly was needed if we were to tailor design a DSL for the interviewed companies;
+\begin{enumerate}
+	\item \textit{Time}. Time have to be an integral part of the DSL, and not just in regards to internal policy logic. Several interviewees mention concepts such as; weekdays, weekends, normal working hours, holidays, night, day, morning etc.
+	\item \textit{Bulding specification}. When discussing rule sets, policies and building automation behavior, all the interviewees related to their requests with terminology rooted in concepts revolving buildings, ie. rooms, room types, radiators, windows, blinds etc.
+\end{enumerate}
+
+We will go into details about our DSL concept in the \nameref{discussion} section.
+
+\begin{lstlisting}[language=Xtext, caption={Just a test}, label={lst:Test}]
+
+
+\end{lstlisting}
+
+
+
+
+
+\section{Evaluation}\label{sec:evaluation}
+
+\section{Discussion}\label{sec:discussion}
+
+\section{Conclusion}\label{sec:conclusion}
+
+\bibliography{BPE}{}
+\bibliographystyle{plain}
+
 \end{document}

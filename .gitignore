@@ -11,5 +11,8 @@ documents/llncs.synctex.gz
 runtime-EclipseApplication/
 
 /source/dk.itu.mdd.policyengine/bin/
+/source/dk.itu.mdd.policyengine.dsl/bin/
+/source/dk.itu.mdd.policyengine.dsl.tests/bin/
+/source/dk.itu.mdd.policyengine.dsl.ui/bin/
 /source/dk.itu.mdd.policyengine.time/
 
