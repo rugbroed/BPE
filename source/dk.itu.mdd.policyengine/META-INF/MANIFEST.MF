@@ -7,12 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: dk.itu.mdd.policyengine.Time,
- dk.itu.mdd.policyengine.Time.impl,
- dk.itu.mdd.policyengine.Time.util,
- dk.itu.mdd.policyengine.PolicyEngine,
- dk.itu.mdd.policyengine.PolicyEngine.impl,
- dk.itu.mdd.policyengine.PolicyEngine.util
+Export-Package: dk.itu.mdd.PolicyEngine,
+ dk.itu.mdd.PolicyEngine.impl,
+ dk.itu.mdd.PolicyEngine.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

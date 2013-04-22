@@ -5,64 +5,131 @@ BruelOgKjaer {
 	policy TemperatureControlPolicy
 	uses sensors TemperatureSensor
 	uses actuators RadiatorActuator
-	is specified by {
-		// Konstantinos
+	specifiedBy {
+		//ERROR
+		//state localState = false
+	
+		if (TemperatureSensor <= 21) {
+			RadiatorActuator = 1
+		}
+		else {
+			if (TemperatureSensor >= 22) {
+				RadiatorActuator = 0
+			}
+		}
 	}
 	
 	policy HumidityMonitoringPolicy
 	uses sensors HumiditySensor
-	uses actuators HumidifierActuator
-	is specified by {
+	//ERROR
+	//uses rooms janitorOffice
+	specifiedBy {
+		timer audioAlarmTimer
+	
+		if (HumiditySensor < 50) {
+			//ERROR
+			//humidityAlarm = true
+	
+			if (audioAlarmTimer reaches 15 seconds) {
+				reset audioAlarmTimer
+	
+				//ERROR
+				//janitorOffice.audioAlarmActuator = 1
+			}
+		}
+		else {
+			//ERROR
+			//humidityAlarm = false
+		}
+	}
+	
+	policy LightMotionPolicy
+	uses sensors MotionSensor
+	uses actuators LightSwitchActuator
+	specifiedBy {
+		timer motionTimer
+	
+		if (MotionSensor = 1) {
+			reset motionTimer
+		}
+		else {
+			//ERROR seconds should be minutes!
+			if (motionTimer reaches 20 seconds) {
+				reset motionTimer
+				
+				LightSwitchActuator = 1
+			}
+		}
 	}
 	
 	schedule WorkingWeekHours 
-	days MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY
+	days Monday, Tuesday, Wednesday, Thursday, Friday 
 	from 06:00 to 18:00
-
+	
 	schedule LateWorkingWeekHours
-	days MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY
+	days Monday, Tuesday, Wednesday, Thursday, Friday 
 	from 18:00 to 22:00
 	
 	schedule LockdownWeekHours
-	days MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY
+	days Monday, Tuesday, Wednesday, Thursday, Friday
 	from 22:00 to 06:00
 	
 	schedule LockdownWeekendHours
-	days SATURDAY, SUNDAY
+	days Saturday, Sunday
 	from 00:00 to 00:00
-	
-	// Just to show that when having a room-type with no 'is-controlled-by' then
-	// there is no 'during' either!
-	room-type NoPolicyRoom {
-	}
-	
-	room-type TemperatureControlledRoom
+
+	// When the sun is up (normal days and during weekends) the temperature is being controlled
+	room-type TemperatureControlledRoom 
 	is-controlled-by TemperatureControlPolicy
-	during WorkingWeekHours, LateWorkingWeekHours
-	{
+	during WorkingWeekHours, LateWorkingWeekHours {
 		sensor officeTemperatureSensor is a TemperatureSensor
 		actuator officeRadiatorActuator is a RadiatorActuator
 	}
-	
-	room-type HumidityControlledRoom
+
+	room-type HumidityControlledRoom 
 	is-controlled-by HumidityMonitoringPolicy
-	during-always
-	{
+	during-always {
 		sensor humidifierSensor is a HumiditySensor		
 		actuator humidifierActuator is a HumidifierActuator
-	}
-	
-	room-type LightMotionControlledRoom {
+	} 
+
+	room-type LightMotionControlledRoom 
+	is-controlled-by LightMotionPolicy 
+	during-always {
 		sensor motionSensor is a MotionSensor
 		actuator lightSwitchActuator is a LightSwitchActuator
 	} 
-	
+
+	room-type HumidityAndTemperatureControlledRoom
+	is-of-type TemperatureControlledRoom, HumidityControlledRoom
+	 
 	building mainBuilding {
 		floor groundFloor {
 			room groundToilet
-			is-of-type TemperatureControlledRoom
-			is-controlled-by HumidityMonitoringPolicy {
+			is-of-type TemperatureControlledRoom, LightMotionControlledRoom {}
+
+			room janitorOffice
+			is-of-type TemperatureControlledRoom {
+				actuator audioAlarmActuator is a AudioAlarmActuator
+				timer audioAlarmTimer is a Timer
 			}
+
+			room calibrationRoom 
+			is-of-type HumidityAndTemperatureControlledRoom
+
+			room cleanRoom 
+			is-of-type HumidityAndTemperatureControlledRoom
+		}
+
+		floor topFloor {
+			room university is a HumidityControlledRoom
+		}
+	}
+
+	building repairBuilding {
+		floor groundFloor {
+			room repairRoom
+			is-of-type HumidityControlledRoom
 		}
 	}
 }
