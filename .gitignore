@@ -1,9 +1,10 @@
 *.DS_Store
-*.ods#
-*.pdf
 
+documents/llncs.bbl
+documents/llncs.blg
 documents/llncs.log
 documents/llncs.out
+documents/llncs.aux
 documents/llncs.pdf
 documents/llncs.synctex.gz(busy)
 documents/llncs.synctex.gz
