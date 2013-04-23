@@ -61,7 +61,7 @@ In the Google sponsered Home Automation Bus - openHab~\cite{openhab} it is also 
 We have tailored our method as follows;
 
 \begin{enumerate}
-	\item Analysis: We conducted open-ended interviews with people working in, or close, to FM in various Danish companies.
+	\item Interviews and analysis: We conducted open-ended interviews with people working in, or close, to FM in various Danish companies.
 	\item Design and development: We designed a building automation policy DSL based on an analysis of the interviews
 	\item Evaluation: We evaluated the DSL in two ways;
 	\begin{enumerate}
@@ -70,7 +70,7 @@ We have tailored our method as follows;
 	\end{enumerate}
 \end{enumerate}
 
-\subsection{Interviews}\label{subsec:interviews}
+\section{Interviews and analysis}\label{sec:interviews}
 Since building control resides with Facility Management we found it pertinent to interview company employees within, or close, to this function. We conducted open-ended interviews with these companies and documented their content by handwritten notes. Some were recorded by audio. The main purpose of the interviews was to document;
 
 \begin{enumerate}
@@ -101,20 +101,11 @@ When conducting the interviews, we stressed that practicality or feasibility sho
 
 We used only the danish and english language to give examples on existing building policies and facilitate the discovery of new, relevant ones. This was done to avoid the limitations of technology, like the expressiveness of a programming language.
 
-\subsection{DSL Design}\label{subsec:dsldesign}
+\section{Design and development}\label{sec:dsldesign}
 By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we have built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believe has a consistent forthcoming syntax and conceptual constructs. We used our Policy Engine DSL editor to write the policies.
 
 We therefore base this project on the requirements defined by the professionals working in Facility Management, and use their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
 
-\subsection{Evaluation}\label{subsec:method-evaluation}
-
-\subsubsection{Interviewee evaluation}\label{subsec:interviewee-evaluation}
-Something about how we prepared the questionnaire and what the results were.
-
-\subsubsection{Student Behavioral Evaluation}\label{subsec:student-evaluation}
-Something about how we prepared requests for policies, and how the students solved the exercises.
-
-\section{Design}\label{sec:design}
 During the analysis of the interviews, it was evident that two concepts clearly was needed if we were to tailor design a DSL for the interviewed companies;
 \begin{enumerate}
 	\item \textit{Time}. Time have to be an integral part of the DSL, and not just in regards to internal policy logic. Several interviewees mention concepts such as; weekdays, weekends, normal working hours, holidays, night, day, morning etc.
@@ -135,7 +126,6 @@ Model returns Model:
 		('room-type' predefinedRooms+=Room)*
 		(buildings+=Building (buildings+=Building)*)?
 	'}';
-
 
 \end{lstlisting}
 
