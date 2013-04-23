@@ -2,7 +2,7 @@
 \usepackage{makeidx}
 \usepackage[pdftex]{hyperref}
 \usepackage{listings}
-
+\usepackage{graphicx}
 \usepackage{color}
 
 \definecolor{sh_comment}{rgb}{0.12, 0.38, 0.18 } %adjusted, in Eclipse: {0.25, 0.42, 0.30 } = #3F6A4D
@@ -107,28 +107,35 @@ By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we have b
 
 We therefore base this project on the requirements defined by the professionals working in Facility Management, and use their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
 
-During the analysis of the interviews, it was evident that two concepts clearly was needed if we were to tailor design a DSL for the interviewed companies;
+During the analysis of the interviews, different meta-constructs was defined. It was evident that the below three key concepts was needed, in order to tailor the policies for the interviewees using the DSL;
+
 \begin{enumerate}
 	\item \textit{Time}. Time have to be an integral part of the DSL, and not just in regards to internal policy logic. Several interviewees mention concepts such as; weekdays, weekends, normal working hours, holidays, night, day, morning etc.
-	\item \textit{Bulding specification}. When discussing rule sets, policies and building automation behavior, all the interviewees related to their requests with terminology rooted in concepts revolving buildings, ie. rooms, room types, radiators, windows, blinds etc.
+	
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=10cm]{schedules.png}
+  \end{center}  
+\caption{An example of \textit{schedules} defined for a interviewee.}
+\label{fig:schedules}
+\end{figure}
+	
+	\item \textit{Rooms and room types}. Rooms and room types are part of the complete building specification, with terminology rooted in concepts revolving around buildings, ie. rooms, room types, floors, different sensors and actuators. In order not to bother the user of the DSL with an overwhelming amount of declarations of rooms, sensors and actuators - we have designed \textit{room types} that declares static use of sensors and actuators. Independent rooms that stick out from the crown can still be defined on a instance level.
+	\item \textit{Bulding specification}. When discussing rule sets, policies and building automation behavior, all the interviewees related to their requests 
 \end{enumerate}
 
-We will go into details about our DSL concept in the \nameref{discussion} section.
+\subsection{Time}\label{subsec:time}
+The analysis of the interviews shows clearly that Time in regards to policies can be assessed as \textit{Schedules} where action or non-action are taking place. The \textit{Schedules} can overlap, resulting in the flexibility of many policies being run in succession, which is something that almost all the interviewees requested.
 
-\begin{lstlisting}[language=Xtext, caption={Just a test}, label={lst:Test}]
+\subsection{Rooms and room types}\label{subsec:rooms}
 
-Model returns Model:
-	{Model}
-	name=EString
-	'{'
-		(stateDefinition+=State (stateDefinition+=State)*)?
-		(policyDefinition+=Policy (policyDefinition+=Policy)*)?
-		(schedules+=Schedule (schedules+=Schedule)*)?
-		('room-type' predefinedRooms+=Room)*
-		(buildings+=Building (buildings+=Building)*)?
-	'}';
-
-\end{lstlisting}
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=10cm]{room-types.png}
+  \end{center}  
+\caption{An example of \textit{room types} defined for a interviewee.}
+\label{fig:roomtypes}
+\end{figure}
 
 \section{Evaluation}\label{sec:evaluation}
 
