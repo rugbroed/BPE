@@ -76,6 +76,7 @@ Since building control resides with Facility Management we found it pertinent to
 
 \begin{enumerate}
 	\item existing governing rules, implicit or explicit.
+	\item existing, and requested, sensors and actuators.
 	\item requests for new governing rules regardless of their practicality or feasibility.
 \end{enumerate}
 
@@ -120,14 +121,41 @@ During the analysis of the interviews, different meta-constructs was defined. It
 \label{fig:schedules}
 \end{figure}
 	
-	\item \textit{Rooms and room types}. Rooms and room types are part of the complete building specification, with terminology rooted in concepts revolving around buildings, ie. rooms, room types, floors, different sensors and actuators. In order not to bother the user of the DSL with an overwhelming amount of declarations of rooms, sensors and actuators - we have designed \textit{room types} that declares static use of sensors and actuators. Independent rooms that stick out from the crown can still be defined on a instance level.
-	\item \textit{Bulding specification}. When discussing rule sets, policies and building automation behavior, all the interviewees related to their requests 
+	\item \textit{Building specification}. It needs to be possible to define the buildings, their floors, number and types of rooms etc.
+
+	\item \textit{Policy}. The actual behavior, ie. adjusting actuators based on sensor input, needs to be defined. 
 \end{enumerate}
 
 \subsection{Time}\label{subsec:time}
-The analysis of the interviews shows clearly that Time in regards to policies can be assessed as \textit{Schedules} where action or non-action are taking place. The \textit{Schedules} can overlap, resulting in the flexibility of many policies being run in succession, which is something that almost all the interviewees requested.
+The analysis of the interviews shows clearly that Time is necessary. We extrapolated the need for Time in two different cases;
+	\begin{enumerate}
+		\item Schedules - types that define a timespan that later can be attached to some behavior.
+		\item Time conditional expression - a conditional expression used for determining the flow of a behavior.
+	\end{enumerate}
 
-\subsection{Rooms and room types}\label{subsec:rooms}
+\subsubsection{Schedules}\label{subsubsec:schedules}
+\textit{Schedules} are predefined types representing a timespan where action or non-action are taking place. The \textit{Schedules} can overlap, resulting in the flexibility of many policies being run in succession, which is something that almost all the interviewees requested.
+
+\subsubsection{Time conditional expression}\label{subsubsec:conditionalexpression}
+A \textit{time conditional expression} is an 'if' statement that can react based on a built-in timer function. 
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=10cm]{conditional-time-expression.png}
+  \end{center}  
+\caption{An example of a \textit{time conditional expression} that evaluates to true if more than 20 minutes have passed.}
+\label{fig:schedules}
+\end{figure}
+
+\subsection{Building specification}\label{subsec:building-specification}
+Rooms and room types are part of the complete building specification, with terminology rooted in concepts revolving around buildings, ie. rooms, room types, floors, different sensors and actuators. In order not to bother the user of the DSL with an overwhelming amount of declarations of rooms, sensors and actuators - we have designed \textit{room types} that declares static use of sensors and actuators. Independent rooms that stick out from the crown can still be defined on a instance level.
+
+[INSERT SMALL BUILDING SPEC IMAGE]
+
+\subsection{Policy}\label{subsec:rooms}
+Policies defines the actual behavior, ie. adjustment of actuators, based on sensor input. 
+
+[INSERT SMALL POLICY SPEC IMAGE]
 
 \begin{figure}
   \begin{center}
