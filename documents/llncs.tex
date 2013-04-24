@@ -103,10 +103,21 @@ When conducting the interviews, we stressed that practicality or feasibility sho
 
 We used only the danish and english language to give examples on existing building policies and facilitate the discovery of new, relevant ones. This was done to avoid the limitations of technology, like the expressiveness of a programming language.
 
+We therefore base this project on the requirements defined by the professionals working in Facility Management, and use their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
+
 \section{Design and development}\label{sec:dsldesign}
 By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we have built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believe has a consistent forthcoming syntax and conceptual constructs. We used our Policy Engine DSL editor to write the policies.
 
-We therefore base this project on the requirements defined by the professionals working in Facility Management, and use their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
+Our model is of considerable size, and consists of these core packages, differentiated in separate ECore Diagrams (can be viewed in full in \nameref{sec:appendix-a});
+
+\begin{enumerate}
+	\item Sensors and Actuators. 9 sensor classes and 6 actuator classes.
+	\item Expression language. 6 classes.
+	\item Building definition. 5 classes.
+	\item Policy definition. 5 classes.
+\end{enumerate}
+
+Theres several extra classes, consisting of subsystems that can be implemented in future work.
 
 During the analysis of the interviews, different meta-constructs was defined. It was evident that the below three key concepts was needed, in order to tailor the policies for the interviewees using the DSL;
 
