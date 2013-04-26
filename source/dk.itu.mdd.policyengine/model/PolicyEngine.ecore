@@ -110,6 +110,10 @@
         eType="#//State"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="during" upperBound="-1"
         eType="#//Schedule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usesRooms" upperBound="-1"
+        eType="#//Room"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defineLocalState" upperBound="-1"
+        eType="#//State" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -165,7 +169,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="act" eType="#//Actuator"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="definedRooms" eType="#//Room"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defineState" eType="#//State"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ManyExpressions" eSuperTypes="#//Expression">
@@ -181,6 +185,5 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operand" lowerBound="1"
         eType="#//CompOps"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

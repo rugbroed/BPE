@@ -1,3 +1,4 @@
+//IT ALL WORKS BEAUTIFULLY
 BruelOgKjaer {
 	state humidityAlarm = false
 	state fireAlarm = false
@@ -5,9 +6,8 @@ BruelOgKjaer {
 	policy TemperatureControlPolicy
 	uses sensors TemperatureSensor
 	uses actuators RadiatorActuator
-	specifiedBy {
-		//ERROR
-		//state localState = false
+	is-implemented-by {
+		state localState = false
 	
 		if (TemperatureSensor <= 21) {
 			RadiatorActuator = 1
@@ -21,39 +21,33 @@ BruelOgKjaer {
 	
 	policy HumidityMonitoringPolicy
 	uses sensors HumiditySensor
-	//ERROR
-	//uses rooms janitorOffice
-	specifiedBy {
+	uses rooms janitorOffice
+	is-implemented-by {
 		timer audioAlarmTimer
 	
 		if (HumiditySensor < 50) {
-			//ERROR
-			//humidityAlarm = true
+			humidityAlarm = true
 	
 			if (audioAlarmTimer reaches 15 seconds) {
 				reset audioAlarmTimer
-	
-				//ERROR
-				//janitorOffice.audioAlarmActuator = 1
+				janitorOffice.audioAlarmActuator = 1
 			}
 		}
 		else {
-			//ERROR
-			//humidityAlarm = false
+			humidityAlarm = false
 		}
 	}
 	
 	policy LightMotionPolicy
 	uses sensors MotionSensor
 	uses actuators LightSwitchActuator
-	specifiedBy {
+	is-implemented-by {
 		timer motionTimer
 	
 		if (MotionSensor = 1) {
 			reset motionTimer
 		}
 		else {
-			//ERROR seconds should be minutes!
 			if (motionTimer reaches 20 seconds) {
 				reset motionTimer
 				
@@ -80,21 +74,21 @@ BruelOgKjaer {
 
 	// When the sun is up (normal days and during weekends) the temperature is being controlled
 	room-type TemperatureControlledRoom 
-	is-controlled-by TemperatureControlPolicy
+	is-governed-by TemperatureControlPolicy
 	during WorkingWeekHours, LateWorkingWeekHours {
 		sensor officeTemperatureSensor is a TemperatureSensor
 		actuator officeRadiatorActuator is a RadiatorActuator
 	}
 
 	room-type HumidityControlledRoom 
-	is-controlled-by HumidityMonitoringPolicy
+	is-governed-by HumidityMonitoringPolicy
 	during-always {
 		sensor humidifierSensor is a HumiditySensor		
 		actuator humidifierActuator is a HumidifierActuator
 	} 
 
 	room-type LightMotionControlledRoom 
-	is-controlled-by LightMotionPolicy 
+	is-governed-by LightMotionPolicy 
 	during-always {
 		sensor motionSensor is a MotionSensor
 		actuator lightSwitchActuator is a LightSwitchActuator
@@ -106,12 +100,12 @@ BruelOgKjaer {
 	building mainBuilding {
 		floor groundFloor {
 			room groundToilet
-			is-of-type TemperatureControlledRoom, LightMotionControlledRoom {}
+			is-of-type TemperatureControlledRoom, LightMotionControlledRoom { }
 
 			room janitorOffice
 			is-of-type TemperatureControlledRoom {
 				actuator audioAlarmActuator is a AudioAlarmActuator
-				timer audioAlarmTimer is a Timer
+				timer audioAlarmTimer //is a Timer
 			}
 
 			room calibrationRoom 
@@ -122,7 +116,7 @@ BruelOgKjaer {
 		}
 
 		floor topFloor {
-			room university is a HumidityControlledRoom
+			room university is-of-type HumidityControlledRoom
 		}
 	}
 
