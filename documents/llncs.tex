@@ -119,19 +119,19 @@ Our model is of considerable size, and consists of these core packages, differen
 
 \subsubsection{Sensors and Actuators}
 \begin{figure}
-  \begin{center}
-    \includegraphics[width=10cm]{ecore-sensors-actuators.png}
-  \end{center}  
-\caption{An example of \textit{schedules} defined for a interviewee.}
+	\begin{center}
+    \includegraphics[width=10cm]{ecore-sensors-actuators.jpg} 
+     \end{center}  
+	\caption{An example of \textit{Sensors and Actuators} defined for a interviewee.}
 \label{fig:ecore-sensors-actuators}
 \end{figure}
 
 \subsubsection{Expression language}
 \begin{figure}
   \begin{center}
-    \includegraphics[width=10cm]{ecore-expression-language.png}
+    \includegraphics[scale=0.5]{ecore-expression-language.png}
   \end{center}  
-\caption{An example of \textit{schedules} defined for a interviewee.}
+\caption{An example of \textit{expression language} defined for a interviewee.}
 \label{fig:ecore-expression-language}
 \end{figure}
 
@@ -140,7 +140,7 @@ Our model is of considerable size, and consists of these core packages, differen
   \begin{center}
     \includegraphics[width=10cm]{ecore-building-definition.png}
   \end{center}  
-\caption{An example of \textit{schedules} defined for a interviewee.}
+\caption{An example of \textit{building definition} defined for a interviewee.}
 \label{fig:ecore-building-definition}
 \end{figure}
 
@@ -179,7 +179,7 @@ A \textit{time conditional expression} is an 'if' statement that can react based
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=10cm]{dsl-conditional-time-expression.png}
+    \includegraphics[width=8cm]{dsl-conditional-time-expression.png}
   \end{center}  
 \caption{An example of a \textit{time conditional expression} that evaluates to true if more than 20 minutes have passed.}
 \label{fig:schedules}
@@ -188,7 +188,13 @@ A \textit{time conditional expression} is an 'if' statement that can react based
 \subsection{Building specification}\label{subsec:building-specification}
 Rooms and room types are part of the complete building specification, with terminology rooted in concepts revolving around buildings, ie. rooms, room types, floors, different sensors and actuators. In order not to bother the user of the DSL with an overwhelming amount of declarations of rooms, sensors and actuators - we have designed \textit{room types} that declares static use of sensors and actuators. Independent rooms that stick out from the crown can still be defined on a instance level.
 
-[INSERT SMALL BUILDING SPEC IMAGE]
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=10cm]{dsl-building-spec.png}
+  \end{center}  
+\caption{An example of \textit{building specification} defined for a interviewee.}
+\label{fig:dsl-building-spec}
+\end{figure}
 
 \subsection{Policy}\label{subsec:rooms}
 Policies defines the actual behavior, ie. adjustment of actuators, based on sensor input. 
