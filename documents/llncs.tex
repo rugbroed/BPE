@@ -161,12 +161,12 @@ Our model is of considerable size, and consists of these core packages, differen
 \end{figure}
 
 \pagebreak
-Theres several extra classes, consisting of subsystems that can be implemented in future work.
+There are several extra classes, consisting of subsystems that can be implemented in future work.
 
-During the analysis of the interviews, different meta-constructs was defined. It was evident that the below three key concepts was needed, in order to tailor the policies for the interviewees using DSL;
+During the analysis of the interviews, different meta-constructs were defined. It was evident that the three key concepts mentioned below were needed, in order to tailor the policies for the interviewees using DSL;
 
 \begin{enumerate}
-	\item \textit{Time}. Time have to be an integral part of the DSL, and not just in regards to internal policy logic. Several interviewees mention concepts such as; weekdays, weekends, normal working hours, holidays, night, day, morning etc.
+	\item \textit{Time}. Time has to be an integral part of the DSL, and not just in regards to internal policy logic. Several interviewees mention concepts such as; weekdays, weekends, normal working hours, holidays, night, day, morning etc.
 	
 	\item \textit{Building specification}. It needs to be possible to define the buildings, their floors, number and types of rooms etc.
 
@@ -192,7 +192,7 @@ A \textit{time conditional expression} is an 'if' statement that can react based
 
 \newpage
 \subsubsection{Schedules}\label{subsubsec:schedules}
-\textit{Schedules} are predefined types representing a timespan where action or no-action taking place. The \textit{Schedules} can overlap, resulting in the flexibility of many policies being run in succession, which is something that almost all the interviewees requested.
+\textit{Schedules} are predefined types representing a timespan where action or no-action takes place. The \textit{Schedules} can overlap, resulting in the flexibility of many policies being run in succession, which is something that almost all the interviewees requested.
 
 \begin{figure}
   	\centering
@@ -215,7 +215,7 @@ In order not to bother the user of the DSL with an overwhelming amount of declar
 \end{figure}
 
 \newpage
-Building specification as in the example below, helps us map out the actual buildings as they are in our DSL. With this we can be able to accurately define exact locations for sensors, actuator and also implement policies for specific rooms in specified locations. 
+Building specification as in the example below, helps us map out the actual buildings as they are in our DSL. With this we can be able to accurately define exact locations for sensors, actuator and also implement policies for rooms in specific locations. 
 
 \begin{figure}
   \centering
@@ -239,25 +239,26 @@ Policies defines the actual behavior, ie. adjustment of actuators, based on sens
 \section{Evaluation}\label{sec:evaluation}
 
 \subsubsection{Br\"{u}el \& Kj\ae r}\label{subsec:bruel}
+The requirements received from Br\"{u}el \& Kj\ae r were implemented in our DSL and this can be found in \nameref{sec:dsl-bruel}. One of the requirements from the interview (\textit{all sensor and actuator data stored in a repository for use in a visual display of data in the FM office}) was not implemented in our DSL because we chose narrow the scope of the project. After an evaluating these requirements, we realized some of the sensors and actuators needed to satisfy the implementation are not defined in our metamodel. This is easily fixed by adding them to the meta-model but instead we have evaluated this as an area in which our DSL can be improved and it is discussed in \nameref{subsec:def-sensor-actuator-types}.
 
 \subsubsection{Bygningstyrelsen}\label{subsec:bygstyrelsen}
+TO BE EVALUATED
 
 \subsubsection{K\o benhavns Tekniske Skole}\label{subsec:kts}
-
+The implementation of these requirements in our DSL can be found in \nameref{sec:dsl-kts} and just like in the evaluation in \nameref{subsec:bruel}, we encounter the same issue of defining sensors and actuators as needed. This seems to be a recurring issue in our language but none the less an opportunity to imporve our language. It is further discussed in \nameref{subsec:def-sensor-actuator-types}. 
+Another area we could improve in our language could be the ability to define how each policy should be used as discussed in \nameref{subsec:during}. 
+ 
 \subsubsection{UNI-C}\label{subsec:uni-c}
-
+TO BE EVALUATED
 
 \section{Discussion}\label{sec:discussion}
 \subsection{Future Work}\label{subsec:futurework}
 
 \subsubsection{Graphical Editor for policy definition}\label{subsec:graphicaleditor}
-Our DSL editor is text based and most of the keywords we have chosen to use are words that are commonly used in the industry. In the way they are structured and used in our DSL, they literally describe the meaning of the combined keywords. The textual editor is sufficient in all definitions but in the policy definition, one needs to have some programming knowledge in order to understand and know how to use the expression language. So in order to accomodate the normal users and give them a good user experience, it would be wise in the future to develope a graphical editor for the policies in order to abstract the expression language making it simpler for users to define policies.
+Our DSL editor is text based and most of the keywords we have chosen to use are words that are commonly used in the industry. In the way they are structured and used in our DSL, they literally describe the meaning of the combined keywords. The textual editor is sufficient in all definitions but in the policy definition, one needs to have some programming knowledge in order to understand and know how to use the expression language. So in order to accomodate the normal users and give them a good user experience, improvement of our DSL is necessary by developing a graphical editor for the policies in order to abstract the expression language making it simpler for users to define policies.
 
 \subsubsection{Integration with existing systems}\label{subsec:integration}
-In our metamodel, we have included some external systems that already exist (\textit{CTS, Access Control, Calender System and Meeting Shedule Systems}) and run in some building. An example is the existing control system (\textit{CTS}) for ventilation, which is hard to understand and needs one be knowledgable in the tool. The GUI is made like an electrical diagram, and not very user friendly. Moreover, the temperatures shown in the program is from sensors in the ventilation ducts, not in the room themselves, making it very hard to regulate it. A lot of time will be spent to get the precise desired room temperature. If integrated with our DSL, the temperature policies running in the rooms could be used to regulate the CTS systems.
-
-\subsubsection{Defining Actuator and Sensor types}\label{subsec:def-sensor-actuator-types}
-From the evaluation section above, we have come to realize that some of the sensors and actuators needed to satisfy the requirements are not implemented in our DSL. This does not give us flexibilty to define policies using actuators and sensors that are not available in our DSL. Better work in this area could be that we modify our DSL so we are able to define actuators and sensors as needed. Sort of the same concept as the predefined room types. This flexibilty will make our DSL more adaptable.
+In our metamodel, we have included some external systems that already exist (\textit{CTS, Access Control, Calender System and Meeting Shedule Systems}) and run in some building. An example is the existing control system (\textit{CTS}) for ventilation, which is hard to understand and needs one be knowledgable in the tool to properly use it. The GUI is made like an electrical diagram, and not very user friendly. Moreover, the temperatures shown in the program is from sensors in the ventilation ducts, not in the room themselves, making it very hard to regulate it. A lot of time will be spent to get the precise desired room temperature. If integrated with our DSL, the temperature policies running in the rooms could maybe be used to regulate the CTS systems.
 
 \subsubsection{Better Code Completion}\label{subsec:codecompletion}
 Code completion is of great importance to our language as it is there to help guide the user in all posible options he/she has and as it is now, our DSL has code completion, which works as designed and meant to. For future work though, We would like to restrict code completion so only the declared/defined elements should be available. In \nameref{fig:code-completion} below, it shows our DSL as it is and if restricted, should only be able to have TemperatureSensor and RadiatorActuator as options for the TemperatureControlPolicy.
@@ -269,8 +270,22 @@ Code completion is of great importance to our language as it is there to help gu
 	\label{fig:code-completion}
 \end{figure}
 
+\subsubsection{Defining Actuator and Sensor types}\label{subsec:def-sensor-actuator-types}
+From the evaluation section above, we have come to realize that some of the sensors and actuators needed to satisfy the requirements are not implemented in our DSL. A quick fix would be to add them to our meta-model but this still will not give us flexibilty to define policies using actuators and sensors that are not available in our DSL when needed. Better work in this area could be that modification of our DSL is necessary in order to accomodate definition actuators and sensors as needed. Sort of the same concept as the predefined room types. This flexibilty will make our DSL more adaptable.
+
+
 \subsubsection{Time Loop}\label{subsec:looptime}
 Our loop is based on an outer loop that calls all policies in every iteration. Maybe it should rather be based on a priorotization of room, room-type or policies. Ex. specify that it should only run once an hour or so.
+
+\subsubsection{When to run policies}\label{subsec:during}
+As it is now, our DSL allows us to define when the policies should be run by the use of schedules defined. Policy or Policies can be run based on one or more scheules. As in the image below, we specify a schedule for all governing policies of that room-type. 
+\begin{figure}
+  \centering
+    \includegraphics[scale=0.5]{dsl-during.png} 
+	\caption{An example to \textit{during} when using policies in rooms.}
+	\label{fig:during}
+\end{figure}
+In the case we have several governing policies that run on different schedules, our DSL doesn't allow us to assign each governing policy with a specific schedule. An improvement to this could be the ability to make our DSL more flexible so can accomodate specifying a different schedule for each of the policies governing a room. 
 
 \section{Conclusion}\label{sec:conclusion}
 
@@ -281,9 +296,11 @@ Our loop is based on an outer loop that calls all policies in every iteration. M
 Because of the size of the ecore model, the xtext file, and DSL's, we have opted to have them in a repository online and are viewable by clicking the provided links.
 
 \subsubsection{Ecore Model}\label{sec:ecore-model}
-Ecore Model can be accessed by clicking the link provided below:\\ 
+Ecore Model can be accessed by clicking the link provided below:
+\\xml file:
 \url{https://github.com/rugbroed/BPE/blob/master/source/dk.itu.mdd.policyengine/model/PolicyEngine.ecorediag}
-
+\\image:
+\url{https://www.dropbox.com/s/ibf0nra56ck2r1x/PolicyEngine.png}
 \subsubsection{PEDSL Xtext}\label{sec:xtext-pedsl}
 The xtext can be viewed in full by clicking the link provided below:\\
 \url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
@@ -292,13 +309,13 @@ The xtext can be viewed in full by clicking the link provided below:\\
 \url{https://github.com/rugbroed/BPE/blob/master/source/bruel.pedsl}
 
 \subsubsection{Bygningstyrelsen DSL}\label{sec:dsl-bygstyr}
-\url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
+\url{https://github.com/rugbroed/BPE/blob/master/source/bygstyr.pedsl} (NOT YET AVAILABLE)
 
 \subsubsection{K\o benhavns Tekniske Skole DSL}\label{sec:dsl-kts}
-\url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
+\url{https://github.com/rugbroed/BPE/blob/master/source/kts.pedsl}
 
 
 \subsubsection{UNI-C DSL}\label{sec:dsl-uni-c}
-\url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
+\url{https://github.com/rugbroed/BPE/blob/master/source/unic.pedsl} (NOT YET AVAILABLE)
 
 \end{document}

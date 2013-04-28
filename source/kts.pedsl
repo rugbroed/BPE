@@ -1,0 +1,203 @@
+KobenhavnsTekniskeSkole {
+	state humidityAlarm = false
+	state fireAlarm = false
+
+	policy ComputerShutDownPolicy
+	uses actuators //ElectricalSwitchActuator
+	uses rooms WorkStation
+	is-implemented-by {
+		state computerOn = true
+		if (/*ElectricalSwitchActuator = true*/) {
+			computerOn = false
+			//ElectricalSwitchActuator = false
+		}
+	}
+	
+	policy SkyLightWindowControlPolicy
+	uses sensors //RainSensor 
+	uses actuators WindowActuator
+	is-implemented-by {
+		state isRaining = false
+		if (/*RainSensor = true*/){
+			isRaining = true
+			if (WindowActuator = true) {
+				WindowActuator = false
+			}
+			
+		}
+	}
+	
+	policy WinterHeatingPolicy
+	uses sensors TemperatureSensor
+	uses actuators WindowActuator, RadiatorActuator
+	uses rooms HeatControlledRoom
+	is-implemented-by {		
+		if (WindowActuator = true && RadiatorActuator = true) {
+			RadiatorActuator = false
+		}
+		
+	}
+	
+	policy RoomHeatingPolicy
+	uses sensors TemperatureSensor, MotionSensor, InfraredLightSensor
+	uses actuators RadiatorActuator
+	uses rooms HeatControlledRoom
+	is-implemented-by {	
+		
+		state roomInUse = false	
+		if (MotionSensor = true || InfraredLightSensor = true) {
+			roomInUse = true
+		}
+		else {
+			roomInUse = false
+		}
+		if ( roomInUse = false && RadiatorActuator = true) {
+			RadiatorActuator = false
+		}		
+	}
+	
+	policy UtilityUsageControlPolicy
+	uses actuators //ElectricalSwitchActuator, WaterValveActuator, GasValveActuator
+	uses rooms ClosedRoom
+	is-implemented-by {
+		if ( /*ElectricalSwitchActuator > 100*/ ) {
+			//ElectricalSwitchActuator = false
+		} 
+		if ( /*WaterValveActuator > 100*/ ) {
+			//WaterValveActuator = false
+		}
+		if ( /*GasValveActuator > 100*/ ) {
+			/*GasValveActuator = false*/
+		}
+	}
+	
+	policy CentralAccessControlPolicy
+	uses actuators DoorActuator, AudioAlarmActuator
+	is-implemented-by {
+		timer ClosingTime 
+		if ( ClosingTime.value = 0 ) {
+			DoorActuator = false
+			//If the doorActuator fails to close the doors due to an obstacle, activate the alarm!!!
+			if ( DoorActuator = true ) {
+				AudioAlarmActuator = true
+			}
+		}
+	}
+	
+	policy CompleteLockdownPolicy
+	uses actuators LightSwitchActuator, WindowActuator, DoorActuator
+	uses rooms ClosedRoom
+	is-implemented-by {
+		state isSecure = true
+		//Turn off lights and close doors and windows during LockdownHours
+		if ( LightSwitchActuator = true ) {
+			LightSwitchActuator = false
+		}
+		if ( WindowActuator = true ) {
+			WindowActuator = false
+		}
+		if ( DoorActuator = true ) {
+			DoorActuator = false
+		}
+		//if even one of them fail to close send a list to the staff
+		if ( LightSwitchActuator = true || WindowActuator = true || DoorActuator = true ) {
+			isSecure = false
+		}
+	}
+	
+	policy NaturalHeatControlPolicy
+	uses sensors //ExternalTemperatureSensor
+	uses actuators RadiatorActuator, WindowActuator
+	uses rooms HeatControlledRoom
+	is-implemented-by {
+		state warmOutside
+		//we need an externalTemperatureSensor for this policy
+		if ( /*ExternalTemperatureSensor > 25*/ ) {
+			warmOutside = true
+			WindowActuator = true
+			RadiatorActuator = false
+		}
+		else {
+			if ( /*ExternalTemperatureSensor < 15*/ ) {
+				warmOutside = false
+				WindowActuator = false
+				RadiatorActuator = true
+			}
+		}
+	}
+	
+	policy HallwayTemperatureControlPolicy
+	uses sensors TemperatureSensor//, RainSensor 
+	uses actuators RadiatorActuator, WindowActuator
+	uses rooms Hallway
+	is-implemented-by {
+		if ( TemperatureSensor > 25 ) {
+			WindowActuator = true
+		}
+		if ( /*RainSensor = true*/ ) {
+			WindowActuator = false
+		}
+	}
+	
+	policy EquipmentShutDownPolicy
+	uses actuators //ElectricalSwitchActuator
+	uses rooms LectureRoom
+	is-implemented-by {
+		state EquipmentState = true
+		if (/*ElectricityActuator = true*/) {
+			EquipmentState = false
+			//ElectricityActuator = false
+		}
+	}
+	
+	policy VentilationControlPolicy
+	uses sensors TemperatureSensor
+	uses actuators RadiatorActuator//, VentilatorActuator
+	is-implemented-by {
+		if ( TemperatureSensor > 25 ) {
+			//VentilatorActuator = true
+			RadiatorActuator = false
+		}
+	}
+	
+	schedule WorkingWeekHours 
+	days Monday, Tuesday, Wednesday, Thursday, Friday 
+	from 06:00 to 18:00
+	
+	schedule LateWorkingWeekHours
+	days Monday, Tuesday, Wednesday, Thursday, Friday 
+	from 18:00 to 22:00
+	
+	schedule LockdownWeekHours
+	days Monday, Tuesday, Wednesday, Thursday, Friday
+	from 22:00 to 06:00
+	
+	schedule LockdownWeekendHours
+	days Saturday, Sunday
+	from 00:00 to 00:00
+
+	room-type WorkStation 
+	is-governed-by ComputerShutDownPolicy
+	during LockdownWeekHours, LockdownWeekendHours
+	
+	room-type ClosedRoom 
+	is-governed-by CompleteLockdownPolicy, UtilityUsageControlPolicy
+	during LockdownWeekHours, LockdownWeekendHours
+	
+	room-type HeatControlledRoom
+	is-governed-by WinterHeatingPolicy, NaturalHeatControlPolicy, RoomHeatingPolicy
+	during WorkingWeekHours
+	
+	room-type VentilationControlledRoom
+	is-governed-by VentilationControlPolicy
+	during WorkingWeekHours
+	 
+	room-type Hallway
+	is-governed-by HallwayTemperatureControlPolicy, NaturalHeatControlPolicy
+	during-always
+	
+	room-type LectureRoom 
+	is-governed-by EquipmentShutDownPolicy
+	during LockdownWeekHours, LockdownWeekendHours 
+	
+}
