@@ -18,6 +18,7 @@ BruelOgKjaer {
 		}
 	}
 	
+	//In this policy, RainSensor is not part of the Collection and therefore gives an error.
 	policy SkylightWindowControlPolicy
 	uses sensors TemperatureSensor //,RainSensor
 	uses actuators WindowActuator
