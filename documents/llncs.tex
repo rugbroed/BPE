@@ -215,7 +215,7 @@ In order not to bother the user of the DSL with an overwhelming amount of declar
 \end{figure}
 
 \newpage
-Building specification as in the example below, helps up map out the actual buildings as they are in our DSL. With this we can be able to accurately define exact locations for sensors, actuator and also implement policies for specific rooms. 
+Building specification as in the example below, helps us map out the actual buildings as they are in our DSL. With this we can be able to accurately define exact locations for sensors, actuator and also implement policies for specific rooms in specified locations. 
 
 \begin{figure}
   \centering
@@ -242,17 +242,23 @@ Policies defines the actual behavior, ie. adjustment of actuators, based on sens
 
 \subsubsection{Bygningstyrelsen}\label{subsec:bygstyrelsen}
 
-\subsubsection{IT-University}\label{subsec:it-u}
-
 \subsubsection{K\o benhavns Tekniske Skole}\label{subsec:kts}
-
-\subsubsection{ST Aerospace}\label{subsec:st-aero}
 
 \subsubsection{UNI-C}\label{subsec:uni-c}
 
 
 \section{Discussion}\label{sec:discussion}
 \subsection{Future Work}\label{subsec:futurework}
+
+\subsubsection{Graphical Editor for policy definition}\label{subsec:graphicaleditor}
+Our DSL editor is text based and most of the keywords we have chosen to use are words that are commonly used in the industry. In the way they are structured and used in our DSL, they literally describe the meaning of the combined keywords. The textual editor is sufficient in all definitions but in the policy definition, one needs to have some programming knowledge in order to understand and know how to use the expression language. So in order to accomodate the normal users and give them a good user experience, it would be wise in the future to develope a graphical editor for the policies in order to abstract the expression language making it simpler for users to define policies.
+
+\subsubsection{Integration with existing systems}\label{subsec:integration}
+In our metamodel, we have included some external systems that already exist (\textit{CTS, Access Control, Calender System and Meeting Shedule Systems}) and run in some building. An example is the existing control system (\textit{CTS}) for ventilation, which is hard to understand and needs one be knowledgable in the tool. The GUI is made like an electrical diagram, and not very user friendly. Moreover, the temperatures shown in the program is from sensors in the ventilation ducts, not in the room themselves, making it very hard to regulate it. A lot of time will be spent to get the precise desired room temperature. If integrated with our DSL, the temperature policies running in the rooms could be used to regulate the CTS systems.
+
+\subsubsection{Defining Actuator and Sensor types}\label{subsec:def-sensor-actuator-types}
+From the evaluation section above, we have come to realize that some of the sensors and actuators needed to satisfy the requirements are not implemented in our DSL. This does not give us flexibilty to define policies using actuators and sensors that are not available in our DSL. Better work in this area could be that we modify our DSL so we are able to define actuators and sensors as needed. Sort of the same concept as the predefined room types. This flexibilty will make our DSL more adaptable.
+
 \subsubsection{Better Code Completion}\label{subsec:codecompletion}
 Code completion is of great importance to our language as it is there to help guide the user in all posible options he/she has and as it is now, our DSL has code completion, which works as designed and meant to. For future work though, We would like to restrict code completion so only the declared/defined elements should be available. In \nameref{fig:code-completion} below, it shows our DSL as it is and if restricted, should only be able to have TemperatureSensor and RadiatorActuator as options for the TemperatureControlPolicy.
 
@@ -263,14 +269,8 @@ Code completion is of great importance to our language as it is there to help gu
 	\label{fig:code-completion}
 \end{figure}
 
-\subsubsection{Loop Time}\label{subsec:looptime}
-Our loop is based on an outter loop that calls all policies in every iteration. Maybe it should rather be based on a priorotization of room, room-type or policies. Ex. specify that it should only run once an hour or so.
-
-\subsubsection{Graphical Editor}\label{subsec:graphicaleditor}
-Our DSL editor is currently text based and in a way requires one to have knowledge of the order in which things must be defined.
-
-\subsubsection{Integration with existing systems}\label{subsec:integration}
-In our metamodel, we have included some external systems that already exist (\textit{CTS, Access Control, Calender System and Meeting Shedule Systems}) and run in most building. Our DSL editor is currently text based.
+\subsubsection{Time Loop}\label{subsec:looptime}
+Our loop is based on an outer loop that calls all policies in every iteration. Maybe it should rather be based on a priorotization of room, room-type or policies. Ex. specify that it should only run once an hour or so.
 
 \section{Conclusion}\label{sec:conclusion}
 
@@ -289,19 +289,14 @@ The xtext can be viewed in full by clicking the link provided below:\\
 \url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
 
 \subsubsection{Br\"{u}el \& Kj\ae r DSL}\label{sec:dsl-bruel}
-\url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
+\url{https://github.com/rugbroed/BPE/blob/master/source/bruel.pedsl}
 
 \subsubsection{Bygningstyrelsen DSL}\label{sec:dsl-bygstyr}
-\url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
-
-\subsubsection{IT-University DSL}\label{sec:dsl-itu}
 \url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
 
 \subsubsection{K\o benhavns Tekniske Skole DSL}\label{sec:dsl-kts}
 \url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
 
-\subsubsection{ST Aerospace DSL}\label{sec:dsl-st-aero}
-\url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
 
 \subsubsection{UNI-C DSL}\label{sec:dsl-uni-c}
 \url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}

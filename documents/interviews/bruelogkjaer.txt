@@ -1,0 +1,55 @@
+Manager in FM @ Brüel go Kjær
+
+Existing policies:
+
+	Existing: Smoke/fire detectors to set off fire alarm and start sprinklers.
+	Existing: VideoSurveillance (time and weekday based): Records video.
+	Existing: Access Control on all external doors and in the calibration and clean rooms.
+	Existing: In the Calibration and Clean rooms air quality (constant) environment is 
+			  maintained using humidifiers.
+	Existing: MotionSensors are used in all toilets to turn lights on and off.
+
+	New: The skylight windows can be opened manually by a switch on a nearby wall. 
+		 Since there is no rain sensor on the window, if forgotten, water damage can be caused. 
+		 (If it rains outside, then close the window. When workday is over close window.)
+
+	New: Room radiators have thermostats that senses the ambient temperature and adjusts 
+			the radiator accordingly. During winter, workers might find the room 'stuffy' 
+			and opens some windows, without bothering to turn down the radiators. 
+			The thermostat treats this as the room is getting colder, and turns up the heat. 
+			This is a huge waste and very bad for human comfort. (If the radiators are on, 
+			and windows are opened then turn off radiators.)
+			
+	New:	 Windows should be automatically opened based on inner room climate. 
+			(temperature, air quality) 
+
+	New:	 All offices, hallways, university should have motion sensors to control lights. 
+	
+	New:	 Use light sensors to get natural light in the day time and use that to regulate 
+			brightness.
+
+	New:	 Monitoring of clean rooms and calibration room. if temperature, humidity goes 
+			over the operating temperature, set off alarm in the janitors office and send 
+			sms/msg to person on duty.
+			
+	New:	 Log all data in a repository which can used to feed a visual monitoring system 
+			and also for easy problem backtrace.
+
+	New:	 The central AccessControl system has actuators on only on all door to the outside. 
+			(If CLOSING_TIME then SecurityDoors-->Close. If cannot close door, then send sms 
+			with alarm to the staff so they can remove obstacle.)
+			
+	New:	 If work day is over, then enumerate through all windows, skylights and 
+			exterior doors. If any of them are not securely closed and locked, then send 
+			an accumulated list to the staff.
+
+	New:	 Generally it would be nice to have rules/policies working not only by week/time. 
+			should also set specific rules for specific rooms. clean room - people work past 
+			work hours sometimes.
+
+	New:	 The existing control system (CTS) for ventilation is hard to understand. 
+			The GUI is made like an electrical diagram, and is not user friendly. 
+			Moreover, the temperatures shown in the program is from sensors in the ventilation 
+			ducts, not in the room themselves, making it very hard to regulate them, since 
+			you'll have to change the settings and then wait for 10-15 minutes. Then you'll 
+			have to go to the room and manually hold a thermometer before going back and repeat this.

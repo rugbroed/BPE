@@ -1,0 +1,151 @@
+BruelOgKjaer {
+	
+	state humidityAlarm = false
+	state fireAlarm = false
+
+	policy TemperatureControlPolicy
+	uses sensors TemperatureSensor
+	uses actuators RadiatorActuator
+	is-implemented-by {
+		if (TemperatureSensor <= 18) {
+			RadiatorActuator = 1
+		}
+		else {
+			if (TemperatureSensor >= 23) {
+				RadiatorActuator = 0
+				
+			}
+		}
+	}
+	
+	policy SkylightWindowControlPolicy
+	uses sensors TemperatureSensor //,RainSensor
+	uses actuators WindowActuator
+	is-implemented-by {
+		state skylightOpen
+		if (/*RainSensor = 1*/) {
+			WindowActuator = 0
+			skylightOpen = false
+		}
+		else {
+			if (TemperatureSensor >= 20 && skylightOpen = false && /*RainSensor = 0*/) {
+				WindowActuator = 1
+				skylightOpen = true
+			}
+		}
+	} 
+	
+	policy HumidityMonitoringPolicy
+	uses sensors HumiditySensor
+	uses rooms janitorOffice
+	is-implemented-by {
+		timer audioAlarmTimer
+	
+		if (HumiditySensor < 50) {
+			humidityAlarm = true
+	
+			if (audioAlarmTimer reaches 15 seconds) {
+				reset audioAlarmTimer
+				janitorOffice.audioAlarmActuator = 1
+			}
+		}
+		else {
+			humidityAlarm = false
+		}
+	}
+	
+	policy LightMotionPolicy
+	uses sensors MotionSensor
+	uses actuators LightSwitchActuator
+	is-implemented-by {
+		timer motionTimer
+	
+		if (MotionSensor = 1) {
+			reset motionTimer
+		}
+		else {
+			if (motionTimer reaches 20 seconds) {
+				reset motionTimer
+				
+				LightSwitchActuator = 1
+			}
+		}
+	}
+	
+	schedule WorkingWeekHours 
+	days Monday, Tuesday, Wednesday, Thursday, Friday 
+	from 06:00 to 18:00
+	
+	schedule LateWorkingWeekHours
+	days Monday, Tuesday, Wednesday, Thursday, Friday 
+	from 18:00 to 22:00
+	
+	schedule LockdownWeekHours
+	days Monday, Tuesday, Wednesday, Thursday, Friday
+	from 22:00 to 06:00
+	
+	schedule LockdownWeekendHours
+	days Saturday, Sunday
+	from 00:00 to 00:00
+
+	room-type TemperatureControlledRoom 
+	is-governed-by TemperatureControlPolicy
+	during WorkingWeekHours, LateWorkingWeekHours {
+		sensor temperatureSensor is a TemperatureSensor
+		actuator radiatorActuator is a RadiatorActuator
+	}
+
+	room-type HumidityControlledRoom 
+	is-governed-by HumidityMonitoringPolicy
+	during-always {
+		sensor humidifierSensor is a HumiditySensor		
+		actuator humidifierActuator is a HumidifierActuator
+	} 
+
+	room-type LightMotionControlledRoom 
+	is-governed-by LightMotionPolicy 
+	during-always {
+		sensor motionSensor is a MotionSensor
+		actuator lightSwitchActuator is a LightSwitchActuator
+	} 
+
+	room-type HumidityAndTemperatureControlledRoom
+	is-of-type TemperatureControlledRoom, HumidityControlledRoom
+	 
+	building mainBuilding {
+		floor groundFloor {
+			room groundToilet
+			is-of-type TemperatureControlledRoom, LightMotionControlledRoom
+
+			room janitorOffice
+			is-of-type TemperatureControlledRoom {
+				actuator audioAlarmActuator is a AudioAlarmActuator
+				timer audioAlarmTimer
+			}
+
+			room office 
+			is-of-type TemperatureControlledRoom, LightMotionControlledRoom
+
+			room calibrationRoom 
+			is-of-type HumidityAndTemperatureControlledRoom
+
+			room cleanRoom 
+			is-of-type HumidityAndTemperatureControlledRoom
+		}
+
+		floor topFloor {
+			room university is-of-type TemperatureControlledRoom, LightMotionControlledRoom
+			is-governed-by SkylightWindowControlPolicy during WorkingWeekHours 
+			
+			room topToilet
+			is-of-type TemperatureControlledRoom, LightMotionControlledRoom
+		}
+	}
+
+	building repairBuilding {
+		floor groundFloor {
+			room repairRoom
+			is-of-type HumidityAndTemperatureControlledRoom
+		}
+	}
+}
