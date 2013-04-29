@@ -1,4 +1,3 @@
-//IT ALL WORKS BEAUTIFULLY
 BruelOgKjaer {
 	state humidityAlarm = false
 	state fireAlarm = false
