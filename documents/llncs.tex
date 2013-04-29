@@ -1,6 +1,7 @@
 \documentclass{llncs}
 \usepackage{makeidx}
 \usepackage[pdftex]{hyperref}
+\usepackage{pdfpages}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{color}
@@ -96,6 +97,8 @@ Finally, this project is based on the requirements defined by the professionals 
 By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs. Finally, we used our Policy Engine DSL editor to write the policies.
 
 Our model is of considerable size, and consists of the following core packages, differentiated in separate Ecore Diagrams (can be viewed in full in \nameref{sec:appendix-a}); 9 sensors classes, 6 actuators classes, 6 expression language classes, 5 building definition classes and 10 policy definition classes.
+
+We have included the full DSL implementation of one of the interviewees, Br\"{u}el \& Kj\ae r in Appendix [INSERT APPENDIX HERE]. Please note that this is a fully working implementation that is running in Eclipse.
 
 \subsubsection{Sensors}:
 \begin{figure}
@@ -272,30 +275,7 @@ In our point of view, the proposed DSL constitutes a useful tool to every simple
 \bibliography{BPE}{}
 \bibliographystyle{plain}
 
-\section{Appendix A}\label{sec:appendix-a}
-Because of the size of the ecore model, the xtext file, and DSL's, we have opted to have them in a repository online which can be easily accessed by clicking the following links.
-
-\subsubsection{Ecore Model}\label{sec:ecore-model}
-Ecore Model can be accessed by clicking the link provided below:
-\\xml file:
-\url{https://github.com/rugbroed/BPE/blob/master/source/dk.itu.mdd.policyengine/model/PolicyEngine.ecorediag}
-\\image:
-\url{https://www.dropbox.com/s/ibf0nra56ck2r1x/PolicyEngine.png}
-\subsubsection{PEDSL Xtext}\label{sec:xtext-pedsl}
-The xtext can be viewed in full by clicking the link provided below:\\
-\url{https://github.com/rugbroed/BPE/blob/master/source/PEDSL.xtext}
-
-\subsubsection{Br\"{u}el \& Kj\ae r DSL}\label{sec:dsl-bruel}
-\url{https://github.com/rugbroed/BPE/blob/master/source/bruel.pedsl}
-
-\subsubsection{Bygningstyrelsen DSL}\label{sec:dsl-bygstyr}
-\url{https://github.com/rugbroed/BPE/blob/master/source/bygstyr.pedsl} (NOT YET AVAILABLE)
-
-\subsubsection{K\o benhavns Tekniske Skole DSL}\label{sec:dsl-kts}
-\url{https://github.com/rugbroed/BPE/blob/master/source/kts.pedsl}
-
-
-\subsubsection{UNI-C DSL}\label{sec:dsl-uni-c}
-\url{https://github.com/rugbroed/BPE/blob/master/source/unic.pedsl} (NOT YET AVAILABLE)
+\includepdf[pages=1,scale=.8,pagecommand=\section{Appendix A}]{BruelOgKjaer.pdf}
+\includepdf[pages=2-,scale=.8,pagecommand={}]{BruelOgKjaer.pdf}
 
 \end{document}
