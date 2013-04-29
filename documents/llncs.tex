@@ -78,9 +78,9 @@ Finally, this project is based on the requirements defined by the professionals 
 \section{Design and development}\label{sec:dsldesign} 
 By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs. Finally, we used our Policy Engine DSL editor to write the policies.
 
-Our model is of considerable size, and consists of the following core packages, differentiated in separate Ecore Diagrams (can be viewed in full in \nameref{sec:appendix-a}); 9 sensors classes, 6 actuators classes, 6 expression language classes, 5 building definition classes and 10 policy definition classes.
+Our model is of considerable size, and consists of the following core packages, differentiated in separate Ecore Diagrams (can be viewed in full in \nameref{sec:appendix-a}); 9 sensors classes (see Figure \ref{fig:ecore-sensors}), 6 actuators classes (see Figure \ref{fig:ecore-actuators}), 6 expression language classes (see \ref{fig:ecore-expression-language}), 5 building definition classes (see Figure \ref{fig:ecore-building-definition}) and 10 policy definition classes (see Figure \ref{fig:ecore-policy-definition}).
 
-We have included the full DSL implementation of one of the interviewees, Br\"{u}el \& Kj\ae r in \nameref{app:a-metamodel}. Please note that this is a fully working implementation that is running in Eclipse.
+We have included the full DSL implementation based on two of the interviews, one for Br\"{u}el \& Kj\ae r (see  \nameref{app:bogk}) and one for K\o benhavns Tekniske Skole (see \nameref{app:kts}). Please note that they are fully working implementations running in Eclipse..
 
 \begin{figure}[h]
 	\centering
@@ -88,13 +88,6 @@ We have included the full DSL implementation of one of the interviewees, Br\"{u}
 	\caption{A fragment of the \textit{sensor} metamodel hierarchy.}
 	\label{fig:ecore-sensors}
 \end{figure}
-
-\subsection{Sensors}
-To be written!
-
-\newpage
-\subsection{Actuators}
-To be written!
 
 \begin{figure}[h]
 	\centering
@@ -123,7 +116,6 @@ In order to specify the building(s) with all their floors and rooms, the core cl
 \end{figure}
 
 \subsection{Policy definition}
-
 
 \begin{figure}
   \centering
@@ -157,7 +149,7 @@ A \textit{time conditional expression} is an `if' statement that can react based
 
 \begin{figure}
   \centering
-    \includegraphics[scale=.6]{dsl-conditional-time-expression.png} 
+    \includegraphics[scale=.5]{dsl-conditional-time-expression.png} 
 	\caption{An example of a \textit{time conditional expression} that evaluates to true if more than 20 minutes have passed.}
 	\label{fig:dsl-conditionalexpression}
 \end{figure}
@@ -180,7 +172,7 @@ To avoid confusing the DSL user with an overwhelming amount of declarations of r
 
 \begin{figure}
   \centering
-    \includegraphics[width=10cm]{dsl-room-types.png}
+    \includegraphics[scale=.5]{dsl-room-types.png}
 	\caption{An example of \textit{room types} defined for a interviewee.}
 	\label{fig:room-types}
 \end{figure}
@@ -190,7 +182,7 @@ Building specification as in the example below, helps us map out the actual buil
 
 \begin{figure}
   \centering
-  \includegraphics[width=10cm]{dsl-building-definition.png}  
+  \includegraphics[scale=.5]{dsl-building-definition.png}  
   \caption{An example of \textit{building specification} defined for a interviewee.}
   \label{fig:dsl-building-definition}
 \end{figure}
@@ -212,16 +204,10 @@ Policies define the actual behavior, ie. adjustment of actuators, based on senso
 \subsubsection{Br\"{u}el \& Kj\ae r}\label{subsec:bruel}
 The requirements received from Br\"{u}el \& Kj\ae r were implemented in our DSL and can be found in \nameref{sec:dsl-bruel}. One of the requirements from the interview (\textit{all sensor and actuator data stored in a repository for use in a visual display of data in the FM office}) was not implemented in our DSL because we decided to narrow the scope of the project. After evaluating these requirements, we realized that some of the sensors and actuators needed to satisfy the implementation are not defined in our metamodel. While these problems could be easily fixed by simply adding some new classes in the metamodel, we evaluated this area as one that our DSL can be further improved as discussed in \nameref{subsec:def-sensor-actuator-types}.
 
-\subsubsection{Bygningstyrelsen}\label{subsec:bygstyrelsen}
-TO BE EVALUATED
-
 \subsubsection{K\o benhavns Tekniske Skole}\label{subsec:kts}
 The implementation of these requirements in our DSL can be found in \nameref{sec:dsl-kts} and just like in the evaluation in \nameref{subsec:bruel}, we faced the same lack of sensors and actuators. This seems to be a recurring issue in our language but nonetheless it provides a nice opportunity to improve our language. It is further discussed in \nameref{subsec:def-sensor-actuator-types}. 
 Another aspect of our language that can be refined is the ability to define how each policy should be used as discussed in \nameref{subsec:during}. 
  
-\subsubsection{UNI-C}\label{subsec:uni-c}
-TO BE EVALUATED
-
 \section{Discussion}\label{sec:discussion}
 During the design and implementation of our metamodel we made many different design decisions, primarily based on the length and scope of this project and revelations from the interviews.
 
@@ -238,7 +224,7 @@ Code completion is of great importance to our language because it really helps t
 
 \begin{figure}
   \centering
-    \includegraphics[width=10cm]{dsl-code-completion.png} 
+    \includegraphics[scale=.5]{dsl-code-completion.png} 
 	\caption{An example of \textit{code completion}.}
 	\label{fig:code-completion}
 \end{figure}
@@ -255,7 +241,7 @@ In its current state, our DSL allows us to determine when the policies should be
 \begin{figure}
   \centering
     \includegraphics[scale=0.5]{dsl-during.png} 
-	\caption{An example to \textit{during} when using policies in rooms.}
+	\caption{An example showing how to chain together policies with execution schedules using the \textit{during} keyword.}
 	\label{fig:during}
 \end{figure}
 In case we have several governing policies that run on different schedules, our DSL does not allow us to assign a specific schedule to every single governing policy. An interesting improvement that could increase our DSL's flexibility would be the ability to specify a different schedule for each of the policies governing a room. 
@@ -269,11 +255,10 @@ In our point of view, the proposed DSL constitutes a useful tool to every simple
 \section{Appendix A - DSL MetaModel}\label{app:a-metamodel}
 The complete Ecore MetaModel can be viewed online at
 \url{https://github.com/rugbroed/BPE/blob/Version-0.9/documents/ecore-policy-engine.png}
-
-\includepdf[pages=1,scale=.8,pagecommand=\section{Appendix B - Br\"{u}el \& Kj\ae r}]{BruelOgKjaer.pdf}
+\includepdf[pages=1,scale=.8,pagecommand=\section{Appendix B - Br\"{u}el \& Kj\ae r}\label{app:bogk}]{BruelOgKjaer.pdf}
 \includepdf[pages=2-,scale=.8,pagecommand={}]{BruelOgKjaer.pdf}
 
-\includepdf[pages=1,scale=.8,pagecommand=\section{Appendix C - DSL for K\o benhavns Tekniske Skole}\label{sec:bygningsstyrelsen}]{BruelOgKjaer.pdf}
+\includepdf[pages=1,scale=.8,pagecommand=\section{Appendix C - K\o benhavns Tekniske Skole}\label{app:kts}]{BruelOgKjaer.pdf}
 \includepdf[pages=2-,scale=.8,pagecommand={}]{BruelOgKjaer.pdf}
 
 \end{document}
