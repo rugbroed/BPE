@@ -227,7 +227,7 @@ If returns If:
 
 
 TimeExpression returns TimeExpression:
-	time=[Timer|EString] 'reaches' seconds=EInt ('seconds' | 'minutes' | 'hours' | 'days' );
+	time=[Timer|EString] 'reaches' timeAmount=EInt ('seconds' | 'minutes' | 'hours' | 'days' );
 
 ResetExpression returns ResetExpression:
 	'reset'  reset=[Timer|EString] ;
