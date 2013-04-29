@@ -230,10 +230,12 @@
 \renewcommand\thechapter      {\@arabic\c@chapter}
 
 \newif\if@mainmatter \@mainmattertrue
-\newcommand\frontmatter{\cleardoublepage
-            \@mainmatterfalse\pagenumbering{Roman}}
+
+
+
 \newcommand\mainmatter{\cleardoublepage
        \@mainmattertrue\pagenumbering{arabic}}
+
 \newcommand\backmatter{\if@openright\cleardoublepage\else\clearpage\fi
       \@mainmatterfalse}
 
