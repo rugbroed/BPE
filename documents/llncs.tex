@@ -91,6 +91,7 @@ We have included the full DSL implementation of one of the interviewees, Br\"{u}
 
 \subsubsection{Sensors}
 
+
 \newpage
 \subsubsection{Actuators}
 \begin{figure}[h]
@@ -206,7 +207,6 @@ Policies define the actual behavior, ie. adjustment of actuators, based on senso
 \subsubsection{Br\"{u}el \& Kj\ae r}\label{subsec:bruel}
 The requirements received from Br\"{u}el \& Kj\ae r were implemented in our DSL and can be found in \nameref{sec:dsl-bruel}. One of the requirements from the interview (\textit{all sensor and actuator data stored in a repository for use in a visual display of data in the FM office}) was not implemented in our DSL because we decided to narrow the scope of the project. After evaluating these requirements, we realized that some of the sensors and actuators needed to satisfy the implementation are not defined in our metamodel. While these problems could be easily fixed by simply adding some new classes in the metamodel, we evaluated this area as one that our DSL can be further improved as discussed in \nameref{subsec:def-sensor-actuator-types}.
 
-
 \subsubsection{Bygningstyrelsen}\label{subsec:bygstyrelsen}
 TO BE EVALUATED
 
@@ -218,13 +218,15 @@ Another aspect of our language that can be refined is the ability to define how 
 TO BE EVALUATED
 
 \section{Discussion}\label{sec:discussion}
+During the design and implementation of our metamodel we made many different design decisions, primarily based on the length and scope of this project and revelations from the interviews.
+
 \subsection{Future Work}\label{subsec:futurework}
 
 \subsubsection{Graphical Editor for policy definition}\label{subsec:graphicaleditor}
-Our DSL editor is text based and most of the keywords we have chosen to use are words commonly used in the industry. In the way they are structured and used in our DSL, they literally describe the meaning of the combined keywords. The textual editor is sufficient in all definitions but in the policy definition one needs to have some programming knowledge in order to understand and know how to use the expression language. Therefore, in order to accommodate the normal users and give them a superior user experience, improvement of our DSL is necessary by developing a graphical editor for the policies to abstract the expression language and consequently make it simpler for users to define them.
+Our DSL editor is text based and we have tried using concepts and words commonly used in the industry. In the way they are structured and used in our DSL, they literally describe the meaning of the combined keywords. The textual editor is sufficient in all definitions but in the policy definition one needs to have some programming knowledge in order to understand and know how to use the expression language. Therefore, in order to accommodate the normal users and give them a superior user experience, improvement of our DSL is necessary by developing a graphical editor for the policies to abstract the expression language and consequently make it simpler for users to define them.
 
 \subsubsection{Integration with existing systems}\label{subsec:integration}
-In our metamodel, we have included some external systems that already exist; (\textit{CTS, Access Control, Calender System and Meeting Shedule Systems}) and used in some buildings. Those systems are usually closed, proprietary systems. Some form of integration is possible to some of them, but would need to be evaluated case by case. The (\textit{CTS}) is somewhat advanced and needs thorough knowledge of the tool to properly use it. The GUI looks like an electrical diagram, and is not made for ease of use. Moreover, the temperatures shown in the program are from sensors in the ventilation ducts, not in the room themselves, adding extra complexity. As it is today, it is not really possible to integrate CTS systems into custom made solutions, like our DSL, since they are proprietary systems and guarded well in order to sell service packages to the users.
+In our metamodel, we have included some external systems that already exist; (\textit{CTS, Access Control, Calender System and Meeting Schedule Systems}) and used in some buildings. Those systems are usually closed, proprietary systems and therefore fall outside the scope of this paper. Some form of integration is possible to some of them, but would need to be evaluated case by case. The (\textit{CTS}) is somewhat advanced and needs thorough knowledge of the tool to properly use it. The GUI looks like an electrical diagram, and is not made for ease of use. Moreover, the temperatures shown in the program are from sensors in the ventilation ducts, not in the room themselves, adding extra complexity. As it is today, it is not really possible to integrate CTS systems into custom made solutions, like our DSL, since they are proprietary systems and guarded well in order to sell service packages to the users.
 
 \subsubsection{Enhanced Code Completion}\label{subsec:codecompletion}
 Code completion is of great importance to our language because it really helps the user by guiding her in all possible options she has. Right now our DSL has an up-and-running code completion but in the future we would like to restrict it in a way that only the declared/defined elements should be available. In \nameref{fig:code-completion} below, we present our DSL as it currently is but if restricted, should only be able to provide TemperatureSensor and RadiatorActuator as options for the TemperatureControlPolicy to the user.
