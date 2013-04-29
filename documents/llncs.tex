@@ -71,7 +71,7 @@ In order to gather enough material to conceptualize a proper DSL, we interviewed
 
 While conducting the interviews, we pointed out that practicality or feasibility should not influence the requests for new governing rules. This proved hard for the interviewees. Some interviews were therefore conducted over several sessions, giving the interviewees time to think creatively. 
 
-We only used natural language (English, Danish) to give examples of existing building policies and facilitate the discovery of new, relevant ones. This was done to avoid the limitations of technology, like the expressiveness of a programming language.
+We only used natural language (English and Danish) to give examples of existing building policies and facilitate the discovery of new, relevant ones. This was done to avoid the limitations of technology, like the expressiveness of a programming language.
 
 Finally, this project is based on the requirements defined by the professionals working in Facility Management, and used their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
 
@@ -89,11 +89,13 @@ We have included the full DSL implementation of one of the interviewees, Br\"{u}
 	\label{fig:ecore-sensors}
 \end{figure}
 
-\subsubsection{Sensors}
-
+\subsection{Sensors}
+To be written!
 
 \newpage
-\subsubsection{Actuators}
+\subsection{Actuators}
+To be written!
+
 \begin{figure}[h]
 	\centering
     \includegraphics[scale=0.7]{ecore-actuators.png}   
@@ -101,7 +103,9 @@ We have included the full DSL implementation of one of the interviewees, Br\"{u}
 	\label{fig:ecore-actuators}
 \end{figure}
 
-\subsubsection{Expression language}
+\subsection{Expression language}
+After the analysis of the interviews we concluded that the needed expression language needed not to be very advanced. We need boolean variables (\textit{states}), and if-statements with two different types of conditions; the normal if-statement and the one that operates on a timer (see Figure \ref{fig:dsl-conditionalexpression}). 
+
 \begin{figure}[h]
   \centering
     \includegraphics[width=10cm]{ecore-expression-language.png} 
@@ -110,7 +114,7 @@ We have included the full DSL implementation of one of the interviewees, Br\"{u}
 \end{figure}
 
 \pagebreak
-\subsubsection{Building definition}
+\subsection{Building definition}
 In order to specify the building(s) with all their floors and rooms, the core classes has been included in Figure ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
 \begin{figure}
   \centering \includegraphics[scale=0.4]{ecore-building-definition.png}  
@@ -118,7 +122,9 @@ In order to specify the building(s) with all their floors and rooms, the core cl
 	\label{fig:ecore-building-definition}
 \end{figure}
 
-\subsubsection{Policy definition}
+\subsection{Policy definition}
+
+
 \begin{figure}
   \centering
     \includegraphics[scale=0.3]{ecore-policy-definition.png}	
@@ -161,13 +167,12 @@ A \textit{time conditional expression} is an `if' statement that can react based
 \textit{Schedules} are predefined types representing a timespan where action or no-action takes place. Note that by defining several The \textit{schedules}, it is possible both to make schedules than can overlap in time, but also policies that takes over when other policies reach their end. 
 
 \begin{figure}
-  	\centering
-    \includegraphics[scale=.65]{dsl-schedules.png}
-	\caption{An example of a \textit{schedule} defined for a interviewee.}
-	\label{fig:dsl-schedules}
+  \centering
+  \includegraphics[scale=.5]{dsl-schedules.png}
+  \caption{An example of a \textit{schedule} defined for a interviewee.}
+  \label{fig:dsl-schedules}
 \end{figure}
 
-\newpage
 \subsection{Building specification}\label{subsec:buildingspecification}
 Rooms and room types are part of the complete building specification, with terminology rooted in concepts revolving around buildings, ie. rooms, room types, floors, different sensors and actuators. \\
 
@@ -185,9 +190,9 @@ Building specification as in the example below, helps us map out the actual buil
 
 \begin{figure}
   \centering
-	 \includegraphics[width=10cm]{dsl-building-definition.png}  
-	\caption{An example of \textit{building specification} defined for a interviewee.}
-	\label{fig:dsl-building-definition}
+  \includegraphics[width=10cm]{dsl-building-definition.png}  
+  \caption{An example of \textit{building specification} defined for a interviewee.}
+  \label{fig:dsl-building-definition}
 \end{figure}
 
 \newpage
@@ -196,7 +201,7 @@ Policies define the actual behavior, ie. adjustment of actuators, based on senso
 
 \begin{figure}
   \centering
-    \includegraphics[width=10cm]{dsl-policy-definition.png} 
+    \includegraphics[scale=.5]{dsl-policy-definition.png} 
 	\caption{An example of \textit{policy definition} defined for a interviewee.}
 	\label{fig:dsl-policy-definition}
 \end{figure}
