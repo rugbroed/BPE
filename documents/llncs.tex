@@ -78,22 +78,15 @@ Finally, this project is based on the requirements defined by the professionals 
 \section{Design and development}\label{sec:dsldesign} 
 By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs. Finally, we used our Policy Engine DSL editor to write the policies.
 
-Our model is of considerable size, and consists of the following core packages, differentiated in separate Ecore Diagrams (can be viewed in full in \nameref{sec:appendix-a}); 9 sensors classes (see Figure \ref{fig:ecore-sensors}), 6 actuators classes (see Figure \ref{fig:ecore-actuators}), 6 expression language classes (see \ref{fig:ecore-expression-language}), 5 building definition classes (see Figure \ref{fig:ecore-building-definition}) and 10 policy definition classes (see Figure \ref{fig:ecore-policy-definition}).
+Our model is of considerable size, and consists of the following core packages, differentiated in separate Ecore Diagrams (can be viewed in full in \nameref{sec:appendix-a}); 9 sensors classes and 6 actuators classes (see Figure \ref{fig:ecore-sensors-actuators}), 6 expression language classes (see \ref{fig:ecore-expression-language}), 5 building definition classes (see Figure \ref{fig:ecore-building-definition}) and 10 policy definition classes (see Figure \ref{fig:ecore-policy-definition}).
 
 We have included the full DSL implementation based on two of the interviews, one for Br\"{u}el \& Kj\ae r (see  \nameref{app:bogk}) and one for K\o benhavns Tekniske Skole (see \nameref{app:kts}). Please note that they are fully working implementations running in Eclipse..
 
 \begin{figure}[h]
 	\centering
-    \includegraphics[scale=0.7]{ecore-sensors.png} 
-	\caption{A fragment of the \textit{sensor} metamodel hierarchy.}
+    \includegraphics[scale=0.37]{ecore-sensors-actuators.png} 
+	\caption{A fragment of the \textit{sensor} and \textit{actuator} metamodel hierarchy. If new types are needed, they should be defined in the metamodel.}
 	\label{fig:ecore-sensors}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.7]{ecore-actuators.png}   
-	\caption{A fragment of the \textit{actuator} metamodel hierarchy.}
-	\label{fig:ecore-actuators}
 \end{figure}
 
 \subsection{Expression language}
