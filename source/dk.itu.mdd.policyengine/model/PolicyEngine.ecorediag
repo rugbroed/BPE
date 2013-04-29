@@ -698,7 +698,7 @@
     <children xmi:type="notation:Node" xmi:id="_XfmsgKW6EeKdTLFGrRslRA" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_XfmsgaW6EeKdTLFGrRslRA" type="5001">
       <children xmi:type="notation:Node" xmi:id="_qZEF0KW6EeKdTLFGrRslRA" type="2001">
-        <element xmi:type="ecore:EAttribute" href="PolicyEngine.ecore#//TimeExpression/seconds"/>
+        <element xmi:type="ecore:EAttribute" href="PolicyEngine.ecore#//TimeExpression/timeAmount"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_qZEF0aW6EeKdTLFGrRslRA"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_XfmsgqW6EeKdTLFGrRslRA"/>
