@@ -177,17 +177,15 @@ To avoid confusing the DSL user with an overwhelming amount of declarations of r
 	\label{fig:room-types}
 \end{figure}
 
-\newpage
 Building specification as in the example below, helps us map out the actual buildings as they are in our DSL. With this we are able to accurately define exact locations for sensors and actuators as well as implement policies for rooms in specific locations. 
 
 \begin{figure}
   \centering
   \includegraphics[scale=.5]{dsl-building-definition.png}  
-  \caption{An example of \textit{building specification} defined for a interviewee.}
+  \caption{An example of \textit{building specification} defined for a interviewee. Note that the janitorOffice inherits from a TemperatureControlled room (which uses a \textit{TemperatureSensor} and a \textit{RadiatorActuator}) but also declares a \textit{AudioAlarmActuator} and a \textit{Timer} instance.}
   \label{fig:dsl-building-definition}
 \end{figure}
 
-\newpage
 \subsection{Policy}\label{subsec:policies}
 Policies define the actual behavior, ie. adjustment of actuators, based on sensor input. 
 
@@ -198,7 +196,6 @@ Policies define the actual behavior, ie. adjustment of actuators, based on senso
 	\label{fig:dsl-policy-definition}
 \end{figure}
 
-\newpage
 \section{Evaluation}\label{sec:evaluation}
 
 \subsubsection{Br\"{u}el \& Kj\ae r}\label{subsec:bruel}
@@ -255,7 +252,7 @@ In its current state, our DSL allows us to determine when the policies should be
 In case we have several governing policies that run on different schedules, our DSL does not allow us to assign a specific schedule to every single governing policy. An interesting improvement that could increase our DSL's flexibility would be the ability to specify a different schedule for each of the policies governing a room.
 
 \section{Conclusion}\label{sec:conclusion}
-In our point of view, the proposed DSL constitutes a useful tool to every simple user planning to define automation policies for his residence or working place. The supporting arguments are the user-friendly interface and the self-explanatory keywords alongside with the flexibility of the abstraction that the DSL provides. Naturally, its scope is narrowed and there is no actual implementation yet, mainly due to the size of the team and the limitations of the semester, but nevertheless it can potentially be improved in many ways as described in ~\nameref{sec:discussion} and lead to the development of an energy-efficient ally of our welfare in both a personal and global dimension. 
+In our point of view, the proposed DSL constitutes a useful tool to every simple user planning to define automation policies for his residence or working place. The supporting arguments are the user-friendly interface and the self-explanatory keywords alongside with the flexibility of the abstraction that the DSL provides. Naturally, its scope is narrowed and there is no actual implementation yet, mainly due to the size of the team and the limitations of the semester, but nevertheless it can potentially be improved in many ways as described in ~\nameref{sec:discussion} and lead to the development of an energy-efficient ally of our welfare in both a personal and global dimension.
 
 \bibliography{BPE}{}
 \bibliographystyle{plain}
