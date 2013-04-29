@@ -209,17 +209,26 @@ The implementation of these requirements in our DSL can be found in \nameref{sec
 Another aspect of our language that can be refined is the ability to define how each policy should be used as discussed in \nameref{subsec:during}. 
  
 \section{Discussion}\label{sec:discussion}
-During the design and implementation of our metamodel we made many different design decisions, primarily based on the length and scope of this project and revelations from the interviews.
+During the design and implementation of our metamodel we made many different design decisions, primarily based on the length and scope of this project and revelations from the interviews. Some of these decisions merits explanations.
 
-\subsection{Future Work}\label{subsec:futurework}
+\subsection{Expression language}
+Since the expression language needed for our DSL is pretty simple, we chose to implement it ourselves. We also looked at basing our expression language on the functionality provided by XBase \cite{xbase}, however the current state of XBase seems far from a stable product. Since our timeframe was rather limited, we did not want to use our time with the implementation details of XBase. We expect XBase to further develop as time goes, and later it might be an excellent choice in regards to the expression language.
 
-\subsubsection{Graphical Editor for policy definition}\label{subsec:graphicaleditor}
+\subsection{Class use versus instance use}
+As can be observed in Figure \ref{fig:dsl-policy-definition} we rely heavily on class use instead of instance use. For example the sentence "uses sensors TemperatureSensor" uses a TemperatureSensor as a class, and not as an instance. We do not find this anymore uncommon than using, for example, static functions in java classes. It is simply a way to achieve lots of fast and easy functionality in a non-complicated way. Imagine that we had to define a 10 story building, room by room, sensor by sensor, actuator by actuator and so forth. The source would quickly become littered with instances, which probably would need to carry the name of the room in it's name in order for the user to keep track of them. An example could be the fictive sensor \textit{buildingFactory3rdFloorRoomNextToKitchenTemperatureSensor}. By using classes directly, we can define room types constructed from both their common sensors and actuators, but also on their need for governing policies. It is still possible to use instances, as also shown in Figure \ref{fig:dsl-policy-definition} (\textit{janitorOffice}) if we, for example, need to activate \textit{a single} actuator based on input from several room sensors. Aspects of this should be adressed in future work (see Section \ref{subsec:collections}).
+
+\section{Future Work}\label{subsec:futurework}
+
+\subsection{Collections}\label{subsec:collections}
+When managing more and more complex buildings, it might be necessary with collections of instances. This could be simple arrays, lists or something like the generics of java. It might prove difficult to convey the concept to non-programmers, so the actual syntax should be defined together with future users.
+
+\subsection{Graphical Editor for policy definition}\label{subsec:graphicaleditor}
 Our DSL editor is text based and we have tried using concepts and words commonly used in the industry. In the way they are structured and used in our DSL, they literally describe the meaning of the combined keywords. The textual editor is sufficient in all definitions but in the policy definition one needs to have some programming knowledge in order to understand and know how to use the expression language. Therefore, in order to accommodate the normal users and give them a superior user experience, improvement of our DSL is necessary by developing a graphical editor for the policies to abstract the expression language and consequently make it simpler for users to define them.
 
-\subsubsection{Integration with existing systems}\label{subsec:integration}
+\subsection{Integration with existing systems}\label{subsec:integration}
 In our metamodel, we have included some external systems that already exist; (\textit{CTS, Access Control, Calender System and Meeting Schedule Systems}) and used in some buildings. Those systems are usually closed, proprietary systems and therefore fall outside the scope of this paper. Some form of integration is possible to some of them, but would need to be evaluated case by case. The (\textit{CTS}) is somewhat advanced and needs thorough knowledge of the tool to properly use it. The GUI looks like an electrical diagram, and is not made for ease of use. Moreover, the temperatures shown in the program are from sensors in the ventilation ducts, not in the room themselves, adding extra complexity. As it is today, it is not really possible to integrate CTS systems into custom made solutions, like our DSL, since they are proprietary systems and guarded well in order to sell service packages to the users.
 
-\subsubsection{Enhanced Code Completion}\label{subsec:codecompletion}
+\subsection{Enhanced Code Completion}\label{subsec:codecompletion}
 Code completion is of great importance to our language because it really helps the user by guiding her in all possible options she has. Right now our DSL has an up-and-running code completion but in the future we would like to restrict it in a way that only the declared/defined elements should be available. In \nameref{fig:code-completion} below, we present our DSL as it currently is but if restricted, should only be able to provide TemperatureSensor and RadiatorActuator as options for the TemperatureControlPolicy to the user.
 
 \begin{figure}
@@ -229,14 +238,13 @@ Code completion is of great importance to our language because it really helps t
 	\label{fig:code-completion}
 \end{figure}
 
-\subsubsection{Defining Actuator and Sensor types}\label{subsec:def-sensor-actuator-types}
+\subsection{Defining Actuator and Sensor types}\label{subsec:def-sensor-actuator-types}
 From the evaluation section above, we came to realize that some of the sensors and actuators needed to satisfy the requirements are not implemented in our DSL. A quick fix would be to add them to our metamodel but this still will not give us the flexibility to define policies using actuators and sensors that are not available in our DSL when needed. Future work in this area might include a minor modification of our DSL in order to accommodate definition of actuators and sensors as needed. Sort of the same concept as the predefined room types. This flexibility will make our DSL more adaptable.
 
-
-\subsubsection{Time Loop}\label{subsec:looptime}
+\subsection{Time Loop}\label{subsec:looptime}
 Our loop is based on an outer loop that calls all policies in every iteration. In the future it could be based on a prioritization of room, room-type or policies adding extra flexibility and fine grained control to the language. For instance, specify that some policies should only run once in an hour.
 
-\subsubsection{When to run policies}\label{subsec:during}
+\subsection{When to run policies}\label{subsec:during}
 In its current state, our DSL allows us to determine when the policies should be run by using the already defined schedules. One or more policies can be run based on one or more schedules. As shown in the image below, we specify a schedule for all governing policies of that room-type. 
 \begin{figure}
   \centering
@@ -244,7 +252,7 @@ In its current state, our DSL allows us to determine when the policies should be
 	\caption{An example showing how to chain together policies with execution schedules using the \textit{during} keyword.}
 	\label{fig:during}
 \end{figure}
-In case we have several governing policies that run on different schedules, our DSL does not allow us to assign a specific schedule to every single governing policy. An interesting improvement that could increase our DSL's flexibility would be the ability to specify a different schedule for each of the policies governing a room. 
+In case we have several governing policies that run on different schedules, our DSL does not allow us to assign a specific schedule to every single governing policy. An interesting improvement that could increase our DSL's flexibility would be the ability to specify a different schedule for each of the policies governing a room.
 
 \section{Conclusion}\label{sec:conclusion}
 In our point of view, the proposed DSL constitutes a useful tool to every simple user planning to define automation policies for his residence or working place. The supporting arguments are the user-friendly interface and the self-explanatory keywords alongside with the flexibility of the abstraction that the DSL provides. Naturally, its scope is narrowed and there is no actual implementation yet, mainly due to the size of the team and the limitations of the semester, but nevertheless it can potentially be improved in many ways as described in ~\nameref{sec:discussion} and lead to the development of an energy-efficient ally of our welfare in both a personal and global dimension. 
