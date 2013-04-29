@@ -6,23 +6,6 @@
 \usepackage{graphicx}
 \usepackage{color}
 
-\definecolor{sh_comment}{rgb}{0.12, 0.38, 0.18 } %adjusted, in Eclipse: {0.25, 0.42, 0.30 } = #3F6A4D
-\definecolor{sh_keyword}{rgb}{0.37, 0.08, 0.25}  % #5F1441
-\definecolor{sh_string}{rgb}{0.06, 0.10, 0.98} % #101AF9
-
-%\newfontfamily\listingsfont[Scale=0.7]{Courier} 
-%\newfontfamily\listingsfontinline[Scale=0.8]{Courier New} 
-
-\lstdefinelanguage{Xtext}{
- morekeywords={grammar, with, hidden, generate, as, import, returns, current, terminal, enum},
- keywordstyle=[2]{\textbf},
- morecomment=[l]{//}, 
- morecomment=[s]{/*}{*/}, 
- morestring=[b]",
- tabsize=4}
- 
-\newcommand{\lstXtext}[1]{\lstinline[breaklines=true,language=Xtext,basicstyle=\listingsfontinline,mathescape,literate={\-}{}{0\discretionary{-}{}{}}]\S#1\S}
-
 \begin{document}
 \frontmatter
 \pagestyle{headings}
