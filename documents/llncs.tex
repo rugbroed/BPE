@@ -82,7 +82,7 @@ Our model is of considerable size, and consists of the following core packages, 
 
 We have included the full DSL implementation of one of the interviewees, Br\"{u}el \& Kj\ae r in Appendix [INSERT APPENDIX HERE]. Please note that this is a fully working implementation that is running in Eclipse.
 
-\subsubsection{Sensors}:
+\subsubsection{Sensors}
 \begin{figure}
 	\centering
     \includegraphics[scale=0.7]{ecore-sensors.png} 
@@ -91,7 +91,7 @@ We have included the full DSL implementation of one of the interviewees, Br\"{u}
 \end{figure}
 
 \pagebreak
-\subsubsection{Actuators}:
+\subsubsection{Actuators}
 \begin{figure}
 	\centering
     \includegraphics[scale=0.7]{ecore-actuators.png}   
@@ -99,7 +99,7 @@ We have included the full DSL implementation of one of the interviewees, Br\"{u}
 	\label{fig:ecore-actuators}
 \end{figure}
 
-\subsubsection{Expression language}:
+\subsubsection{Expression language}
 \begin{figure}
   \centering
     \includegraphics[width=10cm]{ecore-expression-language.png} 
@@ -108,14 +108,15 @@ We have included the full DSL implementation of one of the interviewees, Br\"{u}
 \end{figure}
 
 \pagebreak
-\subsubsection{Building definition}:
+\subsubsection{Building definition}
+In order to specify the building(s) with all their floors and rooms, the core classes has been included in Figure ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
 \begin{figure}
   \centering \includegraphics[scale=0.4]{ecore-building-definition.png}  
 	\caption{The Metamodel related to the \textit{building definition}. The inherited class NamedElement has been omitted.}
 	\label{fig:ecore-building-definition}
 \end{figure}
 
-\subsubsection{Policy definition}:
+\subsubsection{Policy definition}
 \begin{figure}
   \centering
     \includegraphics[scale=0.3]{ecore-policy-definition.png}	
