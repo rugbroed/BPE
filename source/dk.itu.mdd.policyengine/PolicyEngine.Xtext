@@ -16,10 +16,51 @@ Model returns Model:
 		(buildings+=Building (buildings+=Building)*)?
 	'}';
 
+
+
+Actuator returns Actuator:
+	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator;
+
+Sensor returns Sensor:
+	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor | InfraredLightSensor | HumiditySensor;
+
+terminal NULL: 'null';
+
+Exp returns Exp: 
+	Conjunction ( {BOp.lexpr=current} operator='||' rexpr=Conjunction )* ;
+Conjunction returns Exp: 
+	Comparison ( {BOp.lexpr=current} operator='&&' rexpr=Comparison )* ;
+Comparison returns Exp: 
+	Addition ( {BOp.lexpr=current} operator=('='|'!='|'<='|'<'|'>='|'>') rexpr=Addition )* ;
+Addition returns Exp: 
+	Multipl ( {BOp.lexpr=current} operator=('+'|'-') rexpr=Multipl )* ; // FunCall; 
+Multipl returns Exp: 
+	BOpMethod ({BOp.lexpr=current} operator=('*') rexpr=BOpMethod )* ;
+BOpMethod returns Exp:
+	Primary ({BOpMethod.lexpr=current} '.' operator=ID '(' rexpr=Exp ')')* ;	
+Primary	returns Exp: 
+	{NULL} NULL | {Const} INT | {Const} EBoolean |{Id} name=ID | UOp | '(' Exp ')' | FunCall | ResetExpression | TimeExpression | RoomUsage;
+UOp	returns Exp: 
+	{UOp} operator="!" expr=Primary | {UOp} operator="-" expr=Primary ;
+FunCall returns Exp:
+	{FunCall} name=ID '(' (arg+=Exp (',' arg+=Exp)*)? ')'; 
+
+EString returns ecore::EString:
+	STRING | ID;
+
+
 State returns State:
 	{State}
-	'state' name=EString (valueState?= '=' EBoolean)?
+	(valueState?='valueState')?
+	'state'
+	name=EString ('=' exprStates=Exp)?
 	;
+
+
+Timer returns Timer:
+	{Timer}
+	'timer'
+	name=EString;
 
 Schedule returns Schedule:
 	{Schedule}
@@ -82,26 +123,6 @@ Room returns Room:
 	'}')?
 	;
 
-Actuator returns Actuator:
-	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator;
-
-Sensor returns Sensor:
-	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor | InfraredLightSensor | HumiditySensor;
-
-Expression returns Expression:
-	Conjunction ( {ManyExpressions.leftExpr=current} operator='||' rightExpr=Conjunction )* ;
-
-Conjunction returns Expression: 
-	Primary ( {ManyExpressions.leftExpr=current} operator='&&' rightExpr=Primary )* ;
-
-Primary	returns Expression: 
-	TimeExpression | ResetExpression | CompExpression | '(' Expression ')';
-	
-Timer returns Timer:
-	{Timer}
-	'timer'
-	name=EString
-	;
 
 CTS returns CTS:
 	{CTS}
@@ -118,6 +139,9 @@ AccessControl returns AccessControl:
 		('accessControlSensors' '{' accessControlSensors+=Sensor ( "," accessControlSensors+=Sensor)* '}' )?
 		('accessControlDoorLockActuator' '{' accessControlDoorLockActuator+=Actuator ( "," accessControlDoorLockActuator+=Actuator)* '}' )?
 	'}';
+
+EInt returns ecore::EInt:
+	'-'? INT;
 
 CalendarSystem returns CalendarSystem:
 	{CalendarSystem}
@@ -218,57 +242,41 @@ ActuatorComponent returns ActuatorComponent:
 		('is a ' actuators+=Actuator (actuators+=Actuator)*)?
 	;
 
+
+
 If returns If:
 	'if'
-		'(' cond=Expression ')'
-		'{' (then+=Expression ( then+=Expression)*)? (elseif+=If ( elseif+=If)* )? '}'
-		('else' '{' (elseif+=If ( elseif+=If)* )? (else=Expression)? '}')?
+		'(' cond=Exp ')'
+		'{'( then+=Exp ( "," then+=Exp)* )?	( elseif+=If ( "," elseif+=If)*  )? '}'
+		('else' '{' (elseif+=If ( elseif+=If)* )? (else=Exp)? '}' )?
 	;
 
+RoomUsage returns RoomUsage:
+	{RoomUsage}
+	(defineState=[State|EString] '.') | sen=Sensor | act=Actuator;
 
 TimeExpression returns TimeExpression:
-	time=[Timer|EString] 'reaches' seconds=EInt ('seconds' | 'minutes' | 'hours' | 'days' );
+	time=[Timer|EString] 'reaches' TimeBound=EInt ('seconds' | 'minutes' | 'hours' | 'days' );
 
 ResetExpression returns ResetExpression:
 	'reset'  reset=[Timer|EString] ;
 
-RoomUsage returns RoomUsage:
-	{RoomUsage}
-	( EString '.' EString) | defineState=[State|EString] | sen=Sensor | act=Actuator ;
 
-ManyExpressions returns ManyExpressions:
-	'ManyExpressions'
-	'{'
-		'operator' operator=EString
-		'leftExpr' leftExpr=Expression
-		'rightExpr' rightExpr=Expression
-	'}';
+EBoolean returns ecore::EBoolean:
+	'true' | 'false';
 
-CompExpression returns CompExpression:
-	expr=RoomUsage	operand=CompOps  (EInt | EBoolean);
+enum Weekdays:
+	MONDAY = 'Monday' | TUESDAY = 'Tuesday' | WEDNESDAY = 'Wednesday' | THURSDAY = 'Thursday' | FRIDAY = 'Friday' | SATURDAY = 'Saturday' | SUNDAY = 'Sunday'
+	;
 
 Time returns Time:
 	{Time}
 		(hours=EShort ':' minutes=EShort)?
 	;
 
-enum CompOps:
-	GREATER = '>' | GREATEROREQUAL = '>=' | EQUAL = '=' | LESSOREQUAL = '<=' | LESS = '<' | NOTEQUAL = '!=' ;
-
-enum Weekdays:
-	MONDAY = 'Monday' | TUESDAY = 'Tuesday' | WEDNESDAY = 'Wednesday' | THURSDAY = 'Thursday' | FRIDAY = 'Friday' | SATURDAY = 'Saturday' | SUNDAY = 'Sunday'
-	;
-
-EInt returns ecore::EInt:
-	'-'? INT;
 
 EShort returns ecore::EShort:
 	'-'? INT;
-	
-EBoolean returns ecore::EBoolean:
-	'true' | 'false';
-	
-EString returns ecore::EString:
-	STRING | ID;
+
 
 
