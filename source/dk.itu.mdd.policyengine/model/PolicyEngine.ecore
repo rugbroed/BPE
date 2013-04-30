@@ -117,7 +117,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="exprStates" eType="#//Exp"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exprStates" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Timer" eSuperTypes="#//NamedElement"/>
@@ -141,13 +141,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minutes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="If">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cond" lowerBound="1" eType="#//Exp"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cond" lowerBound="1" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="then" upperBound="-1" eType="#//Exp"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="then" upperBound="-1" eType="#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseif" upperBound="-1"
         eType="#//If" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//Exp" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CompOps">
     <eLiterals name="GREATER" literal=">"/>
@@ -157,42 +158,40 @@
     <eLiterals name="LESS" value="4" literal="&lt;"/>
     <eLiterals name="NOTEQUAL" value="5" literal="!="/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TimeExpression" eSuperTypes="#//Exp">
+  <eClassifiers xsi:type="ecore:EClass" name="TimeExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="TimeBound" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="#//Timer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResetExpression" eSuperTypes="#//Exp">
+  <eClassifiers xsi:type="ecore:EClass" name="ResetExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reset" lowerBound="1" eType="#//Timer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RoomUsage" eSuperTypes="#//Exp">
+  <eClassifiers xsi:type="ecore:EClass" name="RoomUsage" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sen" eType="#//Sensor"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="act" eType="#//Actuator"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defineState" eType="#//State"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Exp" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BOp" eSuperTypes="#//Exp">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lexpr" lowerBound="1" eType="#//Exp"
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryOps" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lexpr" lowerBound="1" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rexpr" lowerBound="1" eType="#//Exp"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UOp" eSuperTypes="#//Exp">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Exp"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rexpr" lowerBound="1" eType="#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Id" eSuperTypes="#//Exp #//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BOpMethod" eSuperTypes="#//BOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FunCall" eSuperTypes="#//Exp #//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arg" upperBound="-1" eType="#//Exp"
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryOp" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Const" eSuperTypes="#//Exp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NULL" eSuperTypes="#//Const"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Id" eSuperTypes="#//Expression #//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoomActuators" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definedRoomActuator" eType="#//Room"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definedActuator" eType="#//ActuatorComponent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="#//Expression"/>
 </ecore:EPackage>

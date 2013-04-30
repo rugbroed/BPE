@@ -26,34 +26,32 @@ Sensor returns Sensor:
 
 terminal NULL: 'null';
 
-Exp returns Exp: 
-	Conjunction ( {BOp.lexpr=current} operator='||' rexpr=Conjunction )* ;
-Conjunction returns Exp: 
-	Comparison ( {BOp.lexpr=current} operator='&&' rexpr=Comparison )* ;
-Comparison returns Exp: 
-	Addition ( {BOp.lexpr=current} operator=('='|'!='|'<='|'<'|'>='|'>') rexpr=Addition )* ;
-Addition returns Exp: 
-	Multipl ( {BOp.lexpr=current} operator=('+'|'-') rexpr=Multipl )* ; // FunCall; 
-Multipl returns Exp: 
-	BOpMethod ({BOp.lexpr=current} operator=('*') rexpr=BOpMethod )* ;
-BOpMethod returns Exp:
-	Primary ({BOpMethod.lexpr=current} '.' operator=ID '(' rexpr=Exp ')')* ;	
-Primary	returns Exp: 
-	{NULL} NULL | {Const} INT | {Const} EBoolean |{Id} name=ID | UOp | '(' Exp ')' | FunCall | ResetExpression | TimeExpression | RoomUsage;
-UOp	returns Exp: 
-	{UOp} operator="!" expr=Primary | {UOp} operator="-" expr=Primary ;
-FunCall returns Exp:
-	{FunCall} name=ID '(' (arg+=Exp (',' arg+=Exp)*)? ')'; 
+Expression returns Expression: 
+	Conjunction ( {BinaryOps.lexpr=current} operator='||' rexpr=Conjunction )* ;
+Conjunction returns Expression: 
+	Comparison ( {BinaryOps.lexpr=current} operator='&&' rexpr=Comparison )* ;
+Comparison returns Expression: 
+	Primary ( {BinaryOps.lexpr=current} operator=('='|'!='|'<='|'<'|'>='|'>') rexpr=Primary )* ;
+Primary	returns Expression: 
+	Constant |{Id} name=ID | UnaryOp | '(' Expression ')' | ResetExpression | TimeExpression | RoomUsage | RoomActuators;
+UnaryOp	returns Expression: 
+	{UnaryOp} operator="!" expr=Primary | {UnaryOp} operator="-" expr=Primary ;
 
 EString returns ecore::EString:
 	STRING | ID;
 
+Constant returns Expression:
+	{Constant} INT | {Constant} EBoolean
+;
 
+RoomActuators returns RoomActuators:
+	definedRoomActuator=[Room|EString] '.' definedActuator=[ActuatorComponent|EString];	
+	
 State returns State:
 	{State}
 	(valueState?='valueState')?
 	'state'
-	name=EString ('=' exprStates=Exp)?
+	name=EString ('=' exprStates=Expression)?
 	;
 
 
@@ -246,9 +244,9 @@ ActuatorComponent returns ActuatorComponent:
 
 If returns If:
 	'if'
-		'(' cond=Exp ')'
-		'{'( then+=Exp ( "," then+=Exp)* )?	( elseif+=If ( "," elseif+=If)*  )? '}'
-		('else' '{' (elseif+=If ( elseif+=If)* )? (else=Exp)? '}' )?
+		'(' cond=Expression ')'
+		'{'( then+=Expression ( "," then+=Expression)* )?	( elseif+=If ( "," elseif+=If)*  )? '}'
+		('else' '{' (elseif+=If ( elseif+=If)* )? (else=Expression)? '}' )?
 	;
 
 RoomUsage returns RoomUsage:
@@ -277,6 +275,9 @@ Time returns Time:
 
 EShort returns ecore::EShort:
 	'-'? INT;
+
+
+
 
 
 
