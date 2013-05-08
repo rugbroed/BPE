@@ -66,14 +66,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="MeetingScheduleSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="RadiatorActuator" eSuperTypes="#//ActuatorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="SmokeSensor" eSuperTypes="#//SensorType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ActuatorType" abstract="true" eSuperTypes="#//HasIntegerValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActuatorType" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="CO2Sensor" eSuperTypes="#//SensorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="InfraredLightSensor" eSuperTypes="#//SensorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="HumiditySensor" eSuperTypes="#//SensorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="AudioAlarmActuator" eSuperTypes="#//ActuatorType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HasIntegerValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Room" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="declareSensor" upperBound="-1"
         eType="#//Sensor" containment="true"/>
@@ -91,31 +88,25 @@
   <eClassifiers xsi:type="ecore:EClass" name="Floor" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" upperBound="-1"
         eType="#//Room" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="timers" upperBound="-1"
-        eType="#//Timer" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Policy" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="usesActuators" upperBound="-1"
         eType="#//ActuatorType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specifiedBy" lowerBound="1"
-        upperBound="-1" eType="#//If" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controlledBy" upperBound="-1"
-        eType="#//Timer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specifiedBy" upperBound="-1"
+        eType="#//Statement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defineState" upperBound="-1"
         eType="#//State"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="during" upperBound="-1"
         eType="#//Schedule"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usesRooms" upperBound="-1"
         eType="#//Room"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="defineLocalState" upperBound="-1"
-        eType="#//State" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usesSensors" upperBound="-1"
         eType="#//SensorType" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//NamedElement #//Statement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Timer" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Timer" eSuperTypes="#//NamedElement #//Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Schedule" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekdays" upperBound="-1"
         eType="#//Weekdays"/>
@@ -135,23 +126,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hours" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minutes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="If">
+  <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cond" lowerBound="1" eType="#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="then" upperBound="-1" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elseif" upperBound="-1"
-        eType="#//If" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="else" upperBound="-1" eType="#//Statement"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="CompOps">
-    <eLiterals name="GREATER" literal=">"/>
-    <eLiterals name="GREATEROREQUAL" value="1" literal=">="/>
-    <eLiterals name="EQUAL" value="2" literal="="/>
-    <eLiterals name="LESSOREQUAL" value="3" literal="&lt;="/>
-    <eLiterals name="LESS" value="4" literal="&lt;"/>
-    <eLiterals name="NOTEQUAL" value="5" literal="!="/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseif" upperBound="-1"
+        eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeAmount" lowerBound="1"
@@ -161,17 +144,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="ResetExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reset" lowerBound="1" eType="#//Timer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RoomUsage">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sen" eType="#//SensorType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="act" eType="#//ActuatorType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="defineState" eType="#//State"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="roomInstance" eType="#//Room"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//Component"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceExpression" eSuperTypes="#//BinaryExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ManyExpressions" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftExpr" lowerBound="1"
         eType="#//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rightExpr" lowerBound="1"
@@ -179,15 +154,35 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompExpression" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//RoomUsage"
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operand" lowerBound="1"
-        eType="#//CompOps"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SensorType" abstract="true" eSuperTypes="#//HasIntegerValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorType" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ElectricalSwitchActuator" eSuperTypes="#//ActuatorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="WaterValveActuator" eSuperTypes="#//ActuatorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="GasValveActuator" eSuperTypes="#//ActuatorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentExpression" eSuperTypes="#//BinaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateInstance" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defineState" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoomInstance" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roomInstance" eType="#//Room"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntBoolValue" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sen" eType="#//SensorType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActuatorExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="act" eType="#//ActuatorType"
+        containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>
