@@ -7,51 +7,50 @@ BruelOgKjaer {
 	uses sensors TemperatureSensor
 	uses actuators RadiatorActuator
 	is-implemented-by {
-		if (TemperatureSensor <= 18) {
-			RadiatorActuator = 1
+		if (TemperatureSensor.value <= 18) {
+			RadiatorActuator.setValue = 1
 		}
 		else {
-			if (TemperatureSensor >= 23) {
-				RadiatorActuator = 0
+			if (TemperatureSensor.value >= 23) {
+				RadiatorActuator.setValue = 0
 				
 			}
 		}
 	}
 	
-	//In this policy, RainSensor is not part of the Collection and therefore gives an error.
 	policy SkylightWindowControlPolicy
-	uses sensors TemperatureSensor //,RainSensor
+	uses sensors TemperatureSensor ,RainSensor
 	uses actuators WindowActuator
 	is-implemented-by {
 		state skylightOpen
-		if (/*RainSensor = 1*/) {
-			WindowActuator = 0
-			skylightOpen = false
+		if (RainSensor.value = 1) {
+			WindowActuator.setValue = 0
+			state-instance.skylightOpen = false
 		}
 		else {
-			if (TemperatureSensor >= 20 && skylightOpen = false && /*RainSensor = 0*/) {
-				WindowActuator = 1
-				skylightOpen = true
+			if (TemperatureSensor.value >= 20 && state-instance.skylightOpen = false && RainSensor.value = 0) {
+				WindowActuator.setValue = 1
+				state-instance.skylightOpen = true
 			}
 		}
 	} 
 	
 	policy HumidityMonitoringPolicy
-	uses sensors HumiditySensor
+	uses sensors HumiditySensor	
 	uses rooms janitorOffice
 	is-implemented-by {
 		timer audioAlarmTimer
 	
-		if (HumiditySensor < 50) {
-			humidityAlarm = true
+		if (HumiditySensor.value < 50) {
+			state-instance.humidityAlarm = true
 	
 			if (audioAlarmTimer reaches 15 seconds) {
 				reset audioAlarmTimer
-				janitorOffice.audioAlarmActuator = 1
+				room-instance.janitorOffice.audioAlarmActuator = 1
 			}
 		}
 		else {
-			humidityAlarm = false
+			state-instance.humidityAlarm = false
 		}
 	}
 	
@@ -61,14 +60,14 @@ BruelOgKjaer {
 	is-implemented-by {
 		timer motionTimer
 	
-		if (MotionSensor = 1) {
+		if (MotionSensor.value = 1) {
 			reset motionTimer
 		}
 		else {
 			if (motionTimer reaches 20 seconds) {
 				reset motionTimer
 				
-				LightSwitchActuator = 1
+				LightSwitchActuator.setValue = 1
 			}
 		}
 	}
@@ -126,7 +125,7 @@ BruelOgKjaer {
 
 			room office 
 			is-of-type TemperatureControlledRoom, LightMotionControlledRoom
-
+			
 			room calibrationRoom 
 			is-of-type HumidityAndTemperatureControlledRoom
 

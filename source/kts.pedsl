@@ -1,29 +1,28 @@
 KobenhavnsTekniskeSkole {
 	state humidityAlarm = false
 	state fireAlarm = false
-
+	state lockDown = false
+	state equipmentState = false
+	state computerOn = false
+	
 	policy ComputerShutDownPolicy
-	uses actuators //ElectricalSwitchActuator
+	uses actuators ElectricalSwitchActuator
 	uses rooms WorkStation
 	is-implemented-by {
-		state computerOn = true
-		if (/*ElectricalSwitchActuator = true*/) {
-			computerOn = false
-			//ElectricalSwitchActuator = false
+		if (!state-instance.computerOn) {
+			state-instance.computerOn = true
+			ElectricalSwitchActuator.setValue = true
 		}
 	}
 	
 	policy SkyLightWindowControlPolicy
-	uses sensors //RainSensor 
+	uses sensors RainSensor 
 	uses actuators WindowActuator
 	is-implemented-by {
 		state isRaining = false
-		if (/*RainSensor = true*/){
-			isRaining = true
-			if (WindowActuator = true) {
-				WindowActuator = false
-			}
-			
+		if (RainSensor.value = true){
+			state-instance.isRaining = true
+			WindowActuator.setValue = false
 		}
 	}
 	
@@ -32,11 +31,17 @@ KobenhavnsTekniskeSkole {
 	uses actuators WindowActuator, RadiatorActuator
 	uses rooms HeatControlledRoom
 	is-implemented-by {		
-		if (WindowActuator = true && RadiatorActuator = true) {
-			RadiatorActuator = false
+		if (TemperatureSensor.value <= 18) {
+			WindowActuator.setValue = false
+			RadiatorActuator.setValue = 9
+		} else {
+			if (TemperatureSensor.value >= 25) {
+				WindowActuator.setValue = true
+				RadiatorActuator.setValue = 0
+			}
 		}
 		
-	}
+	} 
 	
 	policy RoomHeatingPolicy
 	uses sensors TemperatureSensor, MotionSensor, InfraredLightSensor
@@ -45,41 +50,42 @@ KobenhavnsTekniskeSkole {
 	is-implemented-by {	
 		
 		state roomInUse = false	
-		if (MotionSensor = true || InfraredLightSensor = true) {
-			roomInUse = true
+		if (MotionSensor.value = true || InfraredLightSensor.value = true) {
+			state-instance.roomInUse = true
+			if ( TemperatureSensor.value <= 18) {
+				RadiatorActuator.setValue = 9
+			}
 		}
 		else {
-			roomInUse = false
+			state-instance.roomInUse = false
 		}
-		if ( roomInUse = false && RadiatorActuator = true) {
-			RadiatorActuator = false
+		if ( state-instance.roomInUse = false && TemperatureSensor.value >= 10) {
+			RadiatorActuator.setValue = 0
 		}		
 	}
 	
 	policy UtilityUsageControlPolicy
-	uses actuators //ElectricalSwitchActuator, WaterValveActuator, GasValveActuator
+	uses sensors MotionSensor, InfraredLightSensor
+	uses actuators ElectricalSwitchActuator, WaterValveActuator, GasValveActuator
 	uses rooms ClosedRoom
 	is-implemented-by {
-		if ( /*ElectricalSwitchActuator > 100*/ ) {
-			//ElectricalSwitchActuator = false
-		} 
-		if ( /*WaterValveActuator > 100*/ ) {
-			//WaterValveActuator = false
-		}
-		if ( /*GasValveActuator > 100*/ ) {
-			/*GasValveActuator = false*/
+		state utilityClosed = false
+		if (MotionSensor.value = false || InfraredLightSensor.value = false)  {
+			state-instance.utilityClosed = true
+			ElectricalSwitchActuator.setValue = false
+			WaterValveActuator.setValue = false
+			GasValveActuator.setValue = false
 		}
 	}
 	
 	policy CentralAccessControlPolicy
+	uses sensors MotionSensor, InfraredLightSensor
 	uses actuators DoorActuator, AudioAlarmActuator
 	is-implemented-by {
-		timer ClosingTime 
-		if ( ClosingTime.value = 0 ) {
-			DoorActuator = false
-			//If the doorActuator fails to close the doors due to an obstacle, activate the alarm!!!
-			if ( DoorActuator = true ) {
-				AudioAlarmActuator = true
+		if ( state-instance.lockDown ) {
+			DoorActuator.setValue = false
+			if  (MotionSensor.value = true || InfraredLightSensor.value = true){
+				AudioAlarmActuator.setValue = true
 			}
 		}
 	}
@@ -88,75 +94,72 @@ KobenhavnsTekniskeSkole {
 	uses actuators LightSwitchActuator, WindowActuator, DoorActuator
 	uses rooms ClosedRoom
 	is-implemented-by {
-		state isSecure = true
-		//Turn off lights and close doors and windows during LockdownHours
-		if ( LightSwitchActuator = true ) {
-			LightSwitchActuator = false
-		}
-		if ( WindowActuator = true ) {
-			WindowActuator = false
-		}
-		if ( DoorActuator = true ) {
-			DoorActuator = false
-		}
-		//if even one of them fail to close send a list to the staff
-		if ( LightSwitchActuator = true || WindowActuator = true || DoorActuator = true ) {
-			isSecure = false
+		state isSecure = false
+		
+		if ( !state-instance.lockDown) {
+			state-instance.isSecure = true
+			state-instance.lockDown = true
+			LightSwitchActuator.setValue = false
+			WindowActuator.setValue = false
+			DoorActuator.setValue = false
+		} else {
+			//send msg to person on duty
 		}
 	}
 	
 	policy NaturalHeatControlPolicy
-	uses sensors //ExternalTemperatureSensor
+	uses sensors TemperatureSensor
 	uses actuators RadiatorActuator, WindowActuator
 	uses rooms HeatControlledRoom
 	is-implemented-by {
 		state warmOutside
-		//we need an externalTemperatureSensor for this policy
-		if ( /*ExternalTemperatureSensor > 25*/ ) {
-			warmOutside = true
-			WindowActuator = true
-			RadiatorActuator = false
+		
+		if ( TemperatureSensor.value > 25 ) {
+			state-instance.warmOutside = true
+			WindowActuator.setValue = true
+			RadiatorActuator.setValue = false
 		}
 		else {
-			if ( /*ExternalTemperatureSensor < 15*/ ) {
-				warmOutside = false
-				WindowActuator = false
-				RadiatorActuator = true
+			if (TemperatureSensor.value < 15) {
+				state-instance.warmOutside = false
+				WindowActuator.setValue = false
+				RadiatorActuator.setValue = true
 			}
 		}
 	}
 	
 	policy HallwayTemperatureControlPolicy
-	uses sensors TemperatureSensor//, RainSensor 
+	uses sensors TemperatureSensor, RainSensor 
 	uses actuators RadiatorActuator, WindowActuator
 	uses rooms Hallway
 	is-implemented-by {
-		if ( TemperatureSensor > 25 ) {
-			WindowActuator = true
+		if ( TemperatureSensor.value > 25 ) {
+			WindowActuator.setValue = true
 		}
-		if ( /*RainSensor = true*/ ) {
-			WindowActuator = false
+		if ( RainSensor.value = true ) {
+			WindowActuator.setValue = false
 		}
 	}
 	
 	policy EquipmentShutDownPolicy
-	uses actuators //ElectricalSwitchActuator
+	uses actuators ElectricalSwitchActuator
 	uses rooms LectureRoom
 	is-implemented-by {
-		state EquipmentState = true
-		if (/*ElectricityActuator = true*/) {
-			EquipmentState = false
-			//ElectricityActuator = false
+		if (state-instance.computerOn != true) {
+			state-instance.equipmentState = true
+			ElectricalSwitchActuator.setValue = true
+		} else {
+			state-instance.equipmentState = false
 		}
 	}
 	
 	policy VentilationControlPolicy
 	uses sensors TemperatureSensor
-	uses actuators RadiatorActuator//, VentilatorActuator
+	uses actuators RadiatorActuator, HumidifierActuator
 	is-implemented-by {
-		if ( TemperatureSensor > 25 ) {
-			//VentilatorActuator = true
-			RadiatorActuator = false
+		if ( TemperatureSensor.value > 25 ) {
+			HumidifierActuator.setValue = true
+			RadiatorActuator.setValue = false
 		}
 	}
 	

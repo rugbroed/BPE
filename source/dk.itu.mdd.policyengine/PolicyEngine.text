@@ -88,7 +88,7 @@ Room returns Room:
 	name=EString
 	('is-of-type' extends+=[Room] (','extends+=[Room])*)?
 	
-	('is-governed-by' policies+=[Policy] (policies+=[Policy])*
+	('is-governed-by' policies+=[Policy] (',' policies+=[Policy])*
 		('during' during+=[Schedule] (',' during+=[Schedule])* | 'during-always'))?
 	('{'
 		(declareSensor+=Sensor (declareSensor+=Sensor)*)?

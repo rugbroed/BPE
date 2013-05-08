@@ -16,32 +16,59 @@ Model returns Model:
 		(buildings+=Building (buildings+=Building)*)?
 	'}';
 
-State returns State:
-	{State}
-	'state' name=EString (valueState?= '=' EBoolean)?
-	;
+ActuatorType returns ActuatorType:
+	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator | ElectricalSwitchActuator | WaterValveActuator | GasValveActuator;
 
-Schedule returns Schedule:
-	{Schedule}
-	'schedule'
-	name=EString
-		('days' weekdays+=Weekdays ( "," weekdays+=Weekdays)*)?
-		('from' from=Time 'to' to=Time)?
-	;
+Statement returns Statement:
+	State | Timer | If;
 
-Policy returns Policy:
-	{Policy}
-	'policy'
-	name=EString
-	('uses sensors' (usesSensors+=Sensor (',' usesSensors+=Sensor)*)?)?
-	('uses actuators' (usesActuators+=Actuator (',' usesActuators+=Actuator)*)?)?
-	('uses rooms' usesRooms+=[Room|EString] ("," usesRooms+=[Room|EString])* )?
-	'is-implemented-by' '{' 
-	(defineLocalState+=State (defineLocalState+=State)*)?
-	(controlledBy+=Timer ( controlledBy+=Timer)*)?
-	specifiedBy+=If ( specifiedBy+=If)* '}' 
-	;
+SensorType returns SensorType:
+	MotionSensor | TemperatureSensor | RainSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor | InfraredLightSensor | HumiditySensor;
 
+Expression returns Expression:
+	Conjunction ( {BinaryExpression.leftExpr=current} operator=('||') rightExpr=Conjunction )*;
+
+Conjunction returns Expression: 
+	Comparison ( {BinaryExpression.leftExpr=current} operator=('&&') rightExpr=Comparison )* ;
+
+Comparison returns Expression: 
+	 Primary ( {BinaryExpression.leftExpr=current} operator=('='|'!='|'<='|'<'|'>='|'>') rightExpr=(Primary | IntBoolValue) )* ;
+
+Instance returns Expression:
+	RoomInstance({InstanceExpression.leftExpr=current} operator=('.') rightExpr=ComponentInstance )* ;
+	
+SetStateActuator returns Expression:
+	SetValue({ComponentExpression.leftExpr=current} operator=('=') rightExpr=IntBoolValue )* ;
+
+Primary	returns Expression: 
+ 	UnaryExpression | '(' Expression ')' | TimeExpression | StateInstance  | SensorExpression;
+
+Condition returns Expression: 
+	'(' Expression ')' 
+;
+
+SetValue returns Expression:
+	ActuatorExpression | StateInstance
+;
+
+Then returns Expression:
+	ResetExpression | SetStateActuator | Instance;
+
+UnaryExpression returns Expression:
+	{UnaryExpression} operator=('!')expr= Primary;
+
+IntBoolValue returns Expression:
+		 {IntBoolValue} INT  | {IntBoolValue} EBoolean;
+
+/* 
+Expression returns Expression:
+	TimeExpression | ResetExpression | InstanceExpression | BinaryExpression_Impl | UnaryExpression | ComponentExpression | ComponentInstance | StateInstance | RoomInstance | IntBoolValue | SensorExpression | ActuatorExpression;
+*/
+Component returns Component:
+	Sensor | Actuator;
+
+EString returns ecore::EString:
+	STRING | ID;
 
 Building returns Building:
 	{Building}
@@ -52,62 +79,56 @@ Building returns Building:
 		(accessControl=AccessControl)?
 		(calendarSystem=CalendarSystem)?
 		(meetingScheduleSystem=MeetingScheduleSystem)?
-		(floors+=Floor (floors+=Floor)*)?
 		(timers+=Timer (timers+=Timer)*)?
+		(floors+=Floor (floors+=Floor)*)?
 	'}';
 	
-Floor returns Floor:
-	{Floor}
-	'floor'
-	name=EString
-	'{'
-		('room' rooms+=Room ( 'room' rooms+=Room)*)?
-		//('timers' timers+=Timer (timers+=Timer)*)?
-	'}';
-
 Room returns Room:
 	{Room}
 	name=EString
-	('is-of-type' extends+=[Room|EString] (',' extends+=[Room|EString])*)?
+	('is-of-type' extends+=[Room] (','extends+=[Room])*)?
 	
-	('is-governed-by' policies+=[Policy|EString] (',' policies+=[Policy|EString])*
-		('during' during+=[Schedule|EString] (',' during+=[Schedule|EString])*
-		|
-		'during-always')
-	)?
+	('is-governed-by' policies+=[Policy] (',' policies+=[Policy])*
+		('during' during+=[Schedule] (',' during+=[Schedule])* | 'during-always'))?
 	('{'
-		(declareSensor+=SensorComponent (declareSensor+=SensorComponent)*)?
-		(declareActuator+=ActuatorComponent (declareActuator+=ActuatorComponent)*)?		
+		(declareSensor+=Sensor (declareSensor+=Sensor)*)?
+		(declareActuator+=Actuator (declareActuator+=Actuator)*)?	
 		(timers+=Timer (timers+=Timer)*)?		
 	'}')?
 	;
 
-Actuator returns Actuator:
-	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator;
+Policy returns Policy:
+	{Policy}
+	'policy'
+	name=EString
+	('uses sensors' (usesSensors+=SensorType (',' usesSensors+=SensorType)*)?)?
+	('uses actuators' (usesActuators+=ActuatorType (',' usesActuators+=ActuatorType)*)?)?
+	('uses rooms' usesRooms+=[Room] (',' usesRooms+=[Room])* )?
+	'is-implemented-by' '{' specifiedBy+=Statement (specifiedBy+=Statement)* '}' 
+	;
 
-Sensor returns Sensor:
-	MotionSensor | TemperatureSensor | PressureSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor | InfraredLightSensor | HumiditySensor;
+State returns State:
+	{State}
+	'state' name=EString (valueState?= '=' EBoolean)?
+	;
 
-Expression returns Expression:
-	Conjunction ( {ManyExpressions.leftExpr=current} operator='||' rightExpr=Conjunction )* ;
-
-Conjunction returns Expression: 
-	Primary ( {ManyExpressions.leftExpr=current} operator='&&' rightExpr=Primary )* ;
-
-Primary	returns Expression: 
-	TimeExpression | ResetExpression | CompExpression | '(' Expression ')';
-	
 Timer returns Timer:
 	{Timer}
-	'timer'
+	'timer' name=EString;
+
+Schedule returns Schedule:
+	{Schedule}
+	'schedule'
 	name=EString
+		('days' weekdays+=Weekdays ( "," weekdays+=Weekdays)*)?
+		('from' from=Time 'to' to=Time)?
 	;
 
 CTS returns CTS:
 	{CTS}
 	'CTS'
 	'{'
-		('temperatureSensors' '{' temperatureSensors+=Sensor ( "," temperatureSensors+=Sensor)* '}' )?
+		('temperatureSensors' '{' temperatureSensors+=TemperatureSensor ( "," temperatureSensors+=TemperatureSensor)* '}' )?
 		('ctsActuators' '{' ctsActuators+=Actuator ( "," ctsActuators+=Actuator)* '}' )?
 	'}';
 
@@ -115,8 +136,8 @@ AccessControl returns AccessControl:
 	{AccessControl}
 	'AccessControl'
 	'{'
-		('accessControlSensors' '{' accessControlSensors+=Sensor ( "," accessControlSensors+=Sensor)* '}' )?
-		('accessControlDoorLockActuator' '{' accessControlDoorLockActuator+=Actuator ( "," accessControlDoorLockActuator+=Actuator)* '}' )?
+		('accessControlSensors' '{' accessControlSensors+=SensorType ( "," accessControlSensors+=SensorType)* '}' )?
+		('accessControlDoorLockActuator' '{' accessControlDoorLockActuator+=DoorActuator ( "," accessControlDoorLockActuator+=DoorActuator)* '}' )?
 	'}';
 
 CalendarSystem returns CalendarSystem:
@@ -129,146 +150,203 @@ MeetingScheduleSystem returns MeetingScheduleSystem:
 	'MeetingScheduleSystem'
 	;
 
-MotionSensor returns MotionSensor:
-	{MotionSensor}
-	'MotionSensor'
-		('valueState' valueState=EInt)?	;
+Floor returns Floor:
+	{Floor}
+	'floor'
+	name=EString
+	'{'
+		('room' rooms+=Room ( 'room' rooms+=Room)*)?
+	'}';
 
 TemperatureSensor returns TemperatureSensor:
 	{TemperatureSensor}
 	'TemperatureSensor'
-		('valueState' valueState=EInt)? ;
+	;
 
-PressureSensor returns PressureSensor:
-	{PressureSensor}
-	'PressureSensor'
-		('valueState' valueState=EInt)? ;
+Actuator returns Actuator:
+	{Actuator}
+	'actuator'
+	name=EString
+	'is a' actuatorTypes+=ActuatorType ( "," actuatorTypes+=ActuatorType)*
+	;
 
-TouchSensor returns TouchSensor:
-	{TouchSensor}
-	'TouchSensor'
-		('valueState' valueState=EInt)? ;
-
-LightSensor returns LightSensor:
-	{LightSensor}
-	'LightSensor'
-		('valueState' valueState=EInt)? ;
-
-SmokeSensor returns SmokeSensor:
-	{SmokeSensor}
-	'SmokeSensor'
-		('valueState' valueState=EInt)? ;
-
-CO2Sensor returns CO2Sensor:
-	{CO2Sensor}
-	'CO2Sensor'
-		('valueState' valueState=EInt)? ;
-
-InfraredLightSensor returns InfraredLightSensor:
-	{InfraredLightSensor}
-	'InfraredLightSensor'
-		('valueState' valueState=EInt)? ;
-
-HumiditySensor returns HumiditySensor:
-	{HumiditySensor}
-	'HumiditySensor'
-		('valueState' valueState=EInt)? ;
 
 LightSwitchActuator returns LightSwitchActuator:
 	{LightSwitchActuator}
 	'LightSwitchActuator'
-		('valueState' valueState=EInt)? ;
+	;
 
 WindowActuator returns WindowActuator:
 	{WindowActuator}
 	'WindowActuator'
-		('valueState' valueState=EInt)? ;
+	;
 
 HumidifierActuator returns HumidifierActuator:
 	{HumidifierActuator}
 	'HumidifierActuator'
-		('valueState' valueState=EInt)? ;
+	;
 
 DoorActuator returns DoorActuator:
 	{DoorActuator}
 	'DoorActuator'
-		('valueState' valueState=EInt)? ;
+	;
 
 RadiatorActuator returns RadiatorActuator:
 	{RadiatorActuator}
 	'RadiatorActuator'
-		('valueState' valueState=EInt)? ;
+	;
 
 AudioAlarmActuator returns AudioAlarmActuator:
 	{AudioAlarmActuator}
 	'AudioAlarmActuator'
-		('valueState' valueState=EInt)? ;
-
-SensorComponent returns SensorComponent:
-	{SensorComponent}
-	'sensor '
-	name=EString
-		('is a ' sensors+=Sensor (sensors+=Sensor)*)?
 	;
 
-ActuatorComponent returns ActuatorComponent:
-	{ActuatorComponent}
-	'actuator'
+ElectricalSwitchActuator returns ElectricalSwitchActuator:
+	{ElectricalSwitchActuator}
+	'ElectricalSwitchActuator'
+	;
+
+WaterValveActuator returns WaterValveActuator:
+	{WaterValveActuator}
+	'WaterValveActuator'
+	;
+
+GasValveActuator returns GasValveActuator:
+	{GasValveActuator}
+	'GasValveActuator'
+	;
+
+MotionSensor returns MotionSensor:
+	{MotionSensor}
+	'MotionSensor'
+	;
+
+RainSensor returns RainSensor:
+	{RainSensor}
+	'RainSensor'
+	;
+
+TouchSensor returns TouchSensor:
+	{TouchSensor}
+	'TouchSensor'
+	;
+
+LightSensor returns LightSensor:
+	{LightSensor}
+	'LightSensor'
+	;
+
+SmokeSensor returns SmokeSensor:
+	{SmokeSensor}
+	'SmokeSensor'
+	;
+
+CO2Sensor returns CO2Sensor:
+	{CO2Sensor}
+	'CO2Sensor'
+	;
+
+InfraredLightSensor returns InfraredLightSensor:
+	{InfraredLightSensor}
+	'InfraredLightSensor'
+	;
+
+HumiditySensor returns HumiditySensor:
+	{HumiditySensor}
+	'HumiditySensor'
+	;
+
+Sensor returns Sensor:
+	{Sensor}
+	'sensor'
 	name=EString
-		('is a ' actuators+=Actuator (actuators+=Actuator)*)?
+	('is a' sensorTypes+=SensorType ( "," sensorTypes+=SensorType)*)?
 	;
 
 If returns If:
-	'if'
-		'(' cond=Expression ')'
-		'{' (then+=Expression ( then+=Expression)*)? (elseif+=If ( elseif+=If)* )? '}'
-		('else' '{' (elseif+=If ( elseif+=If)* )? (else=Expression)? '}')?
-	;
-
+	'if' cond=Condition
+	'{'
+		(then+=Then (then+=Then)*)?
+		(elseif+=Statement (elseif+=Statement)*)?
+	'}'('else' '{' 
+		(then+=Then (then+=Then)*)?
+		(else+=Statement (else+=Statement)*)? '}'
+	)?;
 
 TimeExpression returns TimeExpression:
-	time=[Timer|EString] 'reaches' timeAmount=EInt ('seconds' | 'minutes' | 'hours' | 'days' );
+	time=[Timer] 'reaches' timeAmount=EInt ('seconds' | 'minutes' | 'hours' | 'days' );
 
 ResetExpression returns ResetExpression:
-	'reset'  reset=[Timer|EString] ;
+	'reset'  reset=[Timer];
 
-RoomUsage returns RoomUsage:
-	{RoomUsage}
-	( EString '.' EString) | defineState=[State|EString] | sen=Sensor | act=Actuator ;
 
-ManyExpressions returns ManyExpressions:
-	'ManyExpressions'
+InstanceExpression returns InstanceExpression:
+	'InstanceExpression'
 	'{'
 		'operator' operator=EString
 		'leftExpr' leftExpr=Expression
 		'rightExpr' rightExpr=Expression
 	'}';
 
-CompExpression returns CompExpression:
-	expr=RoomUsage	operand=CompOps  (EInt | EBoolean);
+BinaryExpression_Impl returns BinaryExpression:
+	'BinaryExpression'
+	'{'
+		'operator' operator=EString
+		'leftExpr' leftExpr=Expression
+		'rightExpr' rightExpr=Expression
+	'}';
+
+ComponentExpression returns ComponentExpression:
+	'ComponentExpression'
+	'{'
+		'operator' operator=EString
+		'leftExpr' leftExpr=Expression
+		'rightExpr' rightExpr=Expression
+	'}';
+
+ComponentInstance returns ComponentInstance:
+	{ComponentInstance}
+		(instance=[Component] '=' EInt)?;
+
+StateInstance returns StateInstance:
+	{StateInstance}
+	'state-instance''.'
+		(defineState=[State])?
+	;
+
+RoomInstance returns RoomInstance:
+	{RoomInstance}
+	'room-instance''.'
+		(roomInstance=[Room])?
+	;
+
+SensorExpression returns SensorExpression:
+	{SensorExpression}
+		(sen=SensorType)?
+		'.''value'
+	;
+
+ActuatorExpression returns ActuatorExpression:
+	{ActuatorExpression}
+		(act=ActuatorType)?
+		'.''setValue'
+	;
+
+EInt returns ecore::EInt:
+	'-'? INT;
+
+EBoolean returns ecore::EBoolean:
+	'true' | 'false';
+
+enum Weekdays:
+	MONDAY = 'Monday' | TUESDAY = 'Tuesday' | WEDNESDAY = 'Wednesday' | THURSDAY = 'Thursday' | FRIDAY = 'Friday' | SATURDAY = 'Saturday' | SUNDAY = 'Sunday'
+	;
 
 Time returns Time:
 	{Time}
 		(hours=EShort ':' minutes=EShort)?
 	;
 
-enum CompOps:
-	GREATER = '>' | GREATEROREQUAL = '>=' | EQUAL = '=' | LESSOREQUAL = '<=' | LESS = '<' | NOTEQUAL = '!=' ;
-
-enum Weekdays:
-	MONDAY = 'Monday' | TUESDAY = 'Tuesday' | WEDNESDAY = 'Wednesday' | THURSDAY = 'Thursday' | FRIDAY = 'Friday' | SATURDAY = 'Saturday' | SUNDAY = 'Sunday'
-	;
-
-EInt returns ecore::EInt:
-	'-'? INT;
-
 EShort returns ecore::EShort:
 	'-'? INT;
 	
-EBoolean returns ecore::EBoolean:
-	'true' | 'false';
-	
-EString returns ecore::EString:
-	STRING | ID;
-
-
