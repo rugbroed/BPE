@@ -144,7 +144,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="ResetExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reset" lowerBound="1" eType="#//Timer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InstanceExpression" eSuperTypes="#//BinaryExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftExpr" lowerBound="1"
@@ -165,18 +164,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="WaterValveActuator" eSuperTypes="#//ActuatorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="GasValveActuator" eSuperTypes="#//ActuatorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentExpression" eSuperTypes="#//BinaryExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//Component"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StateInstance" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="StateExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defineState" eType="#//State"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RoomInstance" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="RoomExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="roomInstance" eType="#//Room"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntBoolValue" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueExpression" abstract="true" eSuperTypes="#//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="SensorExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sen" eType="#//SensorType"
         containment="true"/>
@@ -185,4 +183,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="act" eType="#//ActuatorType"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryMethod" eSuperTypes="#//BinaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BoolValue" eSuperTypes="#//ValueExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntValue" eSuperTypes="#//ValueExpression"/>
 </ecore:EPackage>

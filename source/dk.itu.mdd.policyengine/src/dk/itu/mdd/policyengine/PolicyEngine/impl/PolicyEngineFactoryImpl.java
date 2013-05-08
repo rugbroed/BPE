@@ -90,19 +90,19 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 			case PolicyEnginePackage.IF: return createIf();
 			case PolicyEnginePackage.TIME_EXPRESSION: return createTimeExpression();
 			case PolicyEnginePackage.RESET_EXPRESSION: return createResetExpression();
-			case PolicyEnginePackage.INSTANCE_EXPRESSION: return createInstanceExpression();
 			case PolicyEnginePackage.BINARY_EXPRESSION: return createBinaryExpression();
 			case PolicyEnginePackage.UNARY_EXPRESSION: return createUnaryExpression();
 			case PolicyEnginePackage.ELECTRICAL_SWITCH_ACTUATOR: return createElectricalSwitchActuator();
 			case PolicyEnginePackage.WATER_VALVE_ACTUATOR: return createWaterValveActuator();
 			case PolicyEnginePackage.GAS_VALVE_ACTUATOR: return createGasValveActuator();
 			case PolicyEnginePackage.COMPONENT_EXPRESSION: return createComponentExpression();
-			case PolicyEnginePackage.COMPONENT_INSTANCE: return createComponentInstance();
-			case PolicyEnginePackage.STATE_INSTANCE: return createStateInstance();
-			case PolicyEnginePackage.ROOM_INSTANCE: return createRoomInstance();
-			case PolicyEnginePackage.INT_BOOL_VALUE: return createIntBoolValue();
+			case PolicyEnginePackage.STATE_EXPRESSION: return createStateExpression();
+			case PolicyEnginePackage.ROOM_EXPRESSION: return createRoomExpression();
 			case PolicyEnginePackage.SENSOR_EXPRESSION: return createSensorExpression();
 			case PolicyEnginePackage.ACTUATOR_EXPRESSION: return createActuatorExpression();
+			case PolicyEnginePackage.BINARY_METHOD: return createBinaryMethod();
+			case PolicyEnginePackage.BOOL_VALUE: return createBoolValue();
+			case PolicyEnginePackage.INT_VALUE: return createIntValue();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -473,16 +473,6 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InstanceExpression createInstanceExpression() {
-		InstanceExpressionImpl instanceExpression = new InstanceExpressionImpl();
-		return instanceExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public BinaryExpression createBinaryExpression() {
 		BinaryExpressionImpl binaryExpression = new BinaryExpressionImpl();
 		return binaryExpression;
@@ -543,9 +533,9 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentInstance createComponentInstance() {
-		ComponentInstanceImpl componentInstance = new ComponentInstanceImpl();
-		return componentInstance;
+	public StateExpression createStateExpression() {
+		StateExpressionImpl stateExpression = new StateExpressionImpl();
+		return stateExpression;
 	}
 
 	/**
@@ -553,29 +543,9 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StateInstance createStateInstance() {
-		StateInstanceImpl stateInstance = new StateInstanceImpl();
-		return stateInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoomInstance createRoomInstance() {
-		RoomInstanceImpl roomInstance = new RoomInstanceImpl();
-		return roomInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IntBoolValue createIntBoolValue() {
-		IntBoolValueImpl intBoolValue = new IntBoolValueImpl();
-		return intBoolValue;
+	public RoomExpression createRoomExpression() {
+		RoomExpressionImpl roomExpression = new RoomExpressionImpl();
+		return roomExpression;
 	}
 
 	/**
@@ -596,6 +566,36 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 	public ActuatorExpression createActuatorExpression() {
 		ActuatorExpressionImpl actuatorExpression = new ActuatorExpressionImpl();
 		return actuatorExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BinaryMethod createBinaryMethod() {
+		BinaryMethodImpl binaryMethod = new BinaryMethodImpl();
+		return binaryMethod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BoolValue createBoolValue() {
+		BoolValueImpl boolValue = new BoolValueImpl();
+		return boolValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntValue createIntValue() {
+		IntValueImpl intValue = new IntValueImpl();
+		return intValue;
 	}
 
 	/**

@@ -368,7 +368,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getSensorType()
 	 * @generated
 	 */
-	int SENSOR_TYPE = 39;
+	int SENSOR_TYPE = 38;
 
 	/**
 	 * The number of structural features of the '<em>Sensor Type</em>' class.
@@ -1123,7 +1123,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getStatement()
 	 * @generated
 	 */
-	int STATEMENT = 45;
+	int STATEMENT = 43;
 
 	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
@@ -1197,7 +1197,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 36;
+	int EXPRESSION = 35;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -1281,7 +1281,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getBinaryExpression()
 	 * @generated
 	 */
-	int BINARY_EXPRESSION = 37;
+	int BINARY_EXPRESSION = 36;
 
 	/**
 	 * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
@@ -1320,52 +1320,6 @@ public interface PolicyEnginePackage extends EPackage {
 	int BINARY_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.InstanceExpressionImpl <em>Instance Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.InstanceExpressionImpl
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getInstanceExpression()
-	 * @generated
-	 */
-	int INSTANCE_EXPRESSION = 35;
-
-	/**
-	 * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTANCE_EXPRESSION__LEFT_EXPR = BINARY_EXPRESSION__LEFT_EXPR;
-
-	/**
-	 * The feature id for the '<em><b>Right Expr</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTANCE_EXPRESSION__RIGHT_EXPR = BINARY_EXPRESSION__RIGHT_EXPR;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTANCE_EXPRESSION__OPERATOR = BINARY_EXPRESSION__OPERATOR;
-
-	/**
-	 * The number of structural features of the '<em>Instance Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTANCE_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1373,7 +1327,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getUnaryExpression()
 	 * @generated
 	 */
-	int UNARY_EXPRESSION = 38;
+	int UNARY_EXPRESSION = 37;
 
 	/**
 	 * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -1410,7 +1364,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getElectricalSwitchActuator()
 	 * @generated
 	 */
-	int ELECTRICAL_SWITCH_ACTUATOR = 40;
+	int ELECTRICAL_SWITCH_ACTUATOR = 39;
 
 	/**
 	 * The number of structural features of the '<em>Electrical Switch Actuator</em>' class.
@@ -1429,7 +1383,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getWaterValveActuator()
 	 * @generated
 	 */
-	int WATER_VALVE_ACTUATOR = 41;
+	int WATER_VALVE_ACTUATOR = 40;
 
 	/**
 	 * The number of structural features of the '<em>Water Valve Actuator</em>' class.
@@ -1448,7 +1402,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getGasValveActuator()
 	 * @generated
 	 */
-	int GAS_VALVE_ACTUATOR = 42;
+	int GAS_VALVE_ACTUATOR = 41;
 
 	/**
 	 * The number of structural features of the '<em>Gas Valve Actuator</em>' class.
@@ -1467,7 +1421,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getComponent()
 	 * @generated
 	 */
-	int COMPONENT = 43;
+	int COMPONENT = 42;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -1489,31 +1443,13 @@ public interface PolicyEnginePackage extends EPackage {
 	int COMPONENT_EXPRESSION = 44;
 
 	/**
-	 * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
+	 * The feature id for the '<em><b>Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_EXPRESSION__LEFT_EXPR = BINARY_EXPRESSION__LEFT_EXPR;
-
-	/**
-	 * The feature id for the '<em><b>Right Expr</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_EXPRESSION__RIGHT_EXPR = BINARY_EXPRESSION__RIGHT_EXPR;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_EXPRESSION__OPERATOR = BINARY_EXPRESSION__OPERATOR;
+	int COMPONENT_EXPRESSION__INSTANCE = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Component Expression</em>' class.
@@ -1522,45 +1458,17 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 0;
+	int COMPONENT_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ComponentInstanceImpl <em>Component Instance</em>}' class.
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.StateExpressionImpl <em>State Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.ComponentInstanceImpl
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getComponentInstance()
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.StateExpressionImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getStateExpression()
 	 * @generated
 	 */
-	int COMPONENT_INSTANCE = 46;
-
-	/**
-	 * The feature id for the '<em><b>Instance</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE__INSTANCE = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Component Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.StateInstanceImpl <em>State Instance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.StateInstanceImpl
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getStateInstance()
-	 * @generated
-	 */
-	int STATE_INSTANCE = 47;
+	int STATE_EXPRESSION = 45;
 
 	/**
 	 * The feature id for the '<em><b>Define State</b></em>' reference.
@@ -1569,26 +1477,26 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_INSTANCE__DEFINE_STATE = EXPRESSION_FEATURE_COUNT + 0;
+	int STATE_EXPRESSION__DEFINE_STATE = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>State Instance</em>' class.
+	 * The number of structural features of the '<em>State Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_INSTANCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+	int STATE_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomInstanceImpl <em>Room Instance</em>}' class.
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomExpressionImpl <em>Room Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.RoomInstanceImpl
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getRoomInstance()
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.RoomExpressionImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getRoomExpression()
 	 * @generated
 	 */
-	int ROOM_INSTANCE = 48;
+	int ROOM_EXPRESSION = 46;
 
 	/**
 	 * The feature id for the '<em><b>Room Instance</b></em>' reference.
@@ -1597,35 +1505,35 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_INSTANCE__ROOM_INSTANCE = EXPRESSION_FEATURE_COUNT + 0;
+	int ROOM_EXPRESSION__ROOM_INSTANCE = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Room Instance</em>' class.
+	 * The number of structural features of the '<em>Room Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_INSTANCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+	int ROOM_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.IntBoolValueImpl <em>Int Bool Value</em>}' class.
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ValueExpressionImpl <em>Value Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.IntBoolValueImpl
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getIntBoolValue()
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.ValueExpressionImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getValueExpression()
 	 * @generated
 	 */
-	int INT_BOOL_VALUE = 49;
+	int VALUE_EXPRESSION = 47;
 
 	/**
-	 * The number of structural features of the '<em>Int Bool Value</em>' class.
+	 * The number of structural features of the '<em>Value Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INT_BOOL_VALUE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+	int VALUE_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.SensorExpressionImpl <em>Sensor Expression</em>}' class.
@@ -1635,7 +1543,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getSensorExpression()
 	 * @generated
 	 */
-	int SENSOR_EXPRESSION = 50;
+	int SENSOR_EXPRESSION = 48;
 
 	/**
 	 * The feature id for the '<em><b>Sen</b></em>' containment reference.
@@ -1663,7 +1571,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getActuatorExpression()
 	 * @generated
 	 */
-	int ACTUATOR_EXPRESSION = 51;
+	int ACTUATOR_EXPRESSION = 49;
 
 	/**
 	 * The feature id for the '<em><b>Act</b></em>' containment reference.
@@ -1684,6 +1592,90 @@ public interface PolicyEnginePackage extends EPackage {
 	int ACTUATOR_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.BinaryMethodImpl <em>Binary Method</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.BinaryMethodImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getBinaryMethod()
+	 * @generated
+	 */
+	int BINARY_METHOD = 50;
+
+	/**
+	 * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_METHOD__LEFT_EXPR = BINARY_EXPRESSION__LEFT_EXPR;
+
+	/**
+	 * The feature id for the '<em><b>Right Expr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_METHOD__RIGHT_EXPR = BINARY_EXPRESSION__RIGHT_EXPR;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_METHOD__OPERATOR = BINARY_EXPRESSION__OPERATOR;
+
+	/**
+	 * The number of structural features of the '<em>Binary Method</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_METHOD_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.BoolValueImpl <em>Bool Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.BoolValueImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getBoolValue()
+	 * @generated
+	 */
+	int BOOL_VALUE = 51;
+
+	/**
+	 * The number of structural features of the '<em>Bool Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOL_VALUE_FEATURE_COUNT = VALUE_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.IntValueImpl <em>Int Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.IntValueImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getIntValue()
+	 * @generated
+	 */
+	int INT_VALUE = 52;
+
+	/**
+	 * The number of structural features of the '<em>Int Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INT_VALUE_FEATURE_COUNT = VALUE_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.Weekdays <em>Weekdays</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1691,7 +1683,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getWeekdays()
 	 * @generated
 	 */
-	int WEEKDAYS = 52;
+	int WEEKDAYS = 53;
 
 
 	/**
@@ -2540,16 +2532,6 @@ public interface PolicyEnginePackage extends EPackage {
 	EReference getResetExpression_Reset();
 
 	/**
-	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.InstanceExpression <em>Instance Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Instance Expression</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.InstanceExpression
-	 * @generated
-	 */
-	EClass getInstanceExpression();
-
-	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2685,16 +2667,6 @@ public interface PolicyEnginePackage extends EPackage {
 	EClass getComponent();
 
 	/**
-	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression <em>Component Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Component Expression</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression
-	 * @generated
-	 */
-	EClass getComponentExpression();
-
-	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.Statement <em>Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2705,77 +2677,77 @@ public interface PolicyEnginePackage extends EPackage {
 	EClass getStatement();
 
 	/**
-	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.ComponentInstance <em>Component Instance</em>}'.
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression <em>Component Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Component Instance</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.ComponentInstance
+	 * @return the meta object for class '<em>Component Expression</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression
 	 * @generated
 	 */
-	EClass getComponentInstance();
+	EClass getComponentExpression();
 
 	/**
-	 * Returns the meta object for the reference '{@link dk.itu.mdd.policyengine.PolicyEngine.ComponentInstance#getInstance <em>Instance</em>}'.
+	 * Returns the meta object for the reference '{@link dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression#getInstance <em>Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Instance</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.ComponentInstance#getInstance()
-	 * @see #getComponentInstance()
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression#getInstance()
+	 * @see #getComponentExpression()
 	 * @generated
 	 */
-	EReference getComponentInstance_Instance();
+	EReference getComponentExpression_Instance();
 
 	/**
-	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.StateInstance <em>State Instance</em>}'.
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.StateExpression <em>State Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>State Instance</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.StateInstance
+	 * @return the meta object for class '<em>State Expression</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.StateExpression
 	 * @generated
 	 */
-	EClass getStateInstance();
+	EClass getStateExpression();
 
 	/**
-	 * Returns the meta object for the reference '{@link dk.itu.mdd.policyengine.PolicyEngine.StateInstance#getDefineState <em>Define State</em>}'.
+	 * Returns the meta object for the reference '{@link dk.itu.mdd.policyengine.PolicyEngine.StateExpression#getDefineState <em>Define State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Define State</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.StateInstance#getDefineState()
-	 * @see #getStateInstance()
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.StateExpression#getDefineState()
+	 * @see #getStateExpression()
 	 * @generated
 	 */
-	EReference getStateInstance_DefineState();
+	EReference getStateExpression_DefineState();
 
 	/**
-	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.RoomInstance <em>Room Instance</em>}'.
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.RoomExpression <em>Room Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Room Instance</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.RoomInstance
+	 * @return the meta object for class '<em>Room Expression</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.RoomExpression
 	 * @generated
 	 */
-	EClass getRoomInstance();
+	EClass getRoomExpression();
 
 	/**
-	 * Returns the meta object for the reference '{@link dk.itu.mdd.policyengine.PolicyEngine.RoomInstance#getRoomInstance <em>Room Instance</em>}'.
+	 * Returns the meta object for the reference '{@link dk.itu.mdd.policyengine.PolicyEngine.RoomExpression#getRoomInstance <em>Room Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Room Instance</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.RoomInstance#getRoomInstance()
-	 * @see #getRoomInstance()
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.RoomExpression#getRoomInstance()
+	 * @see #getRoomExpression()
 	 * @generated
 	 */
-	EReference getRoomInstance_RoomInstance();
+	EReference getRoomExpression_RoomInstance();
 
 	/**
-	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.IntBoolValue <em>Int Bool Value</em>}'.
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.ValueExpression <em>Value Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Int Bool Value</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.IntBoolValue
+	 * @return the meta object for class '<em>Value Expression</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.ValueExpression
 	 * @generated
 	 */
-	EClass getIntBoolValue();
+	EClass getValueExpression();
 
 	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.SensorExpression <em>Sensor Expression</em>}'.
@@ -2818,6 +2790,36 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getActuatorExpression_Act();
+
+	/**
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.BinaryMethod <em>Binary Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Binary Method</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.BinaryMethod
+	 * @generated
+	 */
+	EClass getBinaryMethod();
+
+	/**
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.BoolValue <em>Bool Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bool Value</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.BoolValue
+	 * @generated
+	 */
+	EClass getBoolValue();
+
+	/**
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.IntValue <em>Int Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Int Value</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.IntValue
+	 * @generated
+	 */
+	EClass getIntValue();
 
 	/**
 	 * Returns the meta object for enum '{@link dk.itu.mdd.policyengine.PolicyEngine.Weekdays <em>Weekdays</em>}'.
@@ -3562,16 +3564,6 @@ public interface PolicyEnginePackage extends EPackage {
 		EReference RESET_EXPRESSION__RESET = eINSTANCE.getResetExpression_Reset();
 
 		/**
-		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.InstanceExpressionImpl <em>Instance Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.InstanceExpressionImpl
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getInstanceExpression()
-		 * @generated
-		 */
-		EClass INSTANCE_EXPRESSION = eINSTANCE.getInstanceExpression();
-
-		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ExpressionImpl <em>Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3692,16 +3684,6 @@ public interface PolicyEnginePackage extends EPackage {
 		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
-		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ComponentExpressionImpl <em>Component Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.ComponentExpressionImpl
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getComponentExpression()
-		 * @generated
-		 */
-		EClass COMPONENT_EXPRESSION = eINSTANCE.getComponentExpression();
-
-		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.StatementImpl <em>Statement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3712,14 +3694,14 @@ public interface PolicyEnginePackage extends EPackage {
 		EClass STATEMENT = eINSTANCE.getStatement();
 
 		/**
-		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ComponentInstanceImpl <em>Component Instance</em>}' class.
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ComponentExpressionImpl <em>Component Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.ComponentInstanceImpl
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getComponentInstance()
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.ComponentExpressionImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getComponentExpression()
 		 * @generated
 		 */
-		EClass COMPONENT_INSTANCE = eINSTANCE.getComponentInstance();
+		EClass COMPONENT_EXPRESSION = eINSTANCE.getComponentExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
@@ -3727,17 +3709,17 @@ public interface PolicyEnginePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_INSTANCE__INSTANCE = eINSTANCE.getComponentInstance_Instance();
+		EReference COMPONENT_EXPRESSION__INSTANCE = eINSTANCE.getComponentExpression_Instance();
 
 		/**
-		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.StateInstanceImpl <em>State Instance</em>}' class.
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.StateExpressionImpl <em>State Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.StateInstanceImpl
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getStateInstance()
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.StateExpressionImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getStateExpression()
 		 * @generated
 		 */
-		EClass STATE_INSTANCE = eINSTANCE.getStateInstance();
+		EClass STATE_EXPRESSION = eINSTANCE.getStateExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Define State</b></em>' reference feature.
@@ -3745,17 +3727,17 @@ public interface PolicyEnginePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE_INSTANCE__DEFINE_STATE = eINSTANCE.getStateInstance_DefineState();
+		EReference STATE_EXPRESSION__DEFINE_STATE = eINSTANCE.getStateExpression_DefineState();
 
 		/**
-		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomInstanceImpl <em>Room Instance</em>}' class.
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RoomExpressionImpl <em>Room Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.RoomInstanceImpl
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getRoomInstance()
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.RoomExpressionImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getRoomExpression()
 		 * @generated
 		 */
-		EClass ROOM_INSTANCE = eINSTANCE.getRoomInstance();
+		EClass ROOM_EXPRESSION = eINSTANCE.getRoomExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Room Instance</b></em>' reference feature.
@@ -3763,17 +3745,17 @@ public interface PolicyEnginePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROOM_INSTANCE__ROOM_INSTANCE = eINSTANCE.getRoomInstance_RoomInstance();
+		EReference ROOM_EXPRESSION__ROOM_INSTANCE = eINSTANCE.getRoomExpression_RoomInstance();
 
 		/**
-		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.IntBoolValueImpl <em>Int Bool Value</em>}' class.
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ValueExpressionImpl <em>Value Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.IntBoolValueImpl
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getIntBoolValue()
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.ValueExpressionImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getValueExpression()
 		 * @generated
 		 */
-		EClass INT_BOOL_VALUE = eINSTANCE.getIntBoolValue();
+		EClass VALUE_EXPRESSION = eINSTANCE.getValueExpression();
 
 		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.SensorExpressionImpl <em>Sensor Expression</em>}' class.
@@ -3810,6 +3792,36 @@ public interface PolicyEnginePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ACTUATOR_EXPRESSION__ACT = eINSTANCE.getActuatorExpression_Act();
+
+		/**
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.BinaryMethodImpl <em>Binary Method</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.BinaryMethodImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getBinaryMethod()
+		 * @generated
+		 */
+		EClass BINARY_METHOD = eINSTANCE.getBinaryMethod();
+
+		/**
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.BoolValueImpl <em>Bool Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.BoolValueImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getBoolValue()
+		 * @generated
+		 */
+		EClass BOOL_VALUE = eINSTANCE.getBoolValue();
+
+		/**
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.IntValueImpl <em>Int Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.IntValueImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getIntValue()
+		 * @generated
+		 */
+		EClass INT_VALUE = eINSTANCE.getIntValue();
 
 		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.Weekdays <em>Weekdays</em>}' enum.

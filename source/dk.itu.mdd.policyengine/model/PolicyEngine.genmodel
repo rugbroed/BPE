@@ -111,7 +111,6 @@
     <genClasses ecoreClass="PolicyEngine.ecore#//ResetExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//ResetExpression/reset"/>
     </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//InstanceExpression"/>
     <genClasses image="false" ecoreClass="PolicyEngine.ecore#//Expression"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//BinaryExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//BinaryExpression/leftExpr"/>
@@ -127,23 +126,25 @@
     <genClasses ecoreClass="PolicyEngine.ecore#//WaterValveActuator"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//GasValveActuator"/>
     <genClasses image="false" ecoreClass="PolicyEngine.ecore#//Component"/>
-    <genClasses ecoreClass="PolicyEngine.ecore#//ComponentExpression"/>
     <genClasses image="false" ecoreClass="PolicyEngine.ecore#//Statement"/>
-    <genClasses ecoreClass="PolicyEngine.ecore#//ComponentInstance">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//ComponentInstance/instance"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//ComponentExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//ComponentExpression/instance"/>
     </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//StateInstance">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//StateInstance/defineState"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//StateExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//StateExpression/defineState"/>
     </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//RoomInstance">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//RoomInstance/roomInstance"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//RoomExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//RoomExpression/roomInstance"/>
     </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//IntBoolValue"/>
+    <genClasses image="false" ecoreClass="PolicyEngine.ecore#//ValueExpression"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//SensorExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//SensorExpression/sen"/>
     </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//ActuatorExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//ActuatorExpression/act"/>
     </genClasses>
+    <genClasses ecoreClass="PolicyEngine.ecore#//BinaryMethod"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//BoolValue"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//IntValue"/>
   </genPackages>
 </genmodel:GenModel>

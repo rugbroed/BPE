@@ -308,14 +308,6 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PolicyEnginePackage.INSTANCE_EXPRESSION: {
-				InstanceExpression instanceExpression = (InstanceExpression)theEObject;
-				T result = caseInstanceExpression(instanceExpression);
-				if (result == null) result = caseBinaryExpression(instanceExpression);
-				if (result == null) result = caseExpression(instanceExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case PolicyEnginePackage.EXPRESSION: {
 				Expression expression = (Expression)theEObject;
 				T result = caseExpression(expression);
@@ -369,45 +361,37 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PolicyEnginePackage.COMPONENT_EXPRESSION: {
-				ComponentExpression componentExpression = (ComponentExpression)theEObject;
-				T result = caseComponentExpression(componentExpression);
-				if (result == null) result = caseBinaryExpression(componentExpression);
-				if (result == null) result = caseExpression(componentExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case PolicyEnginePackage.STATEMENT: {
 				Statement statement = (Statement)theEObject;
 				T result = caseStatement(statement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PolicyEnginePackage.COMPONENT_INSTANCE: {
-				ComponentInstance componentInstance = (ComponentInstance)theEObject;
-				T result = caseComponentInstance(componentInstance);
-				if (result == null) result = caseExpression(componentInstance);
+			case PolicyEnginePackage.COMPONENT_EXPRESSION: {
+				ComponentExpression componentExpression = (ComponentExpression)theEObject;
+				T result = caseComponentExpression(componentExpression);
+				if (result == null) result = caseExpression(componentExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PolicyEnginePackage.STATE_INSTANCE: {
-				StateInstance stateInstance = (StateInstance)theEObject;
-				T result = caseStateInstance(stateInstance);
-				if (result == null) result = caseExpression(stateInstance);
+			case PolicyEnginePackage.STATE_EXPRESSION: {
+				StateExpression stateExpression = (StateExpression)theEObject;
+				T result = caseStateExpression(stateExpression);
+				if (result == null) result = caseExpression(stateExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PolicyEnginePackage.ROOM_INSTANCE: {
-				RoomInstance roomInstance = (RoomInstance)theEObject;
-				T result = caseRoomInstance(roomInstance);
-				if (result == null) result = caseExpression(roomInstance);
+			case PolicyEnginePackage.ROOM_EXPRESSION: {
+				RoomExpression roomExpression = (RoomExpression)theEObject;
+				T result = caseRoomExpression(roomExpression);
+				if (result == null) result = caseExpression(roomExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PolicyEnginePackage.INT_BOOL_VALUE: {
-				IntBoolValue intBoolValue = (IntBoolValue)theEObject;
-				T result = caseIntBoolValue(intBoolValue);
-				if (result == null) result = caseExpression(intBoolValue);
+			case PolicyEnginePackage.VALUE_EXPRESSION: {
+				ValueExpression valueExpression = (ValueExpression)theEObject;
+				T result = caseValueExpression(valueExpression);
+				if (result == null) result = caseExpression(valueExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -422,6 +406,30 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 				ActuatorExpression actuatorExpression = (ActuatorExpression)theEObject;
 				T result = caseActuatorExpression(actuatorExpression);
 				if (result == null) result = caseExpression(actuatorExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PolicyEnginePackage.BINARY_METHOD: {
+				BinaryMethod binaryMethod = (BinaryMethod)theEObject;
+				T result = caseBinaryMethod(binaryMethod);
+				if (result == null) result = caseBinaryExpression(binaryMethod);
+				if (result == null) result = caseExpression(binaryMethod);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PolicyEnginePackage.BOOL_VALUE: {
+				BoolValue boolValue = (BoolValue)theEObject;
+				T result = caseBoolValue(boolValue);
+				if (result == null) result = caseValueExpression(boolValue);
+				if (result == null) result = caseExpression(boolValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PolicyEnginePackage.INT_VALUE: {
+				IntValue intValue = (IntValue)theEObject;
+				T result = caseIntValue(intValue);
+				if (result == null) result = caseValueExpression(intValue);
+				if (result == null) result = caseExpression(intValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -955,21 +963,6 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Instance Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Instance Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInstanceExpression(InstanceExpression object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1090,21 +1083,6 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseComponentExpression(ComponentExpression object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1120,62 +1098,62 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Component Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Component Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComponentInstance(ComponentInstance object) {
+	public T caseComponentExpression(ComponentExpression object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>State Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>State Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>State Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>State Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStateInstance(StateInstance object) {
+	public T caseStateExpression(StateExpression object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Room Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Room Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Room Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Room Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRoomInstance(RoomInstance object) {
+	public T caseRoomExpression(RoomExpression object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Int Bool Value</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Value Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Int Bool Value</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Value Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseIntBoolValue(IntBoolValue object) {
+	public T caseValueExpression(ValueExpression object) {
 		return null;
 	}
 
@@ -1206,6 +1184,51 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseActuatorExpression(ActuatorExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Binary Method</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Binary Method</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBinaryMethod(BinaryMethod object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bool Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bool Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBoolValue(BoolValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Int Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Int Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntValue(IntValue object) {
 		return null;
 	}
 

@@ -4,7 +4,7 @@ package dk.itu.mdd.policyengine.PolicyEngine.impl;
 
 import dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage;
 import dk.itu.mdd.policyengine.PolicyEngine.State;
-import dk.itu.mdd.policyengine.PolicyEngine.StateInstance;
+import dk.itu.mdd.policyengine.PolicyEngine.StateExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,18 +15,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>State Instance</b></em>'.
+ * An implementation of the model object '<em><b>State Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.StateInstanceImpl#getDefineState <em>Define State</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.impl.StateExpressionImpl#getDefineState <em>Define State</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StateInstanceImpl extends ExpressionImpl implements StateInstance {
+public class StateExpressionImpl extends ExpressionImpl implements StateExpression {
 	/**
 	 * The cached value of the '{@link #getDefineState() <em>Define State</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public class StateInstanceImpl extends ExpressionImpl implements StateInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StateInstanceImpl() {
+	protected StateExpressionImpl() {
 		super();
 	}
 
@@ -53,7 +53,7 @@ public class StateInstanceImpl extends ExpressionImpl implements StateInstance {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PolicyEnginePackage.Literals.STATE_INSTANCE;
+		return PolicyEnginePackage.Literals.STATE_EXPRESSION;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class StateInstanceImpl extends ExpressionImpl implements StateInstance {
 			defineState = (State)eResolveProxy(oldDefineState);
 			if (defineState != oldDefineState) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PolicyEnginePackage.STATE_INSTANCE__DEFINE_STATE, oldDefineState, defineState));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PolicyEnginePackage.STATE_EXPRESSION__DEFINE_STATE, oldDefineState, defineState));
 			}
 		}
 		return defineState;
@@ -91,7 +91,7 @@ public class StateInstanceImpl extends ExpressionImpl implements StateInstance {
 		State oldDefineState = defineState;
 		defineState = newDefineState;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyEnginePackage.STATE_INSTANCE__DEFINE_STATE, oldDefineState, defineState));
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyEnginePackage.STATE_EXPRESSION__DEFINE_STATE, oldDefineState, defineState));
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class StateInstanceImpl extends ExpressionImpl implements StateInstance {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PolicyEnginePackage.STATE_INSTANCE__DEFINE_STATE:
+			case PolicyEnginePackage.STATE_EXPRESSION__DEFINE_STATE:
 				if (resolve) return getDefineState();
 				return basicGetDefineState();
 		}
@@ -117,7 +117,7 @@ public class StateInstanceImpl extends ExpressionImpl implements StateInstance {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PolicyEnginePackage.STATE_INSTANCE__DEFINE_STATE:
+			case PolicyEnginePackage.STATE_EXPRESSION__DEFINE_STATE:
 				setDefineState((State)newValue);
 				return;
 		}
@@ -132,7 +132,7 @@ public class StateInstanceImpl extends ExpressionImpl implements StateInstance {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PolicyEnginePackage.STATE_INSTANCE__DEFINE_STATE:
+			case PolicyEnginePackage.STATE_EXPRESSION__DEFINE_STATE:
 				setDefineState((State)null);
 				return;
 		}
@@ -147,10 +147,10 @@ public class StateInstanceImpl extends ExpressionImpl implements StateInstance {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PolicyEnginePackage.STATE_INSTANCE__DEFINE_STATE:
+			case PolicyEnginePackage.STATE_EXPRESSION__DEFINE_STATE:
 				return defineState != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //StateInstanceImpl
+} //StateExpressionImpl

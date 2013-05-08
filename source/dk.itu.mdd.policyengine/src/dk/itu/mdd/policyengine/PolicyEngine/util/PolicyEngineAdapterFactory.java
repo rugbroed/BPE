@@ -208,10 +208,6 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 				return createResetExpressionAdapter();
 			}
 			@Override
-			public Adapter caseInstanceExpression(InstanceExpression object) {
-				return createInstanceExpressionAdapter();
-			}
-			@Override
 			public Adapter caseExpression(Expression object) {
 				return createExpressionAdapter();
 			}
@@ -244,28 +240,24 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 				return createComponentAdapter();
 			}
 			@Override
-			public Adapter caseComponentExpression(ComponentExpression object) {
-				return createComponentExpressionAdapter();
-			}
-			@Override
 			public Adapter caseStatement(Statement object) {
 				return createStatementAdapter();
 			}
 			@Override
-			public Adapter caseComponentInstance(ComponentInstance object) {
-				return createComponentInstanceAdapter();
+			public Adapter caseComponentExpression(ComponentExpression object) {
+				return createComponentExpressionAdapter();
 			}
 			@Override
-			public Adapter caseStateInstance(StateInstance object) {
-				return createStateInstanceAdapter();
+			public Adapter caseStateExpression(StateExpression object) {
+				return createStateExpressionAdapter();
 			}
 			@Override
-			public Adapter caseRoomInstance(RoomInstance object) {
-				return createRoomInstanceAdapter();
+			public Adapter caseRoomExpression(RoomExpression object) {
+				return createRoomExpressionAdapter();
 			}
 			@Override
-			public Adapter caseIntBoolValue(IntBoolValue object) {
-				return createIntBoolValueAdapter();
+			public Adapter caseValueExpression(ValueExpression object) {
+				return createValueExpressionAdapter();
 			}
 			@Override
 			public Adapter caseSensorExpression(SensorExpression object) {
@@ -274,6 +266,18 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseActuatorExpression(ActuatorExpression object) {
 				return createActuatorExpressionAdapter();
+			}
+			@Override
+			public Adapter caseBinaryMethod(BinaryMethod object) {
+				return createBinaryMethodAdapter();
+			}
+			@Override
+			public Adapter caseBoolValue(BoolValue object) {
+				return createBoolValueAdapter();
+			}
+			@Override
+			public Adapter caseIntValue(IntValue object) {
+				return createIntValueAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -786,20 +790,6 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.InstanceExpression <em>Instance Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.InstanceExpression
-	 * @generated
-	 */
-	public Adapter createInstanceExpressionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -912,20 +902,6 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression <em>Component Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression
-	 * @generated
-	 */
-	public Adapter createComponentExpressionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.Statement <em>Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -940,58 +916,58 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.ComponentInstance <em>Component Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression <em>Component Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.ComponentInstance
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression
 	 * @generated
 	 */
-	public Adapter createComponentInstanceAdapter() {
+	public Adapter createComponentExpressionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.StateInstance <em>State Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.StateExpression <em>State Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.StateInstance
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.StateExpression
 	 * @generated
 	 */
-	public Adapter createStateInstanceAdapter() {
+	public Adapter createStateExpressionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.RoomInstance <em>Room Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.RoomExpression <em>Room Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.RoomInstance
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.RoomExpression
 	 * @generated
 	 */
-	public Adapter createRoomInstanceAdapter() {
+	public Adapter createRoomExpressionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.IntBoolValue <em>Int Bool Value</em>}'.
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.ValueExpression <em>Value Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.IntBoolValue
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.ValueExpression
 	 * @generated
 	 */
-	public Adapter createIntBoolValueAdapter() {
+	public Adapter createValueExpressionAdapter() {
 		return null;
 	}
 
@@ -1020,6 +996,48 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActuatorExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.BinaryMethod <em>Binary Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.BinaryMethod
+	 * @generated
+	 */
+	public Adapter createBinaryMethodAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.BoolValue <em>Bool Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.BoolValue
+	 * @generated
+	 */
+	public Adapter createBoolValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.IntValue <em>Int Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.IntValue
+	 * @generated
+	 */
+	public Adapter createIntValueAdapter() {
 		return null;
 	}
 

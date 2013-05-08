@@ -8,12 +8,13 @@ import dk.itu.mdd.policyengine.PolicyEngine.ActuatorExpression;
 import dk.itu.mdd.policyengine.PolicyEngine.ActuatorType;
 import dk.itu.mdd.policyengine.PolicyEngine.AudioAlarmActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.BinaryExpression;
+import dk.itu.mdd.policyengine.PolicyEngine.BinaryMethod;
+import dk.itu.mdd.policyengine.PolicyEngine.BoolValue;
 import dk.itu.mdd.policyengine.PolicyEngine.Building;
 import dk.itu.mdd.policyengine.PolicyEngine.CO2Sensor;
 import dk.itu.mdd.policyengine.PolicyEngine.CalendarSystem;
 import dk.itu.mdd.policyengine.PolicyEngine.Component;
 import dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression;
-import dk.itu.mdd.policyengine.PolicyEngine.ComponentInstance;
 import dk.itu.mdd.policyengine.PolicyEngine.DoorActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.ElectricalSwitchActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.Expression;
@@ -23,8 +24,7 @@ import dk.itu.mdd.policyengine.PolicyEngine.HumidifierActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.HumiditySensor;
 import dk.itu.mdd.policyengine.PolicyEngine.If;
 import dk.itu.mdd.policyengine.PolicyEngine.InfraredLightSensor;
-import dk.itu.mdd.policyengine.PolicyEngine.InstanceExpression;
-import dk.itu.mdd.policyengine.PolicyEngine.IntBoolValue;
+import dk.itu.mdd.policyengine.PolicyEngine.IntValue;
 import dk.itu.mdd.policyengine.PolicyEngine.LightSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.LightSwitchActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.MeetingScheduleSystem;
@@ -38,14 +38,14 @@ import dk.itu.mdd.policyengine.PolicyEngine.RadiatorActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.RainSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.ResetExpression;
 import dk.itu.mdd.policyengine.PolicyEngine.Room;
-import dk.itu.mdd.policyengine.PolicyEngine.RoomInstance;
+import dk.itu.mdd.policyengine.PolicyEngine.RoomExpression;
 import dk.itu.mdd.policyengine.PolicyEngine.Schedule;
 import dk.itu.mdd.policyengine.PolicyEngine.Sensor;
 import dk.itu.mdd.policyengine.PolicyEngine.SensorExpression;
 import dk.itu.mdd.policyengine.PolicyEngine.SensorType;
 import dk.itu.mdd.policyengine.PolicyEngine.SmokeSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.State;
-import dk.itu.mdd.policyengine.PolicyEngine.StateInstance;
+import dk.itu.mdd.policyengine.PolicyEngine.StateExpression;
 import dk.itu.mdd.policyengine.PolicyEngine.Statement;
 import dk.itu.mdd.policyengine.PolicyEngine.TemperatureSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.Time;
@@ -53,6 +53,7 @@ import dk.itu.mdd.policyengine.PolicyEngine.TimeExpression;
 import dk.itu.mdd.policyengine.PolicyEngine.Timer;
 import dk.itu.mdd.policyengine.PolicyEngine.TouchSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.UnaryExpression;
+import dk.itu.mdd.policyengine.PolicyEngine.ValueExpression;
 import dk.itu.mdd.policyengine.PolicyEngine.WaterValveActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.Weekdays;
 import dk.itu.mdd.policyengine.PolicyEngine.WindowActuator;
@@ -322,13 +323,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass instanceExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass expressionEClass = null;
 
 	/**
@@ -385,13 +379,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass statementEClass = null;
 
 	/**
@@ -399,28 +386,28 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentInstanceEClass = null;
+	private EClass componentExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass stateInstanceEClass = null;
+	private EClass stateExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass roomInstanceEClass = null;
+	private EClass roomExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass intBoolValueEClass = null;
+	private EClass valueExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -435,6 +422,27 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * @generated
 	 */
 	private EClass actuatorExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass binaryMethodEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass boolValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass intValueEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1229,15 +1237,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInstanceExpression() {
-		return instanceExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getExpression() {
 		return expressionEClass;
 	}
@@ -1355,15 +1354,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComponentExpression() {
-		return componentExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getStatement() {
 		return statementEClass;
 	}
@@ -1373,8 +1363,8 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComponentInstance() {
-		return componentInstanceEClass;
+	public EClass getComponentExpression() {
+		return componentExpressionEClass;
 	}
 
 	/**
@@ -1382,8 +1372,8 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentInstance_Instance() {
-		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(0);
+	public EReference getComponentExpression_Instance() {
+		return (EReference)componentExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1391,8 +1381,8 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStateInstance() {
-		return stateInstanceEClass;
+	public EClass getStateExpression() {
+		return stateExpressionEClass;
 	}
 
 	/**
@@ -1400,8 +1390,8 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStateInstance_DefineState() {
-		return (EReference)stateInstanceEClass.getEStructuralFeatures().get(0);
+	public EReference getStateExpression_DefineState() {
+		return (EReference)stateExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1409,8 +1399,8 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRoomInstance() {
-		return roomInstanceEClass;
+	public EClass getRoomExpression() {
+		return roomExpressionEClass;
 	}
 
 	/**
@@ -1418,8 +1408,8 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoomInstance_RoomInstance() {
-		return (EReference)roomInstanceEClass.getEStructuralFeatures().get(0);
+	public EReference getRoomExpression_RoomInstance() {
+		return (EReference)roomExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1427,8 +1417,8 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIntBoolValue() {
-		return intBoolValueEClass;
+	public EClass getValueExpression() {
+		return valueExpressionEClass;
 	}
 
 	/**
@@ -1465,6 +1455,33 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 */
 	public EReference getActuatorExpression_Act() {
 		return (EReference)actuatorExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBinaryMethod() {
+		return binaryMethodEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBoolValue() {
+		return boolValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIntValue() {
+		return intValueEClass;
 	}
 
 	/**
@@ -1619,8 +1636,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		resetExpressionEClass = createEClass(RESET_EXPRESSION);
 		createEReference(resetExpressionEClass, RESET_EXPRESSION__RESET);
 
-		instanceExpressionEClass = createEClass(INSTANCE_EXPRESSION);
-
 		expressionEClass = createEClass(EXPRESSION);
 
 		binaryExpressionEClass = createEClass(BINARY_EXPRESSION);
@@ -1642,26 +1657,30 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 
 		componentEClass = createEClass(COMPONENT);
 
-		componentExpressionEClass = createEClass(COMPONENT_EXPRESSION);
-
 		statementEClass = createEClass(STATEMENT);
 
-		componentInstanceEClass = createEClass(COMPONENT_INSTANCE);
-		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__INSTANCE);
+		componentExpressionEClass = createEClass(COMPONENT_EXPRESSION);
+		createEReference(componentExpressionEClass, COMPONENT_EXPRESSION__INSTANCE);
 
-		stateInstanceEClass = createEClass(STATE_INSTANCE);
-		createEReference(stateInstanceEClass, STATE_INSTANCE__DEFINE_STATE);
+		stateExpressionEClass = createEClass(STATE_EXPRESSION);
+		createEReference(stateExpressionEClass, STATE_EXPRESSION__DEFINE_STATE);
 
-		roomInstanceEClass = createEClass(ROOM_INSTANCE);
-		createEReference(roomInstanceEClass, ROOM_INSTANCE__ROOM_INSTANCE);
+		roomExpressionEClass = createEClass(ROOM_EXPRESSION);
+		createEReference(roomExpressionEClass, ROOM_EXPRESSION__ROOM_INSTANCE);
 
-		intBoolValueEClass = createEClass(INT_BOOL_VALUE);
+		valueExpressionEClass = createEClass(VALUE_EXPRESSION);
 
 		sensorExpressionEClass = createEClass(SENSOR_EXPRESSION);
 		createEReference(sensorExpressionEClass, SENSOR_EXPRESSION__SEN);
 
 		actuatorExpressionEClass = createEClass(ACTUATOR_EXPRESSION);
 		createEReference(actuatorExpressionEClass, ACTUATOR_EXPRESSION__ACT);
+
+		binaryMethodEClass = createEClass(BINARY_METHOD);
+
+		boolValueEClass = createEClass(BOOL_VALUE);
+
+		intValueEClass = createEClass(INT_VALUE);
 
 		// Create enums
 		weekdaysEEnum = createEEnum(WEEKDAYS);
@@ -1727,19 +1746,20 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		ifEClass.getESuperTypes().add(this.getStatement());
 		timeExpressionEClass.getESuperTypes().add(this.getExpression());
 		resetExpressionEClass.getESuperTypes().add(this.getExpression());
-		instanceExpressionEClass.getESuperTypes().add(this.getBinaryExpression());
 		binaryExpressionEClass.getESuperTypes().add(this.getExpression());
 		unaryExpressionEClass.getESuperTypes().add(this.getExpression());
 		electricalSwitchActuatorEClass.getESuperTypes().add(this.getActuatorType());
 		waterValveActuatorEClass.getESuperTypes().add(this.getActuatorType());
 		gasValveActuatorEClass.getESuperTypes().add(this.getActuatorType());
-		componentExpressionEClass.getESuperTypes().add(this.getBinaryExpression());
-		componentInstanceEClass.getESuperTypes().add(this.getExpression());
-		stateInstanceEClass.getESuperTypes().add(this.getExpression());
-		roomInstanceEClass.getESuperTypes().add(this.getExpression());
-		intBoolValueEClass.getESuperTypes().add(this.getExpression());
+		componentExpressionEClass.getESuperTypes().add(this.getExpression());
+		stateExpressionEClass.getESuperTypes().add(this.getExpression());
+		roomExpressionEClass.getESuperTypes().add(this.getExpression());
+		valueExpressionEClass.getESuperTypes().add(this.getExpression());
 		sensorExpressionEClass.getESuperTypes().add(this.getExpression());
 		actuatorExpressionEClass.getESuperTypes().add(this.getExpression());
+		binaryMethodEClass.getESuperTypes().add(this.getBinaryExpression());
+		boolValueEClass.getESuperTypes().add(this.getValueExpression());
+		intValueEClass.getESuperTypes().add(this.getValueExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(buildingEClass, Building.class, "Building", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1857,8 +1877,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		initEClass(resetExpressionEClass, ResetExpression.class, "ResetExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResetExpression_Reset(), this.getTimer(), null, "reset", null, 1, 1, ResetExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(instanceExpressionEClass, InstanceExpression.class, "InstanceExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(binaryExpressionEClass, BinaryExpression.class, "BinaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1880,26 +1898,30 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(componentExpressionEClass, ComponentExpression.class, "ComponentExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(componentInstanceEClass, ComponentInstance.class, "ComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentInstance_Instance(), this.getComponent(), null, "instance", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(componentExpressionEClass, ComponentExpression.class, "ComponentExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentExpression_Instance(), this.getComponent(), null, "instance", null, 0, 1, ComponentExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(stateInstanceEClass, StateInstance.class, "StateInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStateInstance_DefineState(), this.getState(), null, "defineState", null, 0, 1, StateInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(stateExpressionEClass, StateExpression.class, "StateExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStateExpression_DefineState(), this.getState(), null, "defineState", null, 0, 1, StateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(roomInstanceEClass, RoomInstance.class, "RoomInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoomInstance_RoomInstance(), this.getRoom(), null, "roomInstance", null, 0, 1, RoomInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(roomExpressionEClass, RoomExpression.class, "RoomExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRoomExpression_RoomInstance(), this.getRoom(), null, "roomInstance", null, 0, 1, RoomExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(intBoolValueEClass, IntBoolValue.class, "IntBoolValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(valueExpressionEClass, ValueExpression.class, "ValueExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(sensorExpressionEClass, SensorExpression.class, "SensorExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSensorExpression_Sen(), this.getSensorType(), null, "sen", null, 0, 1, SensorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorExpressionEClass, ActuatorExpression.class, "ActuatorExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActuatorExpression_Act(), this.getActuatorType(), null, "act", null, 0, 1, ActuatorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(binaryMethodEClass, BinaryMethod.class, "BinaryMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(boolValueEClass, BoolValue.class, "BoolValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(intValueEClass, IntValue.class, "IntValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(weekdaysEEnum, Weekdays.class, "Weekdays");

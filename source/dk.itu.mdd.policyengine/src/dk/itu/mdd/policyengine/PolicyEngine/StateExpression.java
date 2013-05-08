@@ -5,21 +5,21 @@ package dk.itu.mdd.policyengine.PolicyEngine;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>State Instance</b></em>'.
+ * A representation of the model object '<em><b>State Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.StateInstance#getDefineState <em>Define State</em>}</li>
+ *   <li>{@link dk.itu.mdd.policyengine.PolicyEngine.StateExpression#getDefineState <em>Define State</em>}</li>
  * </ul>
  * </p>
  *
- * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getStateInstance()
+ * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getStateExpression()
  * @model
  * @generated
  */
-public interface StateInstance extends Expression {
+public interface StateExpression extends Expression {
 	/**
 	 * Returns the value of the '<em><b>Define State</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -30,14 +30,14 @@ public interface StateInstance extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Define State</em>' reference.
 	 * @see #setDefineState(State)
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getStateInstance_DefineState()
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage#getStateExpression_DefineState()
 	 * @model
 	 * @generated
 	 */
 	State getDefineState();
 
 	/**
-	 * Sets the value of the '{@link dk.itu.mdd.policyengine.PolicyEngine.StateInstance#getDefineState <em>Define State</em>}' reference.
+	 * Sets the value of the '{@link dk.itu.mdd.policyengine.PolicyEngine.StateExpression#getDefineState <em>Define State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Define State</em>' reference.
@@ -46,4 +46,4 @@ public interface StateInstance extends Expression {
 	 */
 	void setDefineState(State value);
 
-} // StateInstance
+} // StateExpression

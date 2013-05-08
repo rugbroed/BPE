@@ -319,15 +319,6 @@ public interface PolicyEngineFactory extends EFactory {
 	ResetExpression createResetExpression();
 
 	/**
-	 * Returns a new object of class '<em>Instance Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Instance Expression</em>'.
-	 * @generated
-	 */
-	InstanceExpression createInstanceExpression();
-
-	/**
 	 * Returns a new object of class '<em>Binary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -382,40 +373,22 @@ public interface PolicyEngineFactory extends EFactory {
 	ComponentExpression createComponentExpression();
 
 	/**
-	 * Returns a new object of class '<em>Component Instance</em>'.
+	 * Returns a new object of class '<em>State Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Instance</em>'.
+	 * @return a new object of class '<em>State Expression</em>'.
 	 * @generated
 	 */
-	ComponentInstance createComponentInstance();
+	StateExpression createStateExpression();
 
 	/**
-	 * Returns a new object of class '<em>State Instance</em>'.
+	 * Returns a new object of class '<em>Room Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State Instance</em>'.
+	 * @return a new object of class '<em>Room Expression</em>'.
 	 * @generated
 	 */
-	StateInstance createStateInstance();
-
-	/**
-	 * Returns a new object of class '<em>Room Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Room Instance</em>'.
-	 * @generated
-	 */
-	RoomInstance createRoomInstance();
-
-	/**
-	 * Returns a new object of class '<em>Int Bool Value</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Int Bool Value</em>'.
-	 * @generated
-	 */
-	IntBoolValue createIntBoolValue();
+	RoomExpression createRoomExpression();
 
 	/**
 	 * Returns a new object of class '<em>Sensor Expression</em>'.
@@ -434,6 +407,33 @@ public interface PolicyEngineFactory extends EFactory {
 	 * @generated
 	 */
 	ActuatorExpression createActuatorExpression();
+
+	/**
+	 * Returns a new object of class '<em>Binary Method</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Binary Method</em>'.
+	 * @generated
+	 */
+	BinaryMethod createBinaryMethod();
+
+	/**
+	 * Returns a new object of class '<em>Bool Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bool Value</em>'.
+	 * @generated
+	 */
+	BoolValue createBoolValue();
+
+	/**
+	 * Returns a new object of class '<em>Int Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Int Value</em>'.
+	 * @generated
+	 */
+	IntValue createIntValue();
 
 	/**
 	 * Returns the package supported by this factory.
