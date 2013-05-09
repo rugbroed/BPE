@@ -4,6 +4,7 @@
 \usepackage{pdfpages}
 \usepackage{listings}
 \usepackage{graphicx}
+\usepackage{comment}
 
 \begin{document}
 
@@ -41,7 +42,10 @@
 \section{Discussion}\label{sec:discussion}
 \input{sections/discussion}
 
-\section{Future Work}\label{subsec:futureWork}
+\section{Threats to Validity}\label{sec:threatsToValidity}
+\input{sections/threatsToValidity}
+
+\section{Future Work}\label{sec:futureWork}
 \input{sections/futureWork}
 
 \section{Conclusion}\label{sec:conclusion}
@@ -50,10 +54,11 @@
 \bibliography{BPE}{}
 \bibliographystyle{plain}
 
-\section{Appendix A - DSL MetaModel}\label{app:a-metamodel}
+%Andrzej prefers Appendixes to be without section numbers
+\section*{Appendix A - DSL MetaModel}\label{app:a-metamodel}
 The complete Ecore MetaModel can be viewed online at
 \url{https://github.com/rugbroed/BPE/blob/Version-0.9/documents/ecore-policy-engine.png}
-\includepdf[pages=1,scale=.8,pagecommand=\section{Appendix B - Br\"{u}el \& Kj\ae r}\label{app:bogk}]{BruelOgKjaer.pdf}
+\includepdf[pages=1,scale=.8,pagecommand=\section*{Appendix B - Br\"{u}el \& Kj\ae r}\label{app:bogk}]{BruelOgKjaer.pdf}
 \includepdf[pages=2-,scale=.8,pagecommand={}]{BruelOgKjaer.pdf}
 
 \includepdf[pages=1,scale=.8,pagecommand=\section{Appendix C - K\o benhavns Tekniske Skole}\label{app:kts}]{BruelOgKjaer.pdf}
