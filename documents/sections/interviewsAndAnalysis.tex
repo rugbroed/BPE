@@ -1,4 +1,4 @@
-Since building control resides with Facility Management we found it pertinent to interview company employees working on or close to that field. We conducted open-ended interviews with these companies and documented their content mostly by handwritten notes or in some rare cases by audio record. The main purpose of the interviews was to document;
+Since building control resides with Facility Management we found it pertinent to interview company employees working in or close to that field. We conducted open-ended interviews with these companies and documented their content mostly by handwritten notes or in some rare cases by audio record. The main purpose of the interviews was to document;
 
 \begin{enumerate}
 	\item existing governing rules, implicit or explicit.
@@ -6,10 +6,75 @@ Since building control resides with Facility Management we found it pertinent to
 	\item requests for new governing rules regardless of their practicality or feasibility.
 \end{enumerate}
 
-In order to gather enough material to conceptualize a proper DSL, we interviewed people from the following companies; Br\"{u}el \& Kj\ae r, Bygningsstyrelsen, IT-University of Copenhagen, K\o benhavns Tekniske Skole, ST Aerospace - Denmark and UNI-C.
+In order to gather enough material to conceptualize a proper DSL, we interviewed people from the following companies;
 
-While conducting the interviews, we pointed out that practicality or feasibility should not influence the requests for new governing rules. This proved hard for the interviewees. Some interviews were therefore conducted over several sessions, giving the interviewees time to think creatively. 
+\subsubsection{Br\"{u}el \& Kj\ae r A/S} supplies integrated solutions for the measurement and analysis of sound and vibration with facilities located in N\ae rum, Denmark. These facilities total up to an area of approximately 20,000$m^2$ and are divided into 2 building with 2 floors each; 
+\begin{itemize}
+	\item Main building is used for office space, calibration of new products, research and development, "university" which is used for seminars and conferences, cafeteria and storage space.
+	\item Repair building is only used for repairs and testing of products.
+\end{itemize}	
+These facilities are daily used by 500 employees for various functionality and only 5 are employed in the Facility Management Department to maintain the buildings.
+\begin{description}
+	\item[Interviewee] Building Maintanance Manager.
+	\item[Duration] 52 minutes
+	\item[Interview] Audio Recording
+\end{description}
 
-We only used natural language (English and Danish) to give examples of existing building policies and facilitate the discovery of new, relevant ones. This was done to avoid the limitations of technology, like the expressiveness of a programming language and to make communication less ridgid. 
+\subsubsection{Bygningsstyrelsen} has responsibility for creating modern, functional and cost effective framework for some of the countries important state institutions (\textit{f.ex - universities and ministries}) and for parts of the legislation in the field.
 
-Finally, this project is based on the requirements defined by the professionals working in Facility Management, and used their stated policies as requirements to be implemented as grammar-passed code using the developed DSL.
+\begin{description}
+	\item[Interviewee] Building Maintanance Manager.
+	\item[Duration] 1 hour
+	\item[Interview] Transcribed
+\end{description}
+
+\subsubsection{IT-University of Copenhagen} is an educational institution based in copenhagen. The facility is one main campus with an approxima area of 19,000$m^2$. The building has a basement and 5 floors.
+\begin{itemize}
+	\item The basement is used for bicycle parking and gym facilities.
+	\item the ground consists of an atrium, canteen, lecture rooms and offices.
+	\item like the ground floor, the rest of the floors consists of lecture rooms and offices.
+\end{itemize}
+\begin{description}
+	\item[Interviewee] Building Maintanance Manager.
+	\item[Duration] 1 hour
+	\item[Interview] Transcribed
+\end{description}
+
+\subsubsection{K\o benhavns Tekniske Skole} is an educational institution based in copenhagen with colleges in various parts of the city.
+\begin{description}
+	\item[Interviewee] Building Maintanance Manager.
+	\item[Duration] 1 hour
+	\item[Interview] Transcribed
+\end{description}
+
+\subsubsection{ST Aerospace - Denmark} is an independent global company, offering third party aviation Maintenance, Repair and Overhaul with facilities in copenhagen. 
+\begin{description}
+	\item[Interviewee] Building Maintanance Manager.
+	\item[Duration] 1 hour
+	\item[Interview] Transcribed
+\end{description}
+
+\subsubsection{UNI-C} is an agency under The Danish Ministry of Children and Education. The promote digital development within the area of children and learning. Our primary focus is on increasing the use of IT in education, and to support an effective operation of institutions by using IT.
+  
+\begin{description}
+	\item[Interviewee] Building Maintanance Manager.
+	\item[Duration] 1 hour
+	\item[Interview] Transcribed
+\end{description}
+
+\subsubsection{Questions} were formulated by the team to be used as a base for these interviews and aimed at gathering relevant information for our project. Some of the questions used in the conducted interviews are as below:
+\begin{enumerate}
+	\item How many buildings, build up of each building and the total floor area?
+	\item What is the facility used for? 
+	\item How many employees make use of the facilty?
+	\item How many work in Facility Management Department?
+	\item What tools, if any, do you make use of currently?
+	\item What Policies are in place today?
+	\item What Policies would you like to have implemented?
+	\item What sensors and actuators are in use today and which others do you find relevant and necessary to have?
+	\item What other implementations would you consider to make managing these facilities easier?
+\end{enumerate}
+
+While conducting the interviews, we pointed out that practicality or feasibility should not influence the requests for new governing rules. This proved hard for the interviewees. Some interviews were therefore conducted over several sessions, giving the interviewees time to think creatively. We only used natural language (English and Danish) to give examples of existing building policies and facilitate the discovery of new, relevant ones. This was done to avoid the limitations of technology, like the expressiveness of a programming language and to make communication less ridgid.\\ 
+
+Finally, this project is solely based on the requirements defined by the professionals working in Facility Management, and uses their stated policies as requirements to be implemented grammar-passed to code using the developed DSL. An example, in Br\"{u}el \& Kj\ae r, the Facility Manager requested that in the case a humidity sensors in the production area drop below a certain value, the alarm in the janitos office should go off. This is implemented and can be seen in Figure \ref{fig:dsl-policy-definition}. In Section \ref{sec:designAndDevelopment}, we discuss more on how these interviews contributed in the design of our DSL in more details.
