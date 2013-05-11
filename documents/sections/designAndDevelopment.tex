@@ -15,6 +15,14 @@ in our metamodel and used in our DSL are from the combined analysis of the inter
 	\label{fig:ecore-sensors-actuators}
 \end{figure}
 
+\subsubsection{Building definition}
+In order to specify the building(s) with all their floors and rooms, the core classes has been included in Figure \ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
+\begin{figure}[h]
+  \centering \includegraphics[scale=0.4]{ecore-building-definition.png}  
+	\caption{The metamodel related to the \textit{building definition}. The inherited class NamedElement has been omitted.}
+	\label{fig:ecore-building-definition}
+\end{figure}
+
 \subsubsection{Expression language}
 After the analysis of the interviews we concluded that the needed expression language did not need to be very advanced. We needed boolean variables (\textit{states}) and if-statements with two different types of conditions; the normal if-statement, which operates on sensor types and state instances. The other one operates on a timer (see Figure \ref{fig:dsl-conditionalexpression}). In the body of the if-statement, we can use expression to reset timers, and set actuators using instances in specific rooms as shown in the DSL example \ref{fig:dsl-policy-definition}
 
@@ -25,13 +33,6 @@ After the analysis of the interviews we concluded that the needed expression lan
 	\label{fig:ecore-expression-language}
 \end{figure}
 
-\subsubsection{Building definition}
-In order to specify the building(s) with all their floors and rooms, the core classes has been included in Figure \ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
-\begin{figure}[h]
-  \centering \includegraphics[scale=0.4]{ecore-building-definition.png}  
-	\caption{The metamodel related to the \textit{building definition}. The inherited class NamedElement has been omitted.}
-	\label{fig:ecore-building-definition}
-\end{figure}
 \subsubsection{Policy definition}
 In the policy definition metamodel below, to define a policy, we make use of actuator and sensor types, and use room instances. The implementation of the policy is enhanced by the use of statements; if, state and timer. the if-statement uses the expression language to define behaviour. These policy can also be run following a defined schedule as shown in the dsl example of room-type in figure \ref{fig:room-types} 
 \begin{figure}[h]
@@ -41,7 +42,7 @@ In the policy definition metamodel below, to define a policy, we make use of act
 	\label{fig:ecore-policy-definition}
 \end{figure}
 
-There are several extra classes, consisting of subsystems that can be implemented in section \ref{subsec:futureWork}.
+There are several extra classes, consisting of subsystems that can be implemented in Section \ref{sec:futureWork}.
 
 \subsection{Key Concepts}
 
@@ -53,9 +54,9 @@ Time has to be an integral part of the DSL, and not just related with the intern
 	\item Time conditional expression\label{subsubsec:conditionalexpression}
 A \textit{time conditional expression} is an expression used for determining the flow of a behavior. It is an `if' statement that can react based on a built-in timer function. 
 
-\begin{figure}
+\begin{figure}[h]
   \centering
-    \includegraphics[scale=.5]{dsl-conditional-time-expression.png} 
+    \includegraphics[scale=.5]{dsl-conditional-time-expression.png}
 	\caption{An example of a \textit{time conditional expression} that evaluates to true if more than 20 minutes have passed.}
 	\label{fig:dsl-conditionalexpression}
 \end{figure}
