@@ -28,7 +28,7 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 	 */
 	public static PolicyEngineFactory init() {
 		try {
-			PolicyEngineFactory thePolicyEngineFactory = (PolicyEngineFactory)EPackage.Registry.INSTANCE.getEFactory("platform:/resource/dk.itu.mdd.policyengine/model/PolicyEngine.ecore"); 
+			PolicyEngineFactory thePolicyEngineFactory = (PolicyEngineFactory)EPackage.Registry.INSTANCE.getEFactory(PolicyEnginePackage.eNS_URI);
 			if (thePolicyEngineFactory != null) {
 				return thePolicyEngineFactory;
 			}

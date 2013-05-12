@@ -32,33 +32,36 @@ Conjunction returns Expression:
 	Comparison ( {BinaryExpression.leftExpr=current} operator=('&&') rightExpr=Comparison )* ;
 
 Comparison returns Expression: 
-	 Primary ( {BinaryExpression.leftExpr=current} operator=('='|'!='|'<='|'<'|'>='|'>') rightExpr=(Primary | IntBoolValue) )* ;
+	 Primary ( {BinaryExpression.leftExpr=current} operator=('='|'!='|'<='|'<'|'>='|'>') rightExpr=(Primary | ValueExpression) )* ;
 
-Instance returns Expression:
-	RoomInstance({InstanceExpression.leftExpr=current} operator=('.') rightExpr=ComponentInstance )* ;
+RoomInstance returns Expression:
+	RoomExpression({BinaryMethod.leftExpr=current} operator=('.') rightExpr=ComponentInstance )* ;
+	
+ComponentInstance returns Expression:
+	ComponentExpression({BinaryMethod.leftExpr=current} operator=('=') rightExpr=ValueExpression )* ;
 	
 SetStateActuator returns Expression:
-	SetValue({ComponentExpression.leftExpr=current} operator=('=') rightExpr=IntBoolValue )* ;
+	SetValue({BinaryMethod.leftExpr=current} operator=('=') rightExpr=ValueExpression )* ;
 
 Primary	returns Expression: 
- 	UnaryExpression | '(' Expression ')' | TimeExpression | StateInstance  | SensorExpression;
+ 	UnaryExpression | '(' Expression ')' | TimeExpression | StateExpression  | SensorExpression;
 
 Condition returns Expression: 
 	'(' Expression ')' 
 ;
 
 SetValue returns Expression:
-	ActuatorExpression | StateInstance
+	ActuatorExpression | StateExpression
 ;
 
 Then returns Expression:
-	ResetExpression | SetStateActuator | Instance;
+	ResetExpression | SetStateActuator | RoomInstance;
 
 UnaryExpression returns Expression:
 	{UnaryExpression} operator=('!')expr= Primary;
 
-IntBoolValue returns Expression:
-		 {IntBoolValue} INT  | {IntBoolValue} EBoolean;
+ValueExpression returns Expression:
+		 IntValue  | BoolValue;
 
 /* 
 Expression returns Expression:
@@ -279,57 +282,42 @@ TimeExpression returns TimeExpression:
 ResetExpression returns ResetExpression:
 	'reset'  reset=[Timer];
 
-
-InstanceExpression returns InstanceExpression:
-	'InstanceExpression'
-	'{'
-		'operator' operator=EString
-		'leftExpr' leftExpr=Expression
-		'rightExpr' rightExpr=Expression
-	'}';
-
-BinaryExpression_Impl returns BinaryExpression:
-	'BinaryExpression'
-	'{'
-		'operator' operator=EString
-		'leftExpr' leftExpr=Expression
-		'rightExpr' rightExpr=Expression
-	'}';
-
 ComponentExpression returns ComponentExpression:
-	'ComponentExpression'
-	'{'
-		'operator' operator=EString
-		'leftExpr' leftExpr=Expression
-		'rightExpr' rightExpr=Expression
-	'}';
+	{ComponentExpression}
+		(instance=[Component])?;
 
-ComponentInstance returns ComponentInstance:
-	{ComponentInstance}
-		(instance=[Component] '=' EInt)?;
-
-StateInstance returns StateInstance:
-	{StateInstance}
+StateExpression returns StateExpression:
+	{StateExpression}
 	'state-instance''.'
 		(defineState=[State])?
 	;
 
-RoomInstance returns RoomInstance:
-	{RoomInstance}
+RoomExpression returns RoomExpression:
+	{RoomExpression}
 	'room-instance''.'
 		(roomInstance=[Room])?
 	;
 
 SensorExpression returns SensorExpression:
 	{SensorExpression}
-		(sen=SensorType)?
-		'.''value'
+		(sen=SensorType'.''value')?
 	;
 
 ActuatorExpression returns ActuatorExpression:
 	{ActuatorExpression}
 		(act=ActuatorType)?
 		'.''setValue'
+	;
+
+
+BoolValue returns BoolValue:
+	{BoolValue}
+	EBoolean
+	;
+
+IntValue returns IntValue:
+	{IntValue}
+	EInt
 	;
 
 EInt returns ecore::EInt:

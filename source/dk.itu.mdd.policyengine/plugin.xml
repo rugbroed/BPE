@@ -7,6 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated PolicyEngine -->
       <package
             uri="platform:/resource/dk.itu.mdd.policyengine/model/PolicyEngine.ecore"
             class="dk.itu.mdd.policyengine.PolicyEngine.PolicyEnginePackage"
