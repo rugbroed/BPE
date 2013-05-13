@@ -1,4 +1,4 @@
-In this section, we focus on 2 points; Our meat-model being of considerable size, explaining it as separate core packages, gives a better understanding and overview of the complete model. Secondly, we explain the key concepts behind the definition of policies.\\
+In this section, we focus on 2 points; Our meat-model being of considerable size, explaining it as separate core packages, gives a better understanding and overview of the complete model. Second, we explain the key concepts behind the definition of policies.\\
  
 By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs. Finally, we used our Policy Engine DSL editor to specify buildings and write the policies. The full DSL implementation based on two of the interviews, one for Br\"{u}el \& Kj\ae r (see Figure \nameref{app:bogk}) and one for K\o benhavns Tekniske Skole (see Figure \nameref{app:kts}). Please note that they are fully working implementations running in Eclipse.
 
@@ -88,7 +88,7 @@ Policies define the actual behavior, ie. adjustment of actuators, based on senso
 \subsubsection{Building specification}\label{subsec:buildingspecification}
 Rooms and room types are part of the complete building specification, with terminology rooted in concepts revolving around buildings, ie. rooms, room types, floors, different sensors and actuators. \\
 
-To avoid confusing the DSL user with an overwhelming amount of declarations of rooms, sensors and actuators - we have designed \textit{room types} that declare static use of sensors and actuators. Independent rooms that stick out from the crown can still be defined on an instance level.
+To avoid confusing the DSL user with an overwhelming amount of declarations of rooms, sensors and actuators --- we have designed \textit{room types} that declare static use of sensors and actuators. Independent rooms that stick out from the crown can still be defined on an instance level.
 
 \begin{figure}
   \centering
