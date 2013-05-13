@@ -1,13 +1,17 @@
 In this section, we focus on 2 points; Our meta-model being of considerable size, explaining it as separate core packages, gives a better understanding and overview of the complete model. Second, we explain the key concepts behind the definition of policies.\\
  
+<<<<<<< HEAD
 By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs. Finally, we used our Policy Engine DSL editor to specify buildings and write the policies. The full DSL implementation based on two of the interviews, one for Br\"{u}el \& Kj\ae r (see figure \nameref{app:bogk}) and one for K\o benhavns Tekniske Skole (see figure \nameref{app:kts}). Please note that they are fully working implementations running in Eclipse.
+=======
+By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs. Finally, we used our Policy Engine DSL editor to specify buildings and write the policies. The full DSL implementation based on two of the interviews, one for Br\"{u}el \& Kj\ae r (see \nameref{app:bogk}) and one for K\o benhavns Tekniske Skole (see \nameref{app:kts}). Please note that they are fully working implementations running in Eclipse.
+>>>>>>> referencing fixed: eval, interview & des&dev
 
 \subsection{Meta-Models}
 
 The following core packages, differentiated in separate Ecore Diagrams can be viewed fully in \nameref{app:a-metamodel} as a single meta-model. In the sub-sections below, we show images and explain the build up of the core package as it is in our model. 
 
 \subsubsection{Building definition}
-In order to specify the building(s) with all their floors and rooms, the core classes has been included in Figure \ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
+In order to specify the building(s) with all their floors and rooms, the core classes has been included in fig. \ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
 \begin{figure}[h]
   \centering \includegraphics[scale=.5]{ecore-building-definition.png}  
 	\caption{The metamodel related to the \textit{building definition}. The inherited class NamedElement has been omitted.}
@@ -26,7 +30,7 @@ In our metamodel, the sensors and actuators used are from the combined analysis 
 
 
 \subsubsection{Expression language}
-After the analysis of the interviews we concluded that the needed expression language did not need to be very advanced. We needed boolean variables (\textit{states}) and if-statements with two different types of conditions; the normal if-statement, which operates on sensor types and state instances. The other one operates on a timer (see Figure \ref{fig:dsl-conditionalexpression}). In the body of the if-statement, we can use expression to reset timers, and set actuators using instances in specific rooms as shown in the DSL example \ref{fig:dsl-policy-definition}. The core classes are all included in Figure \ref{fig:ecore-expression-language} below.
+After the analysis of the interviews we concluded that the needed expression language did not need to be very advanced. We needed boolean variables (\textit{states}) and if-statements with two different types of conditions; the normal if-statement, which operates on sensor types and state instances. The other one operates on a timer (see fig.\ref{fig:dsl-conditionalexpression}). In the body of the if-statement, we can use expression to reset timers, and set actuators using instances in specific rooms as shown in the DSL example in fig.\ref{fig:dsl-policy-definition}. The core classes are all included in fig.\ref{fig:ecore-expression-language} below.
 
 \begin{figure}[h]
   \centering
@@ -36,7 +40,7 @@ After the analysis of the interviews we concluded that the needed expression lan
 \end{figure}
 
 \subsubsection{Policy definition}
-In the policy definition metamodel below, to define a policy, we make use of actuator and sensor types, and use room instances. The implementation of the policy is enhanced by the use of statements; if, state and timer. the if-statement uses the expression language to define behaviour. These policy can also be run following a defined schedule as shown in the dsl example of room-type in figure \ref{fig:room-types}. All policy definition core classes are shown in Figure \ref{fig:ecore-policy-definition} below.
+In the policy definition metamodel below, to define a policy, we make use of actuator and sensor types, and use room instances. The implementation of the policy is enhanced by the use of statements; if, state and timer. the if-statement uses the expression language to define behaviour. These policy can also be run following a defined schedule as shown in the dsl example of room-type in fig.\ref{fig:room-types}. All policy definition core classes are shown in fig.\ref{fig:ecore-policy-definition} below.
 \begin{figure}[h]
   \centering
     \includegraphics[scale=.5]{ecore-policy-definition.png}	
@@ -44,7 +48,7 @@ In the policy definition metamodel below, to define a policy, we make use of act
 	\label{fig:ecore-policy-definition}
 \end{figure}
 
-There are several extra classes, consisting of subsystems that can be implemented in Section \ref{sec:futureWork}.
+There are several extra classes, consisting of subsystems that can be implemented in section \ref{sec:futureWork}.
 
 \subsection{Key Concepts}
 
