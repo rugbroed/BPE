@@ -12,7 +12,6 @@ import dk.itu.mdd.policyengine.PolicyEngine.BinaryMethod;
 import dk.itu.mdd.policyengine.PolicyEngine.BoolValue;
 import dk.itu.mdd.policyengine.PolicyEngine.Building;
 import dk.itu.mdd.policyengine.PolicyEngine.CO2Sensor;
-import dk.itu.mdd.policyengine.PolicyEngine.CalendarSystem;
 import dk.itu.mdd.policyengine.PolicyEngine.Component;
 import dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression;
 import dk.itu.mdd.policyengine.PolicyEngine.DoorActuator;
@@ -28,7 +27,6 @@ import dk.itu.mdd.policyengine.PolicyEngine.InfraredLightSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.IntValue;
 import dk.itu.mdd.policyengine.PolicyEngine.LightSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.LightSwitchActuator;
-import dk.itu.mdd.policyengine.PolicyEngine.MeetingScheduleSystem;
 import dk.itu.mdd.policyengine.PolicyEngine.Model;
 import dk.itu.mdd.policyengine.PolicyEngine.MotionSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.NamedElement;
@@ -164,13 +162,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass ctsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass accessControlEClass = null;
 
 	/**
@@ -186,20 +177,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * @generated
 	 */
 	private EClass namedElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass calendarSystemEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass meetingScheduleSystemEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -542,7 +519,7 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBuilding_CtsSystem() {
+	public EReference getBuilding_AccessControl() {
 		return (EReference)buildingEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -551,7 +528,7 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBuilding_AccessControl() {
+	public EReference getBuilding_Floors() {
 		return (EReference)buildingEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -560,35 +537,8 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBuilding_CalendarSystem() {
-		return (EReference)buildingEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBuilding_MeetingScheduleSystem() {
-		return (EReference)buildingEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBuilding_Floors() {
-		return (EReference)buildingEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getBuilding_Timers() {
-		return (EReference)buildingEClass.getEStructuralFeatures().get(5);
+		return (EReference)buildingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -767,33 +717,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCTS() {
-		return ctsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCTS_TemperatureSensors() {
-		return (EReference)ctsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCTS_CtsActuators() {
-		return (EReference)ctsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAccessControl() {
 		return accessControlEClass;
 	}
@@ -841,24 +764,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 */
 	public EAttribute getNamedElement_Name() {
 		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCalendarSystem() {
-		return calendarSystemEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMeetingScheduleSystem() {
-		return meetingScheduleSystemEClass;
 	}
 
 	/**
@@ -1556,10 +1461,7 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 
 		// Create classes and their features
 		buildingEClass = createEClass(BUILDING);
-		createEReference(buildingEClass, BUILDING__CTS_SYSTEM);
 		createEReference(buildingEClass, BUILDING__ACCESS_CONTROL);
-		createEReference(buildingEClass, BUILDING__CALENDAR_SYSTEM);
-		createEReference(buildingEClass, BUILDING__MEETING_SCHEDULE_SYSTEM);
 		createEReference(buildingEClass, BUILDING__FLOORS);
 		createEReference(buildingEClass, BUILDING__TIMERS);
 
@@ -1593,10 +1495,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 
 		lightSensorEClass = createEClass(LIGHT_SENSOR);
 
-		ctsEClass = createEClass(CTS);
-		createEReference(ctsEClass, CTS__TEMPERATURE_SENSORS);
-		createEReference(ctsEClass, CTS__CTS_ACTUATORS);
-
 		accessControlEClass = createEClass(ACCESS_CONTROL);
 		createEReference(accessControlEClass, ACCESS_CONTROL__ACCESS_CONTROL_SENSORS);
 		createEReference(accessControlEClass, ACCESS_CONTROL__ACCESS_CONTROL_DOOR_LOCK_ACTUATOR);
@@ -1605,10 +1503,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
-
-		calendarSystemEClass = createEClass(CALENDAR_SYSTEM);
-
-		meetingScheduleSystemEClass = createEClass(MEETING_SCHEDULE_SYSTEM);
 
 		radiatorActuatorEClass = createEClass(RADIATOR_ACTUATOR);
 
@@ -1803,10 +1697,7 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(buildingEClass, Building.class, "Building", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBuilding_CtsSystem(), this.getCTS(), null, "ctsSystem", null, 0, 1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBuilding_AccessControl(), this.getAccessControl(), null, "accessControl", null, 0, 1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBuilding_CalendarSystem(), this.getCalendarSystem(), null, "calendarSystem", null, 0, 1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBuilding_MeetingScheduleSystem(), this.getMeetingScheduleSystem(), null, "meetingScheduleSystem", null, 0, 1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBuilding_Floors(), this.getFloor(), null, "floors", null, 0, -1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBuilding_Timers(), this.getTimer(), null, "timers", null, 0, -1, Building.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1840,10 +1731,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 
 		initEClass(lightSensorEClass, LightSensor.class, "LightSensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(ctsEClass, dk.itu.mdd.policyengine.PolicyEngine.CTS.class, "CTS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCTS_TemperatureSensors(), this.getTemperatureSensor(), null, "temperatureSensors", null, 0, -1, dk.itu.mdd.policyengine.PolicyEngine.CTS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCTS_CtsActuators(), this.getActuator(), null, "ctsActuators", null, 0, -1, dk.itu.mdd.policyengine.PolicyEngine.CTS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(accessControlEClass, AccessControl.class, "AccessControl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAccessControl_AccessControlSensors(), this.getSensorType(), null, "accessControlSensors", null, 0, -1, AccessControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAccessControl_AccessControlDoorLockActuator(), this.getDoorActuator(), null, "accessControlDoorLockActuator", null, 0, -1, AccessControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1852,10 +1739,6 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(calendarSystemEClass, CalendarSystem.class, "CalendarSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(meetingScheduleSystemEClass, MeetingScheduleSystem.class, "MeetingScheduleSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(radiatorActuatorEClass, RadiatorActuator.class, "RadiatorActuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

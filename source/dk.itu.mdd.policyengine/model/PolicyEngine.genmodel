@@ -16,10 +16,7 @@
       <genEnumLiterals ecoreEnumLiteral="PolicyEngine.ecore#//Weekdays/SUNDAY"/>
     </genEnums>
     <genClasses ecoreClass="PolicyEngine.ecore#//Building">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/ctsSystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/accessControl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/calendarSystem"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/meetingScheduleSystem"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/floors"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//Building/timers"/>
     </genClasses>
@@ -45,10 +42,6 @@
     <genClasses ecoreClass="PolicyEngine.ecore#//WindowActuator"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//HumidifierActuator"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//LightSensor"/>
-    <genClasses ecoreClass="PolicyEngine.ecore#//CTS">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//CTS/temperatureSensors"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//CTS/ctsActuators"/>
-    </genClasses>
     <genClasses ecoreClass="PolicyEngine.ecore#//AccessControl">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//AccessControl/accessControlSensors"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PolicyEngine.ecore#//AccessControl/accessControlDoorLockActuator"/>
@@ -57,8 +50,6 @@
     <genClasses image="false" ecoreClass="PolicyEngine.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PolicyEngine.ecore#//NamedElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="PolicyEngine.ecore#//CalendarSystem"/>
-    <genClasses ecoreClass="PolicyEngine.ecore#//MeetingScheduleSystem"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//RadiatorActuator"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//SmokeSensor"/>
     <genClasses image="false" ecoreClass="PolicyEngine.ecore#//ActuatorType"/>

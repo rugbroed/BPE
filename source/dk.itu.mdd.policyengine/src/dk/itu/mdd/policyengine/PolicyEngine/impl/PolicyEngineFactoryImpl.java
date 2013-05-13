@@ -69,11 +69,8 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 			case PolicyEnginePackage.WINDOW_ACTUATOR: return createWindowActuator();
 			case PolicyEnginePackage.HUMIDIFIER_ACTUATOR: return createHumidifierActuator();
 			case PolicyEnginePackage.LIGHT_SENSOR: return createLightSensor();
-			case PolicyEnginePackage.CTS: return createCTS();
 			case PolicyEnginePackage.ACCESS_CONTROL: return createAccessControl();
 			case PolicyEnginePackage.DOOR_ACTUATOR: return createDoorActuator();
-			case PolicyEnginePackage.CALENDAR_SYSTEM: return createCalendarSystem();
-			case PolicyEnginePackage.MEETING_SCHEDULE_SYSTEM: return createMeetingScheduleSystem();
 			case PolicyEnginePackage.RADIATOR_ACTUATOR: return createRadiatorActuator();
 			case PolicyEnginePackage.SMOKE_SENSOR: return createSmokeSensor();
 			case PolicyEnginePackage.CO2_SENSOR: return createCO2Sensor();
@@ -265,16 +262,6 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CTS createCTS() {
-		CTSImpl cts = new CTSImpl();
-		return cts;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AccessControl createAccessControl() {
 		AccessControlImpl accessControl = new AccessControlImpl();
 		return accessControl;
@@ -288,26 +275,6 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 	public DoorActuator createDoorActuator() {
 		DoorActuatorImpl doorActuator = new DoorActuatorImpl();
 		return doorActuator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CalendarSystem createCalendarSystem() {
-		CalendarSystemImpl calendarSystem = new CalendarSystemImpl();
-		return calendarSystem;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MeetingScheduleSystem createMeetingScheduleSystem() {
-		MeetingScheduleSystemImpl meetingScheduleSystem = new MeetingScheduleSystemImpl();
-		return meetingScheduleSystem;
 	}
 
 	/**

@@ -78,10 +78,7 @@ Building returns Building:
 	'building'
 	name=EString
 	'{'
-		(ctsSystem=CTS)?
 		(accessControl=AccessControl)?
-		(calendarSystem=CalendarSystem)?
-		(meetingScheduleSystem=MeetingScheduleSystem)?
 		(timers+=Timer (timers+=Timer)*)?
 		(floors+=Floor (floors+=Floor)*)?
 	'}';
@@ -127,14 +124,6 @@ Schedule returns Schedule:
 		('from' from=Time 'to' to=Time)?
 	;
 
-CTS returns CTS:
-	{CTS}
-	'CTS'
-	'{'
-		('temperatureSensors' '{' temperatureSensors+=TemperatureSensor ( "," temperatureSensors+=TemperatureSensor)* '}' )?
-		('ctsActuators' '{' ctsActuators+=Actuator ( "," ctsActuators+=Actuator)* '}' )?
-	'}';
-
 AccessControl returns AccessControl:
 	{AccessControl}
 	'AccessControl'
@@ -142,16 +131,6 @@ AccessControl returns AccessControl:
 		('accessControlSensors' '{' accessControlSensors+=SensorType ( "," accessControlSensors+=SensorType)* '}' )?
 		('accessControlDoorLockActuator' '{' accessControlDoorLockActuator+=DoorActuator ( "," accessControlDoorLockActuator+=DoorActuator)* '}' )?
 	'}';
-
-CalendarSystem returns CalendarSystem:
-	{CalendarSystem}
-	'CalendarSystem'
-	;
-
-MeetingScheduleSystem returns MeetingScheduleSystem:
-	{MeetingScheduleSystem}
-	'MeetingScheduleSystem'
-	;
 
 Floor returns Floor:
 	{Floor}
@@ -318,7 +297,6 @@ ActuatorExpression returns ActuatorExpression:
 		(act=ActuatorType)?
 		'.''setValue'
 	;
-
 
 BoolValue returns BoolValue:
 	{BoolValue}

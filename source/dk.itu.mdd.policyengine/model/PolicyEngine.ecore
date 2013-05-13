@@ -3,14 +3,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PolicyEngine" nsURI="platform:/resource/dk.itu.mdd.policyengine/model/PolicyEngine.ecore"
     nsPrefix="policyengine">
   <eClassifiers xsi:type="ecore:EClass" name="Building" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ctsSystem" eType="#//CTS"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControl" eType="#//AccessControl"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="calendarSystem" eType="#//CalendarSystem"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="meetingScheduleSystem"
-        eType="#//MeetingScheduleSystem" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="floors" upperBound="-1"
         eType="#//Floor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timers" upperBound="-1"
@@ -46,12 +40,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="WindowActuator" eSuperTypes="#//ActuatorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="HumidifierActuator" eSuperTypes="#//ActuatorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="LightSensor" eSuperTypes="#//SensorType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CTS">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="temperatureSensors" upperBound="-1"
-        eType="#//TemperatureSensor" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ctsActuators" upperBound="-1"
-        eType="#//Actuator" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AccessControl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessControlSensors" upperBound="-1"
         eType="#//SensorType" containment="true"/>
@@ -62,8 +50,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CalendarSystem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MeetingScheduleSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="RadiatorActuator" eSuperTypes="#//ActuatorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="SmokeSensor" eSuperTypes="#//SensorType"/>
   <eClassifiers xsi:type="ecore:EClass" name="ActuatorType" abstract="true"/>

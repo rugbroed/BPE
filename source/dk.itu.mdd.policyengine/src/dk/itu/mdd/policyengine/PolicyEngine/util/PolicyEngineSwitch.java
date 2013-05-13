@@ -152,12 +152,6 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PolicyEnginePackage.CTS: {
-				CTS cts = (CTS)theEObject;
-				T result = caseCTS(cts);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case PolicyEnginePackage.ACCESS_CONTROL: {
 				AccessControl accessControl = (AccessControl)theEObject;
 				T result = caseAccessControl(accessControl);
@@ -174,18 +168,6 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 			case PolicyEnginePackage.NAMED_ELEMENT: {
 				NamedElement namedElement = (NamedElement)theEObject;
 				T result = caseNamedElement(namedElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PolicyEnginePackage.CALENDAR_SYSTEM: {
-				CalendarSystem calendarSystem = (CalendarSystem)theEObject;
-				T result = caseCalendarSystem(calendarSystem);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PolicyEnginePackage.MEETING_SCHEDULE_SYSTEM: {
-				MeetingScheduleSystem meetingScheduleSystem = (MeetingScheduleSystem)theEObject;
-				T result = caseMeetingScheduleSystem(meetingScheduleSystem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -632,21 +614,6 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>CTS</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>CTS</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCTS(CTS object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Access Control</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -688,36 +655,6 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Calendar System</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Calendar System</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCalendarSystem(CalendarSystem object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Meeting Schedule System</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Meeting Schedule System</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMeetingScheduleSystem(MeetingScheduleSystem object) {
 		return null;
 	}
 

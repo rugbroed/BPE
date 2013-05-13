@@ -130,15 +130,6 @@ public interface PolicyEngineFactory extends EFactory {
 	LightSensor createLightSensor();
 
 	/**
-	 * Returns a new object of class '<em>CTS</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>CTS</em>'.
-	 * @generated
-	 */
-	CTS createCTS();
-
-	/**
 	 * Returns a new object of class '<em>Access Control</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,24 +146,6 @@ public interface PolicyEngineFactory extends EFactory {
 	 * @generated
 	 */
 	DoorActuator createDoorActuator();
-
-	/**
-	 * Returns a new object of class '<em>Calendar System</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Calendar System</em>'.
-	 * @generated
-	 */
-	CalendarSystem createCalendarSystem();
-
-	/**
-	 * Returns a new object of class '<em>Meeting Schedule System</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Meeting Schedule System</em>'.
-	 * @generated
-	 */
-	MeetingScheduleSystem createMeetingScheduleSystem();
 
 	/**
 	 * Returns a new object of class '<em>Radiator Actuator</em>'.

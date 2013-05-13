@@ -64,7 +64,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 15;
+	int NAMED_ELEMENT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -104,40 +104,13 @@ public interface PolicyEnginePackage extends EPackage {
 	int BUILDING__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Cts System</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILDING__CTS_SYSTEM = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Access Control</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUILDING__ACCESS_CONTROL = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Calendar System</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILDING__CALENDAR_SYSTEM = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Meeting Schedule System</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILDING__MEETING_SCHEDULE_SYSTEM = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int BUILDING__ACCESS_CONTROL = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Floors</b></em>' containment reference list.
@@ -146,7 +119,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUILDING__FLOORS = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int BUILDING__FLOORS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Timers</b></em>' containment reference list.
@@ -155,7 +128,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUILDING__TIMERS = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int BUILDING__TIMERS = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Building</em>' class.
@@ -164,7 +137,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUILDING_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int BUILDING_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.ModelImpl <em>Model</em>}' class.
@@ -256,7 +229,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getActuatorType()
 	 * @generated
 	 */
-	int ACTUATOR_TYPE = 20;
+	int ACTUATOR_TYPE = 17;
 
 	/**
 	 * The number of structural features of the '<em>Actuator Type</em>' class.
@@ -368,7 +341,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getSensorType()
 	 * @generated
 	 */
-	int SENSOR_TYPE = 38;
+	int SENSOR_TYPE = 35;
 
 	/**
 	 * The number of structural features of the '<em>Sensor Type</em>' class.
@@ -513,43 +486,6 @@ public interface PolicyEnginePackage extends EPackage {
 	int LIGHT_SENSOR_FEATURE_COUNT = SENSOR_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.CTSImpl <em>CTS</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.CTSImpl
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getCTS()
-	 * @generated
-	 */
-	int CTS = 12;
-
-	/**
-	 * The feature id for the '<em><b>Temperature Sensors</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CTS__TEMPERATURE_SENSORS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Cts Actuators</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CTS__CTS_ACTUATORS = 1;
-
-	/**
-	 * The number of structural features of the '<em>CTS</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CTS_FEATURE_COUNT = 2;
-
-	/**
 	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.AccessControlImpl <em>Access Control</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -557,7 +493,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getAccessControl()
 	 * @generated
 	 */
-	int ACCESS_CONTROL = 13;
+	int ACCESS_CONTROL = 12;
 
 	/**
 	 * The feature id for the '<em><b>Access Control Sensors</b></em>' containment reference list.
@@ -594,7 +530,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getDoorActuator()
 	 * @generated
 	 */
-	int DOOR_ACTUATOR = 14;
+	int DOOR_ACTUATOR = 13;
 
 	/**
 	 * The number of structural features of the '<em>Door Actuator</em>' class.
@@ -606,44 +542,6 @@ public interface PolicyEnginePackage extends EPackage {
 	int DOOR_ACTUATOR_FEATURE_COUNT = ACTUATOR_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.CalendarSystemImpl <em>Calendar System</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.CalendarSystemImpl
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getCalendarSystem()
-	 * @generated
-	 */
-	int CALENDAR_SYSTEM = 16;
-
-	/**
-	 * The number of structural features of the '<em>Calendar System</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALENDAR_SYSTEM_FEATURE_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.MeetingScheduleSystemImpl <em>Meeting Schedule System</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.MeetingScheduleSystemImpl
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getMeetingScheduleSystem()
-	 * @generated
-	 */
-	int MEETING_SCHEDULE_SYSTEM = 17;
-
-	/**
-	 * The number of structural features of the '<em>Meeting Schedule System</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEETING_SCHEDULE_SYSTEM_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RadiatorActuatorImpl <em>Radiator Actuator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -651,7 +549,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getRadiatorActuator()
 	 * @generated
 	 */
-	int RADIATOR_ACTUATOR = 18;
+	int RADIATOR_ACTUATOR = 15;
 
 	/**
 	 * The number of structural features of the '<em>Radiator Actuator</em>' class.
@@ -670,7 +568,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getSmokeSensor()
 	 * @generated
 	 */
-	int SMOKE_SENSOR = 19;
+	int SMOKE_SENSOR = 16;
 
 	/**
 	 * The number of structural features of the '<em>Smoke Sensor</em>' class.
@@ -689,7 +587,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getCO2Sensor()
 	 * @generated
 	 */
-	int CO2_SENSOR = 21;
+	int CO2_SENSOR = 18;
 
 	/**
 	 * The number of structural features of the '<em>CO2 Sensor</em>' class.
@@ -708,7 +606,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getInfraredLightSensor()
 	 * @generated
 	 */
-	int INFRARED_LIGHT_SENSOR = 22;
+	int INFRARED_LIGHT_SENSOR = 19;
 
 	/**
 	 * The number of structural features of the '<em>Infrared Light Sensor</em>' class.
@@ -727,7 +625,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getHumiditySensor()
 	 * @generated
 	 */
-	int HUMIDITY_SENSOR = 23;
+	int HUMIDITY_SENSOR = 20;
 
 	/**
 	 * The number of structural features of the '<em>Humidity Sensor</em>' class.
@@ -746,7 +644,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getAudioAlarmActuator()
 	 * @generated
 	 */
-	int AUDIO_ALARM_ACTUATOR = 24;
+	int AUDIO_ALARM_ACTUATOR = 21;
 
 	/**
 	 * The number of structural features of the '<em>Audio Alarm Actuator</em>' class.
@@ -765,7 +663,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getRoom()
 	 * @generated
 	 */
-	int ROOM = 25;
+	int ROOM = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -847,7 +745,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getFloor()
 	 * @generated
 	 */
-	int FLOOR = 26;
+	int FLOOR = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -884,7 +782,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getPolicy()
 	 * @generated
 	 */
-	int POLICY = 27;
+	int POLICY = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -966,7 +864,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 28;
+	int STATE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1003,7 +901,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getTimer()
 	 * @generated
 	 */
-	int TIMER = 29;
+	int TIMER = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1031,7 +929,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getSchedule()
 	 * @generated
 	 */
-	int SCHEDULE = 30;
+	int SCHEDULE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1086,7 +984,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getTime()
 	 * @generated
 	 */
-	int TIME = 31;
+	int TIME = 28;
 
 	/**
 	 * The feature id for the '<em><b>Hours</b></em>' attribute.
@@ -1123,7 +1021,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getStatement()
 	 * @generated
 	 */
-	int STATEMENT = 43;
+	int STATEMENT = 40;
 
 	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
@@ -1142,7 +1040,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getIf()
 	 * @generated
 	 */
-	int IF = 32;
+	int IF = 29;
 
 	/**
 	 * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -1197,7 +1095,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 35;
+	int EXPRESSION = 32;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -1216,7 +1114,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getTimeExpression()
 	 * @generated
 	 */
-	int TIME_EXPRESSION = 33;
+	int TIME_EXPRESSION = 30;
 
 	/**
 	 * The feature id for the '<em><b>Time Amount</b></em>' attribute.
@@ -1253,7 +1151,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getResetExpression()
 	 * @generated
 	 */
-	int RESET_EXPRESSION = 34;
+	int RESET_EXPRESSION = 31;
 
 	/**
 	 * The feature id for the '<em><b>Reset</b></em>' reference.
@@ -1281,7 +1179,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getBinaryExpression()
 	 * @generated
 	 */
-	int BINARY_EXPRESSION = 36;
+	int BINARY_EXPRESSION = 33;
 
 	/**
 	 * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
@@ -1327,7 +1225,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getUnaryExpression()
 	 * @generated
 	 */
-	int UNARY_EXPRESSION = 37;
+	int UNARY_EXPRESSION = 34;
 
 	/**
 	 * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -1364,7 +1262,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getElectricalSwitchActuator()
 	 * @generated
 	 */
-	int ELECTRICAL_SWITCH_ACTUATOR = 39;
+	int ELECTRICAL_SWITCH_ACTUATOR = 36;
 
 	/**
 	 * The number of structural features of the '<em>Electrical Switch Actuator</em>' class.
@@ -1383,7 +1281,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getWaterValveActuator()
 	 * @generated
 	 */
-	int WATER_VALVE_ACTUATOR = 40;
+	int WATER_VALVE_ACTUATOR = 37;
 
 	/**
 	 * The number of structural features of the '<em>Water Valve Actuator</em>' class.
@@ -1402,7 +1300,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getGasValveActuator()
 	 * @generated
 	 */
-	int GAS_VALVE_ACTUATOR = 41;
+	int GAS_VALVE_ACTUATOR = 38;
 
 	/**
 	 * The number of structural features of the '<em>Gas Valve Actuator</em>' class.
@@ -1421,7 +1319,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getComponent()
 	 * @generated
 	 */
-	int COMPONENT = 42;
+	int COMPONENT = 39;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -1440,7 +1338,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getComponentExpression()
 	 * @generated
 	 */
-	int COMPONENT_EXPRESSION = 44;
+	int COMPONENT_EXPRESSION = 41;
 
 	/**
 	 * The feature id for the '<em><b>Instance</b></em>' reference.
@@ -1468,7 +1366,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getStateExpression()
 	 * @generated
 	 */
-	int STATE_EXPRESSION = 45;
+	int STATE_EXPRESSION = 42;
 
 	/**
 	 * The feature id for the '<em><b>Define State</b></em>' reference.
@@ -1496,7 +1394,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getRoomExpression()
 	 * @generated
 	 */
-	int ROOM_EXPRESSION = 46;
+	int ROOM_EXPRESSION = 43;
 
 	/**
 	 * The feature id for the '<em><b>Room Instance</b></em>' reference.
@@ -1524,7 +1422,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getValueExpression()
 	 * @generated
 	 */
-	int VALUE_EXPRESSION = 47;
+	int VALUE_EXPRESSION = 44;
 
 	/**
 	 * The number of structural features of the '<em>Value Expression</em>' class.
@@ -1543,7 +1441,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getSensorExpression()
 	 * @generated
 	 */
-	int SENSOR_EXPRESSION = 48;
+	int SENSOR_EXPRESSION = 45;
 
 	/**
 	 * The feature id for the '<em><b>Sen</b></em>' containment reference.
@@ -1571,7 +1469,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getActuatorExpression()
 	 * @generated
 	 */
-	int ACTUATOR_EXPRESSION = 49;
+	int ACTUATOR_EXPRESSION = 46;
 
 	/**
 	 * The feature id for the '<em><b>Act</b></em>' containment reference.
@@ -1599,7 +1497,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getBinaryMethod()
 	 * @generated
 	 */
-	int BINARY_METHOD = 50;
+	int BINARY_METHOD = 47;
 
 	/**
 	 * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
@@ -1645,7 +1543,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getBoolValue()
 	 * @generated
 	 */
-	int BOOL_VALUE = 51;
+	int BOOL_VALUE = 48;
 
 	/**
 	 * The number of structural features of the '<em>Bool Value</em>' class.
@@ -1664,7 +1562,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getIntValue()
 	 * @generated
 	 */
-	int INT_VALUE = 52;
+	int INT_VALUE = 49;
 
 	/**
 	 * The number of structural features of the '<em>Int Value</em>' class.
@@ -1683,7 +1581,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getWindowSensor()
 	 * @generated
 	 */
-	int WINDOW_SENSOR = 53;
+	int WINDOW_SENSOR = 50;
 
 	/**
 	 * The number of structural features of the '<em>Window Sensor</em>' class.
@@ -1702,7 +1600,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getDoorSensor()
 	 * @generated
 	 */
-	int DOOR_SENSOR = 54;
+	int DOOR_SENSOR = 51;
 
 	/**
 	 * The number of structural features of the '<em>Door Sensor</em>' class.
@@ -1721,7 +1619,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getWeekdays()
 	 * @generated
 	 */
-	int WEEKDAYS = 55;
+	int WEEKDAYS = 52;
 
 
 	/**
@@ -1735,17 +1633,6 @@ public interface PolicyEnginePackage extends EPackage {
 	EClass getBuilding();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dk.itu.mdd.policyengine.PolicyEngine.Building#getCtsSystem <em>Cts System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Cts System</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.Building#getCtsSystem()
-	 * @see #getBuilding()
-	 * @generated
-	 */
-	EReference getBuilding_CtsSystem();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link dk.itu.mdd.policyengine.PolicyEngine.Building#getAccessControl <em>Access Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1755,28 +1642,6 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBuilding_AccessControl();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link dk.itu.mdd.policyengine.PolicyEngine.Building#getCalendarSystem <em>Calendar System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Calendar System</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.Building#getCalendarSystem()
-	 * @see #getBuilding()
-	 * @generated
-	 */
-	EReference getBuilding_CalendarSystem();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link dk.itu.mdd.policyengine.PolicyEngine.Building#getMeetingScheduleSystem <em>Meeting Schedule System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Meeting Schedule System</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.Building#getMeetingScheduleSystem()
-	 * @see #getBuilding()
-	 * @generated
-	 */
-	EReference getBuilding_MeetingScheduleSystem();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link dk.itu.mdd.policyengine.PolicyEngine.Building#getFloors <em>Floors</em>}'.
@@ -1999,38 +1864,6 @@ public interface PolicyEnginePackage extends EPackage {
 	EClass getLightSensor();
 
 	/**
-	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.CTS <em>CTS</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>CTS</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.CTS
-	 * @generated
-	 */
-	EClass getCTS();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dk.itu.mdd.policyengine.PolicyEngine.CTS#getTemperatureSensors <em>Temperature Sensors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Temperature Sensors</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.CTS#getTemperatureSensors()
-	 * @see #getCTS()
-	 * @generated
-	 */
-	EReference getCTS_TemperatureSensors();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link dk.itu.mdd.policyengine.PolicyEngine.CTS#getCtsActuators <em>Cts Actuators</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Cts Actuators</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.CTS#getCtsActuators()
-	 * @see #getCTS()
-	 * @generated
-	 */
-	EReference getCTS_CtsActuators();
-
-	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.AccessControl <em>Access Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2092,26 +1925,6 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNamedElement_Name();
-
-	/**
-	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.CalendarSystem <em>Calendar System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Calendar System</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.CalendarSystem
-	 * @generated
-	 */
-	EClass getCalendarSystem();
-
-	/**
-	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.MeetingScheduleSystem <em>Meeting Schedule System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Meeting Schedule System</em>'.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.MeetingScheduleSystem
-	 * @generated
-	 */
-	EClass getMeetingScheduleSystem();
 
 	/**
 	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.RadiatorActuator <em>Radiator Actuator</em>}'.
@@ -2922,36 +2735,12 @@ public interface PolicyEnginePackage extends EPackage {
 		EClass BUILDING = eINSTANCE.getBuilding();
 
 		/**
-		 * The meta object literal for the '<em><b>Cts System</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BUILDING__CTS_SYSTEM = eINSTANCE.getBuilding_CtsSystem();
-
-		/**
 		 * The meta object literal for the '<em><b>Access Control</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference BUILDING__ACCESS_CONTROL = eINSTANCE.getBuilding_AccessControl();
-
-		/**
-		 * The meta object literal for the '<em><b>Calendar System</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BUILDING__CALENDAR_SYSTEM = eINSTANCE.getBuilding_CalendarSystem();
-
-		/**
-		 * The meta object literal for the '<em><b>Meeting Schedule System</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BUILDING__MEETING_SCHEDULE_SYSTEM = eINSTANCE.getBuilding_MeetingScheduleSystem();
 
 		/**
 		 * The meta object literal for the '<em><b>Floors</b></em>' containment reference list feature.
@@ -3144,32 +2933,6 @@ public interface PolicyEnginePackage extends EPackage {
 		EClass LIGHT_SENSOR = eINSTANCE.getLightSensor();
 
 		/**
-		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.CTSImpl <em>CTS</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.CTSImpl
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getCTS()
-		 * @generated
-		 */
-		EClass CTS = eINSTANCE.getCTS();
-
-		/**
-		 * The meta object literal for the '<em><b>Temperature Sensors</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CTS__TEMPERATURE_SENSORS = eINSTANCE.getCTS_TemperatureSensors();
-
-		/**
-		 * The meta object literal for the '<em><b>Cts Actuators</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CTS__CTS_ACTUATORS = eINSTANCE.getCTS_CtsActuators();
-
-		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.AccessControlImpl <em>Access Control</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3222,26 +2985,6 @@ public interface PolicyEnginePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
-
-		/**
-		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.CalendarSystemImpl <em>Calendar System</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.CalendarSystemImpl
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getCalendarSystem()
-		 * @generated
-		 */
-		EClass CALENDAR_SYSTEM = eINSTANCE.getCalendarSystem();
-
-		/**
-		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.MeetingScheduleSystemImpl <em>Meeting Schedule System</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.MeetingScheduleSystemImpl
-		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getMeetingScheduleSystem()
-		 * @generated
-		 */
-		EClass MEETING_SCHEDULE_SYSTEM = eINSTANCE.getMeetingScheduleSystem();
 
 		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.RadiatorActuatorImpl <em>Radiator Actuator</em>}' class.

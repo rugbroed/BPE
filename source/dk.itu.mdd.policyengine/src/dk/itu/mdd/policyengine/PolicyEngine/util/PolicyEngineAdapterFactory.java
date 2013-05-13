@@ -116,10 +116,6 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 				return createLightSensorAdapter();
 			}
 			@Override
-			public Adapter caseCTS(CTS object) {
-				return createCTSAdapter();
-			}
-			@Override
 			public Adapter caseAccessControl(AccessControl object) {
 				return createAccessControlAdapter();
 			}
@@ -130,14 +126,6 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
-			}
-			@Override
-			public Adapter caseCalendarSystem(CalendarSystem object) {
-				return createCalendarSystemAdapter();
-			}
-			@Override
-			public Adapter caseMeetingScheduleSystem(MeetingScheduleSystem object) {
-				return createMeetingScheduleSystemAdapter();
 			}
 			@Override
 			public Adapter caseRadiatorActuator(RadiatorActuator object) {
@@ -476,20 +464,6 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.CTS <em>CTS</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.CTS
-	 * @generated
-	 */
-	public Adapter createCTSAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.AccessControl <em>Access Control</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -528,34 +502,6 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.CalendarSystem <em>Calendar System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.CalendarSystem
-	 * @generated
-	 */
-	public Adapter createCalendarSystemAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.MeetingScheduleSystem <em>Meeting Schedule System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see dk.itu.mdd.policyengine.PolicyEngine.MeetingScheduleSystem
-	 * @generated
-	 */
-	public Adapter createMeetingScheduleSystemAdapter() {
 		return null;
 	}
 
