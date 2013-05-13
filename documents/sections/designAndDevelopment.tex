@@ -1,4 +1,4 @@
-In this section, we focus on 2 points; Our meat-model being of considerable size, explaining it as separate core packages, gives a better understanding and overview of the complete model. Secondly, we explain the key concepts behind the definition of policies.
+In this section, we focus on 2 points; Our meat-model being of considerable size, explaining it as separate core packages, gives a better understanding and overview of the complete model. Secondly, we explain the key concepts behind the definition of policies.\\
  
 By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs. Finally, we used our Policy Engine DSL editor to specify buildings and write the policies. The full DSL implementation based on two of the interviews, one for Br\"{u}el \& Kj\ae r (see Figure \nameref{app:bogk}) and one for K\o benhavns Tekniske Skole (see Figure \nameref{app:kts}). Please note that they are fully working implementations running in Eclipse.
 
@@ -62,7 +62,7 @@ A \textit{time conditional expression} is an expression used for determining the
 	\caption{An example of a \textit{time conditional expression} that evaluates to true if more than 20 minutes have passed.}
 	\label{fig:dsl-conditionalexpression}
 \end{figure}
-
+\newpage
 \item Schedules\label{subsubsec:schedules}
 \textit{Schedules} are predefined types representing a timespan, which can later be attached to a specific behavior where action or no-action takes place. Note that by defining several The \textit{schedules}, it is possible both to make schedules than can overlap in time, but also policies that takes over when other policies reach their end. 
 
@@ -73,6 +73,17 @@ A \textit{time conditional expression} is an expression used for determining the
   \label{fig:dsl-schedules}
 \end{figure}
 \end{enumerate}
+
+\subsubsection{Policy}\label{subsec:policies}
+Policies define the actual behavior, ie. adjustment of actuators, based on sensor input. In the dsl example below, when the humiditySensor value drops under 50, the humidityAlarm state is set to true and every 15 seconds of the timer, the audioAlarmActuator sets off the alarm in the janitorOffice.
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[scale=.5]{dsl-policy-definition.png} 
+	\caption{An example of \textit{policy} using a single sensor type, a single actuator type and a room instance.}
+	\label{fig:dsl-policy-definition}
+\end{figure}
+
 \subsubsection{Building specification}\label{subsec:buildingspecification}
 Rooms and room types are part of the complete building specification, with terminology rooted in concepts revolving around buildings, ie. rooms, room types, floors, different sensors and actuators. \\
 
@@ -94,12 +105,3 @@ Building specification as in the example above, helps us map out the actual buil
   \label{fig:dsl-building-definition}
 \end{figure}
 
-\subsubsection{Policy}\label{subsec:policies}
-Policies define the actual behavior, ie. adjustment of actuators, based on sensor input. In the dsl example below, when the humiditySensor value drops under 50, the humidityAlarm state is set to true and every 15 seconds of the timer, the audioAlarmActuator sets off the alarm in the janitorOffice.
-
-\begin{figure}[h]
-  \centering
-    \includegraphics[scale=.5]{dsl-policy-definition.png} 
-	\caption{An example of \textit{policy} using a single sensor type, a single actuator type and a room instance.}
-	\label{fig:dsl-policy-definition}
-\end{figure}
