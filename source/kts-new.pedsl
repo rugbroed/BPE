@@ -1,0 +1,52 @@
+kts {
+	state smokeDetected = false
+	
+	policy TemperatureControlledRoom
+	uses sensors TemperatureSensor, WindowSensor
+	uses actuators RadiatorActuator
+	is-implemented-by {
+		
+		if (WindowSensor.value = 0) {
+			if (TemperatureSensor.value < 20) {
+				RadiatorActuator.setValue = 1
+			}
+			else {
+				if (TemperatureSensor.value > 21) {
+					RadiatorActuator.setValue = 0
+				}
+			}
+		}
+		else {
+			RadiatorActuator.setValue = 0
+		}
+		
+	}
+	
+	room-type Room 
+	is-governed-by TemperatureControlledRoom
+	during-always {
+		sensor windowSensor is a WindowSensor
+		sensor temperatureSensor is a TemperatureSensor
+		actuator radatorActuator is a RadiatorActuator
+	}
+	
+	room-type office {
+	}
+	
+	building school {
+		floor cellar {
+		}
+		
+		floor groundFloor {
+			room aClassRoom is-of-type Room
+			room anOffice is-of-type Room
+		}
+		
+		floor topFloor {
+			room hallway {
+				sensor temperatureSensor is a TemperatureSensor
+				
+			}
+		}
+	}
+}

@@ -433,6 +433,20 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PolicyEnginePackage.WINDOW_SENSOR: {
+				WindowSensor windowSensor = (WindowSensor)theEObject;
+				T result = caseWindowSensor(windowSensor);
+				if (result == null) result = caseSensorType(windowSensor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PolicyEnginePackage.DOOR_SENSOR: {
+				DoorSensor doorSensor = (DoorSensor)theEObject;
+				T result = caseDoorSensor(doorSensor);
+				if (result == null) result = caseSensorType(doorSensor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -1229,6 +1243,36 @@ public class PolicyEngineSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIntValue(IntValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Window Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Window Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWindowSensor(WindowSensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Door Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Door Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDoorSensor(DoorSensor object) {
 		return null;
 	}
 

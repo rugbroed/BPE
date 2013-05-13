@@ -16,6 +16,7 @@ import dk.itu.mdd.policyengine.PolicyEngine.CalendarSystem;
 import dk.itu.mdd.policyengine.PolicyEngine.Component;
 import dk.itu.mdd.policyengine.PolicyEngine.ComponentExpression;
 import dk.itu.mdd.policyengine.PolicyEngine.DoorActuator;
+import dk.itu.mdd.policyengine.PolicyEngine.DoorSensor;
 import dk.itu.mdd.policyengine.PolicyEngine.ElectricalSwitchActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.Expression;
 import dk.itu.mdd.policyengine.PolicyEngine.Floor;
@@ -57,6 +58,7 @@ import dk.itu.mdd.policyengine.PolicyEngine.ValueExpression;
 import dk.itu.mdd.policyengine.PolicyEngine.WaterValveActuator;
 import dk.itu.mdd.policyengine.PolicyEngine.Weekdays;
 import dk.itu.mdd.policyengine.PolicyEngine.WindowActuator;
+import dk.itu.mdd.policyengine.PolicyEngine.WindowSensor;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -443,6 +445,20 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * @generated
 	 */
 	private EClass intValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass windowSensorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass doorSensorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1489,6 +1505,24 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getWindowSensor() {
+		return windowSensorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDoorSensor() {
+		return doorSensorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getWeekdays() {
 		return weekdaysEEnum;
 	}
@@ -1682,6 +1716,10 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 
 		intValueEClass = createEClass(INT_VALUE);
 
+		windowSensorEClass = createEClass(WINDOW_SENSOR);
+
+		doorSensorEClass = createEClass(DOOR_SENSOR);
+
 		// Create enums
 		weekdaysEEnum = createEEnum(WEEKDAYS);
 	}
@@ -1760,6 +1798,8 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		binaryMethodEClass.getESuperTypes().add(this.getBinaryExpression());
 		boolValueEClass.getESuperTypes().add(this.getValueExpression());
 		intValueEClass.getESuperTypes().add(this.getValueExpression());
+		windowSensorEClass.getESuperTypes().add(this.getSensorType());
+		doorSensorEClass.getESuperTypes().add(this.getSensorType());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(buildingEClass, Building.class, "Building", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1922,6 +1962,10 @@ public class PolicyEnginePackageImpl extends EPackageImpl implements PolicyEngin
 		initEClass(boolValueEClass, BoolValue.class, "BoolValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(intValueEClass, IntValue.class, "IntValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(windowSensorEClass, WindowSensor.class, "WindowSensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(doorSensorEClass, DoorSensor.class, "DoorSensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(weekdaysEEnum, Weekdays.class, "Weekdays");

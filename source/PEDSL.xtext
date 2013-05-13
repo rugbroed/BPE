@@ -17,13 +17,13 @@ Model returns Model:
 	'}';
 
 ActuatorType returns ActuatorType:
-	LightSwitchActuator | WindowActuator | HumidifierActuator | DoorActuator | RadiatorActuator | AudioAlarmActuator | ElectricalSwitchActuator | WaterValveActuator | GasValveActuator;
+	LightSwitchActuator | HumidifierActuator | DoorActuator | WindowActuator | RadiatorActuator | AudioAlarmActuator | ElectricalSwitchActuator | WaterValveActuator | GasValveActuator;
+
+SensorType returns SensorType:
+	MotionSensor | TemperatureSensor | RainSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor | InfraredLightSensor | HumiditySensor | DoorSensor | WindowSensor;
 
 Statement returns Statement:
 	State | Timer | If;
-
-SensorType returns SensorType:
-	MotionSensor | TemperatureSensor | RainSensor | TouchSensor | LightSensor | SmokeSensor | CO2Sensor | InfraredLightSensor | HumiditySensor;
 
 Expression returns Expression:
 	Conjunction ( {BinaryExpression.leftExpr=current} operator=('||') rightExpr=Conjunction )*;
@@ -222,6 +222,16 @@ GasValveActuator returns GasValveActuator:
 MotionSensor returns MotionSensor:
 	{MotionSensor}
 	'MotionSensor'
+	;
+	
+DoorSensor returns DoorSensor:
+	{DoorSensor}
+	'DoorSensor'
+	;
+
+WindowSensor returns WindowSensor:
+	{WindowSensor}
+	'WindowSensor'
 	;
 
 RainSensor returns RainSensor:

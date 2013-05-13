@@ -146,5 +146,7 @@
     <genClasses ecoreClass="PolicyEngine.ecore#//BinaryMethod"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//BoolValue"/>
     <genClasses ecoreClass="PolicyEngine.ecore#//IntValue"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//WindowSensor"/>
+    <genClasses ecoreClass="PolicyEngine.ecore#//DoorSensor"/>
   </genPackages>
 </genmodel:GenModel>

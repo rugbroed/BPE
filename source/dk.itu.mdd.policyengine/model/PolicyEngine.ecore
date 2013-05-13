@@ -186,4 +186,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="BinaryMethod" eSuperTypes="#//BinaryExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="BoolValue" eSuperTypes="#//ValueExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="IntValue" eSuperTypes="#//ValueExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WindowSensor" eSuperTypes="#//SensorType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DoorSensor" eSuperTypes="#//SensorType"/>
 </ecore:EPackage>

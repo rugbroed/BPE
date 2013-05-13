@@ -280,6 +280,14 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 				return createIntValueAdapter();
 			}
 			@Override
+			public Adapter caseWindowSensor(WindowSensor object) {
+				return createWindowSensorAdapter();
+			}
+			@Override
+			public Adapter caseDoorSensor(DoorSensor object) {
+				return createDoorSensorAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -1038,6 +1046,34 @@ public class PolicyEngineAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIntValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.WindowSensor <em>Window Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.WindowSensor
+	 * @generated
+	 */
+	public Adapter createWindowSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link dk.itu.mdd.policyengine.PolicyEngine.DoorSensor <em>Door Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.DoorSensor
+	 * @generated
+	 */
+	public Adapter createDoorSensorAdapter() {
 		return null;
 	}
 

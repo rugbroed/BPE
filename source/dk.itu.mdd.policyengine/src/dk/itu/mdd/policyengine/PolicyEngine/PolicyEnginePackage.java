@@ -1676,6 +1676,44 @@ public interface PolicyEnginePackage extends EPackage {
 	int INT_VALUE_FEATURE_COUNT = VALUE_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.WindowSensorImpl <em>Window Sensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.WindowSensorImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getWindowSensor()
+	 * @generated
+	 */
+	int WINDOW_SENSOR = 53;
+
+	/**
+	 * The number of structural features of the '<em>Window Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WINDOW_SENSOR_FEATURE_COUNT = SENSOR_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.DoorSensorImpl <em>Door Sensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.DoorSensorImpl
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getDoorSensor()
+	 * @generated
+	 */
+	int DOOR_SENSOR = 54;
+
+	/**
+	 * The number of structural features of the '<em>Door Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOOR_SENSOR_FEATURE_COUNT = SENSOR_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link dk.itu.mdd.policyengine.PolicyEngine.Weekdays <em>Weekdays</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1683,7 +1721,7 @@ public interface PolicyEnginePackage extends EPackage {
 	 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getWeekdays()
 	 * @generated
 	 */
-	int WEEKDAYS = 53;
+	int WEEKDAYS = 55;
 
 
 	/**
@@ -2822,6 +2860,26 @@ public interface PolicyEnginePackage extends EPackage {
 	EClass getIntValue();
 
 	/**
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.WindowSensor <em>Window Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Window Sensor</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.WindowSensor
+	 * @generated
+	 */
+	EClass getWindowSensor();
+
+	/**
+	 * Returns the meta object for class '{@link dk.itu.mdd.policyengine.PolicyEngine.DoorSensor <em>Door Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Door Sensor</em>'.
+	 * @see dk.itu.mdd.policyengine.PolicyEngine.DoorSensor
+	 * @generated
+	 */
+	EClass getDoorSensor();
+
+	/**
 	 * Returns the meta object for enum '{@link dk.itu.mdd.policyengine.PolicyEngine.Weekdays <em>Weekdays</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3822,6 +3880,26 @@ public interface PolicyEnginePackage extends EPackage {
 		 * @generated
 		 */
 		EClass INT_VALUE = eINSTANCE.getIntValue();
+
+		/**
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.WindowSensorImpl <em>Window Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.WindowSensorImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getWindowSensor()
+		 * @generated
+		 */
+		EClass WINDOW_SENSOR = eINSTANCE.getWindowSensor();
+
+		/**
+		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.impl.DoorSensorImpl <em>Door Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.DoorSensorImpl
+		 * @see dk.itu.mdd.policyengine.PolicyEngine.impl.PolicyEnginePackageImpl#getDoorSensor()
+		 * @generated
+		 */
+		EClass DOOR_SENSOR = eINSTANCE.getDoorSensor();
 
 		/**
 		 * The meta object literal for the '{@link dk.itu.mdd.policyengine.PolicyEngine.Weekdays <em>Weekdays</em>}' enum.

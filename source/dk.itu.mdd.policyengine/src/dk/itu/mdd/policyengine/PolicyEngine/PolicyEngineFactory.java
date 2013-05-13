@@ -436,6 +436,24 @@ public interface PolicyEngineFactory extends EFactory {
 	IntValue createIntValue();
 
 	/**
+	 * Returns a new object of class '<em>Window Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Window Sensor</em>'.
+	 * @generated
+	 */
+	WindowSensor createWindowSensor();
+
+	/**
+	 * Returns a new object of class '<em>Door Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Door Sensor</em>'.
+	 * @generated
+	 */
+	DoorSensor createDoorSensor();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

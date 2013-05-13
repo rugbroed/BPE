@@ -103,6 +103,8 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 			case PolicyEnginePackage.BINARY_METHOD: return createBinaryMethod();
 			case PolicyEnginePackage.BOOL_VALUE: return createBoolValue();
 			case PolicyEnginePackage.INT_VALUE: return createIntValue();
+			case PolicyEnginePackage.WINDOW_SENSOR: return createWindowSensor();
+			case PolicyEnginePackage.DOOR_SENSOR: return createDoorSensor();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -596,6 +598,26 @@ public class PolicyEngineFactoryImpl extends EFactoryImpl implements PolicyEngin
 	public IntValue createIntValue() {
 		IntValueImpl intValue = new IntValueImpl();
 		return intValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WindowSensor createWindowSensor() {
+		WindowSensorImpl windowSensor = new WindowSensorImpl();
+		return windowSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DoorSensor createDoorSensor() {
+		DoorSensorImpl doorSensor = new DoorSensorImpl();
+		return doorSensor;
 	}
 
 	/**
