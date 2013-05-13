@@ -12,15 +12,31 @@ In our metamodel, we have included some external systems that already exist; (\t
 As it is today, it is not really possible to integrate CTS systems into custom made solutions, like our DSL, since they are proprietary systems and guarded well in order to sell service packages to the users.
 
 \subsection{Enhanced Code Completion}\label{subsec:codecompletion}
-Code completion is of great importance to our language because it really helps the user by guiding (s)he in all possible options. Right now our DSL has an up-and-running code completion but in the future we would like to restrict it in a way that only the declared/defined elements should be available to the user. An example of our running dsl, if a user while defining a policy uses \texttt{TemperatureSensor and RadiatorActuator}, (s)he gets a list of all \texttt{SensorTypes and ActuatorTypes} present in our DSL. If restricted, only \texttt{TemperatureSensor and RadiatorActuator} should be the options available in that particular policy.
+Code completion is of great importance to our language because it really helps the user by guiding her in all possible options she has. Right now our DSL has an up-and-running code completion but in the future we would like to restrict it in a way that only the declared/defined elements should be available. In \nameref{fig:code-completion} below, we present our DSL as it currently is but if restricted, should only be able to provide TemperatureSensor and RadiatorActuator as options for the TemperatureControlPolicy to the user.
 
+%Andrzej told us to remove this figure totally
+\begin{comment}
+\begin{figure}
+  \centering
+    \includegraphics[scale=.5]{dsl-code-completion.png} 
+	\caption{An example of \textit{code completion}.}
+	\label{fig:code-completion}
+\end{figure}
+
+%This point has been recently implemented!
 \subsection{Defining Actuator and Sensor types}\label{subsec:def-sensor-actuator-types}
-From the evaluation section above, we came to realize that some of the sensors and actuators needed to satisfy the requirements are not implemented in our DSL. We quickly fixed it by adding them to our metamodel but this still will not give us the flexibility to define policies using actuators and sensors that are not available in our DSL when needed. Future work in this area might include some minor modification of our DSL in order to accommodate definition of actuators and sensors as needed (\textit{sort of in a similar concept to the predefined room types}), which will enhances flexibility and help make our DSL more adaptable.
-
+From the evaluation section above, we came to realize that some of the sensors and actuators needed to satisfy the requirements are not implemented in our DSL. A quick fix would be to add them to our metamodel but this still will not give us the flexibility to define policies using actuators and sensors that are not available in our DSL when needed. Future work in this area might include a minor modification of our DSL in order to accommodate definition of actuators and sensors as needed. Sort of the same concept as the predefined room types. This flexibility will make our DSL more adaptable.
+\end{comment}
 
 \subsection{Prioritization}\label{subsec:looptime}
 Prioritization of policies would be nice to have in a future version of our language. For example, higher priorities could be given to policies handling situations concerning fire alarms. At the moment we imagine the DSL running in a loop that calls all active (determined using the \textit{schedules}) policies in every iteration. This could instead be based on a prioritization of room, room-type or policies adding extra flexibility and fine grained control to the language. For instance, specify that some policies should only run once in an hour, and some should be run so fast that handling of for example fire alarms would happen almost instantaneous. 
 
-\subsection{Policy Scheduling}\label{subsec:during}
-In its current state, our DSL allows us to determine when the policies should be run by using the already defined schedules. One or more policies can be run based on one or more schedules. 
-In case we have several governing policies that run on different schedules, our DSL does not allow us to assign a specific schedule to a single governing policy. An interesting improvement that could increase our DSL's flexibility would be the ability to specify a different schedule for each of the policies governing a room.
+\subsection{When to run policies}\label{subsec:during}
+In its current state, our DSL allows us to determine when the policies should be run by using the already defined schedules. One or more policies can be run based on one or more schedules. As shown in the image below, we specify a schedule for all governing policies of that room-type. 
+\begin{figure}
+  \centering
+    \includegraphics[scale=0.5]{dsl-during.png} 
+	\caption{An example showing how to chain together policies with execution schedules using the \textit{during} keyword.}
+	\label{fig:during}
+\end{figure}
+In case we have several governing policies that run on different schedules, our DSL does not allow us to assign a specific schedule to every single governing policy. An interesting improvement that could increase our DSL's flexibility would be the ability to specify a different schedule for each of the policies governing a room.
