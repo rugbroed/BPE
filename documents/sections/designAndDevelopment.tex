@@ -4,7 +4,7 @@ By using Eclipse~\cite{eclipse}, EMF and Xtext we built a domain specific langua
 
 \subsection{Meta-Models}
 
-The following core packages, differentiated in separate Ecore Diagrams can be viewed fully in \nameref{app:a-metamodel} as a single meta-model. In the sub-sections below, we show images and explain the build up of the core package as it is in our model. 
+The following core packages, differentiated in separate Ecore Diagrams can be viewed fully in \nameref{app:a-metamodel} as a single meta-model. In the subsections below, we show images and explain the build up of the core package as it is in our model. 
 
 \subsubsection{Building definition}
 In order to specify the building(s) with all their floors and rooms, the core classes has been included in fig. \ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
@@ -15,7 +15,7 @@ In order to specify the building(s) with all their floors and rooms, the core cl
 \end{figure}
 
 \subsubsection{Sensors and Actuators}
-In our metamodel, the sensors and actuators used are from the combined analysis of the interviews mentioned in the section above. In the meta-model, we have a total of 9 sensor classes and 6 actuator classes. Sensor and Actuator class inherit from NamedElement, which gives declared elements a name that later can be referenced in other parts of our DSL. If new types are needed, they should be defined in the meta-model.
+In our meta-model, the sensors and actuators used are from the combined analysis of the interviews mentioned in the section above. In the meta-model, we have a total of 9 sensor classes and 6 actuator classes. Sensor and Actuator classes inherit from NamedElement, which gives declared elements a name that later can be referenced in other parts of our DSL. If new types are needed, they should be defined in the meta-model.
 
 \begin{figure}[h]
 	\centering
@@ -48,7 +48,7 @@ The policy definition meta-model can be inspected in fig. \ref{fig:ecore-policy-
 During the analysis of the interviews, different meta-constructs were defined. It was evident that the \textit{three key concepts} listed below were needed in order to tailor core functionalities discovered.
 
 \subsubsection{Time}\label{subsec:time}
-Time has to be an integral part of the DSL, and not just related with the internal policy logic. Several interviewees mention concepts like weekdays, weekends, normal working hours, holidays, night, day, morning etc., which clearly shows that Time is necessary. We have extrapolated the need for Time in two different cases;
+Time has to be an integral part of the DSL, and not just related with the internal policy logic. Several interviewees mentioned concepts like weekdays, weekends, normal working hours, holidays, night, day, morning etc., which clearly shows that Time is necessary. We have extrapolated the need for Time in two different cases;
 \begin{enumerate}
 	\item Time conditional expressions\label{subsubsec:conditionalexpression}
 are expressions used for determining the flow of a behavior. It is `if' statements that can react based on a built-in timer function (see fig.~\ref{fig:dsl-conditionalexpression}).
@@ -56,11 +56,11 @@ are expressions used for determining the flow of a behavior. It is `if' statemen
 \begin{figure}[h]
   \centering
     \includegraphics[scale=.5]{dsl-conditional-time-expression.png}
-	\caption{An example of a \textit{time conditional expression} that evaluates to true if more than 20 minutes have passed.}
+	\caption{An example of a \textit{time conditional expression} that evaluates to true if more than 20 minutes have elapsed.}
 	\label{fig:dsl-conditionalexpression}
 \end{figure}
 \newpage
-\item Schedules\label{subsubsec:schedules} are predefined types representing a timespan (see fig. \ref{fig:dsl-schedules}), which later can be attached to a specific behavior where action or no-action takes place. Note that by defining several The \textit{schedules}, it is possible both to make schedules than can overlap in time, but also policies that takes over when other policies reach their end.
+\item Schedules\label{subsubsec:schedules} are predefined types representing a timespan (see fig. \ref{fig:dsl-schedules}), which later can be attached to a specific behavior where action or no-action takes place. Note that by defining several The \textit{schedules}, it is possible to make not only schedules than can overlap in time, but also policies that take over when other policies reach their end.
 
 \begin{figure}
   \centering
