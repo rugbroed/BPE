@@ -10,7 +10,7 @@ The following core packages, differentiated in separate Ecore Diagrams (can be v
 in our metamodel and used in our DSL are from the combined analysis of the interview mentioned in the section above. Sensor and Actuator class inherit from NamedElement, giving declared elements a name than can be later referenced in the expression language.
 \begin{figure}[h]
 	\centering
-    \includegraphics[scale=0.37]{ecore-sensors-actuators.png} 
+    \includegraphics[scale=.45]{ecore-sensors-actuators.png} 
 	\caption{A fragment of the \textit{sensor} and \textit{actuator} metamodel hierarchy. If new types are needed, they should be defined in the metamodel.}
 	\label{fig:ecore-sensors-actuators}
 \end{figure}
@@ -18,7 +18,7 @@ in our metamodel and used in our DSL are from the combined analysis of the inter
 \subsubsection{Building definition}
 In order to specify the building(s) with all their floors and rooms, the core classes has been included in Figure \ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
 \begin{figure}[h]
-  \centering \includegraphics[scale=0.4]{ecore-building-definition.png}  
+  \centering \includegraphics[scale=.5]{ecore-building-definition.png}  
 	\caption{The metamodel related to the \textit{building definition}. The inherited class NamedElement has been omitted.}
 	\label{fig:ecore-building-definition}
 \end{figure}
@@ -28,7 +28,7 @@ After the analysis of the interviews we concluded that the needed expression lan
 
 \begin{figure}[h]
   \centering
-    \includegraphics[width=10cm]{ecore-expression-language.png} 
+    \includegraphics[scale=.5]{ecore-expression-language.png} 
 	\caption{The metamodel related to the \textit{expression language}. The inherited class NamedElement has been omitted.}
 	\label{fig:ecore-expression-language}
 \end{figure}
@@ -37,7 +37,7 @@ After the analysis of the interviews we concluded that the needed expression lan
 In the policy definition metamodel below, to define a policy, we make use of actuator and sensor types, and use room instances. The implementation of the policy is enhanced by the use of statements; if, state and timer. the if-statement uses the expression language to define behaviour. These policy can also be run following a defined schedule as shown in the dsl example of room-type in figure \ref{fig:room-types} 
 \begin{figure}[h]
   \centering
-    \includegraphics[width=10cm]{ecore-policy-definition.png}	
+    \includegraphics[scale=.5]{ecore-policy-definition.png}	
 	\caption{The metamodel related to the \textit{policy definition}.}
 	\label{fig:ecore-policy-definition}
 \end{figure}
