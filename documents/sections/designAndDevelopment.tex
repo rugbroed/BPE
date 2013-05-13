@@ -1,6 +1,6 @@
 Since our complete meta-model (\nameref{app:a-metamodel}) is of considerable size, we will in this section explain it using a collection of smaller Ecore diagrams. We also explain the key concepts behind the definition of policies.\\
  
-By using Eclipse~\cite{eclipse}, EMF and Xtext we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs. Finally, we used our Policy Engine DSL editor to specify buildings and write examples of policies learned from the interviews. The full DSL implementation based on two of the interviews, one for Br\"{u}el \& Kj\ae r (see \nameref{app:bogk}) and one for K\o benhavns Tekniske Skole (see \nameref{app:kts}). The referenced DSL figures are all cropped from screendumps of actual, running Eclipse instances.
+By using Eclipse~\cite{eclipse}, EMF and Xtext we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs. Finally, we used our Policy Engine DSL editor to specify buildings and write examples of policies learned from the interviews. The full DSL implementation based on two of the interviews,  Br\"{u}el \& Kj\ae r (see \nameref{app:bogk}) and  K\o benhavns Tekniske Skole (see \nameref{app:kts}). The referenced DSL figures are all cropped from screendumps of actual, running Eclipse instances.
 
 \subsection{Meta-Models}
 
@@ -60,7 +60,7 @@ are expressions used for determining the flow of a behavior. It is `if' statemen
 	\label{fig:dsl-conditionalexpression}
 \end{figure}
 \newpage
-\item Schedules\label{subsubsec:schedules} are predefined types representing a timespan (see fig. \ref{fig:dsl-schedules}), which later can be attached to a specific behavior where action or no-action takes place. Note that by defining several The \textit{schedules}, it is possible to make not only schedules than can overlap in time, but also policies that take over when other policies reach their end.
+\item Schedules\label{subsubsec:schedules} are predefined types representing a timespan (see fig. \ref{fig:dsl-schedules}), which later can be attached to a specific behavior where action or no-action takes place. Note that by defining several \textit{schedules}, it is possible to make not only schedules that can overlap in time, but also policies that take over when other policies reach their end.
 
 \begin{figure}
   \centering
