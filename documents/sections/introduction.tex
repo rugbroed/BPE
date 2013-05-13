@@ -1,19 +1,19 @@
-Energy and natural resources are precious commodities. Residential buildings use about 89\% of the total energy consumption for space heating, cooling and water heating~\cite{janssen2004towards}. Electrical appliances use 11\%. Other buildings use 79\% of the total energy consumption for space heating, cooling, water heating and lighting. To \textit{manually} control buildings for energy efficiency and optimal human comfort is a time-consuming and inefficient task, if even possible. The controller needs to possess a diverse knowledge of the necessary equipment and the building's characteristics at the same time. \textit{``Worldwide, there is no doubt that efficient energy saving is only possible with modern BA based on networking in all levels of abstraction."}~\cite{dietrich2010communication}. Constructing resource efficient buildings makes sense, both in a political and economical perspective. 
+Energy and natural resources are precious commodities. Residential buildings use about 89\% of the total energy consumption for space heating, cooling and water heating~\cite{janssen2004towards}. Electrical appliances use 11\%. Other buildings use 79\% of the total energy consumption for space heating, cooling, water heating and lighting. To \textit{manually} control buildings for energy efficiency and optimal human comfort is a time-consuming and inefficient task, if even possible. The controller needs to possess a diverse knowledge of the necessary equipment and the building's characteristics at the same time. \textit{``Worldwide, there is no doubt that efficient energy saving is only possible with modern BA\footnote{Building Automation} based on networking in all levels of abstraction."}~\cite{dietrich2010communication}. Constructing resource efficient buildings makes sense, both in a political and economical perspective. 
 
 Consequently, our collective need is the adaptation of buildings to the users and the sensor-perceived environment. This can be achieved by developing governing \textit{policies} (defined as pieces of code) based on input such as semi-static data, dynamic data and sensor input, which control the actuators and thereby leading to the desired building state(s).
 
 Merriam-Webster defines \textit{policy} as ``a definite course or method of action selected from among alternatives and in light of given conditions to guide and determine present and future decisions."
 
-Our goal is facilitate the management of building automation using the concept of a DSL expressive enough to capture concepts in that domain.
+Our goal is facilitate the management of building automation using the concept of a DSL\footnote{Domain Specific Language} expressive enough to capture concepts in that domain.
 
-The main contribution is a large building automation DSL build using EMF and Xtext. Six companies were interviewed regarding their need for building automation \textit{policies}. After analyzing the interviews, we iteratively constructed the DSL for building automation. We argue by example, that our DSL is rich and expressive enough to capture the requirements put forth in the interviews. 
+The main contribution is a large building automation DSL build using EMF\footnote{Eclipse Modeling Language} and Xtext. Six companies were interviewed regarding their need for building automation \textit{policies}. After analyzing the interviews, we iteratively constructed the DSL for building automation. We argue by example, that our DSL is rich and expressive enough to capture the requirements put forth in the interviews. 
 
 The focal point is the descriptive properties of the DSL, in order to facilitate the construction of policies expressed during the interviews --- and not any integration towards existing subsystems like CTS\footnote{Central Tilstandskontrol og Styring}, calendars and/or custom made domain specific subsystems. Those systems are outside the scope of this project.
 \newline\\
 We have tailored our method as follows;
 
 \begin{enumerate}
-	\item Interviews and analysis: We conducted open-ended interviews with people working in, or close, to FM in various danish companies.
+	\item Interviews and analysis: We conducted open-ended interviews with people working in, or close, to FM\footnote{Facility Management} in various danish companies.
 	\item Design and development: We designed a building automation policy DSL based on our analysis of the interviews
 	\item Evaluation: We evaluated the completeness, expressiveness and richness of the DSL by implementing all learned by the interview with Br\"{u}el \& Kj\ae r and with K\o benhavns Tekniske Skole since those two companies contained the most advanced behavior put forth during the interviews.
 \end{enumerate}
