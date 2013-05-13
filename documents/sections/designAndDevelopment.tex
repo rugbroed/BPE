@@ -4,16 +4,7 @@ By using Eclipse~\cite{eclipse}, EMF~\cite{emf} and Xtext~\cite{xtext} we built 
 
 \subsection{Meta-Models}
 
-The following core packages, differentiated in separate Ecore Diagrams can be viewed fully in \nameref{app:a-metamodel}; 9 sensors classes and 6 actuators classes (see Figure \ref{fig:ecore-sensors-actuators}), 14 expression language classes (see Figure \ref{fig:ecore-expression-language}), 4 building definition classes (see Figure \ref{fig:ecore-building-definition}) and 10 policy definition classes (see Figure \ref{fig:ecore-policy-definition}).
-
-\subsubsection{Sensors and Actuators}
-in our metamodel and used in our DSL are from the combined analysis of the interview mentioned in the section above. Sensor and Actuator class inherit from NamedElement, giving declared elements a name than can be later referenced in the expression language. 
-\begin{figure}[h]
-	\centering
-    \includegraphics[scale=.45]{ecore-sensors-actuators.png} 
-	\caption{A fragment of the \textit{sensor} and \textit{actuator} metamodel hierarchy. If new types are needed, they should be defined in the metamodel.}
-	\label{fig:ecore-sensors-actuators}
-\end{figure}
+The following core packages, differentiated in separate Ecore Diagrams can be viewed fully in \nameref{app:a-metamodel} as a single meta-model. In the sub-sections below, we show images and explain the build up of the core package as it is in our model. 
 
 \subsubsection{Building definition}
 In order to specify the building(s) with all their floors and rooms, the core classes has been included in Figure \ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
@@ -23,8 +14,19 @@ In order to specify the building(s) with all their floors and rooms, the core cl
 	\label{fig:ecore-building-definition}
 \end{figure}
 
+\subsubsection{Sensors and Actuators}
+In our metamodel, the sensors and actuators used are from the combined analysis of the interviews mentioned in the section above. In the meta-model, we have a total of 9 sensors classes and 6 actuators classes. Sensor and Actuator class inherit from NamedElement, which gives declared elements a name than can be later referenced in other parts of our DSL. If new types are needed, they should be defined in the metamodel.
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=.5]{ecore-sensors-actuators.png} 
+	\caption{A fragment of the \textit{sensor} and \textit{actuator} metamodel hierarchy.}
+	\label{fig:ecore-sensors-actuators}
+\end{figure}
+
+
 \subsubsection{Expression language}
-After the analysis of the interviews we concluded that the needed expression language did not need to be very advanced. We needed boolean variables (\textit{states}) and if-statements with two different types of conditions; the normal if-statement, which operates on sensor types and state instances. The other one operates on a timer (see Figure \ref{fig:dsl-conditionalexpression}). In the body of the if-statement, we can use expression to reset timers, and set actuators using instances in specific rooms as shown in the DSL example \ref{fig:dsl-policy-definition}
+After the analysis of the interviews we concluded that the needed expression language did not need to be very advanced. We needed boolean variables (\textit{states}) and if-statements with two different types of conditions; the normal if-statement, which operates on sensor types and state instances. The other one operates on a timer (see Figure \ref{fig:dsl-conditionalexpression}). In the body of the if-statement, we can use expression to reset timers, and set actuators using instances in specific rooms as shown in the DSL example \ref{fig:dsl-policy-definition}. The core classes are all included in Figure \ref{fig:ecore-expression-language} below.
 
 \begin{figure}[h]
   \centering
@@ -34,7 +36,7 @@ After the analysis of the interviews we concluded that the needed expression lan
 \end{figure}
 
 \subsubsection{Policy definition}
-In the policy definition metamodel below, to define a policy, we make use of actuator and sensor types, and use room instances. The implementation of the policy is enhanced by the use of statements; if, state and timer. the if-statement uses the expression language to define behaviour. These policy can also be run following a defined schedule as shown in the dsl example of room-type in figure \ref{fig:room-types} 
+In the policy definition metamodel below, to define a policy, we make use of actuator and sensor types, and use room instances. The implementation of the policy is enhanced by the use of statements; if, state and timer. the if-statement uses the expression language to define behaviour. These policy can also be run following a defined schedule as shown in the dsl example of room-type in figure \ref{fig:room-types}. All policy definition core classes are shown in Figure \ref{fig:ecore-policy-definition} below.
 \begin{figure}[h]
   \centering
     \includegraphics[scale=.5]{ecore-policy-definition.png}	
