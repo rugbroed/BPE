@@ -10,51 +10,48 @@ The following core packages, differentiated in separate Ecore Diagrams can be vi
 In order to specify the building(s) with all their floors and rooms, the core classes has been included in fig. \ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
 \begin{figure}[h]
   \centering \includegraphics[scale=.5]{ecore-building-definition.png}  
-	\caption{The metamodel related to the \textit{building definition}. The inherited class NamedElement has been omitted.}
+	\caption{The meta-model related to the \textit{building definition}. The inherited class NamedElement has been omitted.}
 	\label{fig:ecore-building-definition}
 \end{figure}
 
 \subsubsection{Sensors and Actuators}
-In our metamodel, the sensors and actuators used are from the combined analysis of the interviews mentioned in the section above. In the meta-model, we have a total of 9 sensors classes and 6 actuators classes. Sensor and Actuator class inherit from NamedElement, which gives declared elements a name than can be later referenced in other parts of our DSL. If new types are needed, they should be defined in the metamodel.
+In our metamodel, the sensors and actuators used are from the combined analysis of the interviews mentioned in the section above. In the meta-model, we have a total of 9 sensor classes and 6 actuator classes. Sensor and Actuator class inherit from NamedElement, which gives declared elements a name that later can be referenced in other parts of our DSL. If new types are needed, they should be defined in the meta-model.
 
 \begin{figure}[h]
 	\centering
     \includegraphics[scale=.7]{ecore-sensors-actuators.png} 
-	\caption{A fragment of the \textit{sensor} and \textit{actuator} metamodel hierarchy.}
+	\caption{A fragment of the \textit{sensor} and \textit{actuator} meta-model hierarchy.}
 	\label{fig:ecore-sensors-actuators}
 \end{figure}
 
 
-\subsubsection{Expression language}
-After the analysis of the interviews we concluded that the needed expression language did not need to be very advanced. We needed boolean variables (\textit{states}) and if-statements with two different types of conditions; the normal if-statement, which operates on sensor types and state instances. The other one operates on a timer (see fig.\ref{fig:dsl-conditionalexpression}). In the body of the if-statement, we can use expression to reset timers, and set actuators using instances in specific rooms as shown in the DSL example in fig.\ref{fig:dsl-policy-definition}. The core classes are all included in fig.\ref{fig:ecore-expression-language} below.
+\subsubsection{Expression Language}
+After the analysis of the interviews we concluded that the needed expression language did not need to be very advanced. We needed boolean variables (\textit{states}) and if-statements with two different types of conditions; the normal if-statement --- which operates on sensor types and state instances -- and another that operates on a timer (see fig.\ref{fig:dsl-conditionalexpression}). In the body of the if-statement, we can use an expression to reset timers, and set actuator values using instances in specific rooms as shown in the DSL example in fig.\ref{fig:dsl-policy-definition}. The core classes are all included in fig.\ref{fig:ecore-expression-language} below.
 
 \begin{figure}[h]
   \centering
     \includegraphics[scale=.5]{ecore-expression-language.png} 
-	\caption{The metamodel related to the \textit{expression language}. The inherited class NamedElement has been omitted.}
+	\caption{The meta-model related to the \textit{expression language}. The inherited class NamedElement has been omitted.}
 	\label{fig:ecore-expression-language}
 \end{figure}
 
 \subsubsection{Policy definition}
-In the policy definition metamodel below, to define a policy, we make use of actuator and sensor types, and use room instances. The implementation of the policy is enhanced by the use of statements; if, state and timer. the if-statement uses the expression language to define behaviour. These policy can also be run following a defined schedule as shown in the dsl example of room-type in fig.\ref{fig:room-types}. All policy definition core classes are shown in fig.\ref{fig:ecore-policy-definition} below.
+The policy definition meta-model can be inspected in fig. \ref{fig:ecore-policy-definition}. To define a policy, we make use of actuator types, sensor types and room instances (via \texttt{usesRooms}). The implementation of the policy is enhanced by the use of the statements; \textit{if}, \textit{state} and \textit{timer}. The if-statement uses the expression language to define it's behavior. \textit{Schedule} can be defined so that policies are temporally constrained --- as can be inspected in fig.~\ref{fig:room-types}. All policy definition core classes are displayed in fig.\ref{fig:ecore-policy-definition}.
 \begin{figure}[h]
   \centering
     \includegraphics[scale=.5]{ecore-policy-definition.png}	
-	\caption{The metamodel related to the \textit{policy definition}.}
+	\caption{The meta-model related to the \textit{policy definition}.}
 	\label{fig:ecore-policy-definition}
 \end{figure}
 
-There are several extra classes, consisting of subsystems that can be implemented in section \ref{sec:futureWork}.
-
 \subsection{Key Concepts}
-
-During the analysis of the interviews, different meta-constructs were defined. It was evident that the three key concepts below were needed in order to tailor the policies for the interviewees using the DSL;
+During the analysis of the interviews, different meta-constructs were defined. It was evident that the \textit{three key concepts} listed below were needed in order to tailor core functionalities discovered.
 
 \subsubsection{Time}\label{subsec:time}
 Time has to be an integral part of the DSL, and not just related with the internal policy logic. Several interviewees mention concepts like weekdays, weekends, normal working hours, holidays, night, day, morning etc., which clearly shows that Time is necessary. We have extrapolated the need for Time in two different cases;
 \begin{enumerate}
-	\item Time conditional expression\label{subsubsec:conditionalexpression}
-A \textit{time conditional expression} is an expression used for determining the flow of a behavior. It is an `if' statement that can react based on a built-in timer function. 
+	\item Time conditional expressions\label{subsubsec:conditionalexpression}
+are expressions used for determining the flow of a behavior. It is `if' statements that can react based on a built-in timer function (see fig.~\ref{fig:dsl-conditionalexpression}).
 
 \begin{figure}[h]
   \centering
@@ -63,24 +60,23 @@ A \textit{time conditional expression} is an expression used for determining the
 	\label{fig:dsl-conditionalexpression}
 \end{figure}
 \newpage
-\item Schedules\label{subsubsec:schedules}
-\textit{Schedules} are predefined types representing a timespan, which can later be attached to a specific behavior where action or no-action takes place. Note that by defining several The \textit{schedules}, it is possible both to make schedules than can overlap in time, but also policies that takes over when other policies reach their end. 
+\item Schedules\label{subsubsec:schedules} are predefined types representing a timespan (see fig. \ref{fig:dsl-schedules}), which later can be attached to a specific behavior where action or no-action takes place. Note that by defining several The \textit{schedules}, it is possible both to make schedules than can overlap in time, but also policies that takes over when other policies reach their end.
 
 \begin{figure}
   \centering
   \includegraphics[scale=.5]{dsl-schedules.png}
-  \caption{An example of a \textit{schedule} defined for a interviewee.}
+  \caption{An example of a \textit{schedule}.}
   \label{fig:dsl-schedules}
 \end{figure}
 \end{enumerate}
 
 \subsubsection{Policy}\label{subsec:policies}
-Policies define the actual behavior, ie. adjustment of actuators, based on sensor input. In the dsl example below, when the humiditySensor value drops under 50, the humidityAlarm state is set to true and every 15 seconds of the timer, the audioAlarmActuator sets off the alarm in the janitorOffice.
+Policies define the actual behavior, ie. adjustment of actuators, based on sensor input. In fig. \ref{fig:dsl-policy-definition}, when the \texttt{humiditySensor} value drops under 50, the \texttt{humidityAlarm} state is set to true. As long as the \texttt{humidityAlarm} is true, the \texttt{audioAlarmActuator} in the \texttt{janitorOffice} will sound every 15 seconds.
 
 \begin{figure}[h]
   \centering
     \includegraphics[scale=.5]{dsl-policy-definition.png} 
-	\caption{An example of \textit{policy} using a single sensor type, a single actuator type and a room instance.}
+	\caption{An example of \textit{policy} using a single sensor type, and an actuator for a room instance.}
 	\label{fig:dsl-policy-definition}
 \end{figure}
 
@@ -88,21 +84,21 @@ Policies define the actual behavior, ie. adjustment of actuators, based on senso
 \subsubsection{Building specification}\label{subsec:buildingspecification}
 Rooms and room types are part of the complete building specification, with terminology rooted in concepts revolving around buildings, ie. rooms, room types, floors, different sensors and actuators. \\
 
-To avoid confusing the DSL user with an overwhelming amount of declarations of rooms, sensors and actuators --- we have designed \textit{room types} that declare static use of sensors and actuators. Independent rooms that stick out from the crown can still be defined on an instance level.
+To avoid cluttering the DSL --- and confusing the user with an overwhelming amount of declarations of rooms, sensors and actuators --- we have designed \textit{room types} (fig. \ref{fig:room-types}) that declare static use of sensors and actuators. Rooms that does not fit into types, can still be internally defined by sensors and actuators on the instance level.
 
 \begin{figure}
   \centering
     \includegraphics[scale=.5]{dsl-room-types.png}
-	\caption{An example of \textit{room types} defined for a interviewee.}
+	\caption{An example of \textit{room types}.}
 	\label{fig:room-types}
 \end{figure}
 
-Building specification as in the example above, helps us map out the actual buildings as they are in our DSL. With this we are able to accurately define exact locations for sensors and actuators as well as implement policies for rooms in specific locations. 
+The \textit{building specification} (fig. \ref{fig:dsl-building-definition}) is the last piece of the BA puzzle --- it helps us analyze the the facilities that requires automation. Using this descriptive concept, we we are able to accurately define the real-world objects as \textit{buildings}, \textit{floors} and \textit{rooms} --- as well as implement policies for rooms in specific locations. 
 
 \begin{figure}
   \centering
   \includegraphics[scale=.5]{dsl-building-definition.png}  
-  \caption{An example of \textit{building specification} defined for a interviewee. Note that the janitorOffice inherits from a TemperatureControlled room (which uses a \textit{TemperatureSensor} and a \textit{RadiatorActuator}) but also declares a \textit{AudioAlarmActuator} and a \textit{Timer} instance.}
+  \caption{An example of \textit{building specification}. Note that the \textit{janitorOffice} inherits from a \textit{TemperatureControlledRoom} (which uses a \textit{TemperatureSensor} and a \textit{RadiatorActuator}) but also declares a \textit{AudioAlarmActuator} and a \textit{Timer} instance.}
   \label{fig:dsl-building-definition}
 \end{figure}
 
