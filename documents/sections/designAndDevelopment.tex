@@ -1,10 +1,10 @@
 Since our complete meta-model~\cite{ecore-complete} is of considerable size, we will in this section explain it using a collection of smaller Ecore diagrams. We also explain the key concepts behind the definition of policies.\\
  
-By using Eclipse~\cite{eclipse}, EMF and Xtext we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs. Finally, we used our Policy Engine DSL editor to specify buildings and write examples of policies learned from the interviews. The full DSL implementation based on two of the interviews,  Br\"{u}el \& Kj\ae r (see \nameref{app:bogk}) and  K\o benhavns Tekniske Skole (see \nameref{app:kts}). The referenced DSL figures are all cropped from screendumps of actual, running Eclipse instances.
+By using Eclipse~\cite{eclipse}, EMF and Xtext we built a domain specific language that is rich enough to express the policies discovered in the analysis. We developed a grammar that is based on our programming experience, and believed to have a consistent forthcoming syntax and conceptual constructs (see \nameref{app:PedslXtext}). Finally, we used our Policy Engine DSL editor to specify buildings and write examples of policies learned from the interviews. The full DSL implementation based on two of the interviews,  Br\"{u}el \& Kj\ae r (see \nameref{app:bogk}) and  K\o benhavns Tekniske Skole (see \nameref{app:kts}). The referenced DSL figures are all cropped from screendumps of actual, running Eclipse instances.
 
 \subsection{Meta-Models}
 
-The following core packages, differentiated in separate Ecore Diagrams can be viewed fully in \nameref{app:a-metamodel} as a single meta-model. In the subsections below, we show images and explain the build up of the core package as it is in our model. 
+The following core packages, differentiated in separate Ecore Diagrams can be viewed fully in ~\cite{ecore-complete} as a single meta-model. In the subsections below, we show images and explain the build up of the core package as it is in our model. 
 
 \subsubsection{Building definition}
 In order to specify the building(s) with all their floors and rooms, the core classes has been included in fig. \ref{fig:ecore-building-definition}. They all inherit from NamedElement, making it possible to give them a name than can be used for later referencing.
@@ -102,3 +102,4 @@ The \textit{building specification} (fig. \ref{fig:dsl-building-definition}) is 
   \label{fig:dsl-building-definition}
 \end{figure}
 
+All the sample DSL implementations as showns in the figures above, are possible by the fact that our grammar has a consistent forthcoming syntax and conceptual constructs. It has been tailored to fit the industry by making use of commonly used words in FM, which makes it clean, understandable and easy to use. (see \nameref{app:PedslXtext}).
