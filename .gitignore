@@ -5,7 +5,6 @@ documents/The Road to a Building Automation DSL through MDD.blg
 documents/The Road to a Building Automation DSL through MDD.log
 documents/The Road to a Building Automation DSL through MDD.out
 documents/The Road to a Building Automation DSL through MDD.aux
-documents/The Road to a Building Automation DSL through MDD.pdf
 documents/The Road to a Building Automation DSL through MDD.synctex.gz(busy)
 documents/The Road to a Building Automation DSL through MDD.synctex.gz
 
@@ -16,4 +15,3 @@ runtime-EclipseApplication/
 /source/dk.itu.mdd.policyengine.dsl.tests/bin/
 /source/dk.itu.mdd.policyengine.dsl.ui/bin/
 /source/dk.itu.mdd.policyengine.time/
-
